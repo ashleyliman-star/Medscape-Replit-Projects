@@ -11,7 +11,7 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
       </h1>
       
       <div className="max-w-4xl mx-auto mb-6">
-        <div className="bg-white rounded-lg border-l-4 border-purple-500 shadow-sm p-6 text-left">
+        <div className="bg-white rounded-lg border-t-4 border-purple-500 shadow-sm p-6 text-left">
           <div className="flex items-center justify-center mb-4">
             <div className="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center mr-3">
               <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
