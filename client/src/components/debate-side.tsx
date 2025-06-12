@@ -48,7 +48,7 @@ export default function DebateSide({
             <Icon className="mr-2 h-5 w-5" />
             {position}
           </h4>
-          <div className={`rounded-xl border-2 border-gray-200 shadow-lg p-6 ${color === 'blue' ? 'bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900' : color === 'purple' ? 'bg-gradient-to-br from-purple-900 via-purple-800 to-purple-900' : 'bg-white'}`}>
+          <div className={`rounded-xl border-2 border-gray-200 shadow-lg p-6 ${color === 'blue' ? 'bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-800' : color === 'purple' ? 'bg-gradient-to-br from-purple-900 via-violet-800 to-indigo-900' : 'bg-white'}`}>
             <Avatar className="w-32 h-32 mx-auto mb-4 border-4 border-white shadow-lg">
               <AvatarImage src={physician.image} alt={physician.name} />
               <AvatarFallback>{physician.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
