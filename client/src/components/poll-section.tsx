@@ -14,11 +14,8 @@ interface PollSectionProps {
 }
 
 const pollOptions = [
-  { value: 'strongly-pro', label: 'Strongly agree - Statins should be widely prescribed for primary prevention' },
-  { value: 'somewhat-pro', label: 'Somewhat agree - Statins are beneficial but should be used more selectively' },
-  { value: 'neutral', label: 'Neutral - The evidence is mixed and depends on individual cases' },
-  { value: 'somewhat-con', label: 'Somewhat disagree - Lifestyle interventions should be prioritized' },
-  { value: 'strongly-con', label: 'Strongly disagree - Statins are overprescribed for low-risk patients' }
+  { value: 'yes', label: 'Yes - Routine surveillance is worth it' },
+  { value: 'no', label: 'No - Routine surveillance is not worth it' }
 ];
 
 export default function PollSection({ debateId }: PollSectionProps) {
@@ -77,7 +74,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
       
       <div className="max-w-2xl mx-auto">
         <h3 className="text-lg font-semibold text-gray-800 mb-6 text-center">
-          Should statins be prescribed for primary prevention in low-risk patients?
+          Is routine surveillance for breast cancer really worth it?
         </h3>
         
         {!hasVoted ? (

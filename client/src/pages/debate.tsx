@@ -60,7 +60,7 @@ const debateData = {
   },
   sideB: {
     position: "CON: Selective Surveillance is More Appropriate",
-    color: "green",
+    color: "green" as const,
     physician: {
       name: "Dr. Robert Chen",
       credentials: "MD, MPH, Preventive Medicine Specialist",
@@ -127,7 +127,7 @@ export default function DebatePage() {
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           <DebateSide 
             position={debateData.sideA.position}
-            color={debateData.sideA.color}
+            color="blue"
             physician={debateData.sideA.physician}
             statement={debateData.sideA.statement}
             argumentsList={debateData.sideA.arguments}
@@ -136,7 +136,7 @@ export default function DebatePage() {
           />
           <DebateSide 
             position={debateData.sideB.position}
-            color={debateData.sideB.color}
+            color="green"
             physician={debateData.sideB.physician}
             statement={debateData.sideB.statement}
             argumentsList={debateData.sideB.arguments}
@@ -151,7 +151,7 @@ export default function DebatePage() {
         
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
         
-        <PollSection debateId="statin-primary-prevention" />
+        <PollSection debateId="breast-cancer-surveillance" />
         
         <AdPlaceholder size="300x250" className="flex justify-center mt-8" />
       </main>

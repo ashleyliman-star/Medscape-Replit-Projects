@@ -10,13 +10,13 @@ export default function Conclusions() {
       </h2>
       <div className="max-w-4xl mx-auto space-y-4 text-gray-700">
         <p>
-          This debate highlights the complexity of primary prevention decisions in cardiovascular medicine. Both perspectives offer valid evidence-based arguments that reflect the current state of clinical practice and guideline recommendations.
+          This debate highlights the complexity of breast cancer screening decisions in modern healthcare. Both perspectives offer valid evidence-based arguments that reflect the current state of clinical practice and evolving guideline recommendations.
         </p>
         <p>
-          The pro-statin argument emphasizes the robust evidence from large-scale clinical trials and the significant public health impact of preventing cardiovascular events. The selective-use argument focuses on individualized care, patient autonomy, and the importance of comprehensive risk assessment.
+          The pro-surveillance argument emphasizes the robust evidence from population studies showing mortality reduction and the benefits of early detection. The selective-surveillance argument focuses on individualized risk assessment, patient autonomy, and minimizing the harms of overdiagnosis and false positives.
         </p>
         <p>
-          Ultimately, the decision should involve shared decision-making between clinicians and patients, considering individual risk factors, patient preferences, potential for lifestyle modification, and the balance of benefits versus risks in each specific case.
+          Ultimately, the decision should involve shared decision-making between clinicians and patients, considering individual risk factors, family history, patient preferences, and the balance of benefits versus risks in each specific case. The key is ensuring women have access to accurate information to make informed choices about their screening participation.
         </p>
       </div>
     </section>

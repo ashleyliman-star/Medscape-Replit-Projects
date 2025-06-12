@@ -76,7 +76,7 @@
   .ad-placeholder {
     background: linear-gradient(45deg, hsl(210, 40%, 95%), hsl(210, 16%, 82%));
     border: 2px dashed hsl(214, 20%, 69%);
-    @apply flex items-center justify-center text-neutral-gray font-medium;
+    @apply flex items-center justify-center text-gray-600 font-medium;
   }
   
   .poll-option:hover {

@@ -55,11 +55,8 @@ export class MemStorage implements IStorage {
   async getPollStats(debateId: string): Promise<Record<string, number>> {
     const responses = await this.getPollResponsesByDebateId(debateId);
     const stats: Record<string, number> = {
-      'strongly-pro': 0,
-      'somewhat-pro': 0,
-      'neutral': 0,
-      'somewhat-con': 0,
-      'strongly-con': 0,
+      'yes': 0,
+      'no': 0,
     };
 
     responses.forEach((response) => {
