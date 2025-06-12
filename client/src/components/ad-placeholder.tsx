@@ -14,7 +14,7 @@ export default function AdPlaceholder({ size, className }: AdPlaceholderProps) {
   return (
     <div className={cn(className)}>
       <div className={cn(
-        'ad-placeholder rounded-lg',
+        'rounded-lg border-2 border-dashed border-gray-400 bg-gray-100 flex items-center justify-center text-gray-600 font-medium',
         dimensions[size]
       )}>
         <span>Advertisement ({size})</span>
