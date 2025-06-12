@@ -128,7 +128,7 @@ export default function DebatePage() {
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           <DebateSide 
             position={debateData.sideA.position}
-            color="blue"
+            color={debateData.sideA.color}
             physician={debateData.sideA.physician}
             statement={debateData.sideA.statement}
             argumentsList={debateData.sideA.arguments}
@@ -137,7 +137,7 @@ export default function DebatePage() {
           />
           <DebateSide 
             position={debateData.sideB.position}
-            color="green"
+            color={debateData.sideB.color}
             physician={debateData.sideB.physician}
             statement={debateData.sideB.statement}
             argumentsList={debateData.sideB.arguments}
