@@ -11,7 +11,7 @@ const debateData = {
   question: "Is routine surveillance for breast cancer really worth it?",
   introduction: "This debate examines the benefits and risks of routine breast cancer screening programs. Two expert perspectives present evidence-based arguments on whether mammography screening should be universally recommended or more selectively applied.",
   sideA: {
-    position: "PRO: Yes, Routine Surveillance is Worth It",
+    position: "YES: Routine Surveillance is Worth It",
     color: "blue" as const,
     physician: {
       name: "Dr. Jennifer Martinez",
@@ -60,7 +60,7 @@ const debateData = {
     guidelines: "Follow established screening guidelines recommending annual or biennial mammograms for women aged 50-74, with individualized decisions for women 40-49 based on personal risk factors and preferences."
   },
   sideB: {
-    position: "CON: Selective Surveillance is More Appropriate",
+    position: "NO: Selective Surveillance is More Appropriate",
     color: "green" as const,
     physician: {
       name: "Dr. Robert Chen",
