@@ -61,7 +61,7 @@ const debateData = {
   },
   sideB: {
     position: "NO: Selective Surveillance is More Appropriate",
-    color: "green" as const,
+    color: "purple" as const,
     physician: {
       name: "Dr. Robert Chen",
       credentials: "MD, MPH, Preventive Medicine Specialist",

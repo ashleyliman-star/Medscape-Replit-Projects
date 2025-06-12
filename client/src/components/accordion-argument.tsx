@@ -6,12 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 interface AccordionArgumentProps {
   title: string;
   points: string[];
-  color: 'blue' | 'green';
+  color: 'blue' | 'green' | 'purple';
 }
 
 export default function AccordionArgument({ title, points, color }: AccordionArgumentProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const dotColor = color === 'blue' ? 'text-blue-600' : 'text-green-600';
+  const dotColor = color === 'blue' ? 'text-blue-600' : color === 'purple' ? 'text-purple-600' : 'text-green-600';
 
   return (
     <div className="argument-item">
