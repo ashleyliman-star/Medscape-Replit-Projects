@@ -7,105 +7,105 @@ import PollSection from "@/components/poll-section";
 import Conclusions from "@/components/conclusions";
 
 const debateData = {
-  question: "Should Statins Be Prescribed for Primary Prevention in Low-Risk Patients?",
-  introduction: "This debate examines whether statin therapy should be recommended for patients without existing cardiovascular disease but with mild risk factors. Two leading cardiologists present contrasting evidence-based perspectives on this critical clinical question affecting millions of patients worldwide.",
+  question: "Is routine surveillance for breast cancer really worth it?",
+  introduction: "This debate examines the benefits and risks of routine breast cancer screening programs. Two expert perspectives present evidence-based arguments on whether mammography screening should be universally recommended or more selectively applied.",
   sideA: {
-    position: "PRO: Yes, Statins Should Be Prescribed",
-    color: "blue",
+    position: "PRO: Yes, Routine Surveillance is Worth It",
+    color: "blue" as const,
     physician: {
-      name: "Dr. Michael Harrison",
-      credentials: "MD, FACC, Interventional Cardiologist",
-      institution: "Harvard Medical School, Mass General Brigham",
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150"
-    },
-    statement: "The overwhelming evidence supports statin therapy for primary prevention. The benefits far outweigh the risks, and we have a responsibility to prevent cardiovascular events before they occur.",
-    arguments: [
-      {
-        title: "Proven cardiovascular risk reduction",
-        points: [
-          "Meta-analyses show 20-25% reduction in major cardiovascular events across diverse patient populations",
-          "Number needed to treat is 67 patients over 5 years to prevent one major cardiovascular event"
-        ]
-      },
-      {
-        title: "Cost-effectiveness in healthcare",
-        points: [
-          "Prevention costs significantly less than treating acute cardiovascular events and their complications",
-          "Generic statins cost less than $1 per day while hospital stays for MI average $15,000-$30,000"
-        ]
-      },
-      {
-        title: "Excellent safety profile",
-        points: [
-          "Serious adverse events occur in less than 1% of patients with proper monitoring",
-          "Muscle symptoms are often reversible and can be managed with different statin formulations"
-        ]
-      },
-      {
-        title: "Early intervention importance",
-        points: [
-          "Atherosclerosis begins early and waiting for events means missing critical prevention windows",
-          "Risk calculators may underestimate lifetime risk, especially in younger patients"
-        ]
-      },
-      {
-        title: "Multiple cardiovascular benefits",
-        points: [
-          "Statins provide pleiotropic effects including anti-inflammatory and plaque stabilization properties",
-          "Benefits extend beyond LDL reduction including stroke prevention and potential mortality benefit"
-        ]
-      }
-    ],
-    guidelines: "Follow ACC/AHA guidelines recommending statin therapy for adults aged 40-75 with LDL ≥70 mg/dL and estimated 10-year ASCVD risk ≥7.5%. Consider patient-clinician discussion for risk-enhancing factors."
-  },
-  sideB: {
-    position: "CON: Selective Use is More Appropriate",
-    color: "green",
-    physician: {
-      name: "Dr. Sarah Chen",
-      credentials: "MD, PhD, Preventive Cardiologist",
-      institution: "Stanford University School of Medicine",
+      name: "Dr. Jennifer Martinez",
+      credentials: "MD, Radiologist & Breast Imaging Specialist",
+      institution: "Johns Hopkins Breast Center",
       image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150"
     },
-    statement: "While statins are valuable medications, their widespread use in low-risk patients may cause more harm than benefit. We should focus on lifestyle interventions and reserve medications for appropriate candidates.",
+    statement: "Routine breast cancer surveillance saves lives through early detection. The benefits of identifying cancer in its earliest stages far outweigh the risks and challenges of screening programs.",
     arguments: [
       {
-        title: "Limited benefit in low-risk populations",
+        title: "Early detection improves survival",
         points: [
-          "Absolute risk reduction in low-risk patients is minimal, requiring treatment of hundreds to prevent one event",
-          "Many studies showing benefit were conducted in higher-risk populations that may not generalize"
+          "Studies consistently show improved 5-year survival rates when breast cancer is detected early through screening",
+          "Early-stage cancers have significantly better treatment outcomes and long-term prognosis"
         ]
       },
       {
-        title: "Significant adverse effects burden",
+        title: "Reduces breast cancer mortality",
         points: [
-          "Muscle symptoms affect 10-15% of patients and can significantly impact quality of life",
-          "Increased risk of new-onset diabetes, particularly in patients with pre-existing risk factors"
+          "Large-scale population studies demonstrate 20-40% reduction in breast cancer deaths with regular screening",
+          "Screening programs have contributed to declining breast cancer mortality rates over the past decades"
         ]
       },
       {
-        title: "Lifestyle interventions underutilized",
+        title: "Allows less aggressive treatment",
         points: [
-          "Comprehensive lifestyle changes can achieve similar risk reduction without medication side effects",
-          "Prescribing statins may reduce patient motivation to make necessary lifestyle modifications"
+          "Early detection often means smaller tumors that require less extensive surgery and chemotherapy",
+          "Breast-conserving surgery is more often possible when cancers are found through screening"
         ]
       },
       {
-        title: "Individual patient variability",
+        title: "Supported by major health guidelines",
         points: [
-          "Risk calculators don't account for individual genetic, social, and lifestyle factors",
-          "Shared decision-making should prioritize patient values and preferences over population statistics"
+          "American Cancer Society and other major organizations recommend routine screening for average-risk women",
+          "Evidence-based guidelines are developed through rigorous review of scientific literature"
         ]
       },
       {
-        title: "Overmedication concerns",
+        title: "Most beneficial for women aged 50–69",
         points: [
-          "Widespread statin use contributes to polypharmacy and medication burden in aging populations",
-          "Healthcare resources might be better allocated to addressing social determinants of health"
+          "This age group shows the greatest benefit from screening with optimal risk-to-benefit ratio",
+          "Cost-effectiveness studies support routine screening in this population"
         ]
       }
     ],
-    guidelines: "Emphasize comprehensive risk assessment including family history, coronary calcium scoring, and patient preferences. Prioritize intensive lifestyle counseling and reserve statins for patients with multiple risk factors or clear clinical indication."
+    guidelines: "Follow established screening guidelines recommending annual or biennial mammograms for women aged 50-74, with individualized decisions for women 40-49 based on personal risk factors and preferences."
+  },
+  sideB: {
+    position: "CON: Selective Surveillance is More Appropriate",
+    color: "green",
+    physician: {
+      name: "Dr. Robert Chen",
+      credentials: "MD, MPH, Preventive Medicine Specialist",
+      institution: "University of California San Francisco",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150"
+    },
+    statement: "While breast cancer screening has benefits, routine surveillance carries significant risks of overdiagnosis, false positives, and psychological harm that may outweigh benefits for many women.",
+    arguments: [
+      {
+        title: "False positives cause anxiety and harm",
+        points: [
+          "Up to 10% of mammograms result in false positives, leading to unnecessary biopsies and procedures",
+          "False positive results cause significant psychological distress and anxiety that can persist for years"
+        ]
+      },
+      {
+        title: "False negatives can miss cancers",
+        points: [
+          "Mammography misses 10-15% of breast cancers, particularly in women with dense breast tissue",
+          "False sense of security from negative results may delay appropriate medical attention for symptoms"
+        ]
+      },
+      {
+        title: "Overdiagnosis leads to unnecessary treatment",
+        points: [
+          "Studies suggest 15-25% of screen-detected cancers represent overdiagnosis of slow-growing tumors",
+          "Women receive treatment for cancers that may never have caused symptoms or death"
+        ]
+      },
+      {
+        title: "Limited impact on overall survival",
+        points: [
+          "While breast cancer mortality decreases, overall mortality benefits are modest",
+          "Improved treatments may account for much of the mortality reduction attributed to screening"
+        ]
+      },
+      {
+        title: "Radiation exposure, though low, is not zero",
+        points: [
+          "Cumulative radiation exposure from annual mammograms over decades carries small but measurable cancer risk",
+          "Risk-benefit calculation varies significantly based on individual patient factors"
+        ]
+      }
+    ],
+    guidelines: "Emphasize shared decision-making with individualized risk assessment. Consider family history, genetic factors, and patient preferences. Focus screening on higher-risk populations where benefits clearly outweigh harms."
   }
 };
 
@@ -126,11 +126,21 @@ export default function DebatePage() {
         
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           <DebateSide 
-            {...debateData.sideA}
+            position={debateData.sideA.position}
+            color={debateData.sideA.color}
+            physician={debateData.sideA.physician}
+            statement={debateData.sideA.statement}
+            argumentsList={debateData.sideA.arguments}
+            guidelines={debateData.sideA.guidelines}
             showPhysician={version === 'A'}
           />
           <DebateSide 
-            {...debateData.sideB}
+            position={debateData.sideB.position}
+            color={debateData.sideB.color}
+            physician={debateData.sideB.physician}
+            statement={debateData.sideB.statement}
+            argumentsList={debateData.sideB.arguments}
+            guidelines={debateData.sideB.guidelines}
             showPhysician={version === 'A'}
           />
         </div>

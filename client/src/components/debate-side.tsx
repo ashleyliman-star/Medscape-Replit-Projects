@@ -20,7 +20,7 @@ interface DebateSideProps {
   color: 'blue' | 'green';
   physician: Physician;
   statement: string;
-  arguments: Argument[];
+  argumentsList: Argument[];
   guidelines: string;
   showPhysician: boolean;
 }
@@ -30,7 +30,7 @@ export default function DebateSide({
   color,
   physician,
   statement,
-  arguments,
+  argumentsList,
   guidelines,
   showPhysician
 }: DebateSideProps) {
@@ -69,7 +69,7 @@ export default function DebateSide({
       <div className="space-y-3">
         <h5 className="font-semibold text-gray-800 mb-3">Key Arguments:</h5>
         
-        {arguments.map((argument, index) => (
+        {argumentsList.map((argument, index) => (
           <AccordionArgument
             key={index}
             title={argument.title}
