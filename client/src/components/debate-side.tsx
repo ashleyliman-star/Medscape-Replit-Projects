@@ -35,7 +35,7 @@ export default function DebateSide({
   showPhysician
 }: DebateSideProps) {
   const sideClass = color === 'blue' ? 'debate-side-a' : color === 'purple' ? 'debate-side-c' : 'debate-side-b';
-  const textColor = color === 'blue' ? 'text-blue-600' : color === 'purple' ? 'text-purple-600' : 'text-green-600';
+  const textColor = color === 'blue' ? 'text-blue-600' : color === 'purple' ? 'text-purple-700' : 'text-green-600';
   const bgColor = color === 'blue' ? 'bg-blue-50' : color === 'purple' ? 'bg-purple-50' : 'bg-green-50';
   const icon = color === 'blue' ? ThumbsUp : ThumbsDown;
   const Icon = icon;
