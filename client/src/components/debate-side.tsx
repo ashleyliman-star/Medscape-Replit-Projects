@@ -48,14 +48,16 @@ export default function DebateSide({
             <Icon className="mr-2 h-5 w-5" />
             {position}
           </h4>
-          <Avatar className="w-32 h-32 mx-auto mb-4 border-4 border-white shadow-lg">
-            <AvatarImage src={physician.image} alt={physician.name} />
-            <AvatarFallback>{physician.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-          </Avatar>
-          <div className="text-center">
-            <h3 className={`text-xl font-bold ${textColor}`}>{physician.name}</h3>
-            <p className="text-sm text-gray-600 mb-2">{physician.credentials}</p>
-            <p className="text-sm text-gray-700">{physician.institution}</p>
+          <div className="bg-white rounded-xl border-2 border-gray-200 shadow-lg p-6">
+            <Avatar className="w-32 h-32 mx-auto mb-4 border-4 border-white shadow-lg">
+              <AvatarImage src={physician.image} alt={physician.name} />
+              <AvatarFallback>{physician.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+            </Avatar>
+            <div className="text-center">
+              <h3 className={`text-xl font-bold ${textColor}`}>{physician.name}</h3>
+              <p className="text-sm text-gray-600 mb-2">{physician.credentials}</p>
+              <p className="text-sm text-gray-700">{physician.institution}</p>
+            </div>
           </div>
         </div>
       )}
