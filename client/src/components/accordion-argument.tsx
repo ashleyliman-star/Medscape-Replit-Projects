@@ -44,7 +44,7 @@ export default function AccordionArgument({ title, points, color }: AccordionArg
                 <ul className="space-y-2 text-sm text-gray-700 pt-3">
                   {points.map((point, index) => (
                     <li key={index} className="flex items-start">
-                      <div className={`w-4 h-4 rounded-full mt-1 mr-3 flex-shrink-0 border-2 ${color === 'blue' ? 'bg-blue-600 border-blue-600' : color === 'purple' ? 'bg-purple-700 border-purple-700' : 'bg-green-600 border-green-600'}`} />
+                      <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0 bg-black" />
                       <span>{point}</span>
                     </li>
                   ))}
