@@ -4,6 +4,7 @@ import DebateQuestion from "@/components/debate-question";
 import DebateSide from "@/components/debate-side";
 import AdPlaceholder from "@/components/ad-placeholder";
 import PollSection from "@/components/poll-section";
+import MiddleGround from "@/components/middle-ground";
 import Conclusions from "@/components/conclusions";
 
 const debateData = {
@@ -146,6 +147,8 @@ export default function DebatePage() {
         </div>
         
         <AdPlaceholder size="300x250" className="flex justify-center mb-8" />
+        
+        <MiddleGround />
         
         <Conclusions />
         
