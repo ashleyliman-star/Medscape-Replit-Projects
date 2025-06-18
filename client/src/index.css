@@ -60,6 +60,27 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    /* Prevent unwanted scrolling on mobile */
+    overscroll-behavior: none;
+  }
+  
+  /* Prevent mobile scroll issues with chat widgets */
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  /* Fix mobile touch scrolling */
+  @media (max-width: 768px) {
+    body {
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+    }
+    
+    /* Prevent zoom and scroll issues on mobile form interactions */
+    input, textarea, select {
+      font-size: 16px;
+    }
   }
 }
 
