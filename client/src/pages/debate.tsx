@@ -6,6 +6,7 @@ import AdPlaceholder from "@/components/ad-placeholder";
 import PollSection from "@/components/poll-section";
 import MiddleGround from "@/components/middle-ground";
 import Conclusions from "@/components/conclusions";
+import SideBySideArguments from "@/components/side-by-side-arguments";
 
 const debateData = {
   question: "Is routine surveillance for breast cancer really worth it?",
@@ -111,7 +112,7 @@ const debateData = {
 };
 
 export default function DebatePage() {
-  const [version, setVersion] = useState<'A' | 'B'>('A');
+  const [version, setVersion] = useState<'A' | 'B' | 'C'>('A');
 
   return (
     <div className="min-h-screen bg-gray-50">
