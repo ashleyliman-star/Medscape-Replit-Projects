@@ -181,7 +181,9 @@ export default function DebatePage() {
         
         <PollSection debateId="breast-cancer-surveillance" />
         
-        <CommentSection />
+        <div className="my-12">
+          <CommentSection />
+        </div>
         
         <AdPlaceholder size="300x250" className="flex justify-center mt-8" />
       </main>
