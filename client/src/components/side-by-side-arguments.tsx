@@ -78,15 +78,15 @@ export default function SideBySideArguments({ yesArguments, noArguments, yesPhys
             <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
               {yesArguments[index] && (
                 <>
-                  <div className="flex items-center mb-4">
-                    <CheckCircle className="h-6 w-6 text-blue-600 mr-3" />
+                  <div className="flex items-center mb-4 flex-wrap gap-3">
+                    <CheckCircle className="h-6 w-6 text-blue-600" />
                     <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       Yes
                     </span>
+                    <h3 className="text-lg font-bold text-blue-800">
+                      {yesArguments[index].title}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-bold text-blue-800 mb-4">
-                    {yesArguments[index].title}
-                  </h3>
                   <ul className="space-y-3">
                     {yesArguments[index].points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
@@ -103,15 +103,15 @@ export default function SideBySideArguments({ yesArguments, noArguments, yesPhys
             <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
               {noArguments[index] && (
                 <>
-                  <div className="flex items-center mb-4">
-                    <XCircle className="h-6 w-6 text-purple-700 mr-3" />
+                  <div className="flex items-center mb-4 flex-wrap gap-3">
+                    <XCircle className="h-6 w-6 text-purple-700" />
                     <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       No
                     </span>
+                    <h3 className="text-lg font-bold text-purple-800">
+                      {noArguments[index].title}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-bold text-purple-800 mb-4">
-                    {noArguments[index].title}
-                  </h3>
                   <ul className="space-y-3">
                     {noArguments[index].points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
