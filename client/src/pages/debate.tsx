@@ -11,6 +11,7 @@ import SummaryTable from "@/components/summary-table";
 import CommentSection from "@/components/comment-section";
 import GroupedArguments from "@/components/grouped-arguments";
 import SplitLayout from "@/components/split-layout";
+import UnboxedArguments from "@/components/unboxed-arguments";
 
 const debateData = {
   question: "Is routine surveillance for breast cancer really worth it?",
@@ -119,7 +120,7 @@ export default function DebatePage() {
   const [version, setVersion] = useState<'A' | 'B' | 'C' | 'D' | 'E'>('A');
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <DebateHeader version={version} onVersionChange={setVersion} />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -165,10 +166,10 @@ export default function DebatePage() {
             />
           </>
         ) : version === 'E' ? (
-          // Version E: Exact duplicate of Version D - Grouped arguments layout
+          // Version E: Unboxed arguments with green check and red X icons
           <>
             <div className="mb-12">
-              <GroupedArguments 
+              <UnboxedArguments 
                 yesArguments={debateData.sideA.arguments}
                 noArguments={debateData.sideB.arguments}
                 yesPhysician={debateData.sideA.physician}
