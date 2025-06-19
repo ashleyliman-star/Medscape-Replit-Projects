@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 
 interface DebateHeaderProps {
-  version: 'A' | 'B' | 'C';
-  onVersionChange: (version: 'A' | 'B' | 'C') => void;
+  version: 'A' | 'B' | 'C' | 'D';
+  onVersionChange: (version: 'A' | 'B' | 'C' | 'D') => void;
 }
 
 export default function DebateHeader({ version, onVersionChange }: DebateHeaderProps) {
@@ -49,6 +49,18 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
                 }`}
               >
                 Version C
+              </Button>
+              <Button
+                onClick={() => onVersionChange('D')}
+                variant="outline"
+                size="sm"
+                className={`${
+                  version === 'D' 
+                    ? 'bg-orange-100 text-orange-700 hover:bg-orange-200 border-orange-200' 
+                    : 'text-gray-600 hover:bg-gray-100'
+                }`}
+              >
+                Version D
               </Button>
             </div>
           </div>

@@ -114,7 +114,7 @@ const debateData = {
 };
 
 export default function DebatePage() {
-  const [version, setVersion] = useState<'A' | 'B' | 'C'>('A');
+  const [version, setVersion] = useState<'A' | 'B' | 'C' | 'D'>('A');
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -128,8 +128,8 @@ export default function DebatePage() {
         
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
         
-        {version === 'C' ? (
-          // Version C: Side-by-side arguments with ads between pairs
+        {version === 'C' || version === 'D' ? (
+          // Version C & D: Side-by-side arguments with ads between pairs
           <>
             <div className="mb-12">
               <SideBySideArguments 
