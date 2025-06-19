@@ -165,10 +165,10 @@ export default function DebatePage() {
             />
           </>
         ) : version === 'E' ? (
-          // Version E: Split layout with full columns
+          // Version E: Exact duplicate of Version D - Grouped arguments layout
           <>
-            <div className="-mx-4 sm:-mx-6 lg:-mx-8 mb-12">
-              <SplitLayout 
+            <div className="mb-12">
+              <GroupedArguments 
                 yesArguments={debateData.sideA.arguments}
                 noArguments={debateData.sideB.arguments}
                 yesPhysician={debateData.sideA.physician}
