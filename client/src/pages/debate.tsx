@@ -7,6 +7,7 @@ import PollSection from "@/components/poll-section";
 import MiddleGround from "@/components/middle-ground";
 import Conclusions from "@/components/conclusions";
 import SideBySideArguments from "@/components/side-by-side-arguments";
+import SummaryTable from "@/components/summary-table";
 
 const debateData = {
   question: "Is routine surveillance for breast cancer really worth it?",
@@ -128,14 +129,21 @@ export default function DebatePage() {
         
         {version === 'C' ? (
           // Version C: Side-by-side arguments with ads between pairs
-          <div className="mb-12">
-            <SideBySideArguments 
+          <>
+            <div className="mb-12">
+              <SideBySideArguments 
+                yesArguments={debateData.sideA.arguments}
+                noArguments={debateData.sideB.arguments}
+                yesPhysician={debateData.sideA.physician}
+                noPhysician={debateData.sideB.physician}
+              />
+            </div>
+            
+            <SummaryTable 
               yesArguments={debateData.sideA.arguments}
               noArguments={debateData.sideB.arguments}
-              yesPhysician={debateData.sideA.physician}
-              noPhysician={debateData.sideB.physician}
             />
-          </div>
+          </>
         ) : (
           // Version A & B: Traditional side-by-side layout
           <>
