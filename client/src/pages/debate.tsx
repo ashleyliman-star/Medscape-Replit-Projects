@@ -213,9 +213,9 @@ export default function DebatePage() {
           </>
         )}
         
-        <MiddleGround />
+        {version === 'E' ? <MiddleGroundUnboxed /> : <MiddleGround />}
         
-        <Conclusions />
+        {version === 'E' ? <ConclusionsUnboxed /> : <Conclusions />}
         
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
         
