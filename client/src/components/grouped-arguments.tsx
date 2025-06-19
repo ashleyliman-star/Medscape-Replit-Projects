@@ -205,8 +205,8 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               </Card>
             </div>
 
-            {/* Ad after every 2 argument groups */}
-            {(groupIndex + 1) % 2 === 0 && groupIndex < Math.ceil(maxArgs / 2) - 1 && (
+            {/* Ad after every argument group pair */}
+            {groupIndex < Math.ceil(maxArgs / 2) - 1 && (
               <div className="flex justify-center my-8">
                 <AdPlaceholder size="300x250" className="w-full max-w-sm" />
               </div>
