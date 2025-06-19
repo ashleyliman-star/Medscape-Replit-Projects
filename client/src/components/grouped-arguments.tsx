@@ -27,7 +27,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
   return (
     <div className="space-y-8">
       {/* Physician Headers */}
-      <div className="grid lg:grid-cols-2 gap-6 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <Card className="bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 text-white p-6">
           <div className="flex items-center mb-4">
             <CheckCircle className="h-8 w-8 mr-4" />
@@ -83,7 +83,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         
         return (
           <div key={groupIndex}>
-            <div className="grid lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* YES Arguments Group */}
               <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
                 {showSingleArgument ? (
