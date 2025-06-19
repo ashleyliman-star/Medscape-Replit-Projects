@@ -12,9 +12,9 @@ interface SummaryTableProps {
 }
 
 export default function SummaryTable({ yesArguments, noArguments }: SummaryTableProps) {
-  // Get all unique points from both sides
-  const yesPoints = yesArguments.flatMap(arg => arg.points);
-  const noPoints = noArguments.flatMap(arg => arg.points);
+  // Get main argument titles from both sides
+  const yesPoints = yesArguments.map(arg => arg.title);
+  const noPoints = noArguments.map(arg => arg.title);
 
   return (
     <div className="mb-12">
