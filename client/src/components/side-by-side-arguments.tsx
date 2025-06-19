@@ -125,8 +125,8 @@ export default function SideBySideArguments({ yesArguments, noArguments, yesPhys
             </Card>
           </div>
           
-          {/* Add ad unit after every pair (except the last one) */}
-          {index < maxArgs - 1 && (
+          {/* Add ad unit after every 2 pairs */}
+          {(index + 1) % 2 === 0 && index < maxArgs - 1 && (
             <div className="flex justify-center mt-8">
               <AdPlaceholder size="300x250" className="w-full max-w-sm" />
             </div>
