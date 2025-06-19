@@ -126,28 +126,41 @@ export default function DebatePage() {
         
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
         
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          <DebateSide 
-            position={debateData.sideA.position}
-            color={debateData.sideA.color}
-            physician={debateData.sideA.physician}
-            statement={debateData.sideA.statement}
-            argumentsList={debateData.sideA.arguments}
-            guidelines={debateData.sideA.guidelines}
-            showPhysician={version === 'A'}
-          />
-          <DebateSide 
-            position={debateData.sideB.position}
-            color={debateData.sideB.color}
-            physician={debateData.sideB.physician}
-            statement={debateData.sideB.statement}
-            argumentsList={debateData.sideB.arguments}
-            guidelines={debateData.sideB.guidelines}
-            showPhysician={version === 'A'}
-          />
-        </div>
-        
-        <AdPlaceholder size="300x250" className="flex justify-center mb-8" />
+        {version === 'C' ? (
+          // Version C: Side-by-side arguments with ads between pairs
+          <div className="mb-12">
+            <SideBySideArguments 
+              yesArguments={debateData.sideA.arguments}
+              noArguments={debateData.sideB.arguments}
+            />
+          </div>
+        ) : (
+          // Version A & B: Traditional side-by-side layout
+          <>
+            <div className="grid lg:grid-cols-2 gap-8 mb-12">
+              <DebateSide 
+                position={debateData.sideA.position}
+                color={debateData.sideA.color}
+                physician={debateData.sideA.physician}
+                statement={debateData.sideA.statement}
+                argumentsList={debateData.sideA.arguments}
+                guidelines={debateData.sideA.guidelines}
+                showPhysician={version === 'A'}
+              />
+              <DebateSide 
+                position={debateData.sideB.position}
+                color={debateData.sideB.color}
+                physician={debateData.sideB.physician}
+                statement={debateData.sideB.statement}
+                argumentsList={debateData.sideB.arguments}
+                guidelines={debateData.sideB.guidelines}
+                showPhysician={version === 'A'}
+              />
+            </div>
+            
+            <AdPlaceholder size="300x250" className="flex justify-center mb-8" />
+          </>
+        )}
         
         <MiddleGround />
         
