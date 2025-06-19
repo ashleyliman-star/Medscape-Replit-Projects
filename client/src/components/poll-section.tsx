@@ -63,6 +63,9 @@ export default function PollSection({ debateId }: PollSectionProps) {
       return;
     }
     
+    // Track poll submission
+    trackEvent('poll_vote', 'engagement', selectedOption);
+    
     submitVoteMutation.mutate(selectedOption);
   };
 
