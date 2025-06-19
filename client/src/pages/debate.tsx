@@ -115,7 +115,7 @@ const debateData = {
 };
 
 export default function DebatePage() {
-  const [version, setVersion] = useState<'A' | 'B' | 'C' | 'D'>('A');
+  const [version, setVersion] = useState<'A' | 'B' | 'C' | 'D' | 'E'>('A');
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -146,8 +146,8 @@ export default function DebatePage() {
               noArguments={debateData.sideB.arguments}
             />
           </>
-        ) : version === 'D' ? (
-          // Version D: Grouped arguments with summary table
+        ) : version === 'D' || version === 'E' ? (
+          // Version D & E: Grouped arguments with summary table
           <>
             <div className="mb-12">
               <GroupedArguments 
