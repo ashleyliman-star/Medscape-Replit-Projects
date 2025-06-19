@@ -125,11 +125,20 @@ export default function SideBySideArguments({ yesArguments, noArguments, yesPhys
             </Card>
           </div>
           
-          {/* Add ad unit after every 2 pairs */}
-          {(index + 1) % 2 === 0 && index < maxArgs - 1 && (
-            <div className="flex justify-center mt-8">
-              <AdPlaceholder size="300x250" className="w-full max-w-sm" />
-            </div>
+          {/* Add ad unit after each pair on mobile, after every 2 pairs on desktop */}
+          {index < maxArgs - 1 && (
+            <>
+              {/* Mobile: Show after each pair */}
+              <div className="flex justify-center mt-8 lg:hidden">
+                <AdPlaceholder size="300x250" className="w-full max-w-sm" />
+              </div>
+              {/* Desktop: Show after every 2 pairs */}
+              {(index + 1) % 2 === 0 && (
+                <div className="hidden lg:flex justify-center mt-8">
+                  <AdPlaceholder size="300x250" className="w-full max-w-sm" />
+                </div>
+              )}
+            </>
           )}
         </div>
       ))}

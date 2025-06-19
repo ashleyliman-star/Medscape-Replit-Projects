@@ -205,11 +205,18 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               </Card>
             </div>
 
-            {/* Ad after every argument group pair */}
+            {/* Ad placement - responsive behavior */}
             {groupIndex < Math.ceil(maxArgs / 2) - 1 && (
-              <div className="flex justify-center my-8">
-                <AdPlaceholder size="300x250" className="w-full max-w-sm" />
-              </div>
+              <>
+                {/* Mobile: Show after each argument group */}
+                <div className="flex justify-center my-8 lg:hidden">
+                  <AdPlaceholder size="300x250" className="w-full max-w-sm" />
+                </div>
+                {/* Desktop: Show after each argument group */}
+                <div className="hidden lg:flex justify-center my-8">
+                  <AdPlaceholder size="300x250" className="w-full max-w-sm" />
+                </div>
+              </>
             )}
           </div>
         );
