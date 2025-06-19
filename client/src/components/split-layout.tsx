@@ -23,9 +23,9 @@ interface SplitLayoutProps {
 
 export default function SplitLayout({ yesArguments, noArguments, yesPhysician, noPhysician }: SplitLayoutProps) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
       {/* YES Side - Full Left Column */}
-      <div className="space-y-8">
+      <div className="space-y-8 bg-gradient-to-br from-blue-50 to-blue-100 p-8 lg:border-r-2 lg:border-gray-300">
         {/* YES Physician Header */}
         <Card className="bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 text-white p-6">
           <div className="flex items-center mb-4">
@@ -53,7 +53,7 @@ export default function SplitLayout({ yesArguments, noArguments, yesPhysician, n
         {/* YES Arguments */}
         {yesArguments.map((argument, index) => (
           <div key={`yes-${index}`}>
-            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+            <Card className="bg-white border-blue-200 p-6 shadow-sm">
               <div className="flex items-center mb-4 flex-wrap gap-3">
                 <CheckCircle className="h-6 w-6 text-blue-600" />
                 <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -84,7 +84,7 @@ export default function SplitLayout({ yesArguments, noArguments, yesPhysician, n
       </div>
 
       {/* NO Side - Full Right Column */}
-      <div className="space-y-8">
+      <div className="space-y-8 bg-gradient-to-br from-purple-50 to-purple-100 p-8">
         {/* NO Physician Header */}
         <Card className="bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-600 text-white p-6">
           <div className="flex items-center mb-4">
@@ -112,7 +112,7 @@ export default function SplitLayout({ yesArguments, noArguments, yesPhysician, n
         {/* NO Arguments */}
         {noArguments.map((argument, index) => (
           <div key={`no-${index}`}>
-            <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+            <Card className="bg-white border-purple-200 p-6 shadow-sm">
               <div className="flex items-center mb-4 flex-wrap gap-3">
                 <XCircle className="h-6 w-6 text-purple-700" />
                 <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
