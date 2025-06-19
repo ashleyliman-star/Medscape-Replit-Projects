@@ -132,6 +132,8 @@ export default function DebatePage() {
             <SideBySideArguments 
               yesArguments={debateData.sideA.arguments}
               noArguments={debateData.sideB.arguments}
+              yesPhysician={debateData.sideA.physician}
+              noPhysician={debateData.sideB.physician}
             />
           </div>
         ) : (
