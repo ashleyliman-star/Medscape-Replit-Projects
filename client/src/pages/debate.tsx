@@ -10,6 +10,7 @@ import SideBySideArguments from "@/components/side-by-side-arguments";
 import SummaryTable from "@/components/summary-table";
 import CommentSection from "@/components/comment-section";
 import GroupedArguments from "@/components/grouped-arguments";
+import SplitLayout from "@/components/split-layout";
 
 const debateData = {
   question: "Is routine surveillance for breast cancer really worth it?",
@@ -146,11 +147,28 @@ export default function DebatePage() {
               noArguments={debateData.sideB.arguments}
             />
           </>
-        ) : version === 'D' || version === 'E' ? (
-          // Version D & E: Grouped arguments with summary table
+        ) : version === 'D' ? (
+          // Version D: Grouped arguments with summary table
           <>
             <div className="mb-12">
               <GroupedArguments 
+                yesArguments={debateData.sideA.arguments}
+                noArguments={debateData.sideB.arguments}
+                yesPhysician={debateData.sideA.physician}
+                noPhysician={debateData.sideB.physician}
+              />
+            </div>
+            
+            <SummaryTable 
+              yesArguments={debateData.sideA.arguments}
+              noArguments={debateData.sideB.arguments}
+            />
+          </>
+        ) : version === 'E' ? (
+          // Version E: Split layout with full columns
+          <>
+            <div className="mb-12">
+              <SplitLayout 
                 yesArguments={debateData.sideA.arguments}
                 noArguments={debateData.sideB.arguments}
                 yesPhysician={debateData.sideA.physician}
