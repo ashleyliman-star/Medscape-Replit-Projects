@@ -12,6 +12,9 @@ import CommentSection from "@/components/comment-section";
 import GroupedArguments from "@/components/grouped-arguments";
 import SplitLayout from "@/components/split-layout";
 import UnboxedArguments from "@/components/unboxed-arguments";
+import SummaryTableUnboxed from "@/components/summary-table-unboxed";
+import MiddleGroundUnboxed from "@/components/middle-ground-unboxed";
+import ConclusionsUnboxed from "@/components/conclusions-unboxed";
 
 const debateData = {
   question: "Is routine surveillance for breast cancer really worth it?",
@@ -177,7 +180,7 @@ export default function DebatePage() {
               />
             </div>
             
-            <SummaryTable 
+            <SummaryTableUnboxed 
               yesArguments={debateData.sideA.arguments}
               noArguments={debateData.sideB.arguments}
             />

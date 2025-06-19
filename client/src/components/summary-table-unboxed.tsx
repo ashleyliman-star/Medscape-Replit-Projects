@@ -1,4 +1,3 @@
-import { Card } from '@/components/ui/card';
 import { CheckCircle, XCircle } from 'lucide-react';
 
 interface Argument {
@@ -6,12 +5,12 @@ interface Argument {
   points: string[];
 }
 
-interface SummaryTableProps {
+interface SummaryTableUnboxedProps {
   yesArguments: Argument[];
   noArguments: Argument[];
 }
 
-export default function SummaryTable({ yesArguments, noArguments }: SummaryTableProps) {
+export default function SummaryTableUnboxed({ yesArguments, noArguments }: SummaryTableUnboxedProps) {
   // Get main argument titles from both sides
   const yesPoints = yesArguments.map(arg => arg.title);
   const noPoints = noArguments.map(arg => arg.title);
@@ -24,7 +23,7 @@ export default function SummaryTable({ yesArguments, noArguments }: SummaryTable
       
       <div className="grid lg:grid-cols-2 gap-6">
         {/* YES Side Summary */}
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6">
+        <div className="p-6">
           <div className="flex items-center mb-4">
             <CheckCircle className="h-6 w-6 text-blue-600 mr-3" />
             <h3 className="text-lg font-bold text-blue-800">
@@ -42,7 +41,7 @@ export default function SummaryTable({ yesArguments, noArguments }: SummaryTable
         </div>
 
         {/* NO Side Summary */}
-        <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-lg p-6">
+        <div className="p-6">
           <div className="flex items-center mb-4">
             <XCircle className="h-6 w-6 text-purple-700 mr-3" />
             <h3 className="text-lg font-bold text-purple-800">
