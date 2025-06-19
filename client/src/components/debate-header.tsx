@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 
 interface DebateHeaderProps {
   version: 'A' | 'B' | 'C' | 'D' | 'E';
@@ -6,6 +7,13 @@ interface DebateHeaderProps {
 }
 
 export default function DebateHeader({ version, onVersionChange }: DebateHeaderProps) {
+  const handleVersionChange = (newVersion: 'A' | 'B' | 'C' | 'D' | 'E') => {
+    // Track the version selection
+    trackEvent('version_selection', 'navigation', `version_${newVersion}`);
+    
+    // Call the parent's version change handler
+    onVersionChange(newVersion);
+  };
   return (
     <header className="bg-white shadow-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -15,7 +23,7 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
             <span className="text-sm text-gray-600">View:</span>
             <div className="flex space-x-2">
               <Button
-                onClick={() => onVersionChange('A')}
+                onClick={() => handleVersionChange('A')}
                 variant="outline"
                 size="sm"
                 className={`${
@@ -27,7 +35,7 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
                 Version A
               </Button>
               <Button
-                onClick={() => onVersionChange('B')}
+                onClick={() => handleVersionChange('B')}
                 variant="outline"
                 size="sm"
                 className={`${
@@ -39,7 +47,7 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
                 Version B
               </Button>
               <Button
-                onClick={() => onVersionChange('C')}
+                onClick={() => handleVersionChange('C')}
                 variant="outline"
                 size="sm"
                 className={`${
@@ -51,7 +59,7 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
                 Version C
               </Button>
               <Button
-                onClick={() => onVersionChange('D')}
+                onClick={() => handleVersionChange('D')}
                 variant="outline"
                 size="sm"
                 className={`${
@@ -63,7 +71,7 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
                 Version D
               </Button>
               <Button
-                onClick={() => onVersionChange('E')}
+                onClick={() => handleVersionChange('E')}
                 variant="outline"
                 size="sm"
                 className={`${
