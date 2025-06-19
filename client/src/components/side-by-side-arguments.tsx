@@ -31,8 +31,8 @@ export default function SideBySideArguments({ yesArguments, noArguments, yesPhys
       <div className="grid lg:grid-cols-2 gap-6 mb-8">
         <Card className="bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 text-white p-6">
           <div className="flex items-center mb-4">
-            <CheckCircle className="h-6 w-6 mr-3" />
-            <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
+            <CheckCircle className="h-8 w-8 mr-4" />
+            <span className="bg-white text-blue-600 px-4 py-2 rounded-full text-lg font-bold">
               YES: Routine Surveillance is Worth It
             </span>
           </div>
@@ -51,8 +51,8 @@ export default function SideBySideArguments({ yesArguments, noArguments, yesPhys
 
         <Card className="bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-600 text-white p-6">
           <div className="flex items-center mb-4">
-            <XCircle className="h-6 w-6 mr-3" />
-            <span className="bg-white text-purple-600 px-3 py-1 rounded-full text-sm font-semibold">
+            <XCircle className="h-8 w-8 mr-4" />
+            <span className="bg-white text-purple-600 px-4 py-2 rounded-full text-lg font-bold">
               NO: Selective Surveillance is More Appropriate
             </span>
           </div>
