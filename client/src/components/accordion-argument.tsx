@@ -2,23 +2,36 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { trackEvent } from "@/lib/analytics";
 
 interface AccordionArgumentProps {
   title: string;
   points: string[];
   color: 'blue' | 'green' | 'purple';
+  argumentIndex?: number;
+  side?: 'yes' | 'no';
 }
 
-export default function AccordionArgument({ title, points, color }: AccordionArgumentProps) {
+export default function AccordionArgument({ title, points, color, argumentIndex = 0, side = 'yes' }: AccordionArgumentProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const dotColor = color === 'blue' ? 'text-blue-600' : color === 'purple' ? 'text-purple-700' : 'text-green-600';
+
+  const handleToggle = () => {
+    const newState = !isExpanded;
+    setIsExpanded(newState);
+    
+    // Track dropdown interaction with unique identifier
+    const dropdownId = `argument_${side}_${argumentIndex + 1}`;
+    const action = newState ? 'expand' : 'collapse';
+    trackEvent('dropdown_interaction', 'argument_expansion', `${dropdownId}_${action}`);
+  };
 
   return (
     <div className="argument-item">
       <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200">
         <div 
           className={`p-4 cursor-pointer ${isExpanded ? 'rounded-t-lg' : 'rounded-lg'}`}
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={handleToggle}
         >
           <div className="flex justify-between items-center">
             <span className="font-medium text-gray-800">{title}</span>

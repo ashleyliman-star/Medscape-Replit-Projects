@@ -80,6 +80,8 @@ export default function DebateSide({
             title={argument.title}
             points={argument.points}
             color={color}
+            argumentIndex={index}
+            side={color === 'blue' ? 'yes' : 'no'}
           />
         ))}
       </div>
