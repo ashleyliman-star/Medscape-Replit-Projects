@@ -53,7 +53,7 @@ export default function SplitLayout({ yesArguments, noArguments, yesPhysician, n
         {/* YES Arguments */}
         {yesArguments.map((argument, index) => (
           <div key={`yes-${index}`}>
-            <Card className="bg-white border-blue-200 p-6 shadow-sm">
+            <div className="mb-6">
               <div className="flex items-center mb-4 flex-wrap gap-3">
                 <CheckCircle className="h-6 w-6 text-blue-600" />
                 <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -71,7 +71,7 @@ export default function SplitLayout({ yesArguments, noArguments, yesPhysician, n
                   </li>
                 ))}
               </ul>
-            </Card>
+            </div>
             
             {/* Ad after each argument except last */}
             {index < yesArguments.length - 1 && (
@@ -112,7 +112,7 @@ export default function SplitLayout({ yesArguments, noArguments, yesPhysician, n
         {/* NO Arguments */}
         {noArguments.map((argument, index) => (
           <div key={`no-${index}`}>
-            <Card className="bg-white border-purple-200 p-6 shadow-sm">
+            <div className="mb-6">
               <div className="flex items-center mb-4 flex-wrap gap-3">
                 <XCircle className="h-6 w-6 text-purple-700" />
                 <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -130,7 +130,7 @@ export default function SplitLayout({ yesArguments, noArguments, yesPhysician, n
                   </li>
                 ))}
               </ul>
-            </Card>
+            </div>
             
             {/* Ad after each argument except last */}
             {index < noArguments.length - 1 && (
