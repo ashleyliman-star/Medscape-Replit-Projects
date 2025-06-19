@@ -124,6 +124,11 @@ export default function DebatePage() {
       <DebateHeader version={version} onVersionChange={setVersion} />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <DebateQuestion 
+          question={debateData.question}
+          introduction={debateData.introduction}
+        />
+        
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
         
         {version === 'C' ? (
