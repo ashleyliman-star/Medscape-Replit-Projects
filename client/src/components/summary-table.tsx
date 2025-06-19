@@ -32,11 +32,11 @@ export default function SummaryTable({ yesArguments, noArguments }: SummaryTable
                 Supporting Routine Surveillance
               </h3>
             </div>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {yesPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <span className="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                  <span className="text-sm text-gray-700 leading-relaxed flex-1">{point}</span>
                 </li>
               ))}
             </ul>
@@ -50,11 +50,11 @@ export default function SummaryTable({ yesArguments, noArguments }: SummaryTable
                 Supporting Selective Surveillance
               </h3>
             </div>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {noPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <span className="inline-block w-2 h-2 bg-purple-700 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                  <span className="text-sm text-gray-700 leading-relaxed flex-1">{point}</span>
                 </li>
               ))}
             </ul>
