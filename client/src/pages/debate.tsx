@@ -8,6 +8,7 @@ import MiddleGround from "@/components/middle-ground";
 import Conclusions from "@/components/conclusions";
 import SideBySideArguments from "@/components/side-by-side-arguments";
 import SummaryTable from "@/components/summary-table";
+import CommentSection from "@/components/comment-section";
 
 const debateData = {
   question: "Is routine surveillance for breast cancer really worth it?",
@@ -179,6 +180,8 @@ export default function DebatePage() {
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
         
         <PollSection debateId="breast-cancer-surveillance" />
+        
+        <CommentSection />
         
         <AdPlaceholder size="300x250" className="flex justify-center mt-8" />
       </main>
