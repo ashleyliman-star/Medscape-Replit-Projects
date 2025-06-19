@@ -9,6 +9,7 @@ import Conclusions from "@/components/conclusions";
 import SideBySideArguments from "@/components/side-by-side-arguments";
 import SummaryTable from "@/components/summary-table";
 import CommentSection from "@/components/comment-section";
+import GroupedArguments from "@/components/grouped-arguments";
 
 const debateData = {
   question: "Is routine surveillance for breast cancer really worth it?",
@@ -128,11 +129,28 @@ export default function DebatePage() {
         
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
         
-        {version === 'C' || version === 'D' ? (
-          // Version C & D: Side-by-side arguments with ads between pairs
+        {version === 'C' ? (
+          // Version C: Side-by-side arguments with ads between pairs
           <>
             <div className="mb-12">
               <SideBySideArguments 
+                yesArguments={debateData.sideA.arguments}
+                noArguments={debateData.sideB.arguments}
+                yesPhysician={debateData.sideA.physician}
+                noPhysician={debateData.sideB.physician}
+              />
+            </div>
+            
+            <SummaryTable 
+              yesArguments={debateData.sideA.arguments}
+              noArguments={debateData.sideB.arguments}
+            />
+          </>
+        ) : version === 'D' ? (
+          // Version D: Grouped arguments with summary table
+          <>
+            <div className="mb-12">
+              <GroupedArguments 
                 yesArguments={debateData.sideA.arguments}
                 noArguments={debateData.sideB.arguments}
                 yesPhysician={debateData.sideA.physician}
