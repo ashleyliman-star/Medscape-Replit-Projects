@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { trackEvent } from "@/lib/analytics";
 
 interface DebateHeaderProps {
   version: 'A' | 'B' | 'C' | 'D' | 'E';
@@ -8,9 +7,6 @@ interface DebateHeaderProps {
 
 export default function DebateHeader({ version, onVersionChange }: DebateHeaderProps) {
   const handleVersionChange = (newVersion: 'A' | 'B' | 'C' | 'D' | 'E') => {
-    // Track the version selection
-    trackEvent('version_selection', 'navigation', `version_${newVersion}`);
-    
     // Call the parent's version change handler
     onVersionChange(newVersion);
   };
