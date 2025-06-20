@@ -96,9 +96,53 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         </Card>
       </div>
 
-      {/* Key Arguments Label */}
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-gray-800">Key Arguments</h2>
+      {/* Key Arguments sections for each physician */}
+      <div className="grid md:grid-cols-2 gap-8 mb-8">
+        {/* YES Key Arguments */}
+        <div>
+          <h3 className="text-lg font-bold text-gray-800 mb-4">Key Arguments</h3>
+          <div className="space-y-6">
+            {yesArguments.map((argument, index) => (
+              <div key={index}>
+                <div className="flex items-start mb-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                  <h4 className="font-semibold text-gray-900">{argument.title}</h4>
+                </div>
+                <ul className="space-y-2 ml-8">
+                  {argument.points.map((point, pointIndex) => (
+                    <li key={pointIndex} className="flex items-start">
+                      <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* NO Key Arguments */}
+        <div>
+          <h3 className="text-lg font-bold text-gray-800 mb-4">Key Arguments</h3>
+          <div className="space-y-6">
+            {noArguments.map((argument, index) => (
+              <div key={index}>
+                <div className="flex items-start mb-3">
+                  <XCircle className="h-5 w-5 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
+                  <h4 className="font-semibold text-gray-900">{argument.title}</h4>
+                </div>
+                <ul className="space-y-2 ml-8">
+                  {argument.points.map((point, pointIndex) => (
+                    <li key={pointIndex} className="flex items-start">
+                      <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Desktop Layout - Side by side pairs */}
