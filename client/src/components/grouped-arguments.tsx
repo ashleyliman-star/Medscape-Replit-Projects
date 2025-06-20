@@ -23,9 +23,9 @@ interface GroupedArgumentsProps {
 
 export default function GroupedArguments({ yesArguments, noArguments, yesPhysician, noPhysician }: GroupedArgumentsProps) {
   return (
-    <div className="space-y-8">
+    <div className="space-y-0">
       {/* Physician Headers - Side by side */}
-      <div className="grid md:grid-cols-2 gap-8 mb-8">
+      <div className="grid md:grid-cols-2 gap-8">
         {/* YES Physician */}
         <Card className="bg-gradient-to-br from-blue-600 via-sky-500 to-cyan-600 text-white p-6">
           <div className="flex items-center mb-4">
@@ -76,7 +76,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
       </div>
 
       {/* Arguments 1-2 Side by Side - Connected to physician boxes */}
-      <div className="grid md:grid-cols-2 gap-8 -mt-6">
+      <div className="grid md:grid-cols-2 gap-8">
         {/* YES Column - Arguments 1-2 */}
         <div>
           {yesArguments.slice(0, 2).length > 0 && (
