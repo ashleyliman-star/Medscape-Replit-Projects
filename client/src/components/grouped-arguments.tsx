@@ -111,6 +111,13 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     </div>
                   )}
                   
+                  {/* Ad after 5th argument */}
+                  {index === 4 && (
+                    <div className="flex justify-center my-8">
+                      <AdPlaceholder size="300x250" className="mx-auto" />
+                    </div>
+                  )}
+                  
                   {index < yesArguments.length - 1 && (
                     <div className="border-b border-blue-200 my-4"></div>
                   )}
@@ -149,6 +156,13 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                   
                   {/* Ad after 2nd argument */}
                   {index === 1 && (
+                    <div className="flex justify-center my-8">
+                      <AdPlaceholder size="300x250" className="mx-auto" />
+                    </div>
+                  )}
+                  
+                  {/* Ad after 5th argument */}
+                  {index === 4 && (
                     <div className="flex justify-center my-8">
                       <AdPlaceholder size="300x250" className="mx-auto" />
                     </div>
