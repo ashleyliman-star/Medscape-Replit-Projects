@@ -76,7 +76,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
       </div>
 
       {/* Arguments 1-2 Side by Side - Connected to physician boxes */}
-      <div className="grid md:grid-cols-2 gap-8 -mt-8">
+      <div className="grid md:grid-cols-2 gap-8 -mt-6">
         {/* YES Column - Arguments 1-2 */}
         <div>
           {yesArguments.slice(0, 2).length > 0 && (
