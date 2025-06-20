@@ -83,10 +83,75 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             <h2 className="text-xl font-bold text-gray-800">Key Arguments</h2>
           </div>
           
-          {/* YES Arguments */}
+          {/* YES Arguments - Grouped */}
           <div className="space-y-6">
-            {yesArguments.map((argument, index) => (
-              <Card key={index} className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+            {/* First group: Arguments 1-2 */}
+            {yesArguments.slice(0, 2).length > 0 && (
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+                <div className="flex items-center mb-6 gap-3">
+                  <CheckCircle className="h-6 w-6 text-blue-600" />
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Yes
+                  </span>
+                </div>
+                <div className="space-y-6">
+                  {yesArguments.slice(0, 2).map((argument, index) => (
+                    <div key={index}>
+                      <h3 className="text-lg font-bold text-blue-800 mb-3">
+                        {argument.title}
+                      </h3>
+                      <ul className="space-y-3">
+                        {argument.points.map((point, pointIndex) => (
+                          <li key={pointIndex} className="flex items-start">
+                            <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
+                            <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {index < yesArguments.slice(0, 2).length - 1 && (
+                        <div className="border-b border-blue-200 my-4"></div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            )}
+
+            {/* Second group: Arguments 3-4 */}
+            {yesArguments.slice(2, 4).length > 0 && (
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+                <div className="flex items-center mb-6 gap-3">
+                  <CheckCircle className="h-6 w-6 text-blue-600" />
+                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Yes
+                  </span>
+                </div>
+                <div className="space-y-6">
+                  {yesArguments.slice(2, 4).map((argument, index) => (
+                    <div key={index}>
+                      <h3 className="text-lg font-bold text-blue-800 mb-3">
+                        {argument.title}
+                      </h3>
+                      <ul className="space-y-3">
+                        {argument.points.map((point, pointIndex) => (
+                          <li key={pointIndex} className="flex items-start">
+                            <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
+                            <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {index < yesArguments.slice(2, 4).length - 1 && (
+                        <div className="border-b border-blue-200 my-4"></div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            )}
+
+            {/* Additional arguments if any */}
+            {yesArguments.slice(4).map((argument, index) => (
+              <Card key={index + 4} className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
                 <div className="flex items-center mb-4 gap-3">
                   <CheckCircle className="h-6 w-6 text-blue-600" />
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -116,10 +181,75 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             <h2 className="text-xl font-bold text-gray-800">Key Arguments</h2>
           </div>
           
-          {/* NO Arguments */}
+          {/* NO Arguments - Grouped */}
           <div className="space-y-6">
-            {noArguments.map((argument, index) => (
-              <Card key={index} className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+            {/* First group: Arguments 1-2 */}
+            {noArguments.slice(0, 2).length > 0 && (
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+                <div className="flex items-center mb-6 gap-3">
+                  <XCircle className="h-6 w-6 text-purple-700" />
+                  <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    No
+                  </span>
+                </div>
+                <div className="space-y-6">
+                  {noArguments.slice(0, 2).map((argument, index) => (
+                    <div key={index}>
+                      <h3 className="text-lg font-bold text-purple-800 mb-3">
+                        {argument.title}
+                      </h3>
+                      <ul className="space-y-3">
+                        {argument.points.map((point, pointIndex) => (
+                          <li key={pointIndex} className="flex items-start">
+                            <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
+                            <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {index < noArguments.slice(0, 2).length - 1 && (
+                        <div className="border-b border-purple-200 my-4"></div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            )}
+
+            {/* Second group: Arguments 3-4 */}
+            {noArguments.slice(2, 4).length > 0 && (
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+                <div className="flex items-center mb-6 gap-3">
+                  <XCircle className="h-6 w-6 text-purple-700" />
+                  <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    No
+                  </span>
+                </div>
+                <div className="space-y-6">
+                  {noArguments.slice(2, 4).map((argument, index) => (
+                    <div key={index}>
+                      <h3 className="text-lg font-bold text-purple-800 mb-3">
+                        {argument.title}
+                      </h3>
+                      <ul className="space-y-3">
+                        {argument.points.map((point, pointIndex) => (
+                          <li key={pointIndex} className="flex items-start">
+                            <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
+                            <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {index < noArguments.slice(2, 4).length - 1 && (
+                        <div className="border-b border-purple-200 my-4"></div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </Card>
+            )}
+
+            {/* Additional arguments if any */}
+            {noArguments.slice(4).map((argument, index) => (
+              <Card key={index + 4} className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
                 <div className="flex items-center mb-4 gap-3">
                   <XCircle className="h-6 w-6 text-purple-700" />
                   <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
