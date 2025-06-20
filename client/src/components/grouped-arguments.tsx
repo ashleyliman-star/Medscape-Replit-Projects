@@ -95,9 +95,15 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                 <div className="space-y-6">
                   {yesArguments.slice(0, 2).map((argument, index) => (
                     <div key={index}>
-                      <h3 className="text-lg font-bold text-blue-800 mb-3">
-                        {argument.title}
-                      </h3>
+                      <div className="flex items-center mb-3 gap-3">
+                        <CheckCircle className="h-5 w-5 text-blue-600" />
+                        <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                          Yes
+                        </span>
+                        <h3 className="text-lg font-bold text-blue-800">
+                          {argument.title}
+                        </h3>
+                      </div>
                       <ul className="space-y-3">
                         {argument.points.map((point, pointIndex) => (
                           <li key={pointIndex} className="flex items-start">
@@ -127,9 +133,15 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                 <div className="space-y-6">
                   {yesArguments.slice(2, 4).map((argument, index) => (
                     <div key={index}>
-                      <h3 className="text-lg font-bold text-blue-800 mb-3">
-                        {argument.title}
-                      </h3>
+                      <div className="flex items-center mb-3 gap-3">
+                        <CheckCircle className="h-5 w-5 text-blue-600" />
+                        <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                          Yes
+                        </span>
+                        <h3 className="text-lg font-bold text-blue-800">
+                          {argument.title}
+                        </h3>
+                      </div>
                       <ul className="space-y-3">
                         {argument.points.map((point, pointIndex) => (
                           <li key={pointIndex} className="flex items-start">
@@ -191,9 +203,15 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                 <div className="space-y-6">
                   {noArguments.slice(0, 2).map((argument, index) => (
                     <div key={index}>
-                      <h3 className="text-lg font-bold text-purple-800 mb-3">
-                        {argument.title}
-                      </h3>
+                      <div className="flex items-center mb-3 gap-3">
+                        <XCircle className="h-5 w-5 text-purple-700" />
+                        <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                          No
+                        </span>
+                        <h3 className="text-lg font-bold text-purple-800">
+                          {argument.title}
+                        </h3>
+                      </div>
                       <ul className="space-y-3">
                         {argument.points.map((point, pointIndex) => (
                           <li key={pointIndex} className="flex items-start">
@@ -223,9 +241,15 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                 <div className="space-y-6">
                   {noArguments.slice(2, 4).map((argument, index) => (
                     <div key={index}>
-                      <h3 className="text-lg font-bold text-purple-800 mb-3">
-                        {argument.title}
-                      </h3>
+                      <div className="flex items-center mb-3 gap-3">
+                        <XCircle className="h-5 w-5 text-purple-700" />
+                        <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                          No
+                        </span>
+                        <h3 className="text-lg font-bold text-purple-800">
+                          {argument.title}
+                        </h3>
+                      </div>
                       <ul className="space-y-3">
                         {argument.points.map((point, pointIndex) => (
                           <li key={pointIndex} className="flex items-start">
