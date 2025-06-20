@@ -113,7 +113,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                       Yes
                     </span>
                     <h3 className="text-lg font-bold text-blue-800">
-                      Arguments {groupIndex * groupSize + 1}-{Math.min((groupIndex + 1) * groupSize, yesArguments.length)}
+                      {group.yesArgs.map(arg => arg.title).join(' & ')}
                     </h3>
                   </div>
                   <div className="space-y-6">
@@ -146,7 +146,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                       No
                     </span>
                     <h3 className="text-lg font-bold text-purple-800">
-                      Arguments {groupIndex * groupSize + 1}-{Math.min((groupIndex + 1) * groupSize, noArguments.length)}
+                      {group.noArgs.map(arg => arg.title).join(' & ')}
                     </h3>
                   </div>
                   <div className="space-y-6">
@@ -171,8 +171,15 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               )}
             </div>
 
-            {/* Add ad after every 2 groups */}
-            {(groupIndex + 1) % 2 === 0 && groupIndex < argumentGroups.length - 1 && (
+            {/* Add ad after first group (between 1-2 and 3-4) */}
+            {groupIndex === 0 && argumentGroups.length > 1 && (
+              <div className="py-8">
+                <AdPlaceholder size="300x250" className="mx-auto" />
+              </div>
+            )}
+            
+            {/* Add ad after every 2 groups for remaining groups */}
+            {groupIndex > 0 && (groupIndex + 1) % 2 === 0 && groupIndex < argumentGroups.length - 1 && (
               <div className="py-8">
                 <AdPlaceholder size="300x250" className="mx-auto" />
               </div>
