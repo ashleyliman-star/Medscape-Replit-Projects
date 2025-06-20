@@ -75,11 +75,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         </Card>
       </div>
 
-      {/* Key Arguments Label */}
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-gray-800">Key Arguments</h2>
-      </div>
-
       {/* Mobile: Alternating Arguments */}
       <div className="lg:hidden space-y-8">
         {Array.from({ length: maxArgs }, (_, index) => (
@@ -87,6 +82,9 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             {/* YES Argument */}
             {yesArguments[index] && (
               <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+                {index === 0 && (
+                  <h3 className="text-lg font-bold text-blue-800 mb-4 text-center">Key Arguments - YES</h3>
+                )}
                 <div className="flex items-center mb-4 flex-wrap gap-3">
                   <CheckCircle className="h-6 w-6 text-blue-600" />
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -110,6 +108,9 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             {/* NO Argument */}
             {noArguments[index] && (
               <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+                {index === 0 && (
+                  <h3 className="text-lg font-bold text-purple-800 mb-4 text-center">Key Arguments - NO</h3>
+                )}
                 <div className="flex items-center mb-4 flex-wrap gap-3">
                   <XCircle className="h-6 w-6 text-purple-700" />
                   <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -140,66 +141,149 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         ))}
       </div>
 
-      {/* Desktop: Side-by-side paired arguments */}
-      <div className="hidden lg:block space-y-8">
-        {Array.from({ length: maxArgs }, (_, index) => (
-          <div key={index}>
-            <div className="grid lg:grid-cols-2 gap-6">
-              {/* YES Argument */}
-              {yesArguments[index] && (
-                <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
-                  <div className="flex items-center mb-4 flex-wrap gap-3">
-                    <CheckCircle className="h-6 w-6 text-blue-600" />
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Yes
-                    </span>
-                    <h3 className="text-lg font-bold text-blue-800">
-                      {yesArguments[index].title}
-                    </h3>
-                  </div>
-                  <ul className="space-y-3">
-                    {yesArguments[index].points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+      {/* Desktop: Grouped Arguments */}
+      <div className="hidden lg:block">
+        {Array.from({ length: Math.ceil(maxArgs / 2) }, (_, groupIndex) => {
+          const isLastGroup = groupIndex === Math.ceil(maxArgs / 2) - 1;
+          const hasOddTotal = maxArgs % 2 === 1;
+          const showSingleArgument = isLastGroup && hasOddTotal;
+          
+          return (
+            <div key={groupIndex}>
+              <div className="grid lg:grid-cols-2 gap-6">
+                {/* YES Arguments Group */}
+                <Card className="bg-gradient-to-br from-blue-600 via-sky-500 to-cyan-600 text-white p-6">
+                  {groupIndex === 0 && (
+                    <h3 className="text-xl font-bold mb-6 text-center">Key Arguments - YES</h3>
+                  )}
+                  {showSingleArgument ? (
+                    // Single argument for last odd group
+                    yesArguments[groupIndex * 2] && (
+                      <div>
+                        <div className="flex items-center mb-4 flex-wrap gap-3">
+                          <CheckCircle className="h-6 w-6 text-white" />
+                          <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
+                            Yes
+                          </span>
+                          <h3 className="text-lg font-bold text-white">
+                            {yesArguments[groupIndex * 2].title}
+                          </h3>
+                        </div>
+                        <ul className="space-y-3">
+                          {yesArguments[groupIndex * 2].points.map((point, pointIndex) => (
+                            <li key={pointIndex} className="flex items-start">
+                              <div className="w-2 h-2 rounded-full bg-white mt-2 mr-3 flex-shrink-0" />
+                              <span className="text-sm text-white leading-relaxed">{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )
+                  ) : (
+                    // Two arguments in one box
+                    <div className="space-y-6">
+                      {[0, 1].map((offset) => {
+                        const argIndex = groupIndex * 2 + offset;
+                        const argument = yesArguments[argIndex];
+                        return argument ? (
+                          <div key={argIndex}>
+                            <div className="flex items-center mb-4 flex-wrap gap-3">
+                              <CheckCircle className="h-6 w-6 text-white" />
+                              <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
+                                Yes
+                              </span>
+                              <h3 className="text-lg font-bold text-white">
+                                {argument.title}
+                              </h3>
+                            </div>
+                            <ul className="space-y-3">
+                              {argument.points.map((point, pointIndex) => (
+                                <li key={pointIndex} className="flex items-start">
+                                  <div className="w-2 h-2 rounded-full bg-white mt-2 mr-3 flex-shrink-0" />
+                                  <span className="text-sm text-white leading-relaxed">{point}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            {offset === 0 && yesArguments[argIndex + 1] && (
+                              <div className="border-b border-white/30 my-6"></div>
+                            )}
+                          </div>
+                        ) : null;
+                      })}
+                    </div>
+                  )}
                 </Card>
-              )}
 
-              {/* NO Argument */}
-              {noArguments[index] && (
-                <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
-                  <div className="flex items-center mb-4 flex-wrap gap-3">
-                    <XCircle className="h-6 w-6 text-purple-700" />
-                    <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      No
-                    </span>
-                    <h3 className="text-lg font-bold text-purple-800">
-                      {noArguments[index].title}
-                    </h3>
-                  </div>
-                  <ul className="space-y-3">
-                    {noArguments[index].points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* NO Arguments Group */}
+                <Card className="bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-600 text-white p-6">
+                  {showSingleArgument ? (
+                    // Single argument for last odd group
+                    noArguments[groupIndex * 2] && (
+                      <div>
+                        <div className="flex items-center mb-4 flex-wrap gap-3">
+                          <XCircle className="h-6 w-6 text-purple-700" />
+                          <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            No
+                          </span>
+                          <h3 className="text-lg font-bold text-purple-800">
+                            {noArguments[groupIndex * 2].title}
+                          </h3>
+                        </div>
+                        <ul className="space-y-3">
+                          {noArguments[groupIndex * 2].points.map((point, pointIndex) => (
+                            <li key={pointIndex} className="flex items-start">
+                              <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
+                              <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )
+                  ) : (
+                    // Two arguments in one box
+                    <div className="space-y-6">
+                      {[0, 1].map((offset) => {
+                        const argIndex = groupIndex * 2 + offset;
+                        const argument = noArguments[argIndex];
+                        return argument ? (
+                          <div key={argIndex}>
+                            <div className="flex items-center mb-4 flex-wrap gap-3">
+                              <XCircle className="h-6 w-6 text-purple-700" />
+                              <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                No
+                              </span>
+                              <h3 className="text-lg font-bold text-purple-800">
+                                {argument.title}
+                              </h3>
+                            </div>
+                            <ul className="space-y-3">
+                              {argument.points.map((point, pointIndex) => (
+                                <li key={pointIndex} className="flex items-start">
+                                  <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
+                                  <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            {offset === 0 && noArguments[argIndex + 1] && (
+                              <div className="border-b border-purple-200 my-6"></div>
+                            )}
+                          </div>
+                        ) : null;
+                      })}
+                    </div>
+                  )}
                 </Card>
+              </div>
+
+              {/* Desktop Ad after each argument group */}
+              {groupIndex < Math.ceil(maxArgs / 2) - 1 && (
+                <div className="flex justify-center my-8">
+                  <AdPlaceholder size="300x250" className="w-full max-w-sm" />
+                </div>
               )}
             </div>
-
-            {/* Ad after every 2 pairs */}
-            {(index + 1) % 2 === 0 && index < maxArgs - 1 && (
-              <div className="flex justify-center my-8">
-                <AdPlaceholder size="300x250" className="w-full max-w-sm" />
-              </div>
-            )}
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
