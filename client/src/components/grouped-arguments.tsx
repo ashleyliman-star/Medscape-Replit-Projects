@@ -23,7 +23,7 @@ interface GroupedArgumentsProps {
 
 export default function GroupedArguments({ yesArguments, noArguments, yesPhysician, noPhysician }: GroupedArgumentsProps) {
   return (
-    <div className="space-y-0">
+    <div className="space-y-0 md:space-y-0">
       {/* Physician Headers - Side by side */}
       <div className="grid md:grid-cols-2 gap-8">
         {/* YES Physician */}
@@ -34,18 +34,18 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               YES: Routine Surveillance is Essential
             </span>
           </div>
-          <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+          <div className="flex items-center gap-3">
             <div className="flex-shrink-0">
               <img 
                 src={yesPhysician.image} 
                 alt={yesPhysician.name}
-                className="w-16 h-16 rounded-full object-cover border-2 border-white/30"
+                className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-white/30"
               />
             </div>
-            <div>
-              <h3 className="text-xl font-bold mb-1">{yesPhysician.name}</h3>
-              <p className="text-blue-100 text-sm mb-1">{yesPhysician.credentials}</p>
-              <p className="text-blue-200 text-sm">{yesPhysician.institution}</p>
+            <div className="min-w-0 flex-1">
+              <h3 className="text-lg md:text-xl font-bold mb-1 truncate">{yesPhysician.name}</h3>
+              <p className="text-blue-100 text-xs md:text-sm mb-1 leading-tight">{yesPhysician.credentials}</p>
+              <p className="text-blue-200 text-xs md:text-sm leading-tight">{yesPhysician.institution}</p>
             </div>
           </div>
         </Card>
@@ -58,18 +58,18 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               NO: Selective Surveillance is More Appropriate
             </span>
           </div>
-          <div className="flex flex-col lg:flex-row lg:items-center gap-4">
+          <div className="flex items-center gap-3">
             <div className="flex-shrink-0">
               <img 
                 src={noPhysician.image} 
                 alt={noPhysician.name}
-                className="w-16 h-16 rounded-full object-cover border-2 border-white/30"
+                className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-white/30"
               />
             </div>
-            <div>
-              <h3 className="text-xl font-bold mb-1">{noPhysician.name}</h3>
-              <p className="text-purple-100 text-sm mb-1">{noPhysician.credentials}</p>
-              <p className="text-purple-200 text-sm">{noPhysician.institution}</p>
+            <div className="min-w-0 flex-1">
+              <h3 className="text-lg md:text-xl font-bold mb-1 truncate">{noPhysician.name}</h3>
+              <p className="text-purple-100 text-xs md:text-sm mb-1 leading-tight">{noPhysician.credentials}</p>
+              <p className="text-purple-200 text-xs md:text-sm leading-tight">{noPhysician.institution}</p>
             </div>
           </div>
         </Card>
@@ -178,8 +178,8 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         </div>
       </div>
 
-      {/* Mobile: Alternating YES/NO arguments */}
-      <div className="md:hidden space-y-6">
+      {/* Mobile: Alternating YES/NO arguments - Disconnected from physician boxes */}
+      <div className="md:hidden space-y-6 mt-8">
         {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
           <div key={index} className="space-y-6">
             {/* YES Argument */}
