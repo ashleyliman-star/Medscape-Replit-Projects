@@ -3,7 +3,7 @@ import { Scale } from "lucide-react";
 
 export default function Conclusions() {
   return (
-    <section className="bg-white rounded-xl shadow-lg p-8 mb-8">
+    <section className="mb-8">
       <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center">
         <Scale className="mr-3 h-6 w-6 text-gray-600" />
         Conclusions
