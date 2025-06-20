@@ -58,45 +58,31 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6">
             <h3 className="text-lg font-bold text-blue-800 mb-4">Key Arguments</h3>
             <div className="space-y-4">
-              {/* First 2 arguments */}
-              {yesArguments.slice(0, 2).map((argument, index) => (
-                <div key={index} className="bg-white/70 p-4 rounded-lg border border-blue-200">
-                  <div className="flex items-center mb-3 gap-3">
-                    <CheckCircle className="h-6 w-6 text-blue-600" />
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Yes
-                    </span>
-                    <h4 className="font-semibold text-blue-900">{argument.title}</h4>
+              {yesArguments.map((argument, index) => (
+                <div key={index}>
+                  <div className="bg-white/70 p-4 rounded-lg border border-blue-200">
+                    <div className="flex items-center mb-3 gap-3">
+                      <CheckCircle className="h-6 w-6 text-blue-600" />
+                      <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Yes
+                      </span>
+                      <h4 className="font-semibold text-blue-900">{argument.title}</h4>
+                    </div>
+                    <ul className="space-y-2">
+                      {argument.points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start">
+                          <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
+                          <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-2">
-                    {argument.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-              
-              {/* Remaining arguments after ad */}
-              {yesArguments.slice(2).map((argument, index) => (
-                <div key={index + 2} className="bg-white/70 p-4 rounded-lg border border-blue-200">
-                  <div className="flex items-center mb-3 gap-3">
-                    <CheckCircle className="h-6 w-6 text-blue-600" />
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Yes
-                    </span>
-                    <h4 className="font-semibold text-blue-900">{argument.title}</h4>
-                  </div>
-                  <ul className="space-y-2">
-                    {argument.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Add ad after 2nd argument */}
+                  {index === 1 && yesArguments.length > 2 && (
+                    <div className="my-6">
+                      <AdPlaceholder size="300x250" className="mx-auto" />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -133,58 +119,37 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
           <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6">
             <h3 className="text-lg font-bold text-purple-800 mb-4">Key Arguments</h3>
             <div className="space-y-4">
-              {/* First 2 arguments */}
-              {noArguments.slice(0, 2).map((argument, index) => (
-                <div key={index} className="bg-white/70 p-4 rounded-lg border border-purple-200">
-                  <div className="flex items-center mb-3 gap-3">
-                    <XCircle className="h-6 w-6 text-purple-700" />
-                    <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      No
-                    </span>
-                    <h4 className="font-semibold text-purple-900">{argument.title}</h4>
+              {noArguments.map((argument, index) => (
+                <div key={index}>
+                  <div className="bg-white/70 p-4 rounded-lg border border-purple-200">
+                    <div className="flex items-center mb-3 gap-3">
+                      <XCircle className="h-6 w-6 text-purple-700" />
+                      <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        No
+                      </span>
+                      <h4 className="font-semibold text-purple-900">{argument.title}</h4>
+                    </div>
+                    <ul className="space-y-2">
+                      {argument.points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start">
+                          <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
+                          <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-2">
-                    {argument.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-              
-              {/* Remaining arguments after ad */}
-              {noArguments.slice(2).map((argument, index) => (
-                <div key={index + 2} className="bg-white/70 p-4 rounded-lg border border-purple-200">
-                  <div className="flex items-center mb-3 gap-3">
-                    <XCircle className="h-6 w-6 text-purple-700" />
-                    <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      No
-                    </span>
-                    <h4 className="font-semibold text-purple-900">{argument.title}</h4>
-                  </div>
-                  <ul className="space-y-2">
-                    {argument.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Add ad after 2nd argument */}
+                  {index === 1 && noArguments.length > 2 && (
+                    <div className="my-6">
+                      <AdPlaceholder size="300x250" className="mx-auto" />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-
-      {/* Ad unit between argument pairs - only show if there are more than 2 arguments */}
-      {(yesArguments.length > 2 || noArguments.length > 2) && (
-        <div className="hidden lg:block mb-8">
-          <AdPlaceholder size="300x250" className="mx-auto" />
-        </div>
-      )}
 
       {/* Mobile: Alternating Arguments */}
       <div className="lg:hidden space-y-8">
