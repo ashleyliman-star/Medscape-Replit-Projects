@@ -82,12 +82,12 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         <h2 className="text-2xl font-bold text-gray-800">Key Arguments</h2>
       </div>
 
-      {/* Arguments in pairs with ads */}
-      <div className="max-w-6xl mx-auto space-y-8">
+      {/* Arguments in pairs with ads - Desktop */}
+      <div className="hidden md:block max-w-6xl mx-auto space-y-8">
         {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }, (_, index) => (
           <div key={index} className="space-y-8">
             {/* Argument pair - side by side */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6">
               {/* YES Argument */}
               {yesArguments[index] && (
                 <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
@@ -146,7 +146,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
       </div>
 
       {/* Mobile: Alternating Arguments */}
-      <div className="lg:hidden space-y-8">
+      <div className="md:hidden space-y-8">
         {Array.from({ length: maxArgs }, (_, index) => (
           <div key={`mobile-${index}`} className="space-y-6">
             {/* YES Argument */}
