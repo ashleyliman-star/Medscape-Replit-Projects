@@ -112,9 +112,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       Yes
                     </span>
-                    <h3 className="text-lg font-bold text-blue-800">
-                      {group.yesArgs.map(arg => arg.title).join(' & ')}
-                    </h3>
                   </div>
                   <div className="space-y-6">
                     {group.yesArgs.map((argument, argIndex) => (
@@ -145,9 +142,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       No
                     </span>
-                    <h3 className="text-lg font-bold text-purple-800">
-                      {group.noArgs.map(arg => arg.title).join(' & ')}
-                    </h3>
                   </div>
                   <div className="space-y-6">
                     {group.noArgs.map((argument, argIndex) => (
