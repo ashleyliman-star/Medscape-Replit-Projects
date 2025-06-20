@@ -96,6 +96,11 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         </Card>
       </div>
 
+      {/* Key Arguments Label */}
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold text-gray-800">Key Arguments</h2>
+      </div>
+
       {/* Desktop Layout - Side by side pairs */}
       <div className="hidden md:block space-y-12">
         {argumentPairs.map((pair, pairIndex) => (

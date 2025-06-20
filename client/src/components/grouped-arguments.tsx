@@ -75,6 +75,11 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         </Card>
       </div>
 
+      {/* Key Arguments Label */}
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold text-gray-800">Key Arguments</h2>
+      </div>
+
       {/* Mobile: Alternating Arguments */}
       <div className="lg:hidden space-y-8">
         {Array.from({ length: maxArgs }, (_, index) => (

@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 
 interface DebateHeaderProps {
-  version: 'A' | 'B' | 'C' | 'D' | 'E';
-  onVersionChange: (version: 'A' | 'B' | 'C' | 'D' | 'E') => void;
+  version: 'A' | 'B' | 'D' | 'E';
+  onVersionChange: (version: 'A' | 'B' | 'D' | 'E') => void;
 }
 
 export default function DebateHeader({ version, onVersionChange }: DebateHeaderProps) {
-  const handleVersionChange = (newVersion: 'A' | 'B' | 'C' | 'D' | 'E') => {
+  const handleVersionChange = (newVersion: 'A' | 'B' | 'D' | 'E') => {
     // Call the parent's version change handler
     onVersionChange(newVersion);
   };
@@ -42,18 +42,7 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
               >
                 Version B
               </Button>
-              <Button
-                onClick={() => handleVersionChange('C')}
-                variant="outline"
-                size="sm"
-                className={`${
-                  version === 'C' 
-                    ? 'bg-purple-100 text-purple-700 hover:bg-purple-200 border-purple-200' 
-                    : 'text-gray-600 hover:bg-gray-100'
-                }`}
-              >
-                Version C
-              </Button>
+
               <Button
                 onClick={() => handleVersionChange('D')}
                 variant="outline"

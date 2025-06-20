@@ -120,7 +120,7 @@ const debateData = {
 };
 
 export default function DebatePage() {
-  const [version, setVersion] = useState<'A' | 'B' | 'C' | 'D' | 'E'>('A');
+  const [version, setVersion] = useState<'A' | 'B' | 'D' | 'E'>('A');
 
   return (
     <div className="min-h-screen bg-white">
@@ -134,24 +134,7 @@ export default function DebatePage() {
         
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
         
-        {version === 'C' ? (
-          // Version C: Side-by-side arguments with ads between pairs
-          <>
-            <div className="mb-12">
-              <SideBySideArguments 
-                yesArguments={debateData.sideA.arguments}
-                noArguments={debateData.sideB.arguments}
-                yesPhysician={debateData.sideA.physician}
-                noPhysician={debateData.sideB.physician}
-              />
-            </div>
-            
-            <SummaryTable 
-              yesArguments={debateData.sideA.arguments}
-              noArguments={debateData.sideB.arguments}
-            />
-          </>
-        ) : version === 'D' ? (
+        {version === 'D' ? (
           // Version D: Grouped arguments with summary table
           <>
             <div className="mb-12">
