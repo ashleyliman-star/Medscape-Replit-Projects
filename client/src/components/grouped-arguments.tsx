@@ -180,6 +180,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
 
       {/* Mobile: Alternating YES/NO arguments - Disconnected from physician boxes */}
       <div className="md:hidden space-y-6 mt-20 border-t border-gray-200 pt-8">
+        <h2 className="text-xl font-bold text-gray-800 mb-6">Key Arguments</h2>
         {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
           <div key={index} className="space-y-6">
             {/* YES Argument */}
