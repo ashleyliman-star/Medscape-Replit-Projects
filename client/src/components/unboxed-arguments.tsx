@@ -109,7 +109,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                   <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
                     Yes
                   </span>
-                  <h4 className="font-semibold text-blue-800">{argument.title}</h4>
+                  <h4 className="font-semibold text-lg text-blue-800">{argument.title}</h4>
                 </div>
                 <ul className="space-y-2 ml-8">
                   {argument.points.map((point, pointIndex) => (
@@ -119,6 +119,20 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                     </li>
                   ))}
                 </ul>
+                
+                {/* Ad after 2nd argument */}
+                {index === 1 && (
+                  <div className="flex justify-center my-8">
+                    <AdPlaceholder size="300x250" className="mx-auto" />
+                  </div>
+                )}
+                
+                {/* Ad after 4th argument */}
+                {index === 3 && (
+                  <div className="flex justify-center my-8">
+                    <AdPlaceholder size="300x250" className="mx-auto" />
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -135,7 +149,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                   <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
                     No
                   </span>
-                  <h4 className="font-semibold text-purple-800">{argument.title}</h4>
+                  <h4 className="font-semibold text-lg text-purple-800">{argument.title}</h4>
                 </div>
                 <ul className="space-y-2 ml-8">
                   {argument.points.map((point, pointIndex) => (
@@ -145,6 +159,20 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                     </li>
                   ))}
                 </ul>
+                
+                {/* Ad after 2nd argument */}
+                {index === 1 && (
+                  <div className="flex justify-center my-8">
+                    <AdPlaceholder size="300x250" className="mx-auto" />
+                  </div>
+                )}
+                
+                {/* Ad after 4th argument */}
+                {index === 3 && (
+                  <div className="flex justify-center my-8">
+                    <AdPlaceholder size="300x250" className="mx-auto" />
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -154,51 +182,73 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
       {/* Mobile: Alternating YES/NO arguments */}
       <div className="md:hidden space-y-6 mb-8">
         <h3 className="text-lg font-bold text-gray-800 mb-4">Key Arguments</h3>
-        {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
-          <div key={index} className="space-y-6">
-            {/* YES Argument */}
-            {yesArguments[index] && (
-              <div>
-                <div className="flex items-start mb-3 gap-3">
-                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                  <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
-                    Yes
-                  </span>
-                  <h4 className="font-semibold text-blue-800">{yesArguments[index].title}</h4>
-                </div>
-                <ul className="space-y-2 ml-8">
-                  {yesArguments[index].points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-start">
-                      <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                      <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+        {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => {
+          const argumentCount = (yesArguments[index] ? 1 : 0) + (noArguments[index] ? 1 : 0) + 
+                               (index > 0 ? Array.from({ length: index }).reduce((acc, _, i) => 
+                                 acc + (yesArguments[i] ? 1 : 0) + (noArguments[i] ? 1 : 0), 0) : 0);
+          
+          return (
+            <div key={index}>
+              <div className="space-y-6">
+                {/* YES Argument */}
+                {yesArguments[index] && (
+                  <div>
+                    <div className="flex items-start mb-3 gap-3">
+                      <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                      <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
+                        Yes
+                      </span>
+                      <h4 className="font-semibold text-lg text-blue-800">{yesArguments[index].title}</h4>
+                    </div>
+                    <ul className="space-y-2 ml-8">
+                      {yesArguments[index].points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start">
+                          <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                          <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-            {/* NO Argument */}
-            {noArguments[index] && (
-              <div>
-                <div className="flex items-start mb-3 gap-3">
-                  <XCircle className="h-5 w-5 text-purple-700 mt-0.5 flex-shrink-0" />
-                  <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
-                    No
-                  </span>
-                  <h4 className="font-semibold text-purple-800">{noArguments[index].title}</h4>
-                </div>
-                <ul className="space-y-2 ml-8">
-                  {noArguments[index].points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-start">
-                      <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                      <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                {/* NO Argument */}
+                {noArguments[index] && (
+                  <div>
+                    <div className="flex items-start mb-3 gap-3">
+                      <XCircle className="h-5 w-5 text-purple-700 mt-0.5 flex-shrink-0" />
+                      <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
+                        No
+                      </span>
+                      <h4 className="font-semibold text-lg text-purple-800">{noArguments[index].title}</h4>
+                    </div>
+                    <ul className="space-y-2 ml-8">
+                      {noArguments[index].points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start">
+                          <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                          <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        ))}
+              
+              {/* Ad after 2nd argument */}
+              {argumentCount === 2 && (
+                <div className="flex justify-center py-8">
+                  <AdPlaceholder size="300x250" className="mx-auto" />
+                </div>
+              )}
+              
+              {/* Ad after 4th argument */}
+              {argumentCount === 4 && (
+                <div className="flex justify-center py-8">
+                  <AdPlaceholder size="300x250" className="mx-auto" />
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
 
