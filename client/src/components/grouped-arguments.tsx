@@ -59,16 +59,30 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             <h3 className="text-lg font-bold text-blue-800 mb-4">Key Arguments</h3>
             <div className="space-y-4">
               {yesArguments.map((argument, index) => (
-                <div key={index} className="bg-white/70 p-4 rounded-lg border border-blue-200">
-                  <h4 className="font-semibold text-blue-900 mb-2">{argument.title}</h4>
-                  <ul className="space-y-2">
-                    {argument.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div key={index}>
+                  <div className="bg-white/70 p-4 rounded-lg border border-blue-200">
+                    <div className="flex items-center mb-3 gap-3">
+                      <CheckCircle className="h-6 w-6 text-blue-600" />
+                      <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Yes
+                      </span>
+                      <h4 className="font-semibold text-blue-900">{argument.title}</h4>
+                    </div>
+                    <ul className="space-y-2">
+                      {argument.points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start">
+                          <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
+                          <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* Add ad after every 2 arguments */}
+                  {(index + 1) % 2 === 0 && index < yesArguments.length - 1 && (
+                    <div className="mt-6 mb-6">
+                      <AdPlaceholder size="300x250" className="mx-auto" />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -106,16 +120,30 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             <h3 className="text-lg font-bold text-purple-800 mb-4">Key Arguments</h3>
             <div className="space-y-4">
               {noArguments.map((argument, index) => (
-                <div key={index} className="bg-white/70 p-4 rounded-lg border border-purple-200">
-                  <h4 className="font-semibold text-purple-900 mb-2">{argument.title}</h4>
-                  <ul className="space-y-2">
-                    {argument.points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div key={index}>
+                  <div className="bg-white/70 p-4 rounded-lg border border-purple-200">
+                    <div className="flex items-center mb-3 gap-3">
+                      <XCircle className="h-6 w-6 text-purple-700" />
+                      <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        No
+                      </span>
+                      <h4 className="font-semibold text-purple-900">{argument.title}</h4>
+                    </div>
+                    <ul className="space-y-2">
+                      {argument.points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start">
+                          <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
+                          <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* Add ad after every 2 arguments */}
+                  {(index + 1) % 2 === 0 && index < noArguments.length - 1 && (
+                    <div className="mt-6 mb-6">
+                      <AdPlaceholder size="300x250" className="mx-auto" />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
