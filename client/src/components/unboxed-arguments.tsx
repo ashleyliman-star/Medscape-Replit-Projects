@@ -104,9 +104,12 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
           <div className="space-y-6">
             {yesArguments.map((argument, index) => (
               <div key={index}>
-                <div className="flex items-start mb-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
-                  <h4 className="font-semibold text-gray-900">{argument.title}</h4>
+                <div className="flex items-start mb-3 gap-3">
+                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
+                    Yes
+                  </span>
+                  <h4 className="font-semibold text-blue-800">{argument.title}</h4>
                 </div>
                 <ul className="space-y-2 ml-8">
                   {argument.points.map((point, pointIndex) => (
@@ -127,9 +130,12 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
           <div className="space-y-6">
             {noArguments.map((argument, index) => (
               <div key={index}>
-                <div className="flex items-start mb-3">
-                  <XCircle className="h-5 w-5 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
-                  <h4 className="font-semibold text-gray-900">{argument.title}</h4>
+                <div className="flex items-start mb-3 gap-3">
+                  <XCircle className="h-5 w-5 text-purple-700 mt-0.5 flex-shrink-0" />
+                  <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
+                    No
+                  </span>
+                  <h4 className="font-semibold text-purple-800">{argument.title}</h4>
                 </div>
                 <ul className="space-y-2 ml-8">
                   {argument.points.map((point, pointIndex) => (
@@ -153,9 +159,12 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             {/* YES Argument */}
             {yesArguments[index] && (
               <div>
-                <div className="flex items-start mb-3">
-                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
-                  <h4 className="font-semibold text-gray-900">{yesArguments[index].title}</h4>
+                <div className="flex items-start mb-3 gap-3">
+                  <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                  <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
+                    Yes
+                  </span>
+                  <h4 className="font-semibold text-blue-800">{yesArguments[index].title}</h4>
                 </div>
                 <ul className="space-y-2 ml-8">
                   {yesArguments[index].points.map((point, pointIndex) => (
@@ -171,9 +180,12 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             {/* NO Argument */}
             {noArguments[index] && (
               <div>
-                <div className="flex items-start mb-3">
-                  <XCircle className="h-5 w-5 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
-                  <h4 className="font-semibold text-gray-900">{noArguments[index].title}</h4>
+                <div className="flex items-start mb-3 gap-3">
+                  <XCircle className="h-5 w-5 text-purple-700 mt-0.5 flex-shrink-0" />
+                  <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
+                    No
+                  </span>
+                  <h4 className="font-semibold text-purple-800">{noArguments[index].title}</h4>
                 </div>
                 <ul className="space-y-2 ml-8">
                   {noArguments[index].points.map((point, pointIndex) => (
