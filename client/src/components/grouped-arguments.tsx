@@ -84,13 +84,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             {yesArguments.slice(0, 2).length > 0 && (
               <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
                 <div className="mb-6">
-                  <h2 className="text-xl font-bold text-blue-800 mb-4">Key Arguments</h2>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="h-6 w-6 text-blue-600" />
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Yes
-                    </span>
-                  </div>
+                  <h2 className="text-xl font-bold text-blue-800">Key Arguments</h2>
                 </div>
                 <div className="space-y-6">
                   {yesArguments.slice(0, 2).map((argument, index) => (
@@ -124,12 +118,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             {/* Second group: Arguments 3-4 */}
             {yesArguments.slice(2, 4).length > 0 && (
               <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
-                <div className="flex items-center mb-6 gap-3">
-                  <CheckCircle className="h-6 w-6 text-blue-600" />
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Yes
-                  </span>
-                </div>
                 <div className="space-y-6">
                   {yesArguments.slice(2, 4).map((argument, index) => (
                     <div key={index}>
@@ -192,13 +180,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             {noArguments.slice(0, 2).length > 0 && (
               <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
                 <div className="mb-6">
-                  <h2 className="text-xl font-bold text-purple-800 mb-4">Key Arguments</h2>
-                  <div className="flex items-center gap-3">
-                    <XCircle className="h-6 w-6 text-purple-700" />
-                    <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      No
-                    </span>
-                  </div>
+                  <h2 className="text-xl font-bold text-purple-800">Key Arguments</h2>
                 </div>
                 <div className="space-y-6">
                   {noArguments.slice(0, 2).map((argument, index) => (
@@ -232,12 +214,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             {/* Second group: Arguments 3-4 */}
             {noArguments.slice(2, 4).length > 0 && (
               <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
-                <div className="flex items-center mb-6 gap-3">
-                  <XCircle className="h-6 w-6 text-purple-700" />
-                  <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    No
-                  </span>
-                </div>
                 <div className="space-y-6">
                   {noArguments.slice(2, 4).map((argument, index) => (
                     <div key={index}>
