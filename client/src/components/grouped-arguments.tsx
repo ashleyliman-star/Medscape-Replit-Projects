@@ -75,9 +75,9 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         </Card>
       </div>
 
-      {/* Arguments - Continuous boxes with ads inside */}
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* YES Column - All Arguments */}
+      {/* Desktop: Side-by-side columns | Mobile: Alternating arguments */}
+      <div className="hidden md:grid md:grid-cols-2 gap-8">
+        {/* YES Column - All Arguments (Desktop only) */}
         <div>
           <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
             <div className="mb-6">
@@ -127,7 +127,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
           </Card>
         </div>
 
-        {/* NO Column - All Arguments */}
+        {/* NO Column - All Arguments (Desktop only) */}
         <div>
           <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
             <div className="mb-6">
@@ -176,6 +176,87 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             </div>
           </Card>
         </div>
+      </div>
+
+      {/* Mobile: Alternating YES/NO arguments */}
+      <div className="md:hidden space-y-6">
+        {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
+          <div key={index} className="space-y-6">
+            {/* YES Argument */}
+            {yesArguments[index] && (
+              <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+                <div className="flex items-center mb-3 gap-3">
+                  <CheckCircle className="h-5 w-5 text-blue-600" />
+                  <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    Yes
+                  </span>
+                  <h3 className="text-lg font-bold text-blue-800">
+                    {yesArguments[index].title}
+                  </h3>
+                </div>
+                <ul className="space-y-3">
+                  {yesArguments[index].points.map((point, pointIndex) => (
+                    <li key={pointIndex} className="flex items-start">
+                      <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                {/* Ad after 2nd YES argument on mobile */}
+                {index === 1 && (
+                  <div className="flex justify-center mt-8">
+                    <AdPlaceholder size="300x250" className="mx-auto" />
+                  </div>
+                )}
+                
+                {/* Ad after 5th YES argument on mobile */}
+                {index === 4 && (
+                  <div className="flex justify-center mt-8">
+                    <AdPlaceholder size="300x250" className="mx-auto" />
+                  </div>
+                )}
+              </Card>
+            )}
+
+            {/* NO Argument */}
+            {noArguments[index] && (
+              <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+                <div className="flex items-center mb-3 gap-3">
+                  <XCircle className="h-5 w-5 text-purple-700" />
+                  <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    No
+                  </span>
+                  <h3 className="text-lg font-bold text-purple-800">
+                    {noArguments[index].title}
+                  </h3>
+                </div>
+                <ul className="space-y-3">
+                  {noArguments[index].points.map((point, pointIndex) => (
+                    <li key={pointIndex} className="flex items-start">
+                      <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                {/* Ad after 2nd NO argument on mobile */}
+                {index === 1 && (
+                  <div className="flex justify-center mt-8">
+                    <AdPlaceholder size="300x250" className="mx-auto" />
+                  </div>
+                )}
+                
+                {/* Ad after 5th NO argument on mobile */}
+                {index === 4 && (
+                  <div className="flex justify-center mt-8">
+                    <AdPlaceholder size="300x250" className="mx-auto" />
+                  </div>
+                )}
+              </Card>
+            )}
+          </div>
+        ))}
       </div>
 
 

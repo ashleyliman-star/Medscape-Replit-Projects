@@ -96,8 +96,8 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         </Card>
       </div>
 
-      {/* Key Arguments sections for each physician */}
-      <div className="grid md:grid-cols-2 gap-8 mb-8">
+      {/* Key Arguments sections for each physician - Desktop only */}
+      <div className="hidden md:grid md:grid-cols-2 gap-8 mb-8">
         {/* YES Key Arguments */}
         <div>
           <h3 className="text-lg font-bold text-gray-800 mb-4">Key Arguments</h3>
@@ -143,6 +143,50 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Mobile: Alternating YES/NO arguments */}
+      <div className="md:hidden space-y-6 mb-8">
+        <h3 className="text-lg font-bold text-gray-800 mb-4">Key Arguments</h3>
+        {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
+          <div key={index} className="space-y-6">
+            {/* YES Argument */}
+            {yesArguments[index] && (
+              <div>
+                <div className="flex items-start mb-3">
+                  <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 mr-3 flex-shrink-0" />
+                  <h4 className="font-semibold text-gray-900">{yesArguments[index].title}</h4>
+                </div>
+                <ul className="space-y-2 ml-8">
+                  {yesArguments[index].points.map((point, pointIndex) => (
+                    <li key={pointIndex} className="flex items-start">
+                      <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* NO Argument */}
+            {noArguments[index] && (
+              <div>
+                <div className="flex items-start mb-3">
+                  <XCircle className="h-5 w-5 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
+                  <h4 className="font-semibold text-gray-900">{noArguments[index].title}</h4>
+                </div>
+                <ul className="space-y-2 ml-8">
+                  {noArguments[index].points.map((point, pointIndex) => (
+                    <li key={pointIndex} className="flex items-start">
+                      <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                      <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
 
       {/* Desktop Layout - Side by side pairs */}
