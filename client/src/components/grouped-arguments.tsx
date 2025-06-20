@@ -75,11 +75,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         </Card>
       </div>
 
-      {/* Key Arguments Label */}
-      <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-gray-800">Key Arguments</h2>
-      </div>
-
       {/* Mobile: Alternating Arguments */}
       <div className="lg:hidden space-y-8">
         {Array.from({ length: maxArgs }, (_, index) => (
@@ -87,6 +82,9 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             {/* YES Argument */}
             {yesArguments[index] && (
               <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+                {index === 0 && (
+                  <h3 className="text-lg font-bold text-blue-800 mb-4 text-center">Key Arguments - YES</h3>
+                )}
                 <div className="flex items-center mb-4 flex-wrap gap-3">
                   <CheckCircle className="h-6 w-6 text-blue-600" />
                   <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -110,6 +108,9 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             {/* NO Argument */}
             {noArguments[index] && (
               <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+                {index === 0 && (
+                  <h3 className="text-lg font-bold text-purple-800 mb-4 text-center">Key Arguments - NO</h3>
+                )}
                 <div className="flex items-center mb-4 flex-wrap gap-3">
                   <XCircle className="h-6 w-6 text-purple-700" />
                   <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -151,25 +152,28 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             <div key={groupIndex}>
               <div className="grid lg:grid-cols-2 gap-6">
                 {/* YES Arguments Group */}
-                <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+                <Card className="bg-gradient-to-br from-blue-600 via-sky-500 to-cyan-600 text-white p-6">
+                  {groupIndex === 0 && (
+                    <h3 className="text-xl font-bold mb-6 text-center">Key Arguments - YES</h3>
+                  )}
                   {showSingleArgument ? (
                     // Single argument for last odd group
                     yesArguments[groupIndex * 2] && (
                       <div>
                         <div className="flex items-center mb-4 flex-wrap gap-3">
-                          <CheckCircle className="h-6 w-6 text-blue-600" />
-                          <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          <CheckCircle className="h-6 w-6 text-white" />
+                          <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
                             Yes
                           </span>
-                          <h3 className="text-lg font-bold text-blue-800">
+                          <h3 className="text-lg font-bold text-white">
                             {yesArguments[groupIndex * 2].title}
                           </h3>
                         </div>
                         <ul className="space-y-3">
                           {yesArguments[groupIndex * 2].points.map((point, pointIndex) => (
                             <li key={pointIndex} className="flex items-start">
-                              <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
-                              <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                              <div className="w-2 h-2 rounded-full bg-white mt-2 mr-3 flex-shrink-0" />
+                              <span className="text-sm text-white leading-relaxed">{point}</span>
                             </li>
                           ))}
                         </ul>
@@ -184,24 +188,24 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                         return argument ? (
                           <div key={argIndex}>
                             <div className="flex items-center mb-4 flex-wrap gap-3">
-                              <CheckCircle className="h-6 w-6 text-blue-600" />
-                              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                              <CheckCircle className="h-6 w-6 text-white" />
+                              <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
                                 Yes
                               </span>
-                              <h3 className="text-lg font-bold text-blue-800">
+                              <h3 className="text-lg font-bold text-white">
                                 {argument.title}
                               </h3>
                             </div>
                             <ul className="space-y-3">
                               {argument.points.map((point, pointIndex) => (
                                 <li key={pointIndex} className="flex items-start">
-                                  <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
-                                  <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                                  <div className="w-2 h-2 rounded-full bg-white mt-2 mr-3 flex-shrink-0" />
+                                  <span className="text-sm text-white leading-relaxed">{point}</span>
                                 </li>
                               ))}
                             </ul>
                             {offset === 0 && yesArguments[argIndex + 1] && (
-                              <div className="border-b border-blue-200 my-6"></div>
+                              <div className="border-b border-white/30 my-6"></div>
                             )}
                           </div>
                         ) : null;
@@ -211,7 +215,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                 </Card>
 
                 {/* NO Arguments Group */}
-                <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+                <Card className="bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-600 text-white p-6">
                   {showSingleArgument ? (
                     // Single argument for last odd group
                     noArguments[groupIndex * 2] && (
