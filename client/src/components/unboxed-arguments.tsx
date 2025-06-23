@@ -72,8 +72,8 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               className="w-24 h-24 rounded-full border-3 border-white mr-4"
             />
             <div>
-              <h2 className="font-bold text-2xl mb-2 text-blue-100">YES: Routine Surveillance is Worth It</h2>
-              <h3 className="font-bold text-lg mb-1">{yesPhysician.name}</h3>
+              <h2 className="font-bold text-3xl mb-2 text-blue-100">YES: Routine Surveillance is Worth It</h2>
+              <h3 className="font-bold text-xl mb-1">{yesPhysician.name}</h3>
               <p className="text-blue-100 text-sm">{yesPhysician.credentials}</p>
               <p className="text-blue-100 text-sm">{yesPhysician.institution}</p>
             </div>
@@ -89,8 +89,8 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               className="w-24 h-24 rounded-full border-3 border-white mr-4"
             />
             <div>
-              <h2 className="font-bold text-2xl mb-2 text-purple-100">NO: Routine Surveillance is Not Worth It</h2>
-              <h3 className="font-bold text-lg mb-1">{noPhysician.name}</h3>
+              <h2 className="font-bold text-3xl mb-2 text-purple-100">NO: Routine Surveillance is Not Worth It</h2>
+              <h3 className="font-bold text-xl mb-1">{noPhysician.name}</h3>
               <p className="text-purple-100 text-sm">{noPhysician.credentials}</p>
               <p className="text-purple-100 text-sm">{noPhysician.institution}</p>
             </div>
@@ -106,7 +106,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             <div className="grid grid-cols-2 gap-8 mb-6">
               {/* YES Key Arguments */}
               <div>
-                {index === 0 && <h3 className="text-lg font-bold text-gray-800 mb-4">Key Arguments</h3>}
+                {index === 0 && <h3 className="text-xl font-bold text-gray-800 mb-4">Key Arguments</h3>}
                 {yesArguments[index] && (
                   <div>
                     <div className="flex items-start mb-3 gap-3">
@@ -114,7 +114,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                       <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
                         Yes
                       </span>
-                      <h4 className="font-semibold text-lg text-blue-800">{yesArguments[index].title}</h4>
+                      <h4 className="font-semibold text-xl text-blue-800">{yesArguments[index].title}</h4>
                     </div>
                     <ul className="space-y-2 ml-8">
                       {yesArguments[index].points.map((point, pointIndex) => (
@@ -130,7 +130,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
               {/* NO Key Arguments */}
               <div>
-                {index === 0 && <h3 className="text-lg font-bold text-gray-800 mb-4">Key Arguments</h3>}
+                {index === 0 && <h3 className="text-xl font-bold text-gray-800 mb-4">Key Arguments</h3>}
                 {noArguments[index] && (
                   <div>
                     <div className="flex items-start mb-3 gap-3">
@@ -138,7 +138,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                       <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
                         No
                       </span>
-                      <h4 className="font-semibold text-lg text-purple-800">{noArguments[index].title}</h4>
+                      <h4 className="font-semibold text-xl text-purple-800">{noArguments[index].title}</h4>
                     </div>
                     <ul className="space-y-2 ml-8">
                       {noArguments[index].points.map((point, pointIndex) => (
