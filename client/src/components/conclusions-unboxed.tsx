@@ -7,7 +7,7 @@ export default function ConclusionsUnboxed() {
         <Scale className="mr-3 h-6 w-6 text-gray-600" />
         Conclusions
       </h2>
-      <div className="max-w-4xl mx-auto space-y-4 text-gray-700">
+      <div className="max-w-4xl mx-auto space-y-4 text-gray-700 text-base md:text-lg">
         <p>
           This debate highlights the complexity of breast cancer screening decisions in modern healthcare. Both perspectives offer valid evidence-based arguments that reflect the current state of clinical practice and evolving guideline recommendations.
         </p>

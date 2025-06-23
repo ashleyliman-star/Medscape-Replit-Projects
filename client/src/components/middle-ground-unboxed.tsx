@@ -11,11 +11,11 @@ export default function MiddleGroundUnboxed() {
         <ul className="space-y-4 text-gray-700">
           <li className="flex items-start">
             <div className="w-2 h-2 rounded-full bg-purple-600 mt-2 mr-4 flex-shrink-0" />
-            <span>Personalized surveillance based on recurrence risk, age, genetic factors, and treatment history may offer a better risk-benefit balance.</span>
+            <span className="text-base md:text-lg">Personalized surveillance based on recurrence risk, age, genetic factors, and treatment history may offer a better risk-benefit balance.</span>
           </li>
           <li className="flex items-start">
             <div className="w-2 h-2 rounded-full bg-purple-600 mt-2 mr-4 flex-shrink-0" />
-            <span>Newer models are being tested to combine patient-reported outcomes, biomarkers, and telehealth to reduce unnecessary in-person visits.</span>
+            <span className="text-base md:text-lg">Newer models are being tested to combine patient-reported outcomes, biomarkers, and telehealth to reduce unnecessary in-person visits.</span>
           </li>
         </ul>
       </div>

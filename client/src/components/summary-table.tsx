@@ -36,7 +36,7 @@ export default function SummaryTable({ yesArguments, noArguments }: SummaryTable
               {yesPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <span className="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span className="text-sm text-gray-700 leading-relaxed flex-1">{point}</span>
+                  <span className="text-base md:text-lg text-gray-700 leading-relaxed flex-1">{point}</span>
                 </li>
               ))}
             </ul>
@@ -54,7 +54,7 @@ export default function SummaryTable({ yesArguments, noArguments }: SummaryTable
               {noPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <span className="inline-block w-2 h-2 bg-purple-700 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span className="text-sm text-gray-700 leading-relaxed flex-1">{point}</span>
+                  <span className="text-base md:text-lg text-gray-700 leading-relaxed flex-1">{point}</span>
                 </li>
               ))}
             </ul>
