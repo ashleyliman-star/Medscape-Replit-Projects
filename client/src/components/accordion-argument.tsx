@@ -34,7 +34,7 @@ export default function AccordionArgument({ title, points, color, argumentIndex 
           onClick={handleToggle}
         >
           <div className="flex justify-between items-center">
-            <span className="font-medium text-gray-800">{title}</span>
+            <span className="font-medium text-lg md:text-xl text-gray-800">{title}</span>
             <motion.div
               animate={{ rotate: isExpanded ? 180 : 0 }}
               transition={{ duration: 0.3 }}
@@ -54,7 +54,7 @@ export default function AccordionArgument({ title, points, color, argumentIndex 
               className="overflow-hidden"
             >
               <div className="px-4 pb-4 border-t border-gray-100">
-                <ul className="space-y-2 text-sm text-gray-700 pt-3">
+                <ul className="space-y-2 text-base md:text-lg text-gray-700 pt-3">
                   {points.map((point, index) => (
                     <li key={index} className="flex items-start">
                       <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0 bg-black" />
