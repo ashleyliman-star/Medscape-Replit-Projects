@@ -25,7 +25,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
   // Create pairs for desktop and alternating pattern for mobile
   const argumentPairs = [];
   const maxLength = Math.max(yesArguments.length, noArguments.length);
-  
+
   for (let i = 0; i < maxLength; i++) {
     if (yesArguments[i] && noArguments[i]) {
       argumentPairs.push({
@@ -152,7 +152,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 )}
               </div>
             </div>
-            
+
             {/* Centered ad after every 2 arguments (index 1, 3, 5, etc.) */}
             {index % 2 === 1 && (
               <div className="flex justify-center py-8">
@@ -211,7 +211,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 </div>
               )}
             </div>
-            
+
             {/* Centered ad after every 2 arguments (index 1, 3, 5, etc.) */}
             {index % 2 === 1 && (
               <div className="flex justify-center py-8">
