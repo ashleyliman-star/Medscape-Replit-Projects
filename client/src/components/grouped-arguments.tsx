@@ -99,25 +99,25 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     {argument.points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
                         <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                        <span className="text-lg text-gray-700 leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
-                  
+
                   {/* Ad after 2nd argument */}
                   {index === 1 && (
                     <div className="flex justify-center my-8">
                       <AdPlaceholder size="300x250" className="mx-auto" />
                     </div>
                   )}
-                  
+
                   {/* Ad after 5th argument */}
                   {index === 4 && (
                     <div className="flex justify-center my-8">
                       <AdPlaceholder size="300x250" className="mx-auto" />
                     </div>
                   )}
-                  
+
                   {index < yesArguments.length - 1 && (
                     <div className="border-b border-blue-200 my-4"></div>
                   )}
@@ -149,25 +149,25 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     {argument.points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
                         <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                        <span className="text-lg text-gray-700 leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
-                  
+
                   {/* Ad after 2nd argument */}
                   {index === 1 && (
                     <div className="flex justify-center my-8">
                       <AdPlaceholder size="300x250" className="mx-auto" />
                     </div>
                   )}
-                  
+
                   {/* Ad after 5th argument */}
                   {index === 4 && (
                     <div className="flex justify-center my-8">
                       <AdPlaceholder size="300x250" className="mx-auto" />
                     </div>
                   )}
-                  
+
                   {index < noArguments.length - 1 && (
                     <div className="border-b border-purple-200 my-4"></div>
                   )}
@@ -200,7 +200,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     {yesArguments[index].points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
                         <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                        <span className="text-lg text-gray-700 leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
@@ -223,14 +223,14 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     {noArguments[index].points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
                         <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
+                        <span className="text-lg text-gray-700 leading-relaxed">{point}</span>
                       </li>
                     ))}
                   </ul>
                 </Card>
               )}
             </div>
-            
+
             {/* Ad after each YES/NO pair - Outside the boxes */}
             <div className="flex justify-center py-8">
               <AdPlaceholder size="300x250" className="mx-auto" />
