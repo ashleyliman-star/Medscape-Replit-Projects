@@ -17,11 +17,13 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
         <div className="flex justify-between items-center">
           <div className="flex-1"></div>
           <div className="flex-1 flex justify-center">
-            <img 
-              src={medscapeLogo}
-              alt="Medscape" 
-              className="h-8"
-            />
+            <a href="https://medscape.com" target="_blank" rel="noopener noreferrer">
+              <img 
+                src={medscapeLogo}
+                alt="Medscape" 
+                className="h-8 hover:opacity-80 transition-opacity"
+              />
+            </a>
           </div>
           <div className="flex-1 flex justify-end">
             <div className="flex items-center space-x-2">
