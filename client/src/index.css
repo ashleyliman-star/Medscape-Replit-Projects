@@ -26,9 +26,9 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   
-  --debate-blue: hsl(213, 83%, 57%);
+  --debate-blue: #3DC7F5;
   --debate-green: hsl(158, 95%, 29%);
-  --debate-purple: hsl(280, 83%, 45%);
+  --debate-purple: #F07584;
   --neutral-gray: hsl(215, 13%, 50%);
 }
 

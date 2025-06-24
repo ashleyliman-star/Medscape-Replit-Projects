@@ -63,7 +63,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
       {/* Physician Headers */}
       <div className="grid md:grid-cols-2 gap-8 mb-8">
         {/* YES Physician */}
-        <Card className="bg-gradient-to-br from-blue-600 via-sky-500 to-cyan-600 text-white p-6">
+        <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' }}>
           <div className="flex items-center mb-4">
             <img 
               src={yesPhysician.image} 
@@ -71,16 +71,16 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               className="w-24 h-24 rounded-full border-3 border-white mr-4"
             />
             <div>
-              <h2 className="font-bold text-3xl mb-2 text-blue-100">YES: Routine Surveillance is Worth It</h2>
+              <h2 className="font-bold text-3xl mb-2 text-white">YES: Routine Surveillance is Worth It</h2>
               <h3 className="font-bold text-xl mb-1">{yesPhysician.name}</h3>
-              <p className="text-blue-100 text-sm">{yesPhysician.credentials}</p>
-              <p className="text-blue-100 text-sm">{yesPhysician.institution}</p>
+              <p className="text-gray-100 text-sm">{yesPhysician.credentials}</p>
+              <p className="text-gray-100 text-sm">{yesPhysician.institution}</p>
             </div>
           </div>
         </Card>
 
         {/* NO Physician */}
-        <Card className="bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-600 text-white p-6">
+        <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)' }}>
           <div className="flex items-center mb-4">
             <img 
               src={noPhysician.image} 
@@ -88,10 +88,10 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               className="w-24 h-24 rounded-full border-3 border-white mr-4"
             />
             <div>
-              <h2 className="font-bold text-3xl mb-2 text-purple-100">NO: Routine Surveillance is Not Worth It</h2>
+              <h2 className="font-bold text-3xl mb-2 text-white">NO: Routine Surveillance is Not Worth It</h2>
               <h3 className="font-bold text-xl mb-1">{noPhysician.name}</h3>
-              <p className="text-purple-100 text-sm">{noPhysician.credentials}</p>
-              <p className="text-purple-100 text-sm">{noPhysician.institution}</p>
+              <p className="text-gray-100 text-sm">{noPhysician.credentials}</p>
+              <p className="text-gray-100 text-sm">{noPhysician.institution}</p>
             </div>
           </div>
         </Card>
@@ -109,10 +109,10 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 {yesArguments[index] && (
                   <div>
                     <div className="flex items-start mb-3 gap-3">
-                      <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
+                      <span className="text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
                         Yes
                       </span>
-                      <h4 className="font-semibold text-xl text-blue-800">{yesArguments[index].title}</h4>
+                      <h4 className="font-semibold text-xl" style={{ color: '#3DC7F5' }}>{yesArguments[index].title}</h4>
                     </div>
                     <ul className="space-y-2 ml-8">
                       {yesArguments[index].points.map((point, pointIndex) => (
@@ -132,10 +132,10 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 {noArguments[index] && (
                   <div>
                     <div className="flex items-start mb-3 gap-3">
-                      <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
+                      <span className="text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
                         No
                       </span>
-                      <h4 className="font-semibold text-xl text-purple-800">{noArguments[index].title}</h4>
+                      <h4 className="font-semibold text-xl" style={{ color: '#F07584' }}>{noArguments[index].title}</h4>
                     </div>
                     <ul className="space-y-2 ml-8">
                       {noArguments[index].points.map((point, pointIndex) => (

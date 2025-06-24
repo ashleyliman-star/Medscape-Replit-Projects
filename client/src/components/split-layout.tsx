@@ -27,7 +27,7 @@ export default function SplitLayout({ yesArguments, noArguments, yesPhysician, n
       {/* YES Side - Full Left Column */}
       <div className="space-y-8 bg-gradient-to-br from-blue-50 to-blue-100 p-8 lg:border-r-2 lg:border-gray-300">
         {/* YES Physician Header */}
-        <Card className="bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 text-white p-6">
+        <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' }}>
           <div className="flex items-center mb-4">
             <CheckCircle className="h-8 w-8 mr-4" />
             <span className="bg-white text-blue-600 px-4 py-2 rounded-full text-lg font-bold">
