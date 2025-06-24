@@ -25,17 +25,17 @@ export default function SummaryTable({ yesArguments, noArguments }: SummaryTable
         
         <div className="grid lg:grid-cols-2 gap-6">
           {/* YES Side Summary */}
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-lg p-6">
+          <div className="border-2 rounded-lg p-6" style={{ background: 'linear-gradient(135deg, rgba(61, 199, 245, 0.1) 0%, rgba(61, 199, 245, 0.2) 100%)', borderColor: '#3DC7F5' }}>
             <div className="flex items-center mb-4">
-              <CheckCircle className="h-6 w-6 text-blue-600 mr-3" />
-              <h3 className="text-lg font-bold text-blue-800">
+              <CheckCircle className="h-6 w-6 mr-3" style={{ color: '#1A9FDA' }} />
+              <h3 className="text-lg font-bold" style={{ color: '#1A9FDA' }}>
                 Supporting Routine Surveillance
               </h3>
             </div>
             <ul className="space-y-3">
               {yesPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="inline-block w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#1A9FDA' }}></span>
                   <span className="text-base md:text-lg text-gray-700 leading-relaxed flex-1">{point}</span>
                 </li>
               ))}
@@ -43,17 +43,17 @@ export default function SummaryTable({ yesArguments, noArguments }: SummaryTable
           </div>
 
           {/* NO Side Summary */}
-          <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-lg p-6">
+          <div className="border-2 rounded-lg p-6" style={{ background: 'linear-gradient(135deg, rgba(240, 117, 132, 0.1) 0%, rgba(240, 117, 132, 0.2) 100%)', borderColor: '#F07584' }}>
             <div className="flex items-center mb-4">
-              <XCircle className="h-6 w-6 text-purple-700 mr-3" />
-              <h3 className="text-lg font-bold text-purple-800">
+              <XCircle className="h-6 w-6 mr-3" style={{ color: '#D43F5C' }} />
+              <h3 className="text-lg font-bold" style={{ color: '#D43F5C' }}>
                 Supporting Selective Surveillance
               </h3>
             </div>
             <ul className="space-y-3">
               {noPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-purple-700 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="inline-block w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#D43F5C' }}></span>
                   <span className="text-base md:text-lg text-gray-700 leading-relaxed flex-1">{point}</span>
                 </li>
               ))}
