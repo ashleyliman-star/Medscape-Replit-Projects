@@ -70,7 +70,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
   };
 
   return (
-    <section className="bg-gradient-to-r from-blue-50 to-green-50 rounded-xl shadow-lg p-8">
+    <section className="rounded-xl shadow-lg p-8" style={{ background: 'linear-gradient(90deg, rgba(6, 74, 167, 0.1) 0%, rgba(6, 74, 167, 0.15) 50%, rgba(6, 74, 167, 0.1) 100%)' }}>
       <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center">
         <BarChart3 className="mr-3 h-6 w-6 text-gray-600" />
         What's Your Opinion?
@@ -100,7 +100,8 @@ export default function PollSection({ debateId }: PollSectionProps) {
               <Button 
                 onClick={handleSubmit}
                 disabled={submitVoteMutation.isPending}
-                className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
+                style={{ background: 'linear-gradient(90deg, #064AA7 0%, #0862C7 100%)' }}
               >
                 {submitVoteMutation.isPending ? "Submitting..." : "Submit Vote"}
               </Button>
