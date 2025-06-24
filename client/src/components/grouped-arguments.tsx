@@ -28,7 +28,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         {/* YES Physician */}
         <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' }}>
           <div className="flex items-center mb-4">
-            <span className="bg-white px-4 py-2 rounded-full text-lg font-bold" style={{ color: '#3DC7F5' }}>
+            <span className="bg-white px-4 py-2 rounded-full text-lg font-bold" style={{ color: '#1A9FDA' }}>
               YES: Routine Surveillance is Essential
             </span>
           </div>
@@ -51,7 +51,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         {/* NO Physician */}
         <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A71 50%, #D73E5E 100%)' }}>
           <div className="flex items-center mb-4">
-            <span className="bg-white px-4 py-2 rounded-full text-lg font-bold" style={{ color: '#F07584' }}>
+            <span className="bg-white px-4 py-2 rounded-full text-lg font-bold" style={{ color: '#D43F5C' }}>
               NO: Selective Surveillance is More Appropriate
             </span>
           </div>
@@ -78,7 +78,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         <div>
           <Card className="border-2 p-6" style={{ background: 'linear-gradient(135deg, rgba(61, 199, 245, 0.1) 0%, rgba(61, 199, 245, 0.2) 100%)', borderColor: '#3DC7F5' }}>
             <div className="mb-6">
-              <h2 className="text-xl font-bold" style={{ color: '#3DC7F5' }}>Key Arguments</h2>
+              <h2 className="text-xl font-bold" style={{ color: '#1A9FDA' }}>Key Arguments</h2>
             </div>
             <div className="space-y-6">
               {yesArguments.map((argument, index) => (
@@ -87,7 +87,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#3DC7F5' }}>
                       Yes
                     </span>
-                    <h3 className="text-lg font-bold" style={{ color: '#3DC7F5' }}>
+                    <h3 className="text-lg font-bold" style={{ color: '#1A9FDA' }}>
                       {argument.title}
                     </h3>
                   </div>
@@ -127,7 +127,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         <div>
           <Card className="border-2 p-6" style={{ background: 'linear-gradient(135deg, rgba(240, 117, 132, 0.1) 0%, rgba(240, 117, 132, 0.2) 100%)', borderColor: '#F07584' }}>
             <div className="mb-6">
-              <h2 className="text-xl font-bold" style={{ color: '#F07584' }}>Key Arguments</h2>
+              <h2 className="text-xl font-bold" style={{ color: '#D43F5C' }}>Key Arguments</h2>
             </div>
             <div className="space-y-6">
               {noArguments.map((argument, index) => (
@@ -136,7 +136,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#F07584' }}>
                       No
                     </span>
-                    <h3 className="text-lg font-bold" style={{ color: '#F07584' }}>
+                    <h3 className="text-lg font-bold" style={{ color: '#D43F5C' }}>
                       {argument.title}
                     </h3>
                   </div>
@@ -186,7 +186,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#3DC7F5' }}>
                       Yes
                     </span>
-                    <h3 className="text-lg font-bold" style={{ color: '#3DC7F5' }}>
+                    <h3 className="text-lg font-bold" style={{ color: '#1A9FDA' }}>
                       {yesArguments[index].title}
                     </h3>
                   </div>
@@ -208,7 +208,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#F07584' }}>
                       No
                     </span>
-                    <h3 className="text-lg font-bold" style={{ color: '#F07584' }}>
+                    <h3 className="text-lg font-bold" style={{ color: '#D43F5C' }}>
                       {noArguments[index].title}
                     </h3>
                   </div>
