@@ -45,7 +45,7 @@ export default function DebateSide({
       {showPhysician && (
         <div className="physician-profile mb-6">
           <h4 className={`text-2xl font-bold ${textColor} mb-4 flex items-center justify-center`}>
-            <Icon className="mr-2 h-12 w-12 md:h-5 md:w-5" />
+            <Icon className="mr-2 h-14 w-14 md:h-5 md:w-5" />
             {position}
           </h4>
           <div className={`rounded-xl border-2 border-gray-200 shadow-lg p-6 ${color === 'blue' ? '' : color === 'purple' ? '' : 'bg-white'}`} style={color === 'blue' ? { background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' } : color === 'purple' ? { background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)' } : {}}>
@@ -65,7 +65,7 @@ export default function DebateSide({
       {!showPhysician && (
         <div className="mb-6">
           <h4 className={`text-2xl font-bold ${textColor} mb-4 flex items-center justify-center`}>
-            <Icon className="mr-2 h-12 w-12 md:h-5 md:w-5" />
+            <Icon className="mr-2 h-14 w-14 md:h-5 md:w-5" />
             {position}
           </h4>
         </div>
