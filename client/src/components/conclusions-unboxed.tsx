@@ -1,10 +1,7 @@
-import { Scale } from "lucide-react";
-
 export default function ConclusionsUnboxed() {
   return (
     <section className="mb-8">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center">
-        <Scale className="mr-3 h-6 w-6 text-gray-600" />
+      <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
         Conclusions
       </h2>
       <div className="max-w-4xl mx-auto space-y-4 text-gray-700 text-base md:text-lg">
