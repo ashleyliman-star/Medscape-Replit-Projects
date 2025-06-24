@@ -16,7 +16,7 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
             {question}
           </h2>
           
-          <p className="text-base md:text-xl text-gray-600 leading-relaxed text-center">
+          <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center">
             {introduction}
           </p>
         </div>
