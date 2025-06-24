@@ -204,7 +204,7 @@ export default function DebatePage() {
           {version === 'E' ? <ConclusionsUnboxed /> : <Conclusions />}
         </div>
         
-        <AdPlaceholder size="728x90" className="flex justify-center mb-12" />
+        <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
         
         <PollSection debateId="breast-cancer-surveillance" />
         
