@@ -91,17 +91,20 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 {index === 0 && <h3 className="text-xl font-bold text-gray-800 mb-4">Key Arguments</h3>}
                 {yesArguments[index] && (
                   <div>
-                    <h4 className="font-semibold text-xl mb-3" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
-                    <div className="bg-white border-2 rounded-lg p-4" style={{ borderColor: '#3DC7F5' }}>
-                      <ul className="space-y-2">
-                        {yesArguments[index].points.map((point, pointIndex) => (
-                          <li key={pointIndex} className="flex items-start">
-                            <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                            <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="flex items-start mb-3 gap-3">
+                      <span className="text-white px-2 py-1 md:px-3 md:py-1.5 rounded-full text-xs md:text-sm font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
+                        Yes
+                      </span>
+                      <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
                     </div>
+                    <ul className="space-y-2 ml-8">
+                      {yesArguments[index].points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start">
+                          <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                          <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
               </div>
@@ -111,17 +114,20 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 {index === 0 && <h3 className="text-xl font-bold text-gray-800 mb-4">Key Arguments</h3>}
                 {noArguments[index] && (
                   <div>
-                    <h4 className="font-semibold text-xl mb-3" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
-                    <div className="bg-white border-2 rounded-lg p-4" style={{ borderColor: '#F07584' }}>
-                      <ul className="space-y-2">
-                        {noArguments[index].points.map((point, pointIndex) => (
-                          <li key={pointIndex} className="flex items-start">
-                            <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                            <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="flex items-start mb-3 gap-3">
+                      <span className="text-white px-2 py-1 md:px-3 md:py-1.5 rounded-full text-xs md:text-sm font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
+                        No
+                      </span>
+                      <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
                     </div>
+                    <ul className="space-y-2 ml-8">
+                      {noArguments[index].points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start">
+                          <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                          <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 )}
               </div>
@@ -146,34 +152,40 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               {/* YES Argument */}
               {yesArguments[index] && (
                 <div>
-                  <h4 className="font-semibold text-xl mb-3" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
-                  <div className="bg-white border-2 rounded-lg p-4 mb-6" style={{ borderColor: '#3DC7F5' }}>
-                    <ul className="space-y-2">
-                      {yesArguments[index].points.map((point, pointIndex) => (
-                        <li key={pointIndex} className="flex items-start">
-                          <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                          <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="flex items-start mb-3 gap-3">
+                    <span className="text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
+                      Yes
+                    </span>
+                    <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
                   </div>
+                  <ul className="space-y-2 ml-8">
+                    {yesArguments[index].points.map((point, pointIndex) => (
+                      <li key={pointIndex} className="flex items-start">
+                        <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                        <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
 
               {/* NO Argument */}
               {noArguments[index] && (
                 <div>
-                  <h4 className="font-semibold text-xl mb-3" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
-                  <div className="bg-white border-2 rounded-lg p-4 mb-6" style={{ borderColor: '#F07584' }}>
-                    <ul className="space-y-2">
-                      {noArguments[index].points.map((point, pointIndex) => (
-                        <li key={pointIndex} className="flex items-start">
-                          <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                          <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="flex items-start mb-3 gap-3">
+                    <span className="text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
+                      No
+                    </span>
+                    <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
                   </div>
+                  <ul className="space-y-2 ml-8">
+                    {noArguments[index].points.map((point, pointIndex) => (
+                      <li key={pointIndex} className="flex items-start">
+                        <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
+                        <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>
