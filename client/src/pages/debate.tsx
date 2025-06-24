@@ -154,7 +154,7 @@ export default function DebatePage() {
         ) : version === 'E' ? (
           // Version E: Unboxed arguments with green check and red X icons
           <>
-            <div className="mb-12">
+            <div className="mb-16">
               <UnboxedArguments 
                 yesArguments={debateData.sideA.arguments}
                 noArguments={debateData.sideB.arguments}
@@ -163,10 +163,12 @@ export default function DebatePage() {
               />
             </div>
             
-            <SummaryTableUnboxed 
-              yesArguments={debateData.sideA.arguments}
-              noArguments={debateData.sideB.arguments}
-            />
+            <div className="mb-16">
+              <SummaryTableUnboxed 
+                yesArguments={debateData.sideA.arguments}
+                noArguments={debateData.sideB.arguments}
+              />
+            </div>
           </>
         ) : (
           // Version A & B: Traditional side-by-side layout
