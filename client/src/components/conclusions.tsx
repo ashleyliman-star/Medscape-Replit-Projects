@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 
 export default function Conclusions() {
   return (
-    <section className="mb-8">
+    <section className="mb-12">
       <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
         Conclusions
       </h2>
