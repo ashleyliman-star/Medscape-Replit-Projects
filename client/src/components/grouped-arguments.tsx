@@ -94,7 +94,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                   <ul className="space-y-3">
                     {argument.points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#3DC7F5' }} />
                         <span className="text-lg text-gray-700 leading-relaxed">{point}</span>
                       </li>
                     ))}
@@ -115,7 +115,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                   )}
 
                   {index < yesArguments.length - 1 && (
-                    <div className="border-b border-blue-200 my-4"></div>
+                    <div className="border-b my-4" style={{ borderColor: '#3DC7F5', opacity: 0.3 }}></div>
                   )}
                 </div>
               ))}
@@ -125,25 +125,25 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
 
         {/* NO Column - All Arguments (Desktop only) */}
         <div>
-          <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+          <Card className="border-2 p-6" style={{ background: 'linear-gradient(135deg, rgba(240, 117, 132, 0.1) 0%, rgba(240, 117, 132, 0.2) 100%)', borderColor: '#F07584' }}>
             <div className="mb-6">
-              <h2 className="text-xl font-bold text-purple-800">Key Arguments</h2>
+              <h2 className="text-xl font-bold" style={{ color: '#F07584' }}>Key Arguments</h2>
             </div>
             <div className="space-y-6">
               {noArguments.map((argument, index) => (
                 <div key={index}>
                   <div className="flex items-center mb-3 gap-3">
-                    <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#F07584' }}>
                       No
                     </span>
-                    <h3 className="text-lg font-bold text-purple-800">
+                    <h3 className="text-lg font-bold" style={{ color: '#F07584' }}>
                       {argument.title}
                     </h3>
                   </div>
                   <ul className="space-y-3">
                     {argument.points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#F07584' }} />
                         <span className="text-lg text-gray-700 leading-relaxed">{point}</span>
                       </li>
                     ))}
@@ -181,19 +181,19 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             <div className="space-y-6">
               {/* YES Argument */}
               {yesArguments[index] && (
-                <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+                <Card className="border-2 p-6" style={{ background: 'linear-gradient(135deg, rgba(61, 199, 245, 0.1) 0%, rgba(61, 199, 245, 0.2) 100%)', borderColor: '#3DC7F5' }}>
                   <div className="flex items-center mb-3 gap-3">
-                    <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#3DC7F5' }}>
                       Yes
                     </span>
-                    <h3 className="text-lg font-bold text-blue-800">
+                    <h3 className="text-lg font-bold" style={{ color: '#3DC7F5' }}>
                       {yesArguments[index].title}
                     </h3>
                   </div>
                   <ul className="space-y-3">
                     {yesArguments[index].points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#3DC7F5' }} />
                         <span className="text-lg text-gray-700 leading-relaxed">{point}</span>
                       </li>
                     ))}
@@ -203,19 +203,19 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
 
               {/* NO Argument */}
               {noArguments[index] && (
-                <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+                <Card className="border-2 p-6" style={{ background: 'linear-gradient(135deg, rgba(240, 117, 132, 0.1) 0%, rgba(240, 117, 132, 0.2) 100%)', borderColor: '#F07584' }}>
                   <div className="flex items-center mb-3 gap-3">
-                    <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#F07584' }}>
                       No
                     </span>
-                    <h3 className="text-lg font-bold text-purple-800">
+                    <h3 className="text-lg font-bold" style={{ color: '#F07584' }}>
                       {noArguments[index].title}
                     </h3>
                   </div>
                   <ul className="space-y-3">
                     {noArguments[index].points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#F07584' }} />
                         <span className="text-lg text-gray-700 leading-relaxed">{point}</span>
                       </li>
                     ))}
