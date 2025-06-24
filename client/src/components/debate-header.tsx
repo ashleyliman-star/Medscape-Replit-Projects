@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import medscapeLogo from "@assets/Medscape_Logo.svg (1)_1750723648901.png";
 
 interface DebateHeaderProps {
   version: 'A' | 'B' | 'D' | 'E';
@@ -17,7 +18,7 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
           <div className="flex-1"></div>
           <div className="flex-1 flex justify-center">
             <img 
-              src="/attached_assets/Medscape_Logo.svg%20(1)_1750723648901.png"
+              src={medscapeLogo}
               alt="Medscape" 
               className="h-8"
             />
