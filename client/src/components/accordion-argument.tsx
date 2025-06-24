@@ -14,7 +14,7 @@ interface AccordionArgumentProps {
 
 export default function AccordionArgument({ title, points, color, argumentIndex = 0, side = 'yes' }: AccordionArgumentProps) {
   const [isExpanded, setIsExpanded] = useState(false);
-  const dotColor = color === 'blue' ? 'text-blue-600' : color === 'purple' ? 'text-purple-700' : 'text-green-600';
+  const dotColor = color === 'blue' ? 'text-[#3DC7F5]' : color === 'purple' ? 'text-[#F07584]' : 'text-green-600';
 
   const handleToggle = () => {
     const newState = !isExpanded;

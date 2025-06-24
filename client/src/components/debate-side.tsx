@@ -35,7 +35,7 @@ export default function DebateSide({
   showPhysician
 }: DebateSideProps) {
   const sideClass = color === 'blue' ? 'debate-side-a' : color === 'purple' ? 'debate-side-c' : 'debate-side-b';
-  const textColor = color === 'blue' ? 'text-blue-600' : color === 'purple' ? 'text-purple-700' : 'text-green-600';
+  const textColor = color === 'blue' ? 'text-[#3DC7F5]' : color === 'purple' ? 'text-[#F07584]' : 'text-green-600';
   const bgColor = color === 'blue' ? 'bg-blue-50' : color === 'purple' ? 'bg-purple-50' : 'bg-green-50';
   const icon = color === 'blue' ? ThumbsUp : ThumbsDown;
   const Icon = icon;
@@ -48,7 +48,7 @@ export default function DebateSide({
             <Icon className="mr-2 h-5 w-5" />
             {position}
           </h4>
-          <div className={`rounded-xl border-2 border-gray-200 shadow-lg p-6 ${color === 'blue' ? 'bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500' : color === 'purple' ? 'bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-600' : 'bg-white'}`}>
+          <div className={`rounded-xl border-2 border-gray-200 shadow-lg p-6 ${color === 'blue' ? '' : color === 'purple' ? '' : 'bg-white'}`} style={color === 'blue' ? { background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' } : color === 'purple' ? { background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)' } : {}}>
             <Avatar className="w-32 h-32 mx-auto mb-4 border-4 border-white shadow-lg">
               <AvatarImage src={physician.image} alt={physician.name} />
               <AvatarFallback>{physician.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>

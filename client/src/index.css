@@ -72,7 +72,7 @@
   }
   
   .debate-side-a {
-    background: linear-gradient(135deg, hsl(213, 100%, 96%) 0%, hsl(213, 88%, 91%) 100%);
+    background: linear-gradient(135deg, rgba(61, 199, 245, 0.1) 0%, rgba(61, 199, 245, 0.2) 100%);
     border-left: 4px solid var(--debate-blue);
   }
   
@@ -82,7 +82,7 @@
   }
   
   .debate-side-c {
-    background: linear-gradient(135deg, hsl(280, 80%, 94%) 0%, hsl(280, 60%, 88%) 100%);
+    background: linear-gradient(135deg, rgba(240, 117, 132, 0.1) 0%, rgba(240, 117, 132, 0.2) 100%);
     border-left: 4px solid var(--debate-purple);
   }
   
