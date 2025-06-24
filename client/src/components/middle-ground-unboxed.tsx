@@ -4,7 +4,7 @@ export default function MiddleGroundUnboxed() {
   return (
     <section className="mb-12">
       <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center">
-        <Scale className="mr-3 h-8 w-8 md:h-6 md:w-6" style={{ color: '#064AA7' }} />
+        <Scale className="mr-3 h-10 w-10 md:h-6 md:w-6" style={{ color: '#064AA7' }} />
         Middle Ground and Evolving Perspectives
       </h2>
       <div className="max-w-4xl mx-auto">
