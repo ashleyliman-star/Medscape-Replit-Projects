@@ -12,31 +12,7 @@
     overflow: hidden;
   }
   
-  .mobile-text-container {
-    position: relative;
-    max-height: 4.5rem; /* 3 lines * 1.5 line-height */
-    overflow: hidden;
-  }
-  
-  .mobile-truncated-text {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin: 0;
-    padding-right: 6rem; /* Space for read more */
-  }
-  
-  .read-more-link {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(to right, transparent, white 20%, white);
-    padding-left: 1rem;
-    color: #2563eb;
-    cursor: pointer;
-    font-weight: 500;
-  }
+
 }
 
 :root {
