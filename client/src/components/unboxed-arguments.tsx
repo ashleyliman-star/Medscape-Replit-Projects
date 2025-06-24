@@ -71,7 +71,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               className="w-24 h-24 rounded-full border-3 border-white mr-4"
             />
             <div>
-              <h2 className="font-bold text-3xl mb-2 text-blue-100">YES: Routine Surveillance is Worth It</h2>
+              <h2 className="font-bold text-3xl mb-2 text-blue-100 font-garamond">YES: Routine Surveillance is Worth It</h2>
               <h3 className="font-bold text-xl mb-1">{yesPhysician.name}</h3>
               <p className="text-blue-100 text-sm">{yesPhysician.credentials}</p>
               <p className="text-blue-100 text-sm">{yesPhysician.institution}</p>
@@ -88,7 +88,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               className="w-24 h-24 rounded-full border-3 border-white mr-4"
             />
             <div>
-              <h2 className="font-bold text-3xl mb-2 text-purple-100">NO: Routine Surveillance is Not Worth It</h2>
+              <h2 className="font-bold text-3xl mb-2 text-purple-100 font-garamond">NO: Routine Surveillance is Not Worth It</h2>
               <h3 className="font-bold text-xl mb-1">{noPhysician.name}</h3>
               <p className="text-purple-100 text-sm">{noPhysician.credentials}</p>
               <p className="text-purple-100 text-sm">{noPhysician.institution}</p>

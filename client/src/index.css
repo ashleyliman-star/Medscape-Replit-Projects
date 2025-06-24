@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -59,11 +62,20 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply antialiased bg-background text-foreground;
+    font-family: 'Proxima Nova', system-ui, -apple-system, sans-serif;
   }
 }
 
 @layer components {
+  .font-garamond {
+    font-family: 'EB Garamond', serif;
+  }
+  
+  .font-proxima {
+    font-family: 'Proxima Nova', system-ui, -apple-system, sans-serif;
+  }
+  
   .debate-side-a {
     background: linear-gradient(135deg, hsl(213, 100%, 96%) 0%, hsl(213, 88%, 91%) 100%);
     border-left: 4px solid var(--debate-blue);

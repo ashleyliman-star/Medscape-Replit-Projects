@@ -30,7 +30,7 @@ export default function SplitLayout({ yesArguments, noArguments, yesPhysician, n
         <Card className="bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 text-white p-6">
           <div className="flex items-center mb-4">
             <CheckCircle className="h-8 w-8 mr-4" />
-            <span className="bg-white text-blue-600 px-4 py-2 rounded-full text-lg font-bold">
+            <span className="bg-white text-blue-600 px-4 py-2 rounded-full text-lg font-bold font-garamond">
               YES: Routine Surveillance is Worth It
             </span>
           </div>
