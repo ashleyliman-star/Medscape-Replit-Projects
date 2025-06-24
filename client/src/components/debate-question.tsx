@@ -23,6 +23,7 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
       temp.style.width = textRef.current?.offsetWidth + 'px' || '300px';
       temp.style.fontSize = '16px';
       temp.style.lineHeight = '1.5';
+      temp.style.textAlign = 'center';
       temp.innerHTML = introduction;
       document.body.appendChild(temp);
       
@@ -31,18 +32,18 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
       
       if (temp.offsetHeight > maxHeight) {
         setShouldTruncate(true);
-        // Truncate text to fit approximately 3 lines
+        // Truncate text to fit with "... read more" on the same line
         const words = introduction.split(' ');
         let truncated = '';
-        temp.innerHTML = '';
+        const readMoreText = '... read more';
         
         for (let i = 0; i < words.length; i++) {
-          const testText = truncated + (truncated ? ' ' : '') + words[i];
+          const testText = truncated + (truncated ? ' ' : '') + words[i] + ' ' + readMoreText;
           temp.innerHTML = testText;
           if (temp.offsetHeight > maxHeight) {
             break;
           }
-          truncated = testText;
+          truncated += (truncated ? ' ' : '') + words[i];
         }
         setTruncatedText(truncated);
       }
@@ -77,9 +78,9 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
             <p ref={textRef}>
               {!isExpanded && shouldTruncate ? (
                 <>
-                  {truncatedText}
+                  {truncatedText}{' '}
                   <span 
-                    className="text-blue-600 cursor-pointer ml-1 font-medium"
+                    className="text-blue-600 cursor-pointer font-medium"
                     onClick={() => setIsExpanded(true)}
                   >
                     ... read more
