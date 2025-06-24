@@ -62,8 +62,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="text-white px-3 py-1.5 rounded-full text-sm font-semibold" style={{ backgroundColor: '#3DC7F5' }}>
                       Yes
                     </span>
-                    <h3 className="text-lg font-bold flex items-center" style={{ color: '#1A9FDA' }}>
-                      <ThumbsUp className="mr-2 h-5 w-5" />
+                    <h3 className="text-lg font-bold" style={{ color: '#1A9FDA' }}>
                       {argument.title}
                     </h3>
                   </div>
@@ -112,8 +111,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="text-white px-3 py-1.5 rounded-full text-sm font-semibold" style={{ backgroundColor: '#F07584' }}>
                       No
                     </span>
-                    <h3 className="text-lg font-bold flex items-center" style={{ color: '#D43F5C' }}>
-                      <ThumbsDown className="mr-2 h-5 w-5" />
+                    <h3 className="text-lg font-bold" style={{ color: '#D43F5C' }}>
                       {argument.title}
                     </h3>
                   </div>
@@ -163,8 +161,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#3DC7F5' }}>
                       Yes
                     </span>
-                    <h3 className="text-lg font-bold flex items-center" style={{ color: '#1A9FDA' }}>
-                      <ThumbsUp className="mr-2 h-5 w-5" />
+                    <h3 className="text-lg font-bold" style={{ color: '#1A9FDA' }}>
                       {yesArguments[index].title}
                     </h3>
                   </div>
@@ -186,8 +183,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#F07584' }}>
                       No
                     </span>
-                    <h3 className="text-lg font-bold flex items-center" style={{ color: '#D43F5C' }}>
-                      <ThumbsDown className="mr-2 h-5 w-5" />
+                    <h3 className="text-lg font-bold" style={{ color: '#D43F5C' }}>
                       {noArguments[index].title}
                     </h3>
                   </div>

@@ -1,4 +1,4 @@
-import { CheckCircle, XCircle } from 'lucide-react';
+import { ThumbsUp, ThumbsDown } from 'lucide-react';
 
 interface Argument {
   title: string;
@@ -26,7 +26,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
           {/* YES Side Summary */}
           <div className="p-6">
             <div className="flex items-center mb-4">
-              <CheckCircle className="h-6 w-6 mr-3" style={{ color: '#1A9FDA' }} />
+              <ThumbsUp className="h-6 w-6 mr-3" style={{ color: '#1A9FDA' }} />
               <h3 className="text-lg font-bold" style={{ color: '#1A9FDA' }}>
                 Supporting Routine Surveillance
               </h3>
@@ -44,7 +44,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
           {/* NO Side Summary */}
           <div className="p-6">
             <div className="flex items-center mb-4">
-              <XCircle className="h-6 w-6 mr-3" style={{ color: '#D43F5C' }} />
+              <ThumbsDown className="h-6 w-6 mr-3" style={{ color: '#D43F5C' }} />
               <h3 className="text-lg font-bold" style={{ color: '#D43F5C' }}>
                 Supporting Selective Surveillance
               </h3>

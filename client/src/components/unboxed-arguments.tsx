@@ -95,10 +95,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                       <span className="text-white px-2 py-1 md:px-3 md:py-1.5 rounded-full text-xs md:text-sm font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
                         Yes
                       </span>
-                      <h4 className="font-semibold text-xl flex items-center" style={{ color: '#1A9FDA' }}>
-                        <ThumbsUp className="mr-2 h-5 w-5" />
-                        {yesArguments[index].title}
-                      </h4>
+                      <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
                     </div>
                     <ul className="space-y-2 ml-8">
                       {yesArguments[index].points.map((point, pointIndex) => (
@@ -121,10 +118,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                       <span className="text-white px-2 py-1 md:px-3 md:py-1.5 rounded-full text-xs md:text-sm font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
                         No
                       </span>
-                      <h4 className="font-semibold text-xl flex items-center" style={{ color: '#D43F5C' }}>
-                        <ThumbsDown className="mr-2 h-5 w-5" />
-                        {noArguments[index].title}
-                      </h4>
+                      <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
                     </div>
                     <ul className="space-y-2 ml-8">
                       {noArguments[index].points.map((point, pointIndex) => (
@@ -162,10 +156,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
                       Yes
                     </span>
-                    <h4 className="font-semibold text-xl flex items-center" style={{ color: '#1A9FDA' }}>
-                      <ThumbsUp className="mr-2 h-5 w-5" />
-                      {yesArguments[index].title}
-                    </h4>
+                    <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
                   </div>
                   <ul className="space-y-2 ml-8">
                     {yesArguments[index].points.map((point, pointIndex) => (
@@ -185,10 +176,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                     <span className="text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
                       No
                     </span>
-                    <h4 className="font-semibold text-xl flex items-center" style={{ color: '#D43F5C' }}>
-                      <ThumbsDown className="mr-2 h-5 w-5" />
-                      {noArguments[index].title}
-                    </h4>
+                    <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
                   </div>
                   <ul className="space-y-2 ml-8">
                     {noArguments[index].points.map((point, pointIndex) => (
