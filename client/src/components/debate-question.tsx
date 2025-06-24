@@ -6,7 +6,7 @@ interface DebateQuestionProps {
 export default function DebateQuestion({ question, introduction }: DebateQuestionProps) {
   return (
     <section className="text-center mb-8">
-      <h1 className="text-3xl md:text-4xl font-bold text-blue-600 mb-6">
+      <h1 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: '#064AA7' }}>
         Medscape Debates
       </h1>
       
