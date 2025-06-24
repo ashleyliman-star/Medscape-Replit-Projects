@@ -164,7 +164,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
                   )}
 
                   {index < noArguments.length - 1 && (
-                    <div className="border-b border-purple-200 my-4"></div>
+                    <div className="border-b my-4" style={{ borderColor: '#F07584', opacity: 0.3 }}></div>
                   )}
                 </div>
               ))}
