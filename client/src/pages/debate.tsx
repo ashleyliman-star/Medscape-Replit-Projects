@@ -198,7 +198,7 @@ export default function DebatePage() {
         
         {version === 'E' ? <MiddleGroundUnboxed /> : <MiddleGround />}
         
-        <div className={version === 'E' ? 'mt-16 mb-8' : ''}>
+        <div className={version === 'E' ? 'mt-16 mb-12' : ''}>
           {version === 'E' ? <ConclusionsUnboxed /> : <Conclusions />}
         </div>
         
