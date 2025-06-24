@@ -17,7 +17,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
 
   return (
     <div className="mb-12">
-      <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+      <div className="rounded-lg shadow-md border border-gray-200 p-6" style={{ backgroundColor: '#e0e8f3' }}>
         <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
           Summary of Key Points
         </h2>
