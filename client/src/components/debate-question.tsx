@@ -102,7 +102,17 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
                 </span>
               </p>
             ) : (
-              <p>{introduction}</p>
+              <p>
+                {introduction}
+                {needsTruncation && isExpanded && (
+                  <span 
+                    className="text-blue-600 cursor-pointer font-medium ml-2"
+                    onClick={() => setIsExpanded(false)}
+                  >
+                    read less
+                  </span>
+                )}
+              </p>
             )}
           </div>
         </div>
