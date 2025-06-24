@@ -37,7 +37,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               <img 
                 src={yesPhysician.image} 
                 alt={yesPhysician.name}
-                className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-white/30"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-white/30"
               />
             </div>
             <div className="min-w-0 flex-1">
@@ -60,7 +60,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               <img 
                 src={noPhysician.image} 
                 alt={noPhysician.name}
-                className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-white/30"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border-2 border-white/30"
               />
             </div>
             <div className="min-w-0 flex-1">
