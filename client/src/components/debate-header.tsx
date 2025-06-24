@@ -37,7 +37,7 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
                       : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
-                  Version A
+                  Version A (KOL)
                 </Button>
                 <Button
                   onClick={() => handleVersionChange('B')}
@@ -49,19 +49,7 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
                       : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
-                  Version B
-                </Button>
-                <Button
-                  onClick={() => handleVersionChange('D')}
-                  variant="outline"
-                  size="sm"
-                  className={`${
-                    version === 'D' 
-                      ? 'bg-orange-100 text-orange-700 hover:bg-orange-200 border-orange-200' 
-                      : 'text-gray-600 hover:bg-gray-100'
-                  }`}
-                >
-                  Version D
+                  Version B (no KOL)
                 </Button>
                 <Button
                   onClick={() => handleVersionChange('E')}
@@ -73,7 +61,19 @@ export default function DebateHeader({ version, onVersionChange }: DebateHeaderP
                       : 'text-gray-600 hover:bg-gray-100'
                   }`}
                 >
-                  Version E
+                  Version C1 (expanded)
+                </Button>
+                <Button
+                  onClick={() => handleVersionChange('D')}
+                  variant="outline"
+                  size="sm"
+                  className={`${
+                    version === 'D' 
+                      ? 'bg-orange-100 text-orange-700 hover:bg-orange-200 border-orange-200' 
+                      : 'text-gray-600 hover:bg-gray-100'
+                  }`}
+                >
+                  Version C2 (expanded, different design)
                 </Button>
               </div>
             </div>
