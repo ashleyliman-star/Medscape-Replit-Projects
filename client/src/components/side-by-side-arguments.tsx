@@ -52,7 +52,7 @@ export default function SideBySideArguments({ yesArguments, noArguments, yesPhys
         <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)' }}>
           <div className="flex items-center mb-4">
             <XCircle className="h-8 w-8 mr-4" />
-            <span className="bg-white text-purple-600 px-4 py-2 rounded-full text-lg font-bold">
+            <span className="bg-white px-4 py-2 rounded-full text-lg font-bold" style={{ color: '#F07584' }}>
               NO: Selective Surveillance is More Appropriate
             </span>
           </div>
@@ -75,22 +75,22 @@ export default function SideBySideArguments({ yesArguments, noArguments, yesPhys
         <div key={index}>
           <div className="grid lg:grid-cols-2 gap-6">
             {/* YES Argument */}
-            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+            <Card className="p-6 border-2" style={{ background: 'linear-gradient(135deg, rgba(61, 199, 245, 0.1) 0%, rgba(61, 199, 245, 0.2) 100%)', borderColor: '#3DC7F5' }}>
               {yesArguments[index] && (
                 <>
                   <div className="flex items-center mb-4 flex-wrap gap-3">
-                    <CheckCircle className="h-6 w-6 text-blue-600" />
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <CheckCircle className="h-6 w-6" style={{ color: '#3DC7F5' }} />
+                    <span className="text-white px-3 py-1 rounded-full text-sm font-semibold" style={{ backgroundColor: '#3DC7F5' }}>
                       Yes
                     </span>
-                    <h3 className="text-lg font-bold text-blue-800">
+                    <h3 className="text-lg font-bold" style={{ color: '#3DC7F5' }}>
                       {yesArguments[index].title}
                     </h3>
                   </div>
                   <ul className="space-y-3">
                     {yesArguments[index].points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-blue-600 mt-2 mr-3 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#3DC7F5' }} />
                         <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
                       </li>
                     ))}
@@ -100,22 +100,22 @@ export default function SideBySideArguments({ yesArguments, noArguments, yesPhys
             </Card>
 
             {/* NO Argument */}
-            <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
+            <Card className="p-6 border-2" style={{ background: 'linear-gradient(135deg, rgba(240, 117, 132, 0.1) 0%, rgba(240, 117, 132, 0.2) 100%)', borderColor: '#F07584' }}>
               {noArguments[index] && (
                 <>
                   <div className="flex items-center mb-4 flex-wrap gap-3">
-                    <XCircle className="h-6 w-6 text-purple-700" />
-                    <span className="bg-purple-700 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <XCircle className="h-6 w-6" style={{ color: '#F07584' }} />
+                    <span className="text-white px-3 py-1 rounded-full text-sm font-semibold" style={{ backgroundColor: '#F07584' }}>
                       No
                     </span>
-                    <h3 className="text-lg font-bold text-purple-800">
+                    <h3 className="text-lg font-bold" style={{ color: '#F07584' }}>
                       {noArguments[index].title}
                     </h3>
                   </div>
                   <ul className="space-y-3">
                     {noArguments[index].points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-purple-700 mt-2 mr-3 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0" style={{ backgroundColor: '#F07584' }} />
                         <span className="text-sm text-gray-700 leading-relaxed">{point}</span>
                       </li>
                     ))}
