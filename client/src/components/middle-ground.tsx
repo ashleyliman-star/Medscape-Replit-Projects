@@ -5,7 +5,7 @@ export default function MiddleGround() {
   return (
     <section className="rounded-xl shadow-lg p-8 mb-12" style={{ background: 'linear-gradient(90deg, rgba(6, 74, 167, 0.1) 0%, rgba(6, 74, 167, 0.15) 50%, rgba(6, 74, 167, 0.1) 100%)' }}>
       <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center">
-        <Scale className="mr-3 h-14 w-14 md:h-6 md:w-6" style={{ color: '#064AA7' }} />
+        <Scale className="mr-1 h-14 w-14 md:h-6 md:w-6" style={{ color: '#064AA7' }} />
         Middle Ground and Evolving Perspectives
       </h2>
       <div className="max-w-4xl mx-auto">
