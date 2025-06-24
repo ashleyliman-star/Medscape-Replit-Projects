@@ -43,7 +43,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             <div className="min-w-0 flex-1">
               <h3 className="text-lg md:text-xl font-bold mb-1 truncate">{yesPhysician.name}</h3>
               <p className="text-blue-100 mb-1 leading-tight" style={{ fontSize: '16px' }}>{yesPhysician.credentials}</p>
-              <p className="text-blue-200 leading-tight" style={{ fontSize: '16px' }}>{yesPhysician.institution}</p>
+              <p className="text-white leading-tight" style={{ fontSize: '16px' }}>{yesPhysician.institution}</p>
             </div>
           </div>
         </Card>
@@ -66,7 +66,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             <div className="min-w-0 flex-1">
               <h3 className="text-lg md:text-xl font-bold mb-1 truncate">{noPhysician.name}</h3>
               <p className="text-pink-100 mb-1 leading-tight" style={{ fontSize: '16px' }}>{noPhysician.credentials}</p>
-              <p className="text-pink-200 leading-tight" style={{ fontSize: '16px' }}>{noPhysician.institution}</p>
+              <p className="text-white leading-tight" style={{ fontSize: '16px' }}>{noPhysician.institution}</p>
             </div>
           </div>
         </Card>

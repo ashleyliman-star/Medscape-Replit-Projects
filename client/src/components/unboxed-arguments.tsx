@@ -74,7 +74,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               <h2 className="font-bold text-3xl mb-2 text-white">YES: Routine Surveillance is Worth It</h2>
               <h3 className="font-bold text-xl mb-1">{yesPhysician.name}</h3>
               <p className="text-gray-100" style={{ fontSize: '16px' }}>{yesPhysician.credentials}</p>
-              <p className="text-gray-100" style={{ fontSize: '16px' }}>{yesPhysician.institution}</p>
+              <p className="text-white" style={{ fontSize: '16px' }}>{yesPhysician.institution}</p>
             </div>
           </div>
         </Card>
@@ -91,7 +91,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               <h2 className="font-bold text-3xl mb-2 text-white">NO: Routine Surveillance is Not Worth It</h2>
               <h3 className="font-bold text-xl mb-1">{noPhysician.name}</h3>
               <p className="text-gray-100" style={{ fontSize: '16px' }}>{noPhysician.credentials}</p>
-              <p className="text-gray-100" style={{ fontSize: '16px' }}>{noPhysician.institution}</p>
+              <p className="text-white" style={{ fontSize: '16px' }}>{noPhysician.institution}</p>
             </div>
           </div>
         </Card>
