@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { CheckCircle, XCircle } from "lucide-react";
 import AdPlaceholder from "./ad-placeholder";
 
 interface Physician {
@@ -29,7 +28,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         {/* YES Physician */}
         <Card className="bg-gradient-to-br from-blue-600 via-sky-500 to-cyan-600 text-white p-6">
           <div className="flex items-center mb-4">
-            <CheckCircle className="h-8 w-8 mr-4" />
             <span className="bg-white text-blue-600 px-4 py-2 rounded-full text-lg font-bold">
               YES: Routine Surveillance is Essential
             </span>
@@ -53,7 +51,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         {/* NO Physician */}
         <Card className="bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-600 text-white p-6">
           <div className="flex items-center mb-4">
-            <XCircle className="h-8 w-8 mr-4" />
             <span className="bg-white text-purple-600 px-4 py-2 rounded-full text-lg font-bold">
               NO: Selective Surveillance is More Appropriate
             </span>
@@ -87,7 +84,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               {yesArguments.map((argument, index) => (
                 <div key={index}>
                   <div className="flex items-center mb-3 gap-3">
-                    <CheckCircle className="h-5 w-5 text-blue-600" />
                     <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
                       Yes
                     </span>
@@ -137,7 +133,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               {noArguments.map((argument, index) => (
                 <div key={index}>
                   <div className="flex items-center mb-3 gap-3">
-                    <XCircle className="h-5 w-5 text-purple-700" />
                     <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold">
                       No
                     </span>
@@ -188,7 +183,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               {yesArguments[index] && (
                 <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
                   <div className="flex items-center mb-3 gap-3">
-                    <CheckCircle className="h-5 w-5 text-blue-600" />
                     <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
                       Yes
                     </span>
@@ -211,7 +205,6 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               {noArguments[index] && (
                 <Card className="bg-gradient-to-br from-purple-50 to-purple-100 border-purple-200 p-6">
                   <div className="flex items-center mb-3 gap-3">
-                    <XCircle className="h-5 w-5 text-purple-700" />
                     <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold">
                       No
                     </span>

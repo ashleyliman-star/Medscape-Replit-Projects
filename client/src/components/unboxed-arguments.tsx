@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { CheckCircle, XCircle } from "lucide-react";
 import AdPlaceholder from "./ad-placeholder";
 
 interface Physician {
@@ -110,7 +109,6 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 {yesArguments[index] && (
                   <div>
                     <div className="flex items-start mb-3 gap-3">
-                      <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                       <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
                         Yes
                       </span>
@@ -134,7 +132,6 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 {noArguments[index] && (
                   <div>
                     <div className="flex items-start mb-3 gap-3">
-                      <XCircle className="h-5 w-5 text-purple-700 mt-0.5 flex-shrink-0" />
                       <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
                         No
                       </span>
@@ -173,7 +170,6 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               {yesArguments[index] && (
                 <div>
                   <div className="flex items-start mb-3 gap-3">
-                    <CheckCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                     <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
                       Yes
                     </span>
@@ -194,7 +190,6 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               {noArguments[index] && (
                 <div>
                   <div className="flex items-start mb-3 gap-3">
-                    <XCircle className="h-5 w-5 text-purple-700 mt-0.5 flex-shrink-0" />
                     <span className="bg-purple-700 text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5">
                       No
                     </span>
