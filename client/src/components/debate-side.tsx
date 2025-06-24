@@ -55,7 +55,7 @@ export default function DebateSide({
             </Avatar>
             <div className="text-center">
               <h3 className={`text-xl font-bold ${color === 'blue' || color === 'purple' ? 'text-white' : textColor}`}>{physician.name}</h3>
-              <p className={`text-base mb-2 ${color === 'blue' || color === 'purple' ? 'text-gray-200' : 'text-gray-600'}`} style={{ fontSize: '16px' }}>{physician.credentials}</p>
+              <p className={`text-base mb-2 ${color === 'blue' || color === 'purple' ? 'text-white' : 'text-gray-600'}`} style={{ fontSize: '16px' }}>{physician.credentials}</p>
               <p className={`text-base ${color === 'blue' || color === 'purple' ? 'text-white' : 'text-gray-700'}`} style={{ fontSize: '16px' }}>{physician.institution}</p>
             </div>
           </div>
