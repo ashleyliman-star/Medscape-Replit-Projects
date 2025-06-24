@@ -198,7 +198,9 @@ export default function DebatePage() {
         
         {version === 'E' ? <MiddleGroundUnboxed /> : <MiddleGround />}
         
-        {version === 'E' ? <ConclusionsUnboxed /> : <Conclusions />}
+        <div className={version === 'E' ? 'mt-16 mb-8' : ''}>
+          {version === 'E' ? <ConclusionsUnboxed /> : <Conclusions />}
+        </div>
         
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
         
