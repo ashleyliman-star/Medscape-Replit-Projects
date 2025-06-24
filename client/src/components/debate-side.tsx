@@ -44,7 +44,7 @@ export default function DebateSide({
     <div className={`${sideClass} rounded-xl p-6 shadow-lg`}>
       {showPhysician && (
         <div className="physician-profile mb-6">
-          <h4 className={`text-2xl font-bold ${textColor} mb-4 flex items-center justify-center`}>
+          <h4 className={`text-2xl font-bold ${textColor} mb-4 flex items-center justify-center font-garamond`}>
             <Icon className="mr-2 h-5 w-5" />
             {position}
           </h4>
@@ -64,7 +64,7 @@ export default function DebateSide({
 
       {!showPhysician && (
         <div className="mb-6">
-          <h4 className={`text-2xl font-bold ${textColor} mb-4 flex items-center justify-center`}>
+          <h4 className={`text-2xl font-bold ${textColor} mb-4 flex items-center justify-center font-garamond`}>
             <Icon className="mr-2 h-5 w-5" />
             {position}
           </h4>

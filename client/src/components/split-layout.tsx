@@ -89,7 +89,7 @@ export default function SplitLayout({ yesArguments, noArguments, yesPhysician, n
         <Card className="bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-600 text-white p-6">
           <div className="flex items-center mb-4">
             <XCircle className="h-8 w-8 mr-4" />
-            <span className="bg-white text-purple-600 px-4 py-2 rounded-full text-lg font-bold">
+            <span className="bg-white text-purple-600 px-4 py-2 rounded-full text-lg font-bold font-garamond">
               NO: Selective Surveillance is More Appropriate
             </span>
           </div>
