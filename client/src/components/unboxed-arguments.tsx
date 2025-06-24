@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import AdPlaceholder from "./ad-placeholder";
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 
 interface Physician {
   name: string;
@@ -60,39 +61,21 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
   return (
     <div className="space-y-8">
-      {/* Physician Headers */}
+      {/* Position Headers */}
       <div className="grid md:grid-cols-2 gap-8 mb-8">
-        {/* YES Physician */}
+        {/* YES Position */}
         <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' }}>
-          <div className="flex items-center mb-4">
-            <img 
-              src={yesPhysician.image} 
-              alt={yesPhysician.name}
-              className="w-24 h-24 rounded-full border-3 border-white mr-4"
-            />
-            <div>
-              <h2 className="font-bold text-3xl mb-2 text-white">YES: Routine Surveillance is Worth It</h2>
-              <h3 className="font-bold text-xl mb-1">{yesPhysician.name}</h3>
-              <p className="text-white" style={{ fontSize: '16px' }}>{yesPhysician.credentials}</p>
-              <p className="text-white" style={{ fontSize: '16px' }}>{yesPhysician.institution}</p>
-            </div>
+          <div className="flex items-center justify-center mb-4">
+            <ThumbsUp className="mr-3 h-8 w-8" />
+            <h2 className="font-bold text-2xl md:text-3xl text-white">YES: Routine Surveillance is Worth It</h2>
           </div>
         </Card>
 
-        {/* NO Physician */}
+        {/* NO Position */}
         <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)' }}>
-          <div className="flex items-center mb-4">
-            <img 
-              src={noPhysician.image} 
-              alt={noPhysician.name}
-              className="w-24 h-24 rounded-full border-3 border-white mr-4"
-            />
-            <div>
-              <h2 className="font-bold text-3xl mb-2 text-white">NO: Routine Surveillance is Not Worth It</h2>
-              <h3 className="font-bold text-xl mb-1">{noPhysician.name}</h3>
-              <p className="text-white" style={{ fontSize: '16px' }}>{noPhysician.credentials}</p>
-              <p className="text-white" style={{ fontSize: '16px' }}>{noPhysician.institution}</p>
-            </div>
+          <div className="flex items-center justify-center mb-4">
+            <ThumbsDown className="mr-3 h-8 w-8" />
+            <h2 className="font-bold text-2xl md:text-3xl text-white">NO: Routine Surveillance is Not Worth It</h2>
           </div>
         </Card>
       </div>
@@ -112,7 +95,10 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                       <span className="text-white px-2 py-1 md:px-3 md:py-1.5 rounded-full text-xs md:text-sm font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
                         Yes
                       </span>
-                      <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
+                      <h4 className="font-semibold text-xl flex items-center" style={{ color: '#1A9FDA' }}>
+                        <ThumbsUp className="mr-2 h-5 w-5" />
+                        {yesArguments[index].title}
+                      </h4>
                     </div>
                     <ul className="space-y-2 ml-8">
                       {yesArguments[index].points.map((point, pointIndex) => (
@@ -135,7 +121,10 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                       <span className="text-white px-2 py-1 md:px-3 md:py-1.5 rounded-full text-xs md:text-sm font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
                         No
                       </span>
-                      <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
+                      <h4 className="font-semibold text-xl flex items-center" style={{ color: '#D43F5C' }}>
+                        <ThumbsDown className="mr-2 h-5 w-5" />
+                        {noArguments[index].title}
+                      </h4>
                     </div>
                     <ul className="space-y-2 ml-8">
                       {noArguments[index].points.map((point, pointIndex) => (
