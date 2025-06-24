@@ -27,7 +27,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
       <div className="grid md:grid-cols-2 gap-8">
         {/* YES Physician */}
         <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' }}>
-          <div className="flex items-center mb-4">
+          <div className="flex justify-center items-center mb-4">
             <span className="bg-white px-4 py-2 rounded-full text-lg font-bold" style={{ color: '#1A9FDA' }}>
               YES: Routine Surveillance is Essential
             </span>
@@ -50,7 +50,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
 
         {/* NO Physician */}
         <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A71 50%, #D73E5E 100%)' }}>
-          <div className="flex items-center mb-4">
+          <div className="flex justify-center items-center mb-4">
             <span className="bg-white px-4 py-2 rounded-full text-lg font-bold" style={{ color: '#D43F5C' }}>
               NO: Selective Surveillance is More Appropriate
             </span>
@@ -84,7 +84,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               {yesArguments.map((argument, index) => (
                 <div key={index}>
                   <div className="flex items-center mb-3 gap-3">
-                    <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#3DC7F5' }}>
+                    <span className="text-white px-3 py-1.5 rounded-full text-sm font-semibold" style={{ backgroundColor: '#3DC7F5' }}>
                       Yes
                     </span>
                     <h3 className="text-lg font-bold" style={{ color: '#1A9FDA' }}>
@@ -133,7 +133,7 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
               {noArguments.map((argument, index) => (
                 <div key={index}>
                   <div className="flex items-center mb-3 gap-3">
-                    <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#F07584' }}>
+                    <span className="text-white px-3 py-1.5 rounded-full text-sm font-semibold" style={{ backgroundColor: '#F07584' }}>
                       No
                     </span>
                     <h3 className="text-lg font-bold" style={{ color: '#D43F5C' }}>
