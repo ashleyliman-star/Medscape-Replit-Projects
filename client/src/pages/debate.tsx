@@ -183,6 +183,12 @@ export default function DebatePage() {
                 guidelines={debateData.sideA.guidelines}
                 showPhysician={version === 'A'}
               />
+              
+              {/* Mobile ad after YES argument box */}
+              <div className="lg:hidden flex justify-center py-8">
+                <AdPlaceholder size="300x250" className="mx-auto" />
+              </div>
+              
               <DebateSide 
                 position={debateData.sideB.position}
                 color={debateData.sideB.color}
