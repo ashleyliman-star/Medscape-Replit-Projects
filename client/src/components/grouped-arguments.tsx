@@ -27,8 +27,8 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
       {/* Position Headers - Side by side */}
       <div className="grid md:grid-cols-2 gap-8">
         {/* YES Position */}
-        <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' }}>
-          <div className="flex justify-center items-center">
+        <Card className="text-white p-8" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' }}>
+          <div className="flex justify-center items-center text-center">
             <ThumbsUp className="mr-3 h-8 w-8" />
             <span className="text-xl md:text-2xl font-bold">
               YES: Routine Surveillance is Essential
