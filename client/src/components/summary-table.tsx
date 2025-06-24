@@ -1,5 +1,5 @@
 import { Card } from '@/components/ui/card';
-import { CheckCircle, XCircle } from 'lucide-react';
+import { ThumbsUp, ThumbsDown } from 'lucide-react';
 
 interface Argument {
   title: string;
@@ -27,7 +27,7 @@ export default function SummaryTable({ yesArguments, noArguments }: SummaryTable
           {/* YES Side Summary */}
           <div className="border-2 rounded-lg p-6" style={{ background: 'linear-gradient(135deg, rgba(61, 199, 245, 0.1) 0%, rgba(61, 199, 245, 0.2) 100%)', borderColor: '#3DC7F5' }}>
             <div className="flex items-center mb-4">
-              <CheckCircle className="h-6 w-6 mr-3" style={{ color: '#1A9FDA' }} />
+              <ThumbsUp className="h-6 w-6 mr-3" style={{ color: '#1A9FDA' }} />
               <h3 className="text-lg font-bold" style={{ color: '#1A9FDA' }}>
                 Supporting Routine Surveillance
               </h3>
@@ -45,7 +45,7 @@ export default function SummaryTable({ yesArguments, noArguments }: SummaryTable
           {/* NO Side Summary */}
           <div className="border-2 rounded-lg p-6" style={{ background: 'linear-gradient(135deg, rgba(240, 117, 132, 0.1) 0%, rgba(240, 117, 132, 0.2) 100%)', borderColor: '#F07584' }}>
             <div className="flex items-center mb-4">
-              <XCircle className="h-6 w-6 mr-3" style={{ color: '#D43F5C' }} />
+              <ThumbsDown className="h-6 w-6 mr-3" style={{ color: '#D43F5C' }} />
               <h3 className="text-lg font-bold" style={{ color: '#D43F5C' }}>
                 Supporting Selective Surveillance
               </h3>
