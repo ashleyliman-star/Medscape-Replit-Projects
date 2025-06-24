@@ -26,9 +26,9 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
       {/* Physician Headers - Side by side */}
       <div className="grid md:grid-cols-2 gap-8">
         {/* YES Physician */}
-        <Card className="bg-gradient-to-br from-blue-600 via-sky-500 to-cyan-600 text-white p-6">
+        <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' }}>
           <div className="flex items-center mb-4">
-            <span className="bg-white text-blue-600 px-4 py-2 rounded-full text-lg font-bold">
+            <span className="bg-white px-4 py-2 rounded-full text-lg font-bold" style={{ color: '#3DC7F5' }}>
               YES: Routine Surveillance is Essential
             </span>
           </div>
@@ -49,9 +49,9 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
         </Card>
 
         {/* NO Physician */}
-        <Card className="bg-gradient-to-br from-purple-600 via-violet-500 to-indigo-600 text-white p-6">
+        <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A71 50%, #D73E5E 100%)' }}>
           <div className="flex items-center mb-4">
-            <span className="bg-white text-purple-600 px-4 py-2 rounded-full text-lg font-bold">
+            <span className="bg-white px-4 py-2 rounded-full text-lg font-bold" style={{ color: '#F07584' }}>
               NO: Selective Surveillance is More Appropriate
             </span>
           </div>
@@ -65,8 +65,8 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             </div>
             <div className="min-w-0 flex-1">
               <h3 className="text-lg md:text-xl font-bold mb-1 truncate">{noPhysician.name}</h3>
-              <p className="text-purple-100 text-xs md:text-sm mb-1 leading-tight">{noPhysician.credentials}</p>
-              <p className="text-purple-200 text-xs md:text-sm leading-tight">{noPhysician.institution}</p>
+              <p className="text-pink-100 text-xs md:text-sm mb-1 leading-tight">{noPhysician.credentials}</p>
+              <p className="text-pink-200 text-xs md:text-sm leading-tight">{noPhysician.institution}</p>
             </div>
           </div>
         </Card>
@@ -76,18 +76,18 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
       <div className="hidden md:grid md:grid-cols-2 gap-8">
         {/* YES Column - All Arguments (Desktop only) */}
         <div>
-          <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200 p-6">
+          <Card className="border-2 p-6" style={{ background: 'linear-gradient(135deg, rgba(61, 199, 245, 0.1) 0%, rgba(61, 199, 245, 0.2) 100%)', borderColor: '#3DC7F5' }}>
             <div className="mb-6">
-              <h2 className="text-xl font-bold text-blue-800">Key Arguments</h2>
+              <h2 className="text-xl font-bold" style={{ color: '#3DC7F5' }}>Key Arguments</h2>
             </div>
             <div className="space-y-6">
               {yesArguments.map((argument, index) => (
                 <div key={index}>
                   <div className="flex items-center mb-3 gap-3">
-                    <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    <span className="text-white px-2 py-1 rounded-full text-xs font-semibold" style={{ backgroundColor: '#3DC7F5' }}>
                       Yes
                     </span>
-                    <h3 className="text-lg font-bold text-blue-800">
+                    <h3 className="text-lg font-bold" style={{ color: '#3DC7F5' }}>
                       {argument.title}
                     </h3>
                   </div>
