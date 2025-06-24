@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import medscapeLogo from "@assets/Medscape_Logo.svg (1)_1750723648901.png";
+import medscapeLogo from "@assets/mscp-logo_1750724375360.avif";
 
 interface DebateHeaderProps {
   version: 'A' | 'B' | 'D' | 'E';
