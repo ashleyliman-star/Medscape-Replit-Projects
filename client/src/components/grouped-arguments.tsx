@@ -200,9 +200,11 @@ export default function GroupedArguments({ yesArguments, noArguments, yesPhysici
             </div>
 
             {/* Ad after each YES/NO pair - Outside the boxes */}
-            <div className="flex justify-center py-8">
-              <AdPlaceholder size="300x250" className="mx-auto" />
-            </div>
+            {index < Math.max(yesArguments.length, noArguments.length) - 1 && (
+              <div className="flex justify-center py-8">
+                <AdPlaceholder size="300x250" className="mx-auto" />
+              </div>
+            )}
           </div>
         ))}
       </div>
