@@ -3,7 +3,7 @@ import { Scale } from "lucide-react";
 export default function MiddleGroundUnboxed() {
   return (
     <section className="mb-12">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center gap-0.5 md:gap-3">
+      <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center gap-0 md:gap-3">
         <Scale className="h-14 w-14 md:h-6 md:w-6" style={{ color: '#064AA7' }} />
         <span>Middle Ground and Evolving Perspectives</span>
       </h2>
