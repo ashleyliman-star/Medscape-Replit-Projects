@@ -169,6 +169,9 @@ export default function DebatePage() {
                 noArguments={debateData.sideB.arguments}
               />
             </div>
+
+            {/* Additional 300x250 ad unit below summary of key points in C1 */}
+            <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
           </>
         ) : (
           // Version A & B: Traditional side-by-side layout
