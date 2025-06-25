@@ -65,7 +65,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
       <div className="grid md:grid-cols-2 gap-8 mb-8">
         {/* YES Position */}
         <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' }}>
-          <div className="flex items-center justify-center mb-4">
+          <div className="flex items-center justify-center text-center">
             <ThumbsUp className="mr-3 h-8 w-8" />
             <h2 className="font-bold text-2xl md:text-3xl text-white">YES: Routine Surveillance is Worth It</h2>
           </div>
@@ -73,7 +73,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
         {/* NO Position */}
         <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)' }}>
-          <div className="flex items-center justify-center mb-4">
+          <div className="flex items-center justify-center text-center">
             <ThumbsDown className="mr-3 h-8 w-8" />
             <h2 className="font-bold text-2xl md:text-3xl text-white">NO: Routine Surveillance is Not Worth It</h2>
           </div>
@@ -90,9 +90,9 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               <div>
                 {index === 0 && <h3 className="text-xl font-bold text-gray-800 mb-4">Key Arguments</h3>}
                 {yesArguments[index] && (
-                  <div>
+                  <div className="mb-6">
                     <div className="flex items-start mb-3 gap-3">
-                      <span className="text-white px-2 py-1 md:px-3 md:py-1.5 rounded-full text-xs md:text-sm font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
+                      <span className="text-white px-4 py-2 rounded-full text-sm font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
                         Yes
                       </span>
                       <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
@@ -113,9 +113,9 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               <div>
                 {index === 0 && <h3 className="text-xl font-bold text-gray-800 mb-4">Key Arguments</h3>}
                 {noArguments[index] && (
-                  <div>
+                  <div className="mb-6">
                     <div className="flex items-start mb-3 gap-3">
-                      <span className="text-white px-2 py-1 md:px-3 md:py-1.5 rounded-full text-xs md:text-sm font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
+                      <span className="text-white px-4 py-2 rounded-full text-sm font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
                         No
                       </span>
                       <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
@@ -151,9 +151,9 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             <div className="space-y-6 mb-6">
               {/* YES Argument */}
               {yesArguments[index] && (
-                <div>
+                <div className="mb-6">
                   <div className="flex items-start mb-3 gap-3">
-                    <span className="text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
+                    <span className="text-white px-4 py-2 rounded-full text-sm font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
                       Yes
                     </span>
                     <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
@@ -171,9 +171,9 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
               {/* NO Argument */}
               {noArguments[index] && (
-                <div>
+                <div className="mb-6">
                   <div className="flex items-start mb-3 gap-3">
-                    <span className="text-white px-2 py-1 rounded-full text-xs font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
+                    <span className="text-white px-4 py-2 rounded-full text-sm font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
                       No
                     </span>
                     <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
