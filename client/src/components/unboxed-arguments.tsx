@@ -198,6 +198,37 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         ))}
       </div>
 
+      {/* Related Articles Section */}
+      <div className="mt-16 mb-8">
+        <h3 className="text-2xl font-bold text-gray-800 mb-6">What to Read Next on Medscape</h3>
+        <div className="space-y-4">
+          <div className="border-b border-gray-200 pb-3">
+            <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+              Breast Cancer Screening Guidelines: What's Changed in 2024
+            </h4>
+          </div>
+          <div className="border-b border-gray-200 pb-3">
+            <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+              MRI vs Mammography: When to Use Each for High-Risk Patients
+            </h4>
+          </div>
+          <div className="border-b border-gray-200 pb-3">
+            <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+              False Positives in Breast Screening: Impact on Patient Psychology
+            </h4>
+          </div>
+          <div className="border-b border-gray-200 pb-3">
+            <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+              Cost-Effectiveness Analysis of Breast Cancer Surveillance Programs
+            </h4>
+          </div>
+          <div className="border-b border-gray-200 pb-3">
+            <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+              Personalized Screening: Risk Stratification in Breast Cancer Prevention
+            </h4>
+          </div>
+        </div>
+      </div>
 
     </div>
   );
