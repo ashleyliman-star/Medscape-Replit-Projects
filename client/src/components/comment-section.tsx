@@ -140,7 +140,7 @@ export default function CommentSection() {
         <div className="space-y-3">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Name/Username
+              Name
             </label>
             <Input
               placeholder="Enter your name or username"
