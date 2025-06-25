@@ -29,22 +29,6 @@ export default function CommentSection() {
           timestamp: "1 hour ago",
           likes: 3,
           replies: []
-        },
-        {
-          id: 12,
-          author: "Dr. Emily Rodriguez",
-          text: "But we can't ignore the lives saved by early detection.",
-          timestamp: "45 minutes ago",
-          likes: 8,
-          replies: []
-        },
-        {
-          id: 13,
-          author: "Alex Thompson",
-          text: "Great point about the psychological impact on patients.",
-          timestamp: "30 minutes ago",
-          likes: 2,
-          replies: []
         }
       ]
     },
@@ -69,14 +53,6 @@ export default function CommentSection() {
           text: "Absolutely. The economic impact is often overlooked.",
           timestamp: "3 hours ago",
           likes: 4,
-          replies: []
-        },
-        {
-          id: 32,
-          author: "Dr. Mark Davis",
-          text: "We need more studies on long-term outcomes.",
-          timestamp: "2 hours ago",
-          likes: 6,
           replies: []
         }
       ]
@@ -154,16 +130,16 @@ export default function CommentSection() {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-8">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-        <MessageSquare className="mr-3 h-6 w-6 text-gray-600" />
+    <div className="bg-white rounded-xl shadow-lg p-6">
+      <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+        <MessageSquare className="mr-2 h-5 w-5 text-gray-600" />
         Discussion
       </h2>
       
-      <div className="space-y-6">
-        <div className="space-y-4">
+      <div className="space-y-4">
+        <div className="space-y-3">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
               Name/Username
             </label>
             <Input
@@ -174,76 +150,75 @@ export default function CommentSection() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
               Comment
             </label>
             <Textarea
               placeholder="Share your thoughts on this debate..."
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
-              className="min-h-[100px]"
+              className="min-h-[80px]"
             />
           </div>
-          <Button onClick={handleSubmit} className="bg-blue-600 hover:bg-blue-700">
+          <Button onClick={handleSubmit} className="bg-blue-600 hover:bg-blue-700" size="sm">
             Post Comment
           </Button>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {currentComments.map((comment) => (
-            <div key={comment.id} className="border-b border-gray-100 pb-6 last:border-b-0">
-              <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-medium text-blue-600">
+            <div key={comment.id} className="border-b border-gray-100 pb-4 last:border-b-0">
+              <div className="flex items-start space-x-3">
+                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-xs font-medium text-blue-600">
                     {comment.author.charAt(0)}
                   </span>
                 </div>
                 
                 <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <span className="font-medium text-gray-900">{comment.author}</span>
-                    <span className="text-sm text-gray-500">{comment.timestamp}</span>
+                  <div className="flex items-center space-x-2 mb-1">
+                    <span className="font-medium text-gray-900 text-sm">{comment.author}</span>
+                    <span className="text-xs text-gray-500">{comment.timestamp}</span>
                   </div>
                   
-                  <p className="text-gray-700 mb-3">{comment.text}</p>
+                  <p className="text-gray-700 text-sm mb-2">{comment.text}</p>
                   
-                  <div className="flex items-center space-x-4 text-sm text-gray-500">
-                    <span>{comment.timestamp}</span>
+                  <div className="flex items-center space-x-3 text-xs text-gray-500">
                     <button 
                       onClick={() => handleLike(comment.id)}
                       className="flex items-center space-x-1 hover:text-red-500 transition-colors"
                     >
-                      <Heart className="h-4 w-4" />
+                      <Heart className="h-3 w-3" />
                       <span>{comment.likes}</span>
                     </button>
                     <button 
                       onClick={() => setReplyingTo(comment.id)}
                       className="flex items-center space-x-1 hover:text-blue-500 transition-colors"
                     >
-                      <Reply className="h-4 w-4" />
+                      <Reply className="h-3 w-3" />
                       <span>Reply</span>
                     </button>
                   </div>
 
                   {comment.replies.length > 0 && (
-                    <div className="mt-4 space-y-4 pl-6 border-l-2 border-gray-100">
+                    <div className="mt-3 pl-4 border-l-2 border-gray-100">
                       {/* Show only first reply by default */}
-                      <div className="bg-gray-50 rounded-lg p-4">
-                        <div className="flex items-start space-x-3">
-                          <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                      <div className="bg-gray-50 rounded-lg p-3">
+                        <div className="flex items-start space-x-2">
+                          <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
                             <span className="text-xs font-medium text-gray-600">
                               {comment.replies[0].author.charAt(0)}
                             </span>
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center space-x-2 mb-1">
-                              <span className="font-medium text-gray-900">{comment.replies[0].author}</span>
-                              <span className="text-sm text-gray-500">{comment.replies[0].timestamp}</span>
+                              <span className="font-medium text-gray-900 text-xs">{comment.replies[0].author}</span>
+                              <span className="text-xs text-gray-500">{comment.replies[0].timestamp}</span>
                             </div>
-                            <p className="text-gray-700">{comment.replies[0].text}</p>
+                            <p className="text-gray-700 text-xs">{comment.replies[0].text}</p>
                             <button 
                               onClick={() => handleLike(comment.replies[0].id)}
-                              className="flex items-center space-x-1 hover:text-red-500 transition-colors mt-2 text-sm text-gray-500"
+                              className="flex items-center space-x-1 hover:text-red-500 transition-colors mt-1 text-xs text-gray-500"
                             >
                               <Heart className="h-3 w-3" />
                               <span>{comment.replies[0].likes}</span>
@@ -254,22 +229,22 @@ export default function CommentSection() {
 
                       {/* Show more replies if expanded */}
                       {showMoreReplies.includes(comment.id) && comment.replies.slice(1).map((reply) => (
-                        <div key={reply.id} className="bg-gray-50 rounded-lg p-4">
-                          <div className="flex items-start space-x-3">
-                            <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+                        <div key={reply.id} className="bg-gray-50 rounded-lg p-3 mt-2">
+                          <div className="flex items-start space-x-2">
+                            <div className="w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center">
                               <span className="text-xs font-medium text-gray-600">
                                 {reply.author.charAt(0)}
                               </span>
                             </div>
                             <div className="flex-1">
                               <div className="flex items-center space-x-2 mb-1">
-                                <span className="font-medium text-gray-900">{reply.author}</span>
-                                <span className="text-sm text-gray-500">{reply.timestamp}</span>
+                                <span className="font-medium text-gray-900 text-xs">{reply.author}</span>
+                                <span className="text-xs text-gray-500">{reply.timestamp}</span>
                               </div>
-                              <p className="text-gray-700">{reply.text}</p>
+                              <p className="text-gray-700 text-xs">{reply.text}</p>
                               <button 
                                 onClick={() => handleLike(reply.id)}
-                                className="flex items-center space-x-1 hover:text-red-500 transition-colors mt-2 text-sm text-gray-500"
+                                className="flex items-center space-x-1 hover:text-red-500 transition-colors mt-1 text-xs text-gray-500"
                               >
                                 <Heart className="h-3 w-3" />
                                 <span>{reply.likes}</span>
@@ -283,7 +258,7 @@ export default function CommentSection() {
                       {comment.replies.length > 1 && (
                         <button
                           onClick={() => toggleShowMoreReplies(comment.id)}
-                          className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+                          className="text-blue-600 hover:text-blue-700 text-xs font-medium mt-2"
                         >
                           {showMoreReplies.includes(comment.id) 
                             ? `Hide ${comment.replies.length - 1} replies`
@@ -295,34 +270,34 @@ export default function CommentSection() {
                   )}
 
                   {replyingTo === comment.id && (
-                    <div className="mt-4 space-y-3">
+                    <div className="mt-3 space-y-2">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-xs font-medium text-gray-700 mb-1">
                           Name/Username
                         </label>
                         <Input
                           placeholder="Enter your name"
                           value={username}
                           onChange={(e) => setUsername(e.target.value)}
-                          className="max-w-xs"
+                          className="max-w-xs text-sm"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-xs font-medium text-gray-700 mb-1">
                           Reply
                         </label>
                         <Textarea
                           placeholder="Write a reply..."
                           value={replyText}
                           onChange={(e) => setReplyText(e.target.value)}
-                          className="min-h-[80px]"
+                          className="min-h-[60px] text-sm"
                         />
                       </div>
                       <div className="flex space-x-2">
                         <Button 
                           onClick={() => handleReply(comment.id)}
                           size="sm"
-                          className="bg-blue-600 hover:bg-blue-700"
+                          className="bg-blue-600 hover:bg-blue-700 text-xs"
                         >
                           Post Reply
                         </Button>
@@ -330,6 +305,7 @@ export default function CommentSection() {
                           onClick={() => setReplyingTo(null)}
                           size="sm"
                           variant="outline"
+                          className="text-xs"
                         >
                           Cancel
                         </Button>
@@ -344,19 +320,20 @@ export default function CommentSection() {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="flex items-center justify-center space-x-4 pt-6 border-t">
+          <div className="flex items-center justify-center space-x-3 pt-4 border-t">
             <Button
               onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
               disabled={currentPage === 1}
               variant="outline"
               size="sm"
+              className="text-xs"
             >
-              <ChevronLeft className="h-4 w-4 mr-1" />
+              <ChevronLeft className="h-3 w-3 mr-1" />
               Previous
             </Button>
             
-            <span className="text-sm text-gray-600">
-              Page {currentPage} of {totalPages}
+            <span className="text-xs text-gray-600">
+              {currentPage} of {totalPages}
             </span>
             
             <Button
@@ -364,9 +341,10 @@ export default function CommentSection() {
               disabled={currentPage === totalPages}
               variant="outline"
               size="sm"
+              className="text-xs"
             >
               Next
-              <ChevronRight className="h-4 w-4 ml-1" />
+              <ChevronRight className="h-3 w-3 ml-1" />
             </Button>
           </div>
         )}
