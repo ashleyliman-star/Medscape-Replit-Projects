@@ -116,12 +116,12 @@ export default function PollSection({ debateId }: PollSectionProps) {
                 {/* Argument titles */}
                 <div className="flex justify-between mb-4">
                   <div className="text-left">
-                    <h4 className="font-semibold text-base" style={{ color: '#1A9FDA' }}>
+                    <h4 className="font-bold text-base" style={{ color: '#1A9FDA' }}>
                       YES: Routine Surveillance is Worth It
                     </h4>
                   </div>
                   <div className="text-right">
-                    <h4 className="font-semibold text-base" style={{ color: '#D43F5C' }}>
+                    <h4 className="font-bold text-base" style={{ color: '#D43F5C' }}>
                       NO: Routine Surveillance is Not Worth It
                     </h4>
                   </div>
@@ -140,7 +140,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
                     <span className="text-2xl font-bold mr-2" style={{ color: '#1A9FDA' }}>
                       {pollStats.total > 0 ? Math.round(((pollStats.counts.yes || 0) / pollStats.total) * 100) : 0}%
                     </span>
-                    <div className="flex-1 h-8 bg-gray-200 rounded-l-full overflow-hidden">
+                    <div className="flex-1 h-8 bg-white rounded-l-full overflow-hidden border border-gray-300">
                       <div 
                         className="h-full transition-all duration-500"
                         style={{ 
@@ -161,7 +161,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
 
                   {/* NO bar and percentage */}
                   <div className="flex-1 flex items-center">
-                    <div className="flex-1 h-8 bg-gray-200 rounded-r-full overflow-hidden">
+                    <div className="flex-1 h-8 bg-white rounded-r-full overflow-hidden border border-gray-300">
                       <div 
                         className="h-full transition-all duration-500 ml-auto"
                         style={{ 
