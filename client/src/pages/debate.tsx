@@ -214,7 +214,31 @@ export default function DebatePage() {
 
         <PollSection debateId="breast-cancer-surveillance" />
 
-        {/* What to Read Next on Medscape section - after poll for version E (C1) */}
+        {/* What to Read Next section - after poll for version D */}
+        {version === 'D' && (
+          <div className="my-12">
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">What to Read Next</h3>
+              <div className="space-y-3">
+                <a href="#" className="block text-blue-600 hover:text-blue-800 transition-colors">
+                  • Latest Guidelines on Breast Cancer Screening from the American Cancer Society
+                </a>
+                <a href="#" className="block text-blue-600 hover:text-blue-800 transition-colors">
+                  • Understanding Dense Breast Tissue and Its Impact on Screening
+                </a>
+                <a href="#" className="block text-blue-600 hover:text-blue-800 transition-colors">
+                  • Personalized Risk Assessment Tools for Breast Cancer
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="my-12">
+          <CommentSection />
+        </div>
+
+        {/* What to Read Next on Medscape section - after discussion for version E (C1) */}
         {version === 'E' && (
           <div className="mt-16 mb-8">
             <div className="border-t-4 border-gray-800 mb-4"></div>
@@ -249,30 +273,6 @@ export default function DebatePage() {
             </div>
           </div>
         )}
-
-        {/* What to Read Next section - after poll for version D */}
-        {version === 'D' && (
-          <div className="my-12">
-            <div className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">What to Read Next</h3>
-              <div className="space-y-3">
-                <a href="#" className="block text-blue-600 hover:text-blue-800 transition-colors">
-                  • Latest Guidelines on Breast Cancer Screening from the American Cancer Society
-                </a>
-                <a href="#" className="block text-blue-600 hover:text-blue-800 transition-colors">
-                  • Understanding Dense Breast Tissue and Its Impact on Screening
-                </a>
-                <a href="#" className="block text-blue-600 hover:text-blue-800 transition-colors">
-                  • Personalized Risk Assessment Tools for Breast Cancer
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
-
-        <div className="my-12">
-          <CommentSection />
-        </div>
 
         <AdPlaceholder size="300x250" className="flex justify-center mt-8" />
       </main>
