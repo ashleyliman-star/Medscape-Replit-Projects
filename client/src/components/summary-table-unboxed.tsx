@@ -22,9 +22,9 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
           Summary of Key Points
         </h2>
         
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-4 max-w-5xl mx-auto">
           {/* YES Side Summary */}
-          <div className="p-6">
+          <div className="p-6 lg:pl-12">
             <div className="flex items-center mb-4">
               <ThumbsUp className="h-6 w-6 mr-3" style={{ color: '#1A9FDA' }} />
               <h3 className="text-lg font-bold" style={{ color: '#1A9FDA' }}>
