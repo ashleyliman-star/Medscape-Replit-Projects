@@ -108,31 +108,79 @@ export default function PollSection({ debateId }: PollSectionProps) {
             </div>
           </>
         ) : (
-          <div className="poll-results">
-            <h4 className="text-lg font-semibold text-gray-800 mb-4 text-center">Poll Results</h4>
+          <div className="mt-6">
+            <h3 className="text-lg font-semibold text-gray-800 mb-6 text-center">Results</h3>
+            
             {pollStats && (
-              <>
-                <div className="space-y-3 mb-4">
-                  {pollOptions.map((option) => {
-                    const percentage = pollStats.percentages[option.value] || 0;
-                    const count = pollStats.counts[option.value] || 0;
-                    
-                    return (
-                      <div key={option.value} className="flex flex-col space-y-1">
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm text-gray-700">{option.label}</span>
-                          <span className="text-sm font-medium text-gray-600">{percentage}%</span>
-                        </div>
-                        <Progress value={percentage} className="h-2" />
-                        <span className="text-xs text-gray-500">{count} votes</span>
-                      </div>
-                    );
-                  })}
+              <div className="relative">
+                {/* Argument titles */}
+                <div className="flex justify-between mb-4">
+                  <div className="text-left">
+                    <h4 className="font-semibold text-base" style={{ color: '#1A9FDA' }}>
+                      YES: Routine Surveillance is Worth It
+                    </h4>
+                  </div>
+                  <div className="text-right">
+                    <h4 className="font-semibold text-base" style={{ color: '#D43F5C' }}>
+                      NO: Routine Surveillance is Not Worth It
+                    </h4>
+                  </div>
                 </div>
-                <p className="text-center text-sm text-gray-600">
+
+                {/* Vote counts on sides */}
+                <div className="flex justify-between items-center mb-2 text-sm text-gray-500">
+                  <span>{pollStats.counts.yes || 0} votes</span>
+                  <span>{pollStats.counts.no || 0} votes</span>
+                </div>
+
+                {/* Progress bar container */}
+                <div className="relative flex items-center">
+                  {/* YES percentage and bar */}
+                  <div className="flex-1 flex items-center">
+                    <span className="text-2xl font-bold mr-2" style={{ color: '#1A9FDA' }}>
+                      {pollStats.total > 0 ? Math.round(((pollStats.counts.yes || 0) / pollStats.total) * 100) : 0}%
+                    </span>
+                    <div className="flex-1 h-8 bg-gray-200 rounded-l-full overflow-hidden">
+                      <div 
+                        className="h-full transition-all duration-500"
+                        style={{ 
+                          backgroundColor: '#1A9FDA',
+                          width: `${pollStats.total > 0 ? ((pollStats.counts.yes || 0) / pollStats.total) * 100 : 0}%`
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Center circle with total votes */}
+                  <div className="relative mx-2">
+                    <div className="w-16 h-16 bg-gray-800 rounded-full flex flex-col items-center justify-center text-white text-xs font-semibold z-10 relative">
+                      <span className="text-lg font-bold">{pollStats.total || 0}</span>
+                      <span>votes</span>
+                    </div>
+                  </div>
+
+                  {/* NO bar and percentage */}
+                  <div className="flex-1 flex items-center">
+                    <div className="flex-1 h-8 bg-gray-200 rounded-r-full overflow-hidden">
+                      <div 
+                        className="h-full transition-all duration-500 ml-auto"
+                        style={{ 
+                          backgroundColor: '#D43F5C',
+                          width: `${pollStats.total > 0 ? ((pollStats.counts.no || 0) / pollStats.total) * 100 : 0}%`
+                        }}
+                      />
+                    </div>
+                    <span className="text-2xl font-bold ml-2" style={{ color: '#D43F5C' }}>
+                      {pollStats.total > 0 ? Math.round(((pollStats.counts.no || 0) / pollStats.total) * 100) : 0}%
+                    </span>
+                  </div>
+                </div>
+
+                {/* Total votes centered below */}
+                <div className="text-center text-sm text-gray-500 mt-4">
                   Based on {pollStats.total} responses • Results update in real-time
-                </p>
-              </>
+                </div>
+              </div>
             )}
           </div>
         )}
