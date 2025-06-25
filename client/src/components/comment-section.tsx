@@ -114,7 +114,7 @@ export default function CommentSection() {
   const [replyText, setReplyText] = useState("");
   const [showMoreReplies, setShowMoreReplies] = useState<number[]>([]);
 
-  const commentsPerPage = 5;
+  const commentsPerPage = 3;
   const totalPages = Math.ceil(allComments.length / commentsPerPage);
   const startIndex = (currentPage - 1) * commentsPerPage;
   const currentComments = allComments.slice(startIndex, startIndex + commentsPerPage);
@@ -162,18 +162,28 @@ export default function CommentSection() {
       
       <div className="space-y-6">
         <div className="space-y-4">
-          <Input
-            placeholder="Enter your name or username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="max-w-xs"
-          />
-          <Textarea
-            placeholder="Share your thoughts on this debate..."
-            value={newComment}
-            onChange={(e) => setNewComment(e.target.value)}
-            className="min-h-[100px]"
-          />
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Name/Username
+            </label>
+            <Input
+              placeholder="Enter your name or username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="max-w-xs"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Comment
+            </label>
+            <Textarea
+              placeholder="Share your thoughts on this debate..."
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+              className="min-h-[100px]"
+            />
+          </div>
           <Button onClick={handleSubmit} className="bg-blue-600 hover:bg-blue-700">
             Post Comment
           </Button>
@@ -286,18 +296,28 @@ export default function CommentSection() {
 
                   {replyingTo === comment.id && (
                     <div className="mt-4 space-y-3">
-                      <Input
-                        placeholder="Enter your name"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        className="max-w-xs"
-                      />
-                      <Textarea
-                        placeholder="Write a reply..."
-                        value={replyText}
-                        onChange={(e) => setReplyText(e.target.value)}
-                        className="min-h-[80px]"
-                      />
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Name/Username
+                        </label>
+                        <Input
+                          placeholder="Enter your name"
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
+                          className="max-w-xs"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                          Reply
+                        </label>
+                        <Textarea
+                          placeholder="Write a reply..."
+                          value={replyText}
+                          onChange={(e) => setReplyText(e.target.value)}
+                          className="min-h-[80px]"
+                        />
+                      </div>
                       <div className="flex space-x-2">
                         <Button 
                           onClick={() => handleReply(comment.id)}
