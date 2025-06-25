@@ -152,7 +152,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
                   </div>
 
                   {/* Center circle with total votes - overlapping bars */}
-                  <div className="relative -mx-0">
+                  <div className="relative -mx-4">
                     <div className="w-16 h-16 bg-gray-800 rounded-full flex flex-col items-center justify-center text-white text-xs font-semibold z-10 relative">
                       <span className="text-lg font-bold">{pollStats.total || 0}</span>
                       <span>votes</span>
