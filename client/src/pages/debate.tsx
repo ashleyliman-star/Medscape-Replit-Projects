@@ -134,78 +134,25 @@ export default function DebatePage() {
 
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
 
-        {version === 'D' ? (
-          // Version D: Grouped arguments with summary table
-          <>
-            <div className="mb-12">
-              <GroupedArguments 
-                yesArguments={debateData.sideA.arguments}
-                noArguments={debateData.sideB.arguments}
-                yesPhysician={debateData.sideA.physician}
-                noPhysician={debateData.sideB.physician}
-              />
-            </div>
+        {/* C1 Version: Unboxed arguments with YES/NO capsules */}
+        <div className="mb-16">
+          <UnboxedArguments 
+            yesArguments={debateData.sideA.arguments}
+            noArguments={debateData.sideB.arguments}
+            yesPhysician={debateData.sideA.physician}
+            noPhysician={debateData.sideB.physician}
+          />
+        </div>
 
-            <SummaryTable 
-              yesArguments={debateData.sideA.arguments}
-              noArguments={debateData.sideB.arguments}
-            />
-          </>
-        ) : version === 'E' ? (
-          // Version E: Unboxed arguments with green check and red X icons
-          <>
-            <div className="mb-16">
-              <UnboxedArguments 
-                yesArguments={debateData.sideA.arguments}
-                noArguments={debateData.sideB.arguments}
-                yesPhysician={debateData.sideA.physician}
-                noPhysician={debateData.sideB.physician}
-              />
-            </div>
+        <div className="mb-16">
+          <SummaryTableUnboxed 
+            yesArguments={debateData.sideA.arguments}
+            noArguments={debateData.sideB.arguments}
+          />
+        </div>
 
-            <div className="mb-16">
-              <SummaryTableUnboxed 
-                yesArguments={debateData.sideA.arguments}
-                noArguments={debateData.sideB.arguments}
-              />
-            </div>
-
-            {/* Additional 300x250 ad unit below summary of key points in C1 */}
-            <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
-          </>
-        ) : (
-          // Version A & B: Traditional side-by-side layout
-          <>
-            <div className="grid lg:grid-cols-2 gap-8 mb-12">
-              <DebateSide 
-                position={debateData.sideA.position}
-                color={debateData.sideA.color}
-                physician={debateData.sideA.physician}
-                statement={debateData.sideA.statement}
-                argumentsList={debateData.sideA.arguments}
-                guidelines={debateData.sideA.guidelines}
-                showPhysician={version === 'A'}
-              />
-
-              {/* Mobile ad after YES argument box */}
-              <div className="lg:hidden flex justify-center py-8">
-                <AdPlaceholder size="300x250" className="mx-auto" />
-              </div>
-
-              <DebateSide 
-                position={debateData.sideB.position}
-                color={debateData.sideB.color}
-                physician={debateData.sideB.physician}
-                statement={debateData.sideB.statement}
-                argumentsList={debateData.sideB.arguments}
-                guidelines={debateData.sideB.guidelines}
-                showPhysician={version === 'A'}
-              />
-            </div>
-
-            <AdPlaceholder size="300x250" className="flex justify-center mb-8" />
-          </>
-        )}
+        {/* 300x250 ad unit below summary of key points */}
+        <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
 
         <MiddleGroundUnboxed />
 
