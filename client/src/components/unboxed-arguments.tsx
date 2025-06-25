@@ -64,16 +64,16 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
       {/* Position Headers */}
       <div className="grid md:grid-cols-2 gap-8 mb-8">
         {/* YES Position */}
-        <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)' }}>
-          <div className="flex items-center justify-center text-center">
+        <Card className="text-white p-8 flex items-center" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)', minHeight: '120px' }}>
+          <div className="flex items-center">
             <ThumbsUp className="mr-3 h-8 w-8" />
             <h2 className="font-bold text-2xl md:text-3xl text-white">YES: Routine Surveillance is Worth It</h2>
           </div>
         </Card>
 
         {/* NO Position */}
-        <Card className="text-white p-6" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)' }}>
-          <div className="flex items-center justify-center text-center">
+        <Card className="text-white p-8 flex items-center" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)', minHeight: '120px' }}>
+          <div className="flex items-center">
             <ThumbsDown className="mr-3 h-8 w-8" />
             <h2 className="font-bold text-2xl md:text-3xl text-white">NO: Routine Surveillance is Not Worth It</h2>
           </div>
