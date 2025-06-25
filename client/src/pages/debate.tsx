@@ -125,15 +125,15 @@ export default function DebatePage() {
   return (
     <div className="min-h-screen bg-white">
       <DebateHeader version={version} onVersionChange={setVersion} />
-      
+
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <DebateQuestion 
           question={debateData.question}
           introduction={debateData.introduction}
         />
-        
+
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
-        
+
         {version === 'D' ? (
           // Version D: Grouped arguments with summary table
           <>
@@ -145,7 +145,7 @@ export default function DebatePage() {
                 noPhysician={debateData.sideB.physician}
               />
             </div>
-            
+
             <SummaryTable 
               yesArguments={debateData.sideA.arguments}
               noArguments={debateData.sideB.arguments}
@@ -162,7 +162,7 @@ export default function DebatePage() {
                 noPhysician={debateData.sideB.physician}
               />
             </div>
-            
+
             <div className="mb-16">
               <SummaryTableUnboxed 
                 yesArguments={debateData.sideA.arguments}
@@ -183,12 +183,12 @@ export default function DebatePage() {
                 guidelines={debateData.sideA.guidelines}
                 showPhysician={version === 'A'}
               />
-              
+
               {/* Mobile ad after YES argument box */}
               <div className="lg:hidden flex justify-center py-8">
                 <AdPlaceholder size="300x250" className="mx-auto" />
               </div>
-              
+
               <DebateSide 
                 position={debateData.sideB.position}
                 color={debateData.sideB.color}
@@ -199,28 +199,48 @@ export default function DebatePage() {
                 showPhysician={version === 'A'}
               />
             </div>
-            
+
             <AdPlaceholder size="300x250" className="flex justify-center mb-8" />
           </>
         )}
-        
+
         {version === 'E' ? <MiddleGroundUnboxed /> : <MiddleGround />}
-        
+
         <div className={version === 'E' ? 'mt-16 mb-12' : ''}>
           {version === 'E' ? <ConclusionsUnboxed /> : <Conclusions />}
         </div>
-        
+
         <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
-        
+
         <PollSection debateId="breast-cancer-surveillance" />
-        
+
+        {/* What to Read Next section - after poll for version D */}
+        {version === 'D' && (
+          <div className="my-12">
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">What to Read Next</h3>
+              <div className="space-y-3">
+                <a href="#" className="block text-blue-600 hover:text-blue-800 transition-colors">
+                  • Latest Guidelines on Breast Cancer Screening from the American Cancer Society
+                </a>
+                <a href="#" className="block text-blue-600 hover:text-blue-800 transition-colors">
+                  • Understanding Dense Breast Tissue and Its Impact on Screening
+                </a>
+                <a href="#" className="block text-blue-600 hover:text-blue-800 transition-colors">
+                  • Personalized Risk Assessment Tools for Breast Cancer
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="my-12">
           <CommentSection />
         </div>
-        
+
         <AdPlaceholder size="300x250" className="flex justify-center mt-8" />
       </main>
-      
+
       <footer className="bg-gray-900 text-white py-8 mt-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-400">
