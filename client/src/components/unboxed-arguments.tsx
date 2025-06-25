@@ -92,7 +92,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 {yesArguments[index] && (
                   <div className="mb-6">
                     <div className="flex items-start mb-3 gap-3">
-                      <span className="text-white px-4 py-2 rounded-full text-sm font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
+                      <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5', fontSize: '18px' }}>
                         Yes
                       </span>
                       <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
@@ -115,7 +115,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 {noArguments[index] && (
                   <div className="mb-6">
                     <div className="flex items-start mb-3 gap-3">
-                      <span className="text-white px-4 py-2 rounded-full text-sm font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
+                      <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5" style={{ backgroundColor: '#F07584', fontSize: '18px' }}>
                         No
                       </span>
                       <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
@@ -153,7 +153,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               {yesArguments[index] && (
                 <div className="mb-6">
                   <div className="flex items-start mb-3 gap-3">
-                    <span className="text-white px-4 py-2 rounded-full text-sm font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5' }}>
+                    <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5', fontSize: '18px' }}>
                       Yes
                     </span>
                     <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
@@ -173,7 +173,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               {noArguments[index] && (
                 <div className="mb-6">
                   <div className="flex items-start mb-3 gap-3">
-                    <span className="text-white px-4 py-2 rounded-full text-sm font-semibold mt-0.5" style={{ backgroundColor: '#F07584' }}>
+                    <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5" style={{ backgroundColor: '#F07584', fontSize: '18px' }}>
                       No
                     </span>
                     <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
