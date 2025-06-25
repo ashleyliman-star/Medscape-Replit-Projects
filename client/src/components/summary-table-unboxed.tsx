@@ -16,7 +16,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
   const noPoints = noArguments.map(arg => arg.title);
 
   return (
-    <div className="mb-8 md:mb-12 mt-2 md:mt-8">
+    <div className="mb-8 md:mb-12 md:mt-8">
       <div className="rounded-lg shadow-md border border-gray-200 p-6" style={{ backgroundColor: '#e0e8f3' }}>
         <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">
           Summary of Key Points
