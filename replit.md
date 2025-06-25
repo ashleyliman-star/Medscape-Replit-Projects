@@ -93,8 +93,9 @@ This is a full-stack web application for presenting medical debates with expert 
 
 ## Changelog
 
-Changelog:
-- June 23, 2025. Initial setup
+- June 25, 2025: Archived versions A, B, and D (C2) - code preserved in comments for future use
+- June 25, 2025: Version C1 (E) is now the only active version with optimized mobile ad placements
+- June 23, 2025: Initial setup
 
 ## User Preferences
 

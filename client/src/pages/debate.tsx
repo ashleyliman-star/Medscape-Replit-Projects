@@ -207,25 +207,18 @@ export default function DebatePage() {
           </>
         )}
 
-        {version === 'E' ? <MiddleGroundUnboxed /> : <MiddleGround />}
+        <MiddleGroundUnboxed />
 
-        <div className={version === 'E' ? 'mt-16 mb-12' : ''}>
-          {version === 'E' ? <ConclusionsUnboxed /> : <Conclusions />}
+        <div className="mt-16 mb-12">
+          <ConclusionsUnboxed />
         </div>
 
-        {/* Ad placement after summary for version E (C1) */}
-        {version === 'E' && (
-          <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
-        )}
-
-        {/* Ad placement for other versions */}
-        {version !== 'E' && (
-          <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
-        )}
+        {/* Ad placement after conclusions in C1 */}
+        <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
 
         <PollSection debateId="breast-cancer-surveillance" />
 
-        {/* What to Read Next section - after poll for version D */}
+        {/* ARCHIVED: What to Read Next section for version D
         {version === 'D' && (
           <div className="my-12">
             <div className="bg-gray-50 rounded-lg p-6">
@@ -244,46 +237,45 @@ export default function DebatePage() {
             </div>
           </div>
         )}
+        */}
 
         <div className="my-12">
           <CommentSection />
         </div>
 
-        {/* What to Read Next on Medscape section - after discussion for version E (C1) */}
-        {version === 'E' && (
-          <div className="mt-16 mb-8">
-            <div className="border-t-4 border-gray-800 mb-4"></div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">What to Read Next on Medscape</h3>
-            <div className="border-t border-gray-800 mb-6"></div>
-            <div className="space-y-4">
-              <div className="border-b border-gray-200 pb-3">
-                <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
-                  Breast Cancer Screening Guidelines: What's Changed in 2024
-                </h4>
-              </div>
-              <div className="border-b border-gray-200 pb-3">
-                <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
-                  MRI vs Mammography: When to Use Each for High-Risk Patients
-                </h4>
-              </div>
-              <div className="border-b border-gray-200 pb-3">
-                <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
-                  False Positives in Breast Screening: Impact on Patient Psychology
-                </h4>
-              </div>
-              <div className="border-b border-gray-200 pb-3">
-                <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
-                  Cost-Effectiveness Analysis of Breast Cancer Surveillance Programs
-                </h4>
-              </div>
-              <div className="border-b border-gray-200 pb-3">
-                <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
-                  Personalized Screening: Risk Stratification in Breast Cancer Prevention
-                </h4>
-              </div>
+        {/* What to Read Next on Medscape section - after discussion for C1 */}
+        <div className="mt-16 mb-8">
+          <div className="border-t-4 border-gray-800 mb-4"></div>
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">What to Read Next on Medscape</h3>
+          <div className="border-t border-gray-800 mb-6"></div>
+          <div className="space-y-4">
+            <div className="border-b border-gray-200 pb-3">
+              <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                Breast Cancer Screening Guidelines: What's Changed in 2024
+              </h4>
+            </div>
+            <div className="border-b border-gray-200 pb-3">
+              <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                MRI vs Mammography: When to Use Each for High-Risk Patients
+              </h4>
+            </div>
+            <div className="border-b border-gray-200 pb-3">
+              <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                False Positives in Breast Screening: Impact on Patient Psychology
+              </h4>
+            </div>
+            <div className="border-b border-gray-200 pb-3">
+              <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                Cost-Effectiveness Analysis of Breast Cancer Surveillance Programs
+              </h4>
+            </div>
+            <div className="border-b border-gray-200 pb-3">
+              <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                Personalized Screening: Risk Stratification in Breast Cancer Prevention
+              </h4>
             </div>
           </div>
-        )}
+        </div>
       </main>
 
       <footer className="bg-gray-900 text-white py-8 mt-12">

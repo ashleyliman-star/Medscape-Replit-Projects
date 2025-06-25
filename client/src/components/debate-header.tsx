@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import medscapeLogo from "@assets/mscp-logo_1750724375360.avif";
 
 interface DebateHeaderProps {
-  version: 'A' | 'B' | 'D' | 'E';
-  onVersionChange: (version: 'A' | 'B' | 'D' | 'E') => void;
+  version: 'E'; // Only C1 (version E) is active
+  onVersionChange: (version: 'E') => void;
 }
 
 export default function DebateHeader({ version, onVersionChange }: DebateHeaderProps) {
