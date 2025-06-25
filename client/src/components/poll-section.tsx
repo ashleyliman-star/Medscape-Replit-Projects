@@ -140,7 +140,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
                     <span className="text-2xl font-bold mr-2" style={{ color: '#1A9FDA' }}>
                       {pollStats.total > 0 ? Math.round(((pollStats.counts.yes || 0) / pollStats.total) * 100) : 0}%
                     </span>
-                    <div className="flex-1 h-8 bg-white rounded-l-full overflow-hidden border border-gray-300">
+                    <div className="flex-1 h-8 bg-white overflow-hidden border border-gray-300" style={{ borderTopLeftRadius: '9999px', borderBottomLeftRadius: '9999px' }}>
                       <div 
                         className="h-full transition-all duration-500"
                         style={{ 
@@ -151,8 +151,8 @@ export default function PollSection({ debateId }: PollSectionProps) {
                     </div>
                   </div>
 
-                  {/* Center circle with total votes */}
-                  <div className="relative mx-2">
+                  {/* Center circle with total votes - overlapping bars */}
+                  <div className="relative -mx-0">
                     <div className="w-16 h-16 bg-gray-800 rounded-full flex flex-col items-center justify-center text-white text-xs font-semibold z-10 relative">
                       <span className="text-lg font-bold">{pollStats.total || 0}</span>
                       <span>votes</span>
@@ -161,7 +161,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
 
                   {/* NO bar and percentage */}
                   <div className="flex-1 flex items-center">
-                    <div className="flex-1 h-8 bg-white rounded-r-full overflow-hidden border border-gray-300">
+                    <div className="flex-1 h-8 bg-white overflow-hidden border border-gray-300" style={{ borderTopRightRadius: '9999px', borderBottomRightRadius: '9999px' }}>
                       <div 
                         className="h-full transition-all duration-500 ml-auto"
                         style={{ 
