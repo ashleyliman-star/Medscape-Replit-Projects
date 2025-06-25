@@ -16,7 +16,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
   const noPoints = noArguments.map(arg => arg.title);
 
   return (
-    <div className="mb-8 md:mb-12 mt-4 md:mt-8">
+    <div className="mb-8 md:mb-12 mt-2 md:mt-8">
       <div className="rounded-lg shadow-md border border-gray-200 p-6" style={{ backgroundColor: '#e0e8f3' }}>
         <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6 text-center">
           Summary of Key Points
@@ -35,7 +35,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
               {yesPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <span className="inline-block w-2 h-2 rounded-full mt-2 mr-2 md:mr-3 flex-shrink-0" style={{ backgroundColor: '#1A9FDA' }}></span>
-                  <span className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed flex-1">{point}</span>
+                  <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '16px' }}>{point}</span>
                 </li>
               ))}
             </ul>
@@ -53,7 +53,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
               {noPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <span className="inline-block w-2 h-2 rounded-full mt-2 mr-2 md:mr-3 flex-shrink-0" style={{ backgroundColor: '#D43F5C' }}></span>
-                  <span className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed flex-1">{point}</span>
+                  <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '16px' }}>{point}</span>
                 </li>
               ))}
             </ul>
