@@ -210,7 +210,15 @@ export default function DebatePage() {
           {version === 'E' ? <ConclusionsUnboxed /> : <Conclusions />}
         </div>
 
-        <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
+        {/* Ad placement after summary for version E (C1) */}
+        {version === 'E' && (
+          <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
+        )}
+
+        {/* Ad placement for other versions */}
+        {version !== 'E' && (
+          <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
+        )}
 
         <PollSection debateId="breast-cancer-surveillance" />
 
@@ -273,8 +281,6 @@ export default function DebatePage() {
             </div>
           </div>
         )}
-
-        <AdPlaceholder size="300x250" className="flex justify-center mt-8" />
       </main>
 
       <footer className="bg-gray-900 text-white py-8 mt-12">
