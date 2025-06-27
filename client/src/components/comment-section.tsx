@@ -97,6 +97,14 @@ export default function CommentSection() {
 
   const handleSubmit = () => {
     if (newComment.trim() && username.trim()) {
+      // Track comment submission with Google Analytics
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'post_comment', {
+          event_category: 'engagement',
+          event_label: 'comment_submitted'
+        });
+      }
+      
       // In a real app, this would be added to the backend
       setNewComment("");
       alert("Comment submitted successfully!");

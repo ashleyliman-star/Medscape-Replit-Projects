@@ -197,27 +197,77 @@ export default function DebatePage() {
           <div className="border-t border-gray-800 mb-6"></div>
           <div className="space-y-4">
             <div className="border-b border-gray-200 pb-3">
-              <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+              <h4 
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'medscape_link_click', {
+                      event_category: 'external_links',
+                      event_label: 'Breast Cancer Screening Guidelines 2024'
+                    });
+                  }
+                }}
+              >
                 Breast Cancer Screening Guidelines: What's Changed in 2024
               </h4>
             </div>
             <div className="border-b border-gray-200 pb-3">
-              <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+              <h4 
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'medscape_link_click', {
+                      event_category: 'external_links',
+                      event_label: 'MRI vs Mammography High-Risk Patients'
+                    });
+                  }
+                }}
+              >
                 MRI vs Mammography: When to Use Each for High-Risk Patients
               </h4>
             </div>
             <div className="border-b border-gray-200 pb-3">
-              <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+              <h4 
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'medscape_link_click', {
+                      event_category: 'external_links',
+                      event_label: 'False Positives Patient Psychology'
+                    });
+                  }
+                }}
+              >
                 False Positives in Breast Screening: Impact on Patient Psychology
               </h4>
             </div>
             <div className="border-b border-gray-200 pb-3">
-              <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+              <h4 
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'medscape_link_click', {
+                      event_category: 'external_links',
+                      event_label: 'Cost-Effectiveness Analysis Surveillance'
+                    });
+                  }
+                }}
+              >
                 Cost-Effectiveness Analysis of Breast Cancer Surveillance Programs
               </h4>
             </div>
             <div className="border-b border-gray-200 pb-3">
-              <h4 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+              <h4 
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'medscape_link_click', {
+                      event_category: 'external_links',
+                      event_label: 'Personalized Screening Risk Stratification'
+                    });
+                  }
+                }}
+              >
                 Personalized Screening: Risk Stratification in Breast Cancer Prevention
               </h4>
             </div>

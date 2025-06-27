@@ -63,8 +63,13 @@ export default function PollSection({ debateId }: PollSectionProps) {
       return;
     }
     
-    // Track poll submission
-    trackEvent('poll_vote', 'engagement', selectedOption);
+    // Track poll submission with Google Analytics
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'submit_vote', {
+        event_category: 'engagement',
+        event_label: selectedOption
+      });
+    }
     
     submitVoteMutation.mutate(selectedOption);
   };
