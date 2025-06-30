@@ -6,11 +6,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Add redirect from root to Medscape URL
-app.get('/', (req, res) => {
-  res.redirect(301, 'https://exp.medscape.com/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases');
-});
-
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
