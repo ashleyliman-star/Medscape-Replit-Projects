@@ -11,21 +11,18 @@ app.use((req, res, next) => {
   const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
   const host = req.get('host') || '';
   
-  // Check if accessing from the correct domain and path
-  if (host.includes('exp.medscape.com') && (req.path === targetPath || req.path === targetPath + '/')) {
+  // If accessing the specific debate path, serve the app (regardless of domain for now)
+  if (req.path === targetPath || req.path === targetPath + '/') {
     req.url = '/'; // Rewrite to root for the app
     next();
   }
-  // In development (Replit), allow access to the target path and necessary assets
-  else if (host.includes('replit') && (req.path === targetPath || req.path === targetPath + '/' || req.path === '/' || req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/'))) {
-    if (req.path === targetPath || req.path === targetPath + '/') {
-      req.url = '/'; // Rewrite to root for the app
-    }
+  // Allow access to necessary assets and API routes
+  else if (req.path === '/' || req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/')) {
     next();
   }
   // Block all other paths
   else {
-    res.status(404).send('Page not found - This content is only available at exp.medscape.com/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases');
+    res.status(404).send('Page not found - This content is only available at the specific debate URL');
   }
 });
 
