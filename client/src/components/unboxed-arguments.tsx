@@ -75,7 +75,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         <Card className="text-white p-8 flex items-center" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)', minHeight: '120px' }}>
           <div className="flex items-center">
             <ThumbsDown className="mr-3 h-8 w-8" />
-            <h2 className="font-bold text-2xl md:text-3xl text-white">NO: Routine Surveillance is Not Worth It</h2>
+            <h2 className="font-bold text-2xl md:text-3xl text-white">Selective Surveillance is More Appropriate</h2>
           </div>
         </Card>
       </div>
