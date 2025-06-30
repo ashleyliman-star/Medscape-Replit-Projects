@@ -46,7 +46,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             <div className="flex items-center mb-3 md:mb-4">
               <ThumbsDown className="h-5 w-5 md:h-6 md:w-6 mr-2 md:mr-3" style={{ color: '#D43F5C' }} />
               <h3 className="text-base md:text-lg font-bold" style={{ color: '#D43F5C' }}>
-                Supporting Selective Surveillance
+                Selective Surveillance is More Appropriate
               </h3>
             </div>
             <ul className="space-y-2 md:space-y-3">
