@@ -114,31 +114,79 @@ app.use((req, res, next) => {
       log(`Direct handler serving target path: ${req.path}`);
       const path = require('path');
       const fs = require('fs');
-      const distPath = path.resolve(import.meta.dirname, "public");
-      const indexPath = path.resolve(distPath, "index.html");
       
-      if (fs.existsSync(indexPath)) {
+      // Log detailed environment info
+      log(`Working directory: ${process.cwd()}`);
+      log(`Module dirname: ${import.meta.dirname}`);
+      log(`NODE_ENV: ${process.env.NODE_ENV}`);
+      
+      // Try multiple possible build paths
+      const possiblePaths = [
+        path.resolve(import.meta.dirname, "public"),
+        path.resolve(process.cwd(), "dist", "public"),
+        path.resolve(import.meta.dirname, "..", "dist", "public")
+      ];
+      
+      let distPath = null;
+      let indexPath = null;
+      
+      for (const testPath of possiblePaths) {
+        const testIndex = path.resolve(testPath, "index.html");
+        log(`Testing path: ${testPath}`);
+        log(`Testing index: ${testIndex}`);
+        log(`Path exists: ${fs.existsSync(testPath)}`);
+        log(`Index exists: ${fs.existsSync(testIndex)}`);
+        
+        if (fs.existsSync(testIndex)) {
+          distPath = testPath;
+          indexPath = testIndex;
+          log(`Found build files at: ${distPath}`);
+          break;
+        }
+      }
+      
+      if (indexPath && fs.existsSync(indexPath)) {
         log(`Serving index.html from: ${indexPath}`);
         res.sendFile(indexPath);
       } else {
         log(`Index.html not found at: ${indexPath}`);
         log(`Build directory exists: ${fs.existsSync(distPath)}`);
+        
+        // Check all possible locations
+        const altPaths = [
+          path.resolve(process.cwd(), "dist", "public"),
+          path.resolve(process.cwd(), "public"),
+          path.resolve(import.meta.dirname, "..", "dist", "public")
+        ];
+        
+        altPaths.forEach((altPath, i) => {
+          log(`Alt path ${i + 1}: ${altPath} - exists: ${fs.existsSync(altPath)}`);
+          if (fs.existsSync(altPath)) {
+            const altIndex = path.join(altPath, "index.html");
+            log(`Alt index ${i + 1}: ${altIndex} - exists: ${fs.existsSync(altIndex)}`);
+          }
+        });
+        
         if (fs.existsSync(distPath)) {
           log(`Directory contents: ${fs.readdirSync(distPath).join(', ')}`);
         }
         
-        // Provide detailed deployment instructions
-        log(`Build files missing - providing deployment guidance`);
-        const deploymentHelp = `
-          <h2>Deployment Configuration Required</h2>
-          <p>Build files are missing. Configure your Replit Deployment with:</p>
-          <ul>
-            <li><strong>Build Command:</strong> npm run build</li>
-            <li><strong>Start Command:</strong> npm run start</li>
-          </ul>
-          <p>Then redeploy to resolve this issue.</p>
-        `;
-        res.status(503).send(deploymentHelp);
+        // Check root directory contents
+        log(`Root directory contents: ${fs.readdirSync(process.cwd()).join(', ')}`);
+        
+        res.status(503).send(`
+          <!DOCTYPE html>
+          <html>
+          <head><title>Build Files Missing</title></head>
+          <body>
+            <h2>Deployment Debug Information</h2>
+            <p>Working directory: ${process.cwd()}</p>
+            <p>Looking for: ${indexPath}</p>
+            <p>Build directory exists: ${fs.existsSync(distPath)}</p>
+            <p>Check deployment logs for detailed path information.</p>
+          </body>
+          </html>
+        `);
       }
     });
     
