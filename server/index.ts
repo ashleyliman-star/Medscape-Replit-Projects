@@ -6,23 +6,26 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Handle routing for Medscape URL structure
+// Handle routing for specific debate page only
 app.use((req, res, next) => {
   const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
-  const host = req.get('host') || '';
   
-  // If accessing the specific debate path, serve the app (regardless of domain for now)
+  // If accessing the specific debate path, serve the app
   if (req.path === targetPath || req.path === targetPath + '/') {
     req.url = '/'; // Rewrite to root for the app
     next();
   }
-  // Allow access to necessary assets and API routes
-  else if (req.path === '/' || req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/')) {
+  // Allow access to necessary assets and API routes for the debate page
+  else if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/')) {
     next();
   }
-  // Block all other paths
+  // For development, allow root access only on replit domains
+  else if (req.path === '/' && req.get('host')?.includes('replit')) {
+    next();
+  }
+  // Block all other paths - let them be handled by other services on exp.medscape.com
   else {
-    res.status(404).send('Page not found - This content is only available at the specific debate URL');
+    res.status(404).send('Page not found');
   }
 });
 
