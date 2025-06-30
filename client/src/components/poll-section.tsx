@@ -83,7 +83,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
       
       <div className="max-w-2xl mx-auto">
         <h3 className="text-lg font-semibold text-gray-800 mb-6 text-center">
-          Is routine surveillance for breast cancer really worth it?
+          Is routine surveillance for cancer metastases a good idea in asymptomatic patients?
         </h3>
         
         {!hasVoted ? (
