@@ -38,6 +38,9 @@ app.use((req, res, next) => {
     return;
   }
   
+  // In production, log requests for debugging
+  log(`Production request: ${req.method} ${req.path} from ${req.get('host')}`);
+  
   // In production, only allow specific paths
   const allowedPaths = [
     targetPath,
@@ -51,8 +54,10 @@ app.use((req, res, next) => {
                        req.path.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|map)$/);
   
   if (allowedPaths.includes(req.path) || isStaticAsset) {
+    log(`Allowing request to: ${req.path}`);
     next();
   } else {
+    log(`Blocking request to: ${req.path}`);
     res.status(404).send('Page not found');
   }
 });
@@ -104,6 +109,24 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
+    // Add a specific handler for the target path before serveStatic
+    app.get(targetPath, (req, res) => {
+      log(`Direct handler serving target path: ${req.path}`);
+      const path = require('path');
+      const fs = require('fs');
+      const distPath = path.resolve(import.meta.dirname, "public");
+      const indexPath = path.resolve(distPath, "index.html");
+      
+      if (fs.existsSync(indexPath)) {
+        log(`Serving index.html from: ${indexPath}`);
+        res.sendFile(indexPath);
+      } else {
+        log(`Index.html not found at: ${indexPath}`);
+        log(`Directory contents: ${fs.existsSync(distPath) ? fs.readdirSync(distPath) : 'Directory does not exist'}`);
+        res.status(500).send('App files not found. Please rebuild the application.');
+      }
+    });
+    
     serveStatic(app);
   }
 
