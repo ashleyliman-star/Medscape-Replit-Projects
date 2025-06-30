@@ -6,13 +6,7 @@ export default function ConclusionsUnboxed() {
       </h2>
       <div className="max-w-4xl mx-auto space-y-4 text-gray-700 text-base md:text-lg">
         <p>
-          This debate highlights the complexity of breast cancer screening decisions in modern healthcare. Both perspectives offer valid evidence-based arguments that reflect the current state of clinical practice and evolving guideline recommendations.
-        </p>
-        <p>
-          The pro-surveillance argument emphasizes the robust evidence from population studies showing mortality reduction and the benefits of early detection. The selective-surveillance argument focuses on individualized risk assessment, patient autonomy, and minimizing the harms of overdiagnosis and false positives.
-        </p>
-        <p>
-          Ultimately, the decision should involve shared decision-making between clinicians and patients, considering individual risk factors, family history, patient preferences, and the balance of benefits versus risks in each specific case. The key is ensuring women have access to accurate information to make informed choices about their screening participation.
+          Despite many guidelines that recommend routine checks, there is limited evidence that frequent surveillance for cancer metastases in patients with asymptomatic disease improves overall survival or quality of life. However, there isn't necessarily a one-size-fits-all approach to surveillance in this patient population. The benefits and harms may vary by the cancer type and the patient, and decisions should be made on a case-by-case basis alongside the patient.
         </p>
       </div>
     </section>
