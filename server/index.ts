@@ -122,8 +122,26 @@ app.use((req, res, next) => {
         res.sendFile(indexPath);
       } else {
         log(`Index.html not found at: ${indexPath}`);
-        log(`Directory contents: ${fs.existsSync(distPath) ? fs.readdirSync(distPath) : 'Directory does not exist'}`);
-        res.status(500).send('App files not found. Please rebuild the application.');
+        log(`Build directory exists: ${fs.existsSync(distPath)}`);
+        if (fs.existsSync(distPath)) {
+          log(`Directory contents: ${fs.readdirSync(distPath).join(', ')}`);
+        }
+        
+        // Emergency fallback - serve a basic HTML page that shows the app should be rebuilt
+        res.status(503).send(`
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Medical Debate - Build Required</title>
+            <meta charset="UTF-8">
+          </head>
+          <body>
+            <h1>Application Build Required</h1>
+            <p>The medical debate application needs to be rebuilt. Please contact support.</p>
+            <p>Error: Build files not found at ${distPath}</p>
+          </body>
+          </html>
+        `);
       }
     });
     
