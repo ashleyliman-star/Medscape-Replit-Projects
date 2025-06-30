@@ -12,6 +12,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={DebatePage} />
+      <Route path="/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases" component={DebatePage} />
       <Route component={NotFound} />
     </Switch>
   );
