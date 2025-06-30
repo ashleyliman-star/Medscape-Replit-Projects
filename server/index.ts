@@ -6,6 +6,25 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Handle routing for Medscape URL structure
+app.use((req, res, next) => {
+  const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
+  
+  // If accessing the specific Medscape path, serve the app
+  if (req.path === targetPath || req.path === targetPath + '/') {
+    req.url = '/'; // Rewrite to root for the app
+    next();
+  }
+  // If accessing root from development, serve normally
+  else if (req.path === '/' && req.get('host')?.includes('replit')) {
+    next();
+  }
+  // Block all other paths
+  else {
+    res.status(404).send('Page not found');
+  }
+});
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
