@@ -197,79 +197,58 @@ export default function DebatePage() {
           <div className="border-t border-gray-800 mb-6"></div>
           <div className="space-y-4">
             <div className="border-b border-gray-200 pb-3">
-              <h4 
-                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer"
+              <a 
+                href="https://www.medscape.com/viewarticle/routine-checks-cancer-metastases-help-or-harm-2025a1000h03"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'Breast Cancer Screening Guidelines 2024'
+                      event_label: 'Routine Checks for Cancer Metastases Help or Harm'
                     });
                   }
                 }}
               >
-                Breast Cancer Screening Guidelines: What's Changed in 2024
-              </h4>
+                Routine Checks for Cancer Metastases: A Help or Harm?
+              </a>
             </div>
             <div className="border-b border-gray-200 pb-3">
-              <h4 
-                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer"
+              <a 
+                href="https://www.medscape.com/viewarticle/beyond-survival-why-many-women-opt-double-mastectomy-2024a1000gv5?form=fpf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'MRI vs Mammography High-Risk Patients'
+                      event_label: 'Beyond Survival Double Mastectomy'
                     });
                   }
                 }}
               >
-                MRI vs Mammography: When to Use Each for High-Risk Patients
-              </h4>
+                Beyond Survival: Why Many Women Opt for a Double Mastectomy
+              </a>
             </div>
             <div className="border-b border-gray-200 pb-3">
-              <h4 
-                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer"
+              <a 
+                href="https://www.medscape.com/viewarticle/surveillance-instead-surgery-low-risk-dcis-2024a1000nak?form=fpf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
                 onClick={() => {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'False Positives Patient Psychology'
+                      event_label: 'Surveillance Instead Surgery DCIS'
                     });
                   }
                 }}
               >
-                False Positives in Breast Screening: Impact on Patient Psychology
-              </h4>
-            </div>
-            <div className="border-b border-gray-200 pb-3">
-              <h4 
-                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer"
-                onClick={() => {
-                  if (typeof window !== 'undefined' && window.gtag) {
-                    window.gtag('event', 'medscape_link_click', {
-                      event_category: 'external_links',
-                      event_label: 'Cost-Effectiveness Analysis Surveillance'
-                    });
-                  }
-                }}
-              >
-                Cost-Effectiveness Analysis of Breast Cancer Surveillance Programs
-              </h4>
-            </div>
-            <div className="border-b border-gray-200 pb-3">
-              <h4 
-                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer"
-                onClick={() => {
-                  if (typeof window !== 'undefined' && window.gtag) {
-                    window.gtag('event', 'medscape_link_click', {
-                      event_category: 'external_links',
-                      event_label: 'Personalized Screening Risk Stratification'
-                    });
-                  }
-                }}
-              >
-                Personalized Screening: Risk Stratification in Breast Cancer Prevention
-              </h4>
+                Surveillance Instead of Surgery for Low-Risk DCIS?
+              </a>
             </div>
           </div>
         </div>
