@@ -127,9 +127,18 @@ app.use((req, res, next) => {
           log(`Directory contents: ${fs.readdirSync(distPath).join(', ')}`);
         }
         
-        // Build files are missing - this shouldn't happen in production
-        log(`Build files missing - deployment may need to run build process`);
-        res.status(503).send('Application build files not found. Deployment configuration may need adjustment.');
+        // Provide detailed deployment instructions
+        log(`Build files missing - providing deployment guidance`);
+        const deploymentHelp = `
+          <h2>Deployment Configuration Required</h2>
+          <p>Build files are missing. Configure your Replit Deployment with:</p>
+          <ul>
+            <li><strong>Build Command:</strong> npm run build</li>
+            <li><strong>Start Command:</strong> npm run start</li>
+          </ul>
+          <p>Then redeploy to resolve this issue.</p>
+        `;
+        res.status(503).send(deploymentHelp);
       }
     });
     
