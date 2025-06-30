@@ -17,8 +17,8 @@ import MiddleGroundUnboxed from "@/components/middle-ground-unboxed";
 import ConclusionsUnboxed from "@/components/conclusions-unboxed";
 
 const debateData = {
-  question: "Is routine surveillance for breast cancer really worth it?",
-  introduction: "This debate examines the benefits and risks of routine breast cancer screening programs. Two expert perspectives present evidence-based arguments on whether mammography screening should be universally recommended or more selectively applied.",
+  question: "Do Patients Benefit From Routine Checks for Cancer Metastases?",
+  introduction: "After undergoing a full course of curative-intent cancer treatment, patients are typically monitored for early signs of recurrence. For certain cancer types, guidelines recommend patients receive imaging scans and blood tests as often as every 6 months over 5 years. But some experts have longstanding concerns about the value of surveillance after curative-intent treatment in patients who remain asymptomatic. Do frequent scans and blood tests actually improve survival or quality of life?",
   sideA: {
     position: "YES: Routine Surveillance is Worth It",
     color: "blue" as const,
