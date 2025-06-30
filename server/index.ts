@@ -9,6 +9,12 @@ app.use(express.urlencoded({ extended: false }));
 // Handle routing for specific debate page only
 app.use((req, res, next) => {
   const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
+  const host = req.get('host') || '';
+  
+  // Redirect from Replit app domain to Medscape domain
+  if (host.includes('medscape-debate.replit.app') && req.path === '/') {
+    return res.redirect(301, `https://exp.medscape.com${targetPath}`);
+  }
   
   // If accessing the specific debate path, serve the app
   if (req.path === targetPath || req.path === targetPath + '/') {
@@ -19,8 +25,8 @@ app.use((req, res, next) => {
   else if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/')) {
     next();
   }
-  // For development, allow root access only on replit domains
-  else if (req.path === '/' && req.get('host')?.includes('replit')) {
+  // For development, allow root access only on replit domains (but not the app domain)
+  else if (req.path === '/' && req.get('host')?.includes('replit') && !host.includes('medscape-debate.replit.app')) {
     next();
   }
   // Block all other paths - let them be handled by other services on exp.medscape.com
