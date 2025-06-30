@@ -9,6 +9,19 @@ app.use(express.urlencoded({ extended: false }));
 // Handle routing for Medscape URL structure - simplified approach
 const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
 
+// Redirect root Replit URL to production Medscape URL
+app.get('/', (req, res, next) => {
+  const host = req.get('host');
+  
+  // If accessing from Replit domain, redirect to Medscape URL
+  if (host && host.includes('replit.app')) {
+    return res.redirect(301, `https://exp.medscape.com${targetPath}`);
+  }
+  
+  // Otherwise continue normally
+  next();
+});
+
 // Explicitly handle the target path
 app.get(targetPath, (req, res, next) => {
   // Let this request continue to be handled by static serving or Vite
