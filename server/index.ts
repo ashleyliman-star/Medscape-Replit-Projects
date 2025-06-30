@@ -15,8 +15,8 @@ app.use((req, res, next) => {
     req.url = '/'; // Rewrite to root for the app
     next();
   }
-  // If accessing root from development, serve normally
-  else if (req.path === '/' && req.get('host')?.includes('replit')) {
+  // In development, allow access to root and static assets
+  else if (req.path === '/' || req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/')) {
     next();
   }
   // Block all other paths
