@@ -12,11 +12,18 @@ app.use((req, res, next) => {
   
   // If accessing the specific Medscape path, serve the app
   if (req.path === targetPath || req.path === targetPath + '/') {
-    req.url = '/'; // Rewrite to root for the app
+    // In development, rewrite URL for Vite middleware
+    if (app.get("env") === "development") {
+      req.url = '/';
+    }
     next();
   }
-  // If accessing root from development, serve normally
-  else if (req.path === '/' && req.get('host')?.includes('replit')) {
+  // If accessing root from development environment, serve normally
+  else if (req.path === '/' && (app.get("env") === "development" || req.get('host')?.includes('replit'))) {
+    next();
+  }
+  // Allow static assets in production
+  else if (req.path.startsWith('/assets/') || req.path.startsWith('/src/') || req.path.includes('.')) {
     next();
   }
   // Block all other paths
@@ -72,6 +79,15 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
+    // In production, handle the specific route before serving static files
+    const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
+    
+    app.get(targetPath, (req, res, next) => {
+      // Serve index.html for the specific route
+      req.url = '/';
+      next();
+    });
+    
     serveStatic(app);
   }
 
