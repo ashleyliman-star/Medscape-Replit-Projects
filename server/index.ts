@@ -6,28 +6,40 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Handle routing for Medscape URL structure
+// Handle routing for Medscape URL structure - simplified approach
+const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
+
+// Explicitly handle the target path
+app.get(targetPath, (req, res, next) => {
+  // Let this request continue to be handled by static serving or Vite
+  next();
+});
+
+// Route filtering middleware
 app.use((req, res, next) => {
-  const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
+  const isDevelopment = app.get("env") === "development";
   
-  // If accessing the specific Medscape path, serve the app
-  if (req.path === targetPath || req.path === targetPath + '/') {
-    // In development, rewrite URL for Vite middleware
-    if (app.get("env") === "development") {
-      req.url = '/';
-    }
+  // In development, allow everything
+  if (isDevelopment) {
     next();
+    return;
   }
-  // If accessing root from development environment, serve normally
-  else if (req.path === '/' && (app.get("env") === "development" || req.get('host')?.includes('replit'))) {
+  
+  // In production, only allow specific paths
+  const allowedPaths = [
+    targetPath,
+    targetPath + '/',
+    '/'
+  ];
+  
+  // Allow static assets
+  const isStaticAsset = req.path.startsWith('/assets/') || 
+                       req.path.startsWith('/src/') || 
+                       req.path.match(/\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|map)$/);
+  
+  if (allowedPaths.includes(req.path) || isStaticAsset) {
     next();
-  }
-  // Allow static assets in production
-  else if (req.path.startsWith('/assets/') || req.path.startsWith('/src/') || req.path.includes('.')) {
-    next();
-  }
-  // Block all other paths
-  else {
+  } else {
     res.status(404).send('Page not found');
   }
 });
@@ -79,15 +91,6 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
-    // In production, handle the specific route before serving static files
-    const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
-    
-    app.get(targetPath, (req, res, next) => {
-      // Serve index.html for the specific route
-      req.url = '/';
-      next();
-    });
-    
     serveStatic(app);
   }
 
