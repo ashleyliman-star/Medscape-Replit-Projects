@@ -127,66 +127,9 @@ app.use((req, res, next) => {
           log(`Directory contents: ${fs.readdirSync(distPath).join(', ')}`);
         }
         
-        // Emergency fallback - serve a functional debate page
-        log(`Serving emergency fallback page`);
-        res.status(200).send(`
-          <!DOCTYPE html>
-          <html lang="en">
-          <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Medical Debate: Cancer Surveillance - Medscape</title>
-            <meta name="robots" content="noindex, nofollow">
-            <meta property="og:title" content="Medical Debate: Cancer Surveillance in Asymptomatic Patients">
-            <meta property="og:description" content="Expert perspectives on routine surveillance for cancer metastases. Educational content for healthcare professionals.">
-            <style>
-              body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; max-width: 800px; margin: 0 auto; }
-              .header { border-bottom: 3px solid #0066cc; padding-bottom: 20px; margin-bottom: 30px; }
-              .question { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
-              .side { margin: 20px 0; padding: 20px; border-left: 4px solid #0066cc; }
-              .poll { background: #f0f8ff; padding: 20px; border-radius: 8px; margin: 30px 0; }
-              button { background: #0066cc; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
-              .note { font-style: italic; color: #666; margin-top: 20px; }
-            </style>
-          </head>
-          <body>
-            <div class="header">
-              <h1>Medical Debate: Is routine surveillance for cancer metastases a good idea in asymptomatic patients?</h1>
-              <p><strong>Educational content for healthcare professionals</strong></p>
-            </div>
-            
-            <div class="question">
-              <h2>The Question</h2>
-              <p>Routine surveillance for cancer metastases in asymptomatic patients remains a topic of significant debate. This discussion examines the evidence for and against systematic monitoring approaches.</p>
-            </div>
-            
-            <div class="side">
-              <h3>YES - Routine surveillance is worth it</h3>
-              <p><strong>Early detection enables intervention:</strong> Regular monitoring can identify metastases at stages when treatment options may be more effective.</p>
-              <p><strong>Patient peace of mind:</strong> Systematic surveillance provides psychological reassurance for patients and families.</p>
-              <p><strong>Treatment planning:</strong> Regular monitoring allows for better coordination of care and treatment planning.</p>
-            </div>
-            
-            <div class="side" style="border-left-color: #cc6600;">
-              <h3>NO - Selective surveillance is more appropriate</h3>
-              <p><strong>Limited survival benefit:</strong> Studies show minimal impact on overall survival from routine surveillance in asymptomatic patients.</p>
-              <p><strong>Resource allocation:</strong> Healthcare resources may be better allocated to higher-yield interventions.</p>
-              <p><strong>Quality of life considerations:</strong> Frequent testing can increase anxiety and impact patient quality of life.</p>
-            </div>
-            
-            <div class="poll">
-              <h3>What's your perspective?</h3>
-              <p>This is a simplified fallback version. The full interactive debate is temporarily unavailable.</p>
-              <button onclick="alert('Thank you for your interest. The full interactive version will be available shortly.')">Vote: Yes - Routine surveillance</button>
-              <button onclick="alert('Thank you for your interest. The full interactive version will be available shortly.')" style="background: #cc6600; margin-left: 10px;">Vote: No - Selective surveillance</button>
-            </div>
-            
-            <div class="note">
-              <p><strong>Note:</strong> This debate is for educational purposes and should not replace clinical judgment. The full interactive version includes detailed expert arguments, polling results, and additional resources.</p>
-            </div>
-          </body>
-          </html>
-        `);
+        // Build files are missing - this shouldn't happen in production
+        log(`Build files missing - deployment may need to run build process`);
+        res.status(503).send('Application build files not found. Deployment configuration may need adjustment.');
       }
     });
     
