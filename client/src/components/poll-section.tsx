@@ -16,7 +16,7 @@ interface PollSectionProps {
 
 const pollOptions = [
   { value: 'yes', label: 'Yes - Routine surveillance is worth it' },
-  { value: 'no', label: 'Selective surveillance is more appropriate' }
+  { value: 'no', label: 'No - Selective surveillance is more appropriate' }
 ];
 
 export default function PollSection({ debateId }: PollSectionProps) {
