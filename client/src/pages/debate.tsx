@@ -206,8 +206,10 @@ export default function DebatePage() {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'Routine Checks for Cancer Metastases Help or Harm'
+                      event_label: 'Routine Checks for Cancer Metastases Help or Harm',
+                      link_url: 'https://www.medscape.com/viewarticle/routine-checks-cancer-metastases-help-or-harm-2025a1000h03'
                     });
+                    console.log('GA4 Event fired: medscape_link_click');
                   }
                 }}
               >
@@ -224,8 +226,10 @@ export default function DebatePage() {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'Beyond Survival Double Mastectomy'
+                      event_label: 'Beyond Survival Double Mastectomy',
+                      link_url: 'https://www.medscape.com/viewarticle/beyond-survival-why-many-women-opt-double-mastectomy-2024a1000gv5'
                     });
+                    console.log('GA4 Event fired: medscape_link_click');
                   }
                 }}
               >
@@ -242,8 +246,10 @@ export default function DebatePage() {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'Surveillance Instead Surgery DCIS'
+                      event_label: 'Surveillance Instead Surgery DCIS',
+                      link_url: 'https://www.medscape.com/viewarticle/surveillance-instead-surgery-low-risk-dcis-2024a1000nak'
                     });
+                    console.log('GA4 Event fired: medscape_link_click');
                   }
                 }}
               >
