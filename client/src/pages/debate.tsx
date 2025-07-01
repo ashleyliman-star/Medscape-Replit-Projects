@@ -203,13 +203,18 @@ export default function DebatePage() {
                 rel="noopener noreferrer"
                 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
                 onClick={() => {
+                  console.log('Link clicked - checking GA availability');
+                  console.log('window.gtag available:', typeof window.gtag);
                   if (typeof window !== 'undefined' && window.gtag) {
+                    console.log('Firing GA4 event: medscape_link_click');
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
                       event_label: 'Routine Checks for Cancer Metastases Help or Harm',
                       link_url: 'https://www.medscape.com/viewarticle/routine-checks-cancer-metastases-help-or-harm-2025a1000h03'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
+                  } else {
+                    console.log('GA not available - gtag function not found');
                   }
                 }}
               >
