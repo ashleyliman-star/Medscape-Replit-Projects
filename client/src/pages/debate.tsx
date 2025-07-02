@@ -198,7 +198,7 @@ export default function DebatePage() {
           <div className="space-y-4">
             <div className="border-b border-gray-200 pb-3">
               <a 
-                href="https://www.medscape.com/viewarticle/routine-checks-cancer-metastases-help-or-harm-2025a1000h03?ecd=socpd_fb_250102_site_xx_position1"
+                href="https://www.medscape.com/viewarticle/routine-checks-cancer-metastases-help-or-harm-2025a1000h03?ecd=socpd_fb_250102_mscpmrk_xx_position1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
@@ -210,7 +210,7 @@ export default function DebatePage() {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
                       event_label: 'Routine Checks for Cancer Metastases Help or Harm',
-                      link_url: 'https://www.medscape.com/viewarticle/routine-checks-cancer-metastases-help-or-harm-2025a1000h03?ecd=socpd_fb_250102_site_xx_position1'
+                      link_url: 'https://www.medscape.com/viewarticle/routine-checks-cancer-metastases-help-or-harm-2025a1000h03?ecd=socpd_fb_250102_mscpmrk_xx_position1'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
                   } else {
@@ -223,7 +223,7 @@ export default function DebatePage() {
             </div>
             <div className="border-b border-gray-200 pb-3">
               <a 
-                href="https://www.medscape.com/viewarticle/beyond-survival-why-many-women-opt-double-mastectomy-2024a1000gv5?ecd=socpd_fb_250102_site_xx_position2"
+                href="https://www.medscape.com/viewarticle/beyond-survival-why-many-women-opt-double-mastectomy-2024a1000gv5?ecd=socpd_fb_250102_mscpmrk_xx_position2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
@@ -232,7 +232,7 @@ export default function DebatePage() {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
                       event_label: 'Beyond Survival Double Mastectomy',
-                      link_url: 'https://www.medscape.com/viewarticle/beyond-survival-why-many-women-opt-double-mastectomy-2024a1000gv5?ecd=socpd_fb_250102_site_xx_position2'
+                      link_url: 'https://www.medscape.com/viewarticle/beyond-survival-why-many-women-opt-double-mastectomy-2024a1000gv5?ecd=socpd_fb_250102_mscpmrk_xx_position2'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
                   }
@@ -243,7 +243,7 @@ export default function DebatePage() {
             </div>
             <div className="border-b border-gray-200 pb-3">
               <a 
-                href="https://www.medscape.com/viewarticle/surveillance-instead-surgery-low-risk-dcis-2024a1000nak?ecd=socpd_fb_250102_site_xx_position3"
+                href="https://www.medscape.com/viewarticle/surveillance-instead-surgery-low-risk-dcis-2024a1000nak?ecd=socpd_fb_250102_mscpmrk_xx_position3"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
@@ -252,7 +252,7 @@ export default function DebatePage() {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
                       event_label: 'Surveillance Instead Surgery DCIS',
-                      link_url: 'https://www.medscape.com/viewarticle/surveillance-instead-surgery-low-risk-dcis-2024a1000nak?ecd=socpd_fb_250102_site_xx_position3'
+                      link_url: 'https://www.medscape.com/viewarticle/surveillance-instead-surgery-low-risk-dcis-2024a1000nak?ecd=socpd_fb_250102_mscpmrk_xx_position3'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
                   }
