@@ -31,7 +31,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
                 Supporting Routine Surveillance
               </h3>
             </div>
-            <ul className="space-y-2 md:space-y-3">
+            <ul className="space-y-2 md:space-y-3 ml-8">
               {yesPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <span className="inline-block w-2 h-2 rounded-full mt-2 mr-2 md:mr-3 flex-shrink-0" style={{ backgroundColor: '#1A9FDA' }}></span>
@@ -49,7 +49,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
                 Selective Surveillance is More Appropriate
               </h3>
             </div>
-            <ul className="space-y-2 md:space-y-3">
+            <ul className="space-y-2 md:space-y-3 ml-8">
               {noPoints.map((point, index) => (
                 <li key={index} className="flex items-start">
                   <span className="inline-block w-2 h-2 rounded-full mt-2 mr-2 md:mr-3 flex-shrink-0" style={{ backgroundColor: '#D43F5C' }}></span>
