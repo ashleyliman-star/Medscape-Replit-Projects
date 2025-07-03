@@ -14,14 +14,6 @@ interface PollSectionProps {
   debateId: string;
 }
 
-interface PollStats {
-  counts: {
-    yes: number;
-    no: number;
-  };
-  total: number;
-}
-
 const pollOptions = [
   { value: 'yes', label: 'Yes - Routine surveillance is worth it' },
   { value: 'no', label: 'No - Selective surveillance is more appropriate' }
@@ -32,7 +24,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
   const [hasVoted, setHasVoted] = useState(false);
   const { toast } = useToast();
 
-  const { data: pollStats, refetch } = useQuery<PollStats>({
+  const { data: pollStats, refetch } = useQuery({
     queryKey: [`/api/poll/${debateId}/stats`],
     enabled: hasVoted,
   });
@@ -142,8 +134,8 @@ export default function PollSection({ debateId }: PollSectionProps) {
 
                 {/* Vote counts on sides */}
                 <div className="flex justify-between items-center mb-2 text-sm text-gray-500">
-                  <span>{pollStats?.counts?.yes || 0} votes</span>
-                  <span>{pollStats?.counts?.no || 0} votes</span>
+                  <span>{pollStats.counts.yes || 0} votes</span>
+                  <span>{pollStats.counts.no || 0} votes</span>
                 </div>
 
                 {/* Progress bar container */}
@@ -151,14 +143,14 @@ export default function PollSection({ debateId }: PollSectionProps) {
                   {/* YES percentage and bar */}
                   <div className="flex-1 flex items-center">
                     <span className="text-2xl font-bold mr-2" style={{ color: '#1A9FDA' }}>
-                      {(pollStats?.total || 0) > 0 ? Math.round(((pollStats?.counts?.yes || 0) / (pollStats?.total || 1)) * 100) : 0}%
+                      {pollStats.total > 0 ? Math.round(((pollStats.counts.yes || 0) / pollStats.total) * 100) : 0}%
                     </span>
                     <div className="flex-1 h-8 bg-white overflow-hidden border border-gray-300" style={{ borderTopLeftRadius: '9999px', borderBottomLeftRadius: '9999px' }}>
                       <div 
                         className="h-full transition-all duration-500"
                         style={{ 
                           backgroundColor: '#1A9FDA',
-                          width: `${(pollStats?.total || 0) > 0 ? ((pollStats?.counts?.yes || 0) / (pollStats?.total || 1)) * 100 : 0}%`
+                          width: `${pollStats.total > 0 ? ((pollStats.counts.yes || 0) / pollStats.total) * 100 : 0}%`
                         }}
                       />
                     </div>
@@ -167,7 +159,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
                   {/* Center circle with total votes - overlapping bars */}
                   <div className="relative -mx-4">
                     <div className="w-16 h-16 bg-gray-800 rounded-full flex flex-col items-center justify-center text-white text-xs font-semibold z-10 relative">
-                      <span className="text-lg font-bold">{pollStats?.total || 0}</span>
+                      <span className="text-lg font-bold">{pollStats.total || 0}</span>
                       <span>votes</span>
                     </div>
                   </div>
@@ -179,19 +171,19 @@ export default function PollSection({ debateId }: PollSectionProps) {
                         className="h-full transition-all duration-500 ml-auto"
                         style={{ 
                           backgroundColor: '#D43F5C',
-                          width: `${(pollStats?.total || 0) > 0 ? ((pollStats?.counts?.no || 0) / (pollStats?.total || 1)) * 100 : 0}%`
+                          width: `${pollStats.total > 0 ? ((pollStats.counts.no || 0) / pollStats.total) * 100 : 0}%`
                         }}
                       />
                     </div>
                     <span className="text-2xl font-bold ml-2" style={{ color: '#D43F5C' }}>
-                      {(pollStats?.total || 0) > 0 ? Math.round(((pollStats?.counts?.no || 0) / (pollStats?.total || 1)) * 100) : 0}%
+                      {pollStats.total > 0 ? Math.round(((pollStats.counts.no || 0) / pollStats.total) * 100) : 0}%
                     </span>
                   </div>
                 </div>
 
                 {/* Total votes centered below */}
                 <div className="text-center text-sm text-gray-500 mt-4">
-                  Based on {pollStats?.total || 0} responses • Results update in real-time
+                  Based on {pollStats.total} responses • Results update in real-time
                 </div>
               </div>
             )}
