@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MessageSquareText } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import type { Comment } from "@shared/schema";
 
@@ -111,7 +111,7 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
                     onClick={onCommentClick}
                     className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors"
                   >
-                    <MessageSquareText className="h-4 w-4" />
+                    <MessageCircle className="h-4 w-4" />
                     <span>{comments.length}</span>
                   </button>
                 </>
@@ -159,7 +159,7 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
                     onClick={onCommentClick}
                     className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors"
                   >
-                    <MessageSquareText className="h-4 w-4" />
+                    <MessageCircle className="h-4 w-4" />
                     <span>{comments.length}</span>
                   </button>
                 </>

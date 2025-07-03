@@ -57,11 +57,20 @@ export default function CommentSection({ debateId }: CommentSectionProps) {
     mutationFn: (commentData: InsertComment) => 
       apiRequest('POST', '/api/comments', commentData),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['/api/comments', debateId] });
+      // Invalidate both the specific debate comments and the general comments query
+      queryClient.invalidateQueries({ queryKey: [`/api/comments/${debateId}`] });
+      queryClient.invalidateQueries({ queryKey: [`/api/comments/breast-cancer-surveillance`] });
+      
       setNewComment("");
       setAuthorName("");
       setReplyTo(null);
       setReplyText("");
+      
+      toast({
+        title: "Comment posted!",
+        description: "Your comment has been successfully added to the discussion.",
+        variant: "default",
+      });
     }
   });
 
@@ -70,7 +79,9 @@ export default function CommentSection({ debateId }: CommentSectionProps) {
     mutationFn: (commentId: number) => 
       apiRequest('POST', `/api/comments/${commentId}/like`),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['/api/comments', debateId] });
+      // Invalidate both the specific debate comments and the general comments query
+      queryClient.invalidateQueries({ queryKey: [`/api/comments/${debateId}`] });
+      queryClient.invalidateQueries({ queryKey: [`/api/comments/breast-cancer-surveillance`] });
     }
   });
 
