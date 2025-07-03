@@ -69,38 +69,29 @@ const debateData = {
     statement: "While breast cancer screening has benefits, routine surveillance carries significant risks of overdiagnosis, false positives, and psychological harm that may outweigh benefits for many women.",
     arguments: [
       {
-        title: "False positives cause anxiety and harm",
+        title: "No clear evidence survival improves",
         points: [
-          "Up to 10% of mammograms result in false positives, leading to unnecessary biopsies and procedures",
-          "False positive results cause significant psychological distress and anxiety that can persist for years"
+          "Studies consistently demonstrate that identifying recurrent disease earlier does not improve survival or quality of life in asymptomatic patients.",
+          "While survival may appear better in patients with asymptomatic vs symptomatic recurrences, the \"survival clock\" starts earlier in the disease timeline for asymptomatic patients."
         ]
       },
       {
-        title: "False negatives can miss cancers",
+        title: "Frequent imaging can cause harm",
         points: [
-          "Mammography misses 10-15% of breast cancers, particularly in women with dense breast tissue",
-          "False sense of security from negative results may delay appropriate medical attention for symptoms"
+          "Ongoing scans can lead to unnecessary radiation as well as anxiety.",
+          "Routine visits may be also challenging for patients and mean lost time at work"
         ]
       },
       {
-        title: "Overdiagnosis leads to unnecessary treatment",
+        title: "Overdiagnosis may lead to unnecessary care",
         points: [
-          "Studies suggest 15-25% of screen-detected cancers represent overdiagnosis of slow-growing tumors",
-          "Women receive treatment for cancers that may never have caused symptoms or death"
+          "Incidental findings on routine scans and blood tests can lead to more testing and unnecessary treatment."
         ]
       },
       {
-        title: "Limited impact on overall survival",
+        title: "Patients often bear the cost",
         points: [
-          "While breast cancer mortality decreases, overall mortality benefits are modest",
-          "Improved treatments may account for much of the mortality reduction attributed to screening"
-        ]
-      },
-      {
-        title: "Radiation exposure, though low, is not zero",
-        points: [
-          "Cumulative radiation exposure from annual mammograms over decades carries small but measurable cancer risk",
-          "Risk-benefit calculation varies significantly based on individual patient factors"
+          "These tests aren't cheap and patients increasingly have to pay the costs out of pocket."
         ]
       }
     ],
