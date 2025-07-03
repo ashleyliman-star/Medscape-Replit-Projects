@@ -58,7 +58,7 @@ const debateData = {
     guidelines: "Follow established screening guidelines recommending annual or biennial mammograms for women aged 50-74, with individualized decisions for women 40-49 based on personal risk factors and preferences."
   },
   sideB: {
-    position: "Selective Surveillance is More Appropriate",
+    position: "NO: Selective Surveillance is More Appropriate",
     color: "purple" as const,
     physician: {
       name: "Dr. Robert Chen",

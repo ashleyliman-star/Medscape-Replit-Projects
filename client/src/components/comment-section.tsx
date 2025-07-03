@@ -151,7 +151,7 @@ export default function CommentSection() {
               Name
             </label>
             <Input
-              placeholder="Enter your name or username"
+              placeholder="Enter your name"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="max-w-xs"
@@ -281,7 +281,7 @@ export default function CommentSection() {
                     <div className="mt-3 space-y-2">
                       <div>
                         <label className="block text-xs font-medium text-gray-700 mb-1">
-                          Name/Username
+                          Name
                         </label>
                         <Input
                           placeholder="Enter your name"
