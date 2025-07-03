@@ -9,6 +9,7 @@ import Conclusions from "@/components/conclusions";
 import SideBySideArguments from "@/components/side-by-side-arguments";
 import SummaryTable from "@/components/summary-table";
 import CommentSection from "@/components/comment-section";
+import CommentPanel from "@/components/comment-panel";
 import GroupedArguments from "@/components/grouped-arguments";
 import SplitLayout from "@/components/split-layout";
 import UnboxedArguments from "@/components/unboxed-arguments";
@@ -110,6 +111,16 @@ const debateData = {
 };
 
 export default function DebatePage() {
+  const [isCommentPanelOpen, setIsCommentPanelOpen] = useState(false);
+
+  const handleCommentClick = () => {
+    setIsCommentPanelOpen(true);
+  };
+
+  const handleCloseCommentPanel = () => {
+    setIsCommentPanelOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <DebateHeader />
@@ -118,6 +129,7 @@ export default function DebatePage() {
         <DebateQuestion 
           question={debateData.question}
           introduction={debateData.introduction}
+          onCommentClick={handleCommentClick}
         />
 
         <AdPlaceholder size="728x90" className="flex justify-center mb-8" position={1} />
@@ -175,9 +187,7 @@ export default function DebatePage() {
         )}
         */}
 
-        <div className="my-12">
-          <CommentSection debateId="breast-cancer-surveillance" />
-        </div>
+
 
         {/* What to Read Next on Medscape section - after discussion for C1 */}
         <div className="mt-16 mb-8">
@@ -262,6 +272,13 @@ export default function DebatePage() {
           </p>
         </div>
       </footer>
+
+      {/* Comment Panel */}
+      <CommentPanel 
+        isOpen={isCommentPanelOpen}
+        onClose={handleCloseCommentPanel}
+        debateId="breast-cancer-surveillance"
+      />
     </div>
   );
 }

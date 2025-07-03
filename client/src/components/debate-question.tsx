@@ -1,15 +1,24 @@
 import { useState, useEffect, useRef } from 'react';
+import { MessageSquareText } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import type { Comment } from "@shared/schema";
 
 interface DebateQuestionProps {
   question: string;
   introduction: string;
+  onCommentClick?: () => void;
 }
 
-export default function DebateQuestion({ question, introduction }: DebateQuestionProps) {
+export default function DebateQuestion({ question, introduction, onCommentClick }: DebateQuestionProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [truncatedText, setTruncatedText] = useState('');
   const [needsTruncation, setNeedsTruncation] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
+
+  // Fetch comments to get count
+  const { data: comments = [] } = useQuery<Comment[]>({
+    queryKey: [`/api/comments/breast-cancer-surveillance`]
+  });
 
   useEffect(() => {
     const calculateTruncation = () => {
@@ -91,10 +100,22 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
           
           {/* Byline and publication date - desktop */}
           <div className="hidden md:block mt-4 text-center">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 flex items-center justify-center">
               <span className="font-medium">Victoria Stern</span>
               <span className="mx-2">•</span>
-              July 07, 2025
+              <span>July 07, 2025</span>
+              {onCommentClick && (
+                <>
+                  <span className="mx-2">•</span>
+                  <button 
+                    onClick={onCommentClick}
+                    className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors"
+                  >
+                    <MessageSquareText className="h-4 w-4" />
+                    <span>{comments.length}</span>
+                  </button>
+                </>
+              )}
             </p>
           </div>
           
@@ -127,10 +148,22 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
           
           {/* Byline and publication date - mobile */}
           <div className="md:hidden mt-4 text-center">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 flex items-center justify-center">
               <span className="font-medium">Victoria Stern</span>
               <span className="mx-2">•</span>
-              July 07, 2025
+              <span>July 07, 2025</span>
+              {onCommentClick && (
+                <>
+                  <span className="mx-2">•</span>
+                  <button 
+                    onClick={onCommentClick}
+                    className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors"
+                  >
+                    <MessageSquareText className="h-4 w-4" />
+                    <span>{comments.length}</span>
+                  </button>
+                </>
+              )}
             </p>
           </div>
         </div>
