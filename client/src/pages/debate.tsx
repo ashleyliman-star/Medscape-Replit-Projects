@@ -75,23 +75,27 @@ const debateData = {
     statement: "While breast cancer screening has benefits, routine surveillance carries significant risks of overdiagnosis, false positives, and psychological harm that may outweigh benefits for many women.",
     arguments: [
       {
+        title: "Regular surveillance can lead to overdiagnosis",
+        points: [
+          "Routine blood tests and imaging may uncover incidental findings that would not be harmful to patients."
+        ]
+      },
+      {
+        title: "Overdiagnosis can lead to unnecessary care",
+        points: [
+          "Incidental findings may prompt follow-up testing and expose patients to additional radiation from imaging or to unnecessary treatment."
+        ]
+      },
+      {
         title: "No clear evidence survival improves",
         points: [
-          "Studies consistently demonstrate that identifying recurrent disease earlier does not improve survival or quality of life in asymptomatic patients.",
-          "While survival may appear better in patients with asymptomatic vs symptomatic recurrences, the \"survival clock\" starts earlier in the disease timeline for asymptomatic patients."
+          "Studies consistently show that identifying recurrent disease earlier does not improve survival in asymptomatic patients. Survival may only appear to be better in patients with asymptomatic vs symptomatic recurrences because the \"survival clock\" starts earlier."
         ]
       },
       {
-        title: "Frequent imaging can cause harm",
+        title: "Quality of life doesn't improve",
         points: [
-          "Ongoing scans can lead to unnecessary radiation as well as anxiety.",
-          "Routine visits may be also challenging for patients and mean lost time at work"
-        ]
-      },
-      {
-        title: "Overdiagnosis may lead to unnecessary care",
-        points: [
-          "Incidental findings on routine scans and blood tests can lead to more testing and unnecessary treatment."
+          "Research also indicates that routine surveillance in this population does not improve patients' quality of life. This testing can, for instance, fuel greater anxiety among patients, and regular travel to appointments may be challenging and take time away from work and family."
         ]
       },
       {
