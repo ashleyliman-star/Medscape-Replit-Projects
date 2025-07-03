@@ -59,8 +59,8 @@ const debateData = {
         points: [
           "Treating patients at an earlier stage should be more effective or mean less aggressive treatment is needed."
         ]
-      }
-    ],
+      },
+      {
         title: "Cancer may be easier to treat",
         points: [
           "Identifying a recurrence early could mean less aggressive treatment."
