@@ -6,6 +6,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Serve robots.txt file
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.send('User-agent: *\nDisallow: /');
+});
+
 // Handle routing for specific debate page only
 app.use((req, res, next) => {
   const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
