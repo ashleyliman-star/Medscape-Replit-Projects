@@ -136,7 +136,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
             {/* Centered ad after every 2 arguments (index 1, 3, 5, etc.) */}
             {index % 2 === 1 && (
-              <div className="flex justify-center py-8">
+              <div className="col-span-2 flex justify-center py-8">
                 <AdPlaceholder size="responsive-desktop-banner" className="mx-auto" position={startingAdPosition + Math.floor(index / 2)} />
               </div>
             )}
