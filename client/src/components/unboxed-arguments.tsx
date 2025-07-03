@@ -136,7 +136,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             {/* Centered ad after every 2 arguments (index 1, 3, 5, etc.) */}
             {index % 2 === 1 && (
               <div className="flex justify-center py-8">
-                <AdPlaceholder size="300x250" className="mx-auto" />
+                <AdPlaceholder size="300x250" className="mx-auto" position={4 + Math.floor(index / 2)} />
               </div>
             )}
           </div>
@@ -192,7 +192,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
             {/* Ad after every pair of YES/NO arguments */}
             <div className="flex justify-center py-8">
-              <AdPlaceholder size="300x250" className="mx-auto" />
+              <AdPlaceholder size="300x250" className="mx-auto" position={4 + index} />
             </div>
           </div>
         ))}

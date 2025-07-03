@@ -122,7 +122,7 @@ export default function DebatePage() {
           introduction={debateData.introduction}
         />
 
-        <AdPlaceholder size="728x90" className="flex justify-center mb-8" />
+        <AdPlaceholder size="728x90" className="flex justify-center mb-8" position={1} />
 
         {/* C1 Version: Unboxed arguments with YES/NO capsules */}
         <div className="mb-16">
@@ -142,7 +142,7 @@ export default function DebatePage() {
         </div>
 
         {/* 300x250 ad unit below summary of key points */}
-        <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
+        <AdPlaceholder size="300x250" className="flex justify-center mb-12" position={2} />
 
         <MiddleGroundUnboxed />
 
@@ -151,7 +151,7 @@ export default function DebatePage() {
         </div>
 
         {/* Ad placement after conclusions in C1 */}
-        <AdPlaceholder size="300x250" className="flex justify-center mb-12" />
+        <AdPlaceholder size="300x250" className="flex justify-center mb-12" position={3} />
 
         <PollSection debateId="breast-cancer-surveillance" />
 
