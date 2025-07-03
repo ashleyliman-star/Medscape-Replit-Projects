@@ -127,7 +127,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
                   </div>
                   <div className="text-right">
                     <h4 className="font-bold text-base" style={{ color: '#D43F5C' }}>
-                      NO: Routine Surveillance is Not Worth It
+                      NO: Selective Surveillance is More Appropriate
                     </h4>
                   </div>
                 </div>
