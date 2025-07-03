@@ -6,8 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Serve robots.txt file
-app.get('/robots.txt', (req, res) => {
+// Serve robots.txt file only for the specific debate page path
+app.get('/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases/robots.txt', (req, res) => {
   res.type('text/plain');
   res.send('User-agent: *\nDisallow: /');
 });
@@ -20,6 +20,11 @@ app.use((req, res, next) => {
   // Redirect from Replit app domain to Medscape domain
   if (host.includes('medscape-debate.replit.app') && req.path === '/') {
     return res.redirect(301, `https://exp.medscape.com${targetPath}`);
+  }
+  
+  // Block root access on exp.medscape.com domain
+  if (host.includes('exp.medscape.com') && req.path === '/') {
+    return res.status(404).send('Page not found');
   }
   
   // If accessing the specific debate path, serve the app
