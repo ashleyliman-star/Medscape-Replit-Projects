@@ -10,8 +10,8 @@ interface AdPlaceholderProps {
 export default function AdPlaceholder({ size, className, position }: AdPlaceholderProps) {
   const dimensions = {
     '300x250': 'w-80 h-64',
-    '728x90': 'w-full max-w-2xl h-24',
-    'responsive-desktop-banner': 'w-80 h-64 md:w-full md:max-w-2xl md:h-24'
+    '728x90': 'w-full h-24',
+    'responsive-desktop-banner': 'w-80 h-64 md:w-full md:h-24'
   };
 
   const handleAdClick = () => {
