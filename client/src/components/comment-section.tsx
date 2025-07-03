@@ -289,10 +289,6 @@ export default function CommentSection({ debateId }: CommentSectionProps) {
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-6">
-      <h2 className="text-3xl font-bold text-gray-900 mb-4 flex items-center">
-        <MessageSquare className="mr-2 h-7 w-7 text-gray-600" />
-        Comments
-      </h2>
       
       <div className="space-y-4">
         <div className="space-y-3">
