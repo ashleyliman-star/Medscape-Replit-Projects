@@ -31,12 +31,36 @@ const debateData = {
     statement: "Routine breast cancer surveillance saves lives through early detection. The benefits of identifying cancer in its earliest stages far outweigh the risks and challenges of screening programs.",
     arguments: [
       {
-        title: "Catching earlier means less disease",
+        title: "Routine surveillance is often backed by guidelines",
         points: [
-          "Theoretically, tumor burden will be lower before symptoms develop and treating patients at this earlier stage should be more effective."
+          "Major cancer organizations, such as NCCN and ASCO, typically recommend routine surveillance in asymptomatic patients following curative intent cancer treatment (notable exception is breast cancer)."
         ]
       },
       {
+        title: "Routine surveillance finds more recurrences",
+        points: [
+          "Studies generally indicate that regular scans and blood tests uncover more cancer recurrences."
+        ]
+      },
+      {
+        title: "Earlier detection could improve outcomes",
+        points: [
+          "5-year survival rates tend to be higher in patients with asymptomatic vs symptomatic recurrences."
+        ]
+      },
+      {
+        title: "Catching recurrences earlier likely means less disease",
+        points: [
+          "Theoretically, tumor burden will be lower before symptoms develop."
+        ]
+      },
+      {
+        title: "The disease may be easier to treat",
+        points: [
+          "Treating patients at an earlier stage should be more effective or mean less aggressive treatment is needed."
+        ]
+      }
+    ],
         title: "Cancer may be easier to treat",
         points: [
           "Identifying a recurrence early could mean less aggressive treatment."
