@@ -89,6 +89,14 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
             {introduction}
           </p>
           
+          {/* Byline and publication date - desktop */}
+          <div className="hidden md:block mt-4 text-left">
+            <p className="text-sm text-gray-500">
+              <span className="font-medium">Victoria Stern</span><br />
+              July 07, 2025
+            </p>
+          </div>
+          
           {/* Mobile - truncated with read more */}
           <div ref={textRef} className="md:hidden text-base text-gray-600 leading-relaxed text-left">
             {!isExpanded && needsTruncation ? (
@@ -114,6 +122,14 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
                 )}
               </p>
             )}
+          </div>
+          
+          {/* Byline and publication date - mobile */}
+          <div className="md:hidden mt-4 text-left">
+            <p className="text-sm text-gray-500">
+              <span className="font-medium">Victoria Stern</span><br />
+              July 07, 2025
+            </p>
           </div>
         </div>
       </div>
