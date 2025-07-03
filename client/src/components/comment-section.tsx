@@ -27,7 +27,7 @@ export default function CommentSection({ debateId }: CommentSectionProps) {
   const commentsPerPage = 5;
 
   // Fetch comments for this debate
-  const { data: comments = [], isLoading } = useQuery({
+  const { data: comments = [], isLoading } = useQuery<Comment[]>({
     queryKey: [`/api/comments/${debateId}`]
   });
 
