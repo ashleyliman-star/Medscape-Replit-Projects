@@ -27,7 +27,7 @@ export default function CommentSection({ debateId }: CommentSectionProps) {
   const [showMoreReplies, setShowMoreReplies] = useState<number[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [likedComments, setLikedComments] = useState<Set<number>>(new Set());
-  const commentsPerPage = 5;
+  const commentsPerPage = 10;
 
   // Load liked comments from localStorage on component mount
   useEffect(() => {
@@ -65,6 +65,7 @@ export default function CommentSection({ debateId }: CommentSectionProps) {
       setAuthorName("");
       setReplyTo(null);
       setReplyText("");
+      setCurrentPage(1); // Reset to first page to show new comment
       
       toast({
         title: "Comment posted!",
