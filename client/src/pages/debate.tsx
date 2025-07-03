@@ -110,11 +110,9 @@ const debateData = {
 };
 
 export default function DebatePage() {
-  const [version, setVersion] = useState<'A' | 'B' | 'D' | 'E'>('A');
-
   return (
     <div className="min-h-screen bg-white">
-      <DebateHeader version={version} onVersionChange={setVersion} />
+      <DebateHeader />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <DebateQuestion 
@@ -178,7 +176,7 @@ export default function DebatePage() {
         */}
 
         <div className="my-12">
-          <CommentSection />
+          <CommentSection debateId="breast-cancer-surveillance" />
         </div>
 
         {/* What to Read Next on Medscape section - after discussion for C1 */}

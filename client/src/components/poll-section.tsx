@@ -14,6 +14,18 @@ interface PollSectionProps {
   debateId: string;
 }
 
+interface PollStats {
+  counts: {
+    yes: number;
+    no: number;
+  };
+  percentages: {
+    yes: number;
+    no: number;
+  };
+  total: number;
+}
+
 const pollOptions = [
   { value: 'yes', label: 'Yes - Routine surveillance is worth it' },
   { value: 'no', label: 'No - Selective surveillance is more appropriate' }
@@ -24,7 +36,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
   const [hasVoted, setHasVoted] = useState(false);
   const { toast } = useToast();
 
-  const { data: pollStats, refetch } = useQuery({
+  const { data: pollStats, refetch } = useQuery<PollStats>({
     queryKey: [`/api/poll/${debateId}/stats`],
     enabled: hasVoted,
   });

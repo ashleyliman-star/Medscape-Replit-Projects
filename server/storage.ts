@@ -1,4 +1,6 @@
-import { users, pollResponses, type User, type InsertUser, type InsertPollResponse, type PollResponse } from "@shared/schema";
+import { users, pollResponses, comments, type User, type InsertUser, type InsertPollResponse, type PollResponse, type Comment, type InsertComment } from "@shared/schema";
+import { db } from "./db";
+import { eq, sql } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -7,66 +9,89 @@ export interface IStorage {
   createPollResponse(response: InsertPollResponse): Promise<PollResponse>;
   getPollResponsesByDebateId(debateId: string): Promise<PollResponse[]>;
   getPollStats(debateId: string): Promise<Record<string, number>>;
+  createComment(comment: InsertComment): Promise<Comment>;
+  getCommentsByDebateId(debateId: string): Promise<Comment[]>;
+  likeComment(commentId: number): Promise<Comment>;
+  getCommentReplies(commentId: number): Promise<Comment[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private pollResponses: Map<number, PollResponse>;
-  private currentUserId: number;
-  private currentPollId: number;
-
-  constructor() {
-    this.users = new Map();
-    this.pollResponses = new Map();
-    this.currentUserId = 1;
-    this.currentPollId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async createPollResponse(insertResponse: InsertPollResponse): Promise<PollResponse> {
-    const id = this.currentPollId++;
-    const response: PollResponse = { ...insertResponse, id };
-    this.pollResponses.set(id, response);
+    const [response] = await db
+      .insert(pollResponses)
+      .values(insertResponse)
+      .returning();
     return response;
   }
 
   async getPollResponsesByDebateId(debateId: string): Promise<PollResponse[]> {
-    return Array.from(this.pollResponses.values()).filter(
-      (response) => response.debateId === debateId,
-    );
+    return await db
+      .select()
+      .from(pollResponses)
+      .where(eq(pollResponses.debateId, debateId));
   }
 
   async getPollStats(debateId: string): Promise<Record<string, number>> {
     const responses = await this.getPollResponsesByDebateId(debateId);
-    const stats: Record<string, number> = {
-      'yes': 0,
-      'no': 0,
-    };
-
-    responses.forEach((response) => {
-      if (stats[response.response] !== undefined) {
-        stats[response.response]++;
-      }
-    });
-
+    const stats: Record<string, number> = {};
+    
+    for (const response of responses) {
+      stats[response.response] = (stats[response.response] || 0) + 1;
+    }
+    
     return stats;
+  }
+
+  async createComment(insertComment: InsertComment): Promise<Comment> {
+    const [comment] = await db
+      .insert(comments)
+      .values(insertComment)
+      .returning();
+    return comment;
+  }
+
+  async getCommentsByDebateId(debateId: string): Promise<Comment[]> {
+    return await db
+      .select()
+      .from(comments)
+      .where(eq(comments.debateId, debateId))
+      .orderBy(comments.createdAt);
+  }
+
+  async likeComment(commentId: number): Promise<Comment> {
+    const [comment] = await db
+      .update(comments)
+      .set({ likes: sql`${comments.likes} + 1` })
+      .where(eq(comments.id, commentId))
+      .returning();
+    return comment;
+  }
+
+  async getCommentReplies(commentId: number): Promise<Comment[]> {
+    return await db
+      .select()
+      .from(comments)
+      .where(eq(comments.parentId, commentId))
+      .orderBy(comments.createdAt);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
