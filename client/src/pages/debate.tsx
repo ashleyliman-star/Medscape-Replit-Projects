@@ -131,6 +131,7 @@ export default function DebatePage() {
             noArguments={debateData.sideB.arguments}
             yesPhysician={debateData.sideA.physician}
             noPhysician={debateData.sideB.physician}
+            startingAdPosition={2}
           />
         </div>
 
@@ -142,7 +143,7 @@ export default function DebatePage() {
         </div>
 
         {/* 300x250 ad unit below summary of key points */}
-        <AdPlaceholder size="300x250" className="flex justify-center mb-12" position={2} />
+        <AdPlaceholder size="300x250" className="flex justify-center mb-12" position={7} />
 
         <MiddleGroundUnboxed />
 
@@ -151,7 +152,7 @@ export default function DebatePage() {
         </div>
 
         {/* Ad placement after conclusions in C1 */}
-        <AdPlaceholder size="300x250" className="flex justify-center mb-12" position={3} />
+        <AdPlaceholder size="300x250" className="flex justify-center mb-12" position={8} />
 
         <PollSection debateId="breast-cancer-surveillance" />
 

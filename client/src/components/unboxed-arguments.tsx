@@ -19,9 +19,10 @@ interface UnboxedArgumentsProps {
   noArguments: Argument[];
   yesPhysician: Physician;
   noPhysician: Physician;
+  startingAdPosition?: number;
 }
 
-export default function UnboxedArguments({ yesArguments, noArguments, yesPhysician, noPhysician }: UnboxedArgumentsProps) {
+export default function UnboxedArguments({ yesArguments, noArguments, yesPhysician, noPhysician, startingAdPosition = 2 }: UnboxedArgumentsProps) {
   // Create pairs for desktop and alternating pattern for mobile
   const argumentPairs = [];
   const maxLength = Math.max(yesArguments.length, noArguments.length);
@@ -136,7 +137,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             {/* Centered ad after every 2 arguments (index 1, 3, 5, etc.) */}
             {index % 2 === 1 && (
               <div className="flex justify-center py-8">
-                <AdPlaceholder size="300x250" className="mx-auto" position={4 + Math.floor(index / 2)} />
+                <AdPlaceholder size="300x250" className="mx-auto" position={startingAdPosition + Math.floor(index / 2)} />
               </div>
             )}
           </div>
@@ -192,7 +193,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
             {/* Ad after every pair of YES/NO arguments */}
             <div className="flex justify-center py-8">
-              <AdPlaceholder size="300x250" className="mx-auto" position={4 + index} />
+              <AdPlaceholder size="300x250" className="mx-auto" position={startingAdPosition + index} />
             </div>
           </div>
         ))}
