@@ -25,8 +25,8 @@ app.use((req, res, next) => {
   else if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/')) {
     next();
   }
-  // For development, allow root access only on replit domains (but not the app domain)
-  else if (req.path === '/' && req.get('host')?.includes('replit') && !host.includes('medscape-debate.replit.app')) {
+  // For development, allow root access 
+  else if (req.path === '/' && (req.get('host')?.includes('replit') || req.get('host')?.includes('localhost') || req.get('host')?.includes('127.0.0.1'))) {
     next();
   }
   // Block all other paths - let them be handled by other services on exp.medscape.com
