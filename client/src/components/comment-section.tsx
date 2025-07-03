@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { MessageSquare, Heart, Reply, ChevronLeft, ChevronRight } from "lucide-react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 import type { Comment, InsertComment } from "@shared/schema";
 
 interface CommentWithTimestamp extends Omit<Comment, 'createdAt'> {
@@ -18,13 +19,33 @@ interface CommentSectionProps {
 
 export default function CommentSection({ debateId }: CommentSectionProps) {
   const queryClient = useQueryClient();
+  const { toast } = useToast();
   const [newComment, setNewComment] = useState("");
   const [authorName, setAuthorName] = useState("");
   const [replyTo, setReplyTo] = useState<number | null>(null);
   const [replyText, setReplyText] = useState("");
   const [showMoreReplies, setShowMoreReplies] = useState<number[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [likedComments, setLikedComments] = useState<Set<number>>(new Set());
   const commentsPerPage = 5;
+
+  // Load liked comments from localStorage on component mount
+  useEffect(() => {
+    const storedLikes = localStorage.getItem(`likedComments_${debateId}`);
+    if (storedLikes) {
+      try {
+        const likes = JSON.parse(storedLikes);
+        setLikedComments(new Set(likes));
+      } catch (error) {
+        console.error('Error parsing liked comments from localStorage:', error);
+      }
+    }
+  }, [debateId]);
+
+  // Save liked comments to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem(`likedComments_${debateId}`, JSON.stringify([...likedComments]));
+  }, [likedComments, debateId]);
 
   // Fetch comments for this debate
   const { data: comments = [], isLoading } = useQuery<Comment[]>({
@@ -118,7 +139,25 @@ export default function CommentSection({ debateId }: CommentSectionProps) {
   };
 
   const handleLikeComment = (commentId: number) => {
-    likeCommentMutation.mutate(commentId);
+    if (likedComments.has(commentId)) {
+      toast({
+        title: "Already liked!",
+        description: "You've already liked this comment.",
+        variant: "default",
+      });
+      return;
+    }
+
+    likeCommentMutation.mutate(commentId, {
+      onSuccess: () => {
+        setLikedComments(prev => new Set(prev).add(commentId));
+        toast({
+          title: "Comment liked!",
+          description: "Your like has been added to this comment.",
+          variant: "default",
+        });
+      }
+    });
   };
 
   const toggleShowMoreReplies = (commentId: number) => {
@@ -162,9 +201,13 @@ export default function CommentSection({ debateId }: CommentSectionProps) {
           <div className="flex items-center space-x-4 mt-2">
             <button
               onClick={() => handleLikeComment(comment.id)}
-              className="flex items-center space-x-1 text-gray-500 hover:text-red-500 transition-colors"
+              className={`flex items-center space-x-1 transition-colors ${
+                likedComments.has(comment.id) 
+                  ? 'text-red-500' 
+                  : 'text-gray-500 hover:text-red-500'
+              }`}
             >
-              <Heart className="h-4 w-4" />
+              <Heart className={`h-4 w-4 ${likedComments.has(comment.id) ? 'fill-current' : ''}`} />
               <span className="text-sm">{comment.likes}</span>
             </button>
             <button
