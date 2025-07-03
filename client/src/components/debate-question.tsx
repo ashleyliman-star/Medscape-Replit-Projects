@@ -85,12 +85,12 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
           </h2>
           
           {/* Desktop - always show full text */}
-          <p className="hidden md:block text-base md:text-lg text-gray-600 leading-relaxed text-center">
+          <p className="hidden md:block text-base md:text-lg text-gray-600 leading-relaxed text-left">
             {introduction}
           </p>
           
           {/* Mobile - truncated with read more */}
-          <div ref={textRef} className="md:hidden text-base text-gray-600 leading-relaxed text-center">
+          <div ref={textRef} className="md:hidden text-base text-gray-600 leading-relaxed text-left">
             {!isExpanded && needsTruncation ? (
               <p>
                 {truncatedText}
