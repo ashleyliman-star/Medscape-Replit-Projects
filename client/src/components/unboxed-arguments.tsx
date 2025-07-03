@@ -86,7 +86,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
           <div key={index}>
             {/* Arguments row */}
-            <div className="grid grid-cols-2 gap-8 mb-6">
+            <div className="grid grid-cols-2 gap-8 mb-8">
               {/* YES Key Arguments */}
               <div>
                 {index === 0 && <h3 className="text-xl font-bold text-gray-800 mb-4">Key Arguments</h3>}
@@ -136,7 +136,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
             {/* Centered ad after arguments 2 and 4 for better spacing */}
             {(index === 1 || index === 3) && (
-              <div className="col-span-2 flex justify-center py-8">
+              <div className="col-span-2 flex justify-center py-12">
                 <AdPlaceholder size="responsive-desktop-banner" className="mx-auto" position={startingAdPosition + (index === 1 ? 0 : 1)} />
               </div>
             )}
