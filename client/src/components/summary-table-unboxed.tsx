@@ -31,14 +31,19 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
                 Supporting Routine Surveillance
               </h3>
             </div>
-            <ul className="space-y-2 md:space-y-3 ml-16">
+            <div className="space-y-2 md:space-y-3">
               {yesPoints.map((point, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="inline-block w-2 h-2 rounded-full mt-2 mr-2 md:mr-3 flex-shrink-0" style={{ backgroundColor: '#1A9FDA' }}></span>
-                  <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '16px' }}>{point}</span>
-                </li>
+                <div key={index} className="flex items-start gap-3">
+                  <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5 opacity-0" style={{ backgroundColor: '#3DC7F5', fontSize: '16px' }}>
+                    Yes
+                  </span>
+                  <div className="flex items-start">
+                    <span className="inline-block w-2 h-2 rounded-full mt-2 mr-2 md:mr-3 flex-shrink-0" style={{ backgroundColor: '#1A9FDA' }}></span>
+                    <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '16px' }}>{point}</span>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* NO Side Summary */}
@@ -49,14 +54,19 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
                 Selective Surveillance is More Appropriate
               </h3>
             </div>
-            <ul className="space-y-2 md:space-y-3 ml-16">
+            <div className="space-y-2 md:space-y-3">
               {noPoints.map((point, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="inline-block w-2 h-2 rounded-full mt-2 mr-2 md:mr-3 flex-shrink-0" style={{ backgroundColor: '#D43F5C' }}></span>
-                  <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '16px' }}>{point}</span>
-                </li>
+                <div key={index} className="flex items-start gap-3">
+                  <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5 opacity-0" style={{ backgroundColor: '#F07584', fontSize: '16px' }}>
+                    No
+                  </span>
+                  <div className="flex items-start">
+                    <span className="inline-block w-2 h-2 rounded-full mt-2 mr-2 md:mr-3 flex-shrink-0" style={{ backgroundColor: '#D43F5C' }}></span>
+                    <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '16px' }}>{point}</span>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
