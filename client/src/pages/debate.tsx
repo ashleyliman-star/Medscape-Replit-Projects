@@ -31,38 +31,27 @@ const debateData = {
     statement: "Routine breast cancer surveillance saves lives through early detection. The benefits of identifying cancer in its earliest stages far outweigh the risks and challenges of screening programs.",
     arguments: [
       {
-        title: "Early detection improves survival",
+        title: "Catching earlier means less disease",
         points: [
-          "Studies consistently show improved 5-year survival rates when breast cancer is detected early through screening",
-          "Early-stage cancers have significantly better treatment outcomes and long-term prognosis"
+          "Theoretically, tumor burden will be lower before symptoms develop and treating patients at this earlier stage should be more effective."
         ]
       },
       {
-        title: "Reduces breast cancer mortality",
+        title: "Cancer may be easier to treat",
         points: [
-          "Large-scale population studies demonstrate 20-40% reduction in breast cancer deaths with regular screening",
-          "Screening programs have contributed to declining breast cancer mortality rates over the past decades"
+          "Identifying a recurrence early could mean less aggressive treatment."
         ]
       },
       {
-        title: "Allows less aggressive treatment",
+        title: "Earlier detection may improve outcomes",
         points: [
-          "Early detection often means smaller tumors that require less extensive surgery and chemotherapy",
-          "Breast-conserving surgery is more often possible when cancers are found through screening"
+          "5-year survival rates tend to be higher in patients with asymptomatic vs symptomatic recurrences."
         ]
       },
       {
-        title: "Supported by major health guidelines",
+        title: "Routine surveillance is often backed by guidelines",
         points: [
-          "American Cancer Society and other major organizations recommend routine screening for average-risk women",
-          "Evidence-based guidelines are developed through rigorous review of scientific literature"
-        ]
-      },
-      {
-        title: "Most beneficial for women aged 50–69",
-        points: [
-          "This age group shows the greatest benefit from screening with optimal risk-to-benefit ratio",
-          "Cost-effectiveness studies support routine screening in this population"
+          "Major cancer organizations, such as NCCN and ASCO, recommend routine surveillance for many cancer types (notable exception being breast cancer)."
         ]
       }
     ],
