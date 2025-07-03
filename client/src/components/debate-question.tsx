@@ -90,9 +90,10 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
           </p>
           
           {/* Byline and publication date - desktop */}
-          <div className="hidden md:block mt-4 text-left">
+          <div className="hidden md:block mt-4 text-center">
             <p className="text-sm text-gray-500">
-              <span className="font-medium">Victoria Stern</span><br />
+              <span className="font-medium">Victoria Stern</span>
+              <span className="mx-2">•</span>
               July 07, 2025
             </p>
           </div>
@@ -125,9 +126,10 @@ export default function DebateQuestion({ question, introduction }: DebateQuestio
           </div>
           
           {/* Byline and publication date - mobile */}
-          <div className="md:hidden mt-4 text-left">
+          <div className="md:hidden mt-4 text-center">
             <p className="text-sm text-gray-500">
-              <span className="font-medium">Victoria Stern</span><br />
+              <span className="font-medium">Victoria Stern</span>
+              <span className="mx-2">•</span>
               July 07, 2025
             </p>
           </div>
