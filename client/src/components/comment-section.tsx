@@ -44,7 +44,7 @@ export default function CommentSection({ debateId }: CommentSectionProps) {
 
   // Save liked comments to localStorage whenever it changes
   useEffect(() => {
-    localStorage.setItem(`likedComments_${debateId}`, JSON.stringify([...likedComments]));
+    localStorage.setItem(`likedComments_${debateId}`, JSON.stringify(Array.from(likedComments)));
   }, [likedComments, debateId]);
 
   // Fetch comments for this debate

@@ -98,14 +98,11 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                       </span>
                       <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
                     </div>
-                    <ul className="space-y-2 ml-8">
+                    <div className="ml-8">
                       {yesArguments[index].points.map((point, pointIndex) => (
-                        <li key={pointIndex} className="flex items-start">
-                          <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                          <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
-                        </li>
+                        <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 )}
               </div>
@@ -121,14 +118,11 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                       </span>
                       <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
                     </div>
-                    <ul className="space-y-2 ml-8">
+                    <div className="ml-8">
                       {noArguments[index].points.map((point, pointIndex) => (
-                        <li key={pointIndex} className="flex items-start">
-                          <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                          <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
-                        </li>
+                        <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 )}
               </div>
@@ -159,14 +153,11 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                     </span>
                     <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
                   </div>
-                  <ul className="space-y-2 ml-8">
+                  <div className="ml-8">
                     {yesArguments[index].points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
-                      </li>
+                      <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               )}
 
@@ -179,14 +170,11 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                     </span>
                     <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
                   </div>
-                  <ul className="space-y-2 ml-8">
+                  <div className="ml-8">
                     {noArguments[index].points.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start">
-                        <div className="w-2 h-2 rounded-full bg-gray-400 mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</span>
-                      </li>
+                      <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               )}
             </div>
