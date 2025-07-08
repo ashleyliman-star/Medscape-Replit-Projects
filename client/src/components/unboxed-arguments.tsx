@@ -98,7 +98,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                       </span>
                       <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
                     </div>
-                    <div className="ml-8">
+                    <div className="ml-16">
                       {yesArguments[index].points.map((point, pointIndex) => (
                         <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
                       ))}
@@ -118,7 +118,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                       </span>
                       <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
                     </div>
-                    <div className="ml-8">
+                    <div className="ml-16">
                       {noArguments[index].points.map((point, pointIndex) => (
                         <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
                       ))}
