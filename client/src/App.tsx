@@ -4,7 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import DebatePage from "@/pages/debate";
-import AdminSimple from "@/pages/admin-simple";
+import AdminPage from "@/pages/admin";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 import { initGA } from "./lib/analytics";
@@ -14,7 +14,7 @@ function Router() {
     <Switch>
       <Route path="/" component={DebatePage} />
       <Route path="/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases" component={DebatePage} />
-      <Route path="/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases/icd-admin" component={AdminSimple} />
+      <Route path="/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases/icd-admin" component={AdminPage} />
       <Route component={NotFound} />
     </Switch>
   );
