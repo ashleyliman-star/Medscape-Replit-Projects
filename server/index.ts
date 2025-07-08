@@ -27,8 +27,8 @@ app.use((req, res, next) => {
     return res.status(404).send('Page not found');
   }
   
-  // If accessing the specific debate path, serve the app
-  if (req.path === targetPath || req.path === targetPath + '/') {
+  // If accessing the specific debate path or admin path, serve the app
+  if (req.path === targetPath || req.path === targetPath + '/' || req.path === targetPath + '/icd-admin') {
     req.url = '/'; // Rewrite to root for the app
     next();
   }

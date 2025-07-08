@@ -103,6 +103,40 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Admin API routes
+  
+  // Get all comments for admin panel
+  app.get("/api/admin/comments", async (req, res) => {
+    try {
+      const comments = await storage.getAllComments();
+      res.json(comments);
+    } catch (error) {
+      console.error('Error fetching all comments:', error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Delete a comment (admin only)
+  app.delete("/api/admin/comments/:commentId", async (req, res) => {
+    try {
+      const commentId = parseInt(req.params.commentId);
+      if (isNaN(commentId)) {
+        res.status(400).json({ message: "Invalid comment ID" });
+        return;
+      }
+      
+      const success = await storage.deleteComment(commentId);
+      if (success) {
+        res.json({ message: "Comment deleted successfully" });
+      } else {
+        res.status(500).json({ message: "Failed to delete comment" });
+      }
+    } catch (error) {
+      console.error('Error deleting comment:', error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }

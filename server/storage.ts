@@ -13,6 +13,9 @@ export interface IStorage {
   getCommentsByDebateId(debateId: string): Promise<Comment[]>;
   likeComment(commentId: number): Promise<Comment>;
   getCommentReplies(commentId: number): Promise<Comment[]>;
+  // Admin functions
+  getAllComments(): Promise<Comment[]>;
+  deleteComment(commentId: number): Promise<boolean>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -91,6 +94,33 @@ export class DatabaseStorage implements IStorage {
       .from(comments)
       .where(eq(comments.parentId, commentId))
       .orderBy(comments.createdAt);
+  }
+
+  // Admin functions
+  async getAllComments(): Promise<Comment[]> {
+    return await db
+      .select()
+      .from(comments)
+      .orderBy(comments.createdAt);
+  }
+
+  async deleteComment(commentId: number): Promise<boolean> {
+    try {
+      // First delete any replies to this comment
+      await db
+        .delete(comments)
+        .where(eq(comments.parentId, commentId));
+      
+      // Then delete the comment itself
+      const result = await db
+        .delete(comments)
+        .where(eq(comments.id, commentId));
+      
+      return true;
+    } catch (error) {
+      console.error('Error deleting comment:', error);
+      return false;
+    }
   }
 }
 
