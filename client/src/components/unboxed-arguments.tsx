@@ -65,18 +65,18 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
       {/* Position Headers */}
       <div className="grid md:grid-cols-2 gap-8 mb-8">
         {/* YES Position */}
-        <Card className="text-white p-8 flex items-center" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)', minHeight: '120px' }}>
+        <Card className="text-white p-4 md:p-8 flex items-center" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)', minHeight: '80px' }}>
           <div className="flex items-center">
-            <ThumbsUp className="mr-3 h-8 w-8" />
-            <h2 className="font-bold text-2xl md:text-3xl text-white">YES: Routine Surveillance is Worth It</h2>
+            <ThumbsUp className="mr-2 md:mr-3 h-6 w-6 md:h-8 md:w-8" />
+            <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-white">YES: Routine Surveillance is Worth It</h2>
           </div>
         </Card>
 
         {/* NO Position */}
-        <Card className="text-white p-8 flex items-center" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)', minHeight: '120px' }}>
+        <Card className="text-white p-4 md:p-8 flex items-center" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)', minHeight: '80px' }}>
           <div className="flex items-center">
-            <ThumbsDown className="mr-3 h-8 w-8" />
-            <h2 className="font-bold text-2xl md:text-3xl text-white">NO: Selective Surveillance is More Appropriate</h2>
+            <ThumbsDown className="mr-2 md:mr-3 h-6 w-6 md:h-8 md:w-8" />
+            <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-white">NO: Selective Surveillance is More Appropriate</h2>
           </div>
         </Card>
       </div>
