@@ -93,6 +93,11 @@ This is a full-stack web application for presenting medical debates with expert 
 
 ## Changelog
 
+- July 8, 2025: Implemented admin system with password protection (medscape/ICDTeam909) for comment management
+- July 8, 2025: Improved desktop text alignment - supporting text now aligns with argument titles
+- July 8, 2025: Optimized mobile argument boxes - reduced spacing and font sizes for better mobile experience
+- July 8, 2025: Updated Hotjar tracking code to new ID (930685) for Medscape Debates Cancer project
+- July 8, 2025: Added Medscape favicon to replace default browser icon
 - June 25, 2025: Archived versions A, B, and D (C2) - code preserved in comments for future use
 - June 25, 2025: Version C1 (E) is now the only active version with optimized mobile ad placements
 - June 23, 2025: Initial setup
