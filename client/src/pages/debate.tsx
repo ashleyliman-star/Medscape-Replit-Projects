@@ -260,6 +260,46 @@ export default function DebatePage() {
                 Surveillance Instead of Surgery for Low-Risk DCIS?
               </a>
             </div>
+            <div className="border-b border-gray-200 pb-3">
+              <a 
+                href="https://www.medscape.com/viewarticle/do-tattoos-pose-cancer-risk-2025a1000fkh?ecd=socpd_fb_250102_mscpmrk_xx_position4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'medscape_link_click', {
+                      event_category: 'external_links',
+                      event_label: 'Do Tattoos Pose Cancer Risk',
+                      link_url: 'https://www.medscape.com/viewarticle/do-tattoos-pose-cancer-risk-2025a1000fkh?ecd=socpd_fb_250102_mscpmrk_xx_position4'
+                    });
+                    console.log('GA4 Event fired: medscape_link_click');
+                  }
+                }}
+              >
+                Do Tattoos Pose a Cancer Risk?
+              </a>
+            </div>
+            <div className="border-b border-gray-200 pb-3">
+              <a 
+                href="https://www.medscape.com/viewarticle/napping-patterns-older-adults-tied-all-cause-mortality-2025a1000fn3?ecd=socpd_fb_250102_mscpmrk_xx_position5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', 'medscape_link_click', {
+                      event_category: 'external_links',
+                      event_label: 'Napping Patterns Older Adults Mortality',
+                      link_url: 'https://www.medscape.com/viewarticle/napping-patterns-older-adults-tied-all-cause-mortality-2025a1000fn3?ecd=socpd_fb_250102_mscpmrk_xx_position5'
+                    });
+                    console.log('GA4 Event fired: medscape_link_click');
+                  }
+                }}
+              >
+                Napping Patterns in Older Adults Tied to All-Cause Mortality
+              </a>
+            </div>
           </div>
         </div>
       </main>
