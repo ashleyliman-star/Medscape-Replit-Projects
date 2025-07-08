@@ -97,6 +97,8 @@ This is a full-stack web application for presenting medical debates with expert 
 - July 8, 2025: Improved desktop text alignment - supporting text now aligns with argument titles
 - July 8, 2025: Optimized mobile argument boxes - reduced spacing and font sizes for better mobile experience
 - July 8, 2025: Updated Hotjar tracking code to new ID (930685) for Medscape Debates Cancer project
+- July 8, 2025: Updated page metadata with proper title, description, and Open Graph tags for social sharing
+- July 8, 2025: Added engaging opening line "Is it time to rethink routine surveillance?" to introduction
 - July 8, 2025: Added Medscape favicon to replace default browser icon
 - June 25, 2025: Archived versions A, B, and D (C2) - code preserved in comments for future use
 - June 25, 2025: Version C1 (E) is now the only active version with optimized mobile ad placements
