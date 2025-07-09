@@ -348,7 +348,7 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('policies')}
                 onMouseEnter={() => setActiveMenu('policies')}
-                className={`text-base py-3 transition-colors duration-200 ${
+                className={`text-base font-medium py-3 transition-colors duration-200 ${
                   activeMenu === 'policies' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
@@ -357,7 +357,7 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('medscape')}
                 onMouseEnter={() => setActiveMenu('medscape')}
-                className={`text-base py-3 transition-colors duration-200 ${
+                className={`text-base font-medium py-3 transition-colors duration-200 ${
                   activeMenu === 'medscape' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
@@ -366,7 +366,7 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('about')}
                 onMouseEnter={() => setActiveMenu('about')}
-                className={`text-base py-3 transition-colors duration-200 ${
+                className={`text-base font-medium py-3 transition-colors duration-200 ${
                   activeMenu === 'about' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
@@ -375,7 +375,7 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('advertisers')}
                 onMouseEnter={() => setActiveMenu('advertisers')}
-                className={`text-base py-3 transition-colors duration-200 ${
+                className={`text-base font-medium py-3 transition-colors duration-200 ${
                   activeMenu === 'advertisers' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
