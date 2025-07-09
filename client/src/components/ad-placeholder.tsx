@@ -64,6 +64,8 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
       window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_mscpmrk_masters_alc', '_blank');
     } else if (size === '300x250' && position === 2 && !isDesktop) {
       window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_mscpmrk_masters_alc', '_blank');
+    } else if (size === '300x250' && position === 3 && !isDesktop) {
+      window.open('https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_mscpmrk_masters_alc', '_blank');
     }
   };
 
@@ -75,6 +77,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const showFifthMedscapeAd = size === '300x250' && position === 7 && isDesktop; // Updated position
   const showFirstMobile300x250Ad = size === '300x250' && position === 1 && !isDesktop; // Updated position
   const showSecondMobile300x250Ad = size === '300x250' && position === 2 && !isDesktop;
+  const showThirdMobile300x250Ad = size === '300x250' && position === 3 && !isDesktop;
   
   const firstAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
   const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
@@ -83,6 +86,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const fifthAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v7_300x250_1752083329006.jpg";
   const firstMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_300x250_1752090608590.jpg";
   const secondMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_300x250_1752091332968.jpg";
+  const thirdMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v6_300x250_1752091467559.jpg";
 
   return (
     <div className={cn(className)}>
@@ -194,6 +198,22 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
           <img
             src={secondMobile300x250AdImage}
             alt="Use Brain Health to Start the Alcohol Conversation - Read Now"
+            className="w-full h-full object-cover rounded-lg"
+            style={{ width: '300px', height: '250px' }}
+          />
+        </a>
+      ) : showThirdMobile300x250Ad ? (
+        <a
+          href="https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_mscpmrk_masters_alc"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleAdClick}
+          className="block cursor-pointer hover:opacity-90 transition-opacity"
+          style={getStyles()}
+        >
+          <img
+            src={thirdMobile300x250AdImage}
+            alt="Beyond Cancer: The Overlooked Harms of Alcohol - Read Now"
             className="w-full h-full object-cover rounded-lg"
             style={{ width: '300px', height: '250px' }}
           />
