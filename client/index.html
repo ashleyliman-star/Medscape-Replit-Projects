@@ -35,12 +35,16 @@
     
     <!-- Adobe Analytics Start -->
     <script>
+    console.log('Adobe Analytics: Initializing...');
     // Alloy Global Function
     !function(n,o){o.forEach(function(o){n[o]||((n.__alloyNS=n.__alloyNS||[]).push(o),n[o]=function(){var u=arguments;return new Promise(function(i,l){n[o].q.push([i,l,u])})},n[o].q=[])})}(window,["alloy"]);
+    console.log('Adobe Analytics: Alloy global function initialized');
     // Adobe Client Data Layer
     window.adobeDataLayer = window.adobeDataLayer || [];
+    console.log('Adobe Analytics: Data layer initialized');
     // Global Metrics CMD
     window.globalMetrics = window.globalMetrics || {cmd: []};
+    console.log('Adobe Analytics: Global metrics initialized');
     // Store Data
     window.__INITIAL_STATE__ = {
       pagedata: {
@@ -49,8 +53,9 @@
         }
       }
     };
+    console.log('Adobe Analytics: Initial state configured for site:', window.__INITIAL_STATE__.pagedata.omniture.s_site);
     </script>
-    <script id="alloytags" src="//img.lb.wbmdstatic.com/webmd_static_vue/file-explorer/webmd/global-metrics/global-metrics.min.js" defer></script>
+    <script id="alloytags" src="//img.lb.wbmdstatic.com/webmd_static_vue/file-explorer/webmd/global-metrics/global-metrics.min.js" defer onload="console.log('Adobe Analytics: Global metrics script loaded successfully')" onerror="console.error('Adobe Analytics: Failed to load global metrics script')"></script>
     <!-- Adobe Analytics End -->
     
     <!-- Hotjar Tracking Code for Medscape Debates Cancer -->
