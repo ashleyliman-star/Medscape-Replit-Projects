@@ -410,9 +410,7 @@ export default function DebatePage() {
                 >
                   {item.label}
                   {item.hasIcon && (
-                    <span className="ml-1 inline-flex items-center justify-center w-4 h-4 bg-blue-600 rounded-full text-white text-xs">
-                      <span className="text-[8px] leading-none">✓✗</span>
-                    </span>
+                    <span className="ml-1 inline-block w-4 h-4 bg-blue-600 rounded-full text-white text-xs text-center leading-4">✓</span>
                   )}
                 </a>
                 {index < array.length - 1 && (
