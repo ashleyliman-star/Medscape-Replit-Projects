@@ -144,14 +144,14 @@ export default function DebatePage() {
       { label: 'Newsletters & Alerts', href: 'https://www.medscape.com/newsletters' }
     ],
     about: [
-      { label: 'About Medscape', href: '#' },
-      { label: 'Medscape Staff', href: '#' },
-      { label: 'Market Research', href: '#' },
-      { label: 'Help Center', href: '#' },
-      { label: 'Contact Us', href: '#' }
+      { label: 'About Medscape', href: 'https://www.medscape.com/public/about' },
+      { label: 'Medscape Staff', href: 'https://www.medscape.com/public/bios/medscapestaff' },
+      { label: 'Market Research', href: 'https://www.medscape.com/marketresearch' },
+      { label: 'Help Center', href: 'https://help.medscape.com/hc/en-us' },
+      { label: 'Contact Us', href: 'https://help.medscape.com/hc/en-us/requests/new?_gl=1*fe4ty3*_gcl_au*MTc0ODM3ODk0NC4xNzQ0ODM1MTMz' }
     ],
     advertisers: [
-      { label: 'Advertise with Us', href: '#' },
+      { label: 'Advertise with Us', href: 'https://www.medscape.com/advertise' },
       { label: 'Advertising Policy', href: 'https://www.medscape.com/public/adpolicy' }
     ]
   };
