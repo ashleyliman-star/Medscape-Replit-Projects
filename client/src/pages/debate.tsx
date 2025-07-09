@@ -133,15 +133,15 @@ export default function DebatePage() {
       { label: 'Your Privacy Choices', href: '#', hasIcon: true }
     ],
     medscape: [
-      { label: 'News & Perspectives', href: '#' },
-      { label: 'Tools & References', href: '#' },
-      { label: 'CME/CE', href: '#' },
-      { label: 'Video', href: '#' },
-      { label: 'Events', href: '#' },
-      { label: 'Specialties', href: '#' },
-      { label: 'Topics', href: '#' },
-      { label: 'Account Information', href: '#' },
-      { label: 'Newsletters & Alerts', href: '#' }
+      { label: 'News & Perspectives', href: 'https://www.medscape.com/today' },
+      { label: 'Tools & References', href: 'https://reference.medscape.com/?_gl=1*egdqvp*_gcl_au*MTc0ODM3ODk0NC4xNzQ0ODM1MTMz' },
+      { label: 'CME/CE', href: 'https://www.medscape.org/multispecialty?_gl=1*egdqvp*_gcl_au*MTc0ODM3ODk0NC4xNzQ0ODM1MTMz' },
+      { label: 'Video', href: 'https://www.medscape.com/video' },
+      { label: 'Events', href: 'https://www.medscapelive.com/' },
+      { label: 'Specialties', href: 'https://www.medscape.com/specialties' },
+      { label: 'Topics', href: 'https://www.medscape.com/today/resource' },
+      { label: 'Account Information', href: 'https://www.medscape.com/profile' },
+      { label: 'Newsletters & Alerts', href: 'https://www.medscape.com/newsletters' }
     ],
     about: [
       { label: 'About Medscape', href: '#' },
