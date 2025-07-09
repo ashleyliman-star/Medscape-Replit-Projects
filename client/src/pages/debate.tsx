@@ -445,12 +445,12 @@ export default function DebatePage() {
           {/* App Downloads */}
           <div className="flex flex-wrap gap-4 mb-6">
             <div className="text-sm text-gray-600 mr-4">GET THE MEDSCAPE APP</div>
-            <a href="#" className="inline-block">
+            <a href="https://apps.apple.com/us/app/medscape/id321367289" target="_blank" rel="noopener noreferrer" className="inline-block">
               <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1469664000" 
                    alt="Download on the App Store" 
                    className="h-8" />
             </a>
-            <a href="#" className="inline-block">
+            <a href="https://play.google.com/store/apps/details?id=com.medscape.android&pli=1" target="_blank" rel="noopener noreferrer" className="inline-block">
               <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
                    alt="Get it on Google Play" 
                    className="h-10" />
