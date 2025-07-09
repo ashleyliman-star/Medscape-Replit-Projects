@@ -338,7 +338,7 @@ export default function DebatePage() {
         </div>
       </main>
 
-      <footer className="bg-white py-8 mt-12" style={{borderTop: '4px solid #16478c'}}>
+      <footer className="bg-white py-8 mt-12" style={{borderTop: '2px solid #16478c'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           
@@ -386,13 +386,16 @@ export default function DebatePage() {
             {/* Medscape Logo */}
             <div className="pb-2">
               <img 
-                src="/attached_assets/Medscape%20logo_1752022501129.avif" 
+                src="/attached_assets/Medscape_Logo.svg%20(1)_1750723648901.png" 
                 alt="Medscape" 
                 className="h-8"
                 onError={(e) => {
-                  e.currentTarget.src = "/attached_assets/Medscape_Logo.svg%20(1)_1750723648901.png";
+                  e.currentTarget.style.display = 'none';
+                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'block';
                 }} 
               />
+              <div className="text-[#16478c] text-lg font-bold" style={{display: 'none'}}>Medscape</div>
             </div>
           </div>
           
