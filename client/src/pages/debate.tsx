@@ -386,16 +386,10 @@ export default function DebatePage() {
             {/* Medscape Logo */}
             <div className="pb-2">
               <img 
-                src="/attached_assets/Medscape_Logo.svg%20(1)_1750723648901.png" 
+                src="/attached_assets/Medscape%20logo_1752074292455.png" 
                 alt="Medscape" 
                 className="h-8"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'block';
-                }} 
               />
-              <div className="text-[#16478c] text-lg font-bold" style={{display: 'none'}}>Medscape</div>
             </div>
           </div>
           
