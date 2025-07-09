@@ -193,9 +193,6 @@ export default function DebatePage() {
         {/* 728x90 ad unit on desktop, 300x250 on mobile - below summary of key points */}
         <AdPlaceholder size="responsive-desktop-banner" className="flex justify-center mb-12" position={5} />
 
-        {/* 300x250 ad unit above middle ground - mobile only */}
-        <AdPlaceholder size="300x250" className="md:hidden flex justify-center mb-12" position={6} />
-
         <MiddleGroundUnboxed />
 
         <div className="mt-16 mb-12">
