@@ -329,7 +329,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
       </div>
       
       {/* Advertisement label */}
-      <div className="text-center mt-0.5">
+      <div className="text-center mt-px">
         <span className="text-xs text-gray-500">Advertisement</span>
       </div>
     </div>
