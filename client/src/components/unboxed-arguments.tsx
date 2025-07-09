@@ -131,7 +131,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             {/* Centered ad after arguments 2 and 4 for better spacing */}
             {(index === 1 || index === 3) && (
               <div className="col-span-2 flex justify-center my-8">
-                <AdPlaceholder size="responsive-desktop-banner" className="mx-auto" position={startingAdPosition + (index === 1 ? 0 : 1)} />
+                <AdPlaceholder size="responsive-desktop-banner" className="mx-auto" position={index === 1 ? 2 : 3} />
               </div>
             )}
           </div>
