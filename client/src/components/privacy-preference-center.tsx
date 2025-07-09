@@ -96,7 +96,12 @@ export default function PrivacyPreferenceCenter({ isOpen, onClose }: PrivacyPref
                   <p>
                     When you visit our website, we store cookies on your browser to collect information. The information collected might relate to you, your preferences or your device, and is mostly used to make the site work as you expect it to and to provide a more personalized experience. However, you can choose not to allow certain types of cookies, which may impact your experience of the site and the services we are able to offer. Click on the different category headings to find out more and change our default settings according to your preference. You cannot opt-out of our First Party Strictly Necessary Cookies as they are deployed in order to ensure the proper functioning of our website (such as prompting the cookie banner and remembering your settings, to log into your account, to redirect you when you log out, etc.). For more information about the First and Third Party Cookies used please follow this link.
                   </p>
-                  <a href="#" className="text-blue-600 hover:text-blue-800 underline">
+                  <a 
+                    href="https://mynt-test-privacy.my.onetrust.com/webform/ebe19500-bc8d-487f-9d89-98fde8b270e2/79f83daf-7de8-4c35-977e-ee8089e07888" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-blue-600 hover:text-blue-800 underline"
+                  >
                     Opt Out Form
                   </a>
                 </div>
