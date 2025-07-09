@@ -181,7 +181,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
             {/* Ad after every pair of YES/NO arguments */}
             <div className="flex justify-center py-8">
-              <AdPlaceholder size="300x250" className="mx-auto" position={startingAdPosition + index} />
+              <AdPlaceholder size="300x250" className="mx-auto" position={1 + index} />
             </div>
           </div>
         ))}

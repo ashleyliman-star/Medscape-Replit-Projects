@@ -179,7 +179,7 @@ export default function DebatePage() {
             noArguments={debateData.sideB.arguments}
             yesPhysician={debateData.sideA.physician}
             noPhysician={debateData.sideB.physician}
-            startingAdPosition={2}
+            startingAdPosition={1}
           />
         </div>
 
@@ -191,7 +191,10 @@ export default function DebatePage() {
         </div>
 
         {/* 728x90 ad unit on desktop, 300x250 on mobile - below summary of key points */}
-        <AdPlaceholder size="responsive-desktop-banner" className="flex justify-center mb-12" position={4} />
+        <AdPlaceholder size="responsive-desktop-banner" className="flex justify-center mb-12" position={5} />
+
+        {/* 300x250 ad unit above middle ground - mobile only */}
+        <AdPlaceholder size="300x250" className="md:hidden flex justify-center mb-12" position={6} />
 
         <MiddleGroundUnboxed />
 
@@ -200,7 +203,7 @@ export default function DebatePage() {
         </div>
 
         {/* 300x250 ad unit above poll - stays the same on all devices */}
-        <AdPlaceholder size="300x250" className="flex justify-center mb-12" position={5} />
+        <AdPlaceholder size="300x250" className="flex justify-center mb-12" position={7} />
 
         <PollSection debateId="breast-cancer-surveillance" />
 
