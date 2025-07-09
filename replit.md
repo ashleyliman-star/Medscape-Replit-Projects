@@ -93,6 +93,9 @@ This is a full-stack web application for presenting medical debates with expert 
 
 ## Changelog
 
+- July 9, 2025: Completed comprehensive Medscape Masters alcohol campaign integration with all seven mobile ad units filled with unique 300x250 creatives and proper click tracking
+- July 9, 2025: Added "Advertisement" labels below all ad units for both mobile and desktop compliance
+- July 9, 2025: Optimized mobile ad positioning with sequential numbering (1-7) matching visual order from top to bottom
 - July 9, 2025: Built comprehensive privacy preference center with three tabs (Your Privacy, Strictly Necessary Cookies, Privacy Preference Center) featuring functional cookie toggles, localStorage persistence, and OneTrust integration
 - July 8, 2025: Implemented admin system with password protection (medscape/ICDTeam909) for comment management
 - July 8, 2025: Improved desktop text alignment - supporting text now aligns with argument titles

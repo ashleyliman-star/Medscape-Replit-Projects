@@ -106,7 +106,8 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
 
   return (
     <div className={cn(className)}>
-      {showFirstMedscapeAd ? (
+      <div>
+        {showFirstMedscapeAd ? (
         <a
           href="https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_mscpmrk_masters_alc"
           target="_blank"
@@ -324,6 +325,12 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
           </span>
         </div>
       )}
+      </div>
+      
+      {/* Advertisement label */}
+      <div className="text-center mt-2">
+        <span className="text-xs text-gray-500">Advertisement</span>
+      </div>
     </div>
   );
 }
