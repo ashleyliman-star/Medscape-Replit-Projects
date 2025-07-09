@@ -54,15 +54,19 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
       window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_mscpmrk_masters_alc', '_blank');
     } else if (size === 'responsive-desktop-banner' && position === 2) {
       window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_mscpmrk_masters_alc', '_blank');
+    } else if (size === 'responsive-desktop-banner' && position === 3) {
+      window.open('https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_mscpmrk_masters_alc', '_blank');
     }
   };
 
   // Show Medscape alcohol ads for specific positions on desktop
   const showFirstMedscapeAd = size === '728x90' && position === 1 && isDesktop;
   const showSecondMedscapeAd = size === 'responsive-desktop-banner' && position === 2 && isDesktop;
+  const showThirdMedscapeAd = size === 'responsive-desktop-banner' && position === 3 && isDesktop;
   
   const firstAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
   const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
+  const thirdAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v6_728x90 (1)_1752083072070.jpg";
 
   return (
     <div className={cn(className)}>
@@ -94,6 +98,22 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
           <img
             src={secondAlcoholAdImage}
             alt="Use Brain Health to Start the Alcohol Conversation - Read Now"
+            className="w-full h-full object-cover rounded-lg"
+            style={{ width: '728px', height: '90px' }}
+          />
+        </a>
+      ) : showThirdMedscapeAd ? (
+        <a
+          href="https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_mscpmrk_masters_alc"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleAdClick}
+          className="block cursor-pointer hover:opacity-90 transition-opacity"
+          style={getStyles()}
+        >
+          <img
+            src={thirdAlcoholAdImage}
+            alt="Beyond Cancer: The Overlooked Harms of Alcohol - Read Now"
             className="w-full h-full object-cover rounded-lg"
             style={{ width: '728px', height: '90px' }}
           />
