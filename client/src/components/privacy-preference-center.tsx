@@ -388,14 +388,6 @@ export default function PrivacyPreferenceCenter({ isOpen, onClose }: PrivacyPref
               Accept Essential
             </button>
           </div>
-          
-          {/* OneTrust Badge */}
-          <div className="mt-4 flex justify-center">
-            <div className="flex items-center gap-2 text-xs text-gray-500">
-              <span>Powered by</span>
-              <span className="font-medium text-green-600">OneTrust</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
