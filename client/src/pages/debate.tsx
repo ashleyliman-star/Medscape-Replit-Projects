@@ -170,7 +170,7 @@ export default function DebatePage() {
           onCommentClick={handleCommentClick}
         />
 
-        <AdPlaceholder size="728x90" className="flex justify-center mb-8" position={1} />
+        <AdPlaceholder size="728x90" className="hidden md:flex justify-center mb-8" position={1} />
 
         {/* C1 Version: Unboxed arguments with YES/NO capsules */}
         <div className="mb-16">
