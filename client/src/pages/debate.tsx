@@ -389,8 +389,8 @@ export default function DebatePage() {
               <img 
                 src={medscapeLogo} 
                 alt="Medscape" 
-                className="h-8"
-                style={{maxWidth: '120px'}}
+                className="h-6"
+                style={{width: 'auto', maxWidth: '140px'}}
               />
             </div>
           </div>
