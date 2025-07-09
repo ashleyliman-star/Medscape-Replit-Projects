@@ -338,18 +338,18 @@ export default function DebatePage() {
         </div>
       </main>
 
-      <footer className="bg-white py-8 mt-12" style={{borderTop: '2px solid #16478c'}}>
+      <footer className="bg-white py-8 mt-12" style={{borderTop: '4px solid #16478c'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           
           {/* Main Navigation */}
-          <div className="flex flex-wrap items-center justify-between border-b border-gray-200 mb-4">
+          <div className="flex flex-wrap items-center justify-between border-b-2 border-gray-300 mb-4">
             <div className="flex gap-8">
               <button 
                 onClick={() => setActiveMenu('policies')}
                 onMouseEnter={() => setActiveMenu('policies')}
-                className={`text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200 ${
-                  activeMenu === 'policies' ? 'border-b-2 border-[#16478c]' : ''
+                className={`text-base font-bold py-3 transition-colors duration-200 ${
+                  activeMenu === 'policies' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
                 Policies
@@ -357,8 +357,8 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('medscape')}
                 onMouseEnter={() => setActiveMenu('medscape')}
-                className={`text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200 ${
-                  activeMenu === 'medscape' ? 'border-b-2 border-[#16478c]' : ''
+                className={`text-base font-bold py-3 transition-colors duration-200 ${
+                  activeMenu === 'medscape' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
                 Medscape
@@ -366,8 +366,8 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('about')}
                 onMouseEnter={() => setActiveMenu('about')}
-                className={`text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200 ${
-                  activeMenu === 'about' ? 'border-b-2 border-[#16478c]' : ''
+                className={`text-base font-bold py-3 transition-colors duration-200 ${
+                  activeMenu === 'about' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
                 About
@@ -375,8 +375,8 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('advertisers')}
                 onMouseEnter={() => setActiveMenu('advertisers')}
-                className={`text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200 ${
-                  activeMenu === 'advertisers' ? 'border-b-2 border-[#16478c]' : ''
+                className={`text-base font-bold py-3 transition-colors duration-200 ${
+                  activeMenu === 'advertisers' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
                 For Advertisers
@@ -385,11 +385,14 @@ export default function DebatePage() {
             
             {/* Medscape Logo */}
             <div className="pb-2">
-              <img src="/attached_assets/Medscape_Logo.svg%20(1)_1750723648901.png" alt="Medscape" className="h-6" onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.nextElementSibling.style.display = 'block';
-              }} />
-              <div className="text-[#16478c] text-lg font-bold" style={{display: 'none'}}>Medscape</div>
+              <img 
+                src="/attached_assets/Medscape%20logo_1752022501129.avif" 
+                alt="Medscape" 
+                className="h-8"
+                onError={(e) => {
+                  e.currentTarget.src = "/attached_assets/Medscape_Logo.svg%20(1)_1750723648901.png";
+                }} 
+              />
             </div>
           </div>
           
