@@ -8,6 +8,7 @@ import AdminPage from "@/pages/admin";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
 import { initGA } from "./lib/analytics";
+import { initializeCookiePreferences } from "./lib/cookie-consent";
 
 function Router() {
   return (
@@ -21,8 +22,11 @@ function Router() {
 }
 
 function App() {
-  // Initialize Google Analytics when app loads
+  // Initialize Google Analytics and cookie preferences when app loads
   useEffect(() => {
+    // Initialize cookie preferences system
+    initializeCookiePreferences();
+    
     // Verify required environment variable is present
     if (!import.meta.env.VITE_GA_MEASUREMENT_ID) {
       console.warn('Missing required Google Analytics key: VITE_GA_MEASUREMENT_ID');

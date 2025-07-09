@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import medscapeLogo from "@assets/Medscape logo_1752074413175.png";
+import { 
+  getCookiePreferences, 
+  saveCookiePreferences, 
+  acceptEssentialOnly,
+  type CookiePreferences 
+} from "@/lib/cookie-consent";
 
 interface PrivacyPreferenceCenterProps {
   isOpen: boolean;
@@ -9,23 +15,49 @@ interface PrivacyPreferenceCenterProps {
 
 export default function PrivacyPreferenceCenter({ isOpen, onClose }: PrivacyPreferenceCenterProps) {
   const [activeTab, setActiveTab] = useState("your-privacy");
-  const [performanceCookies, setPerformanceCookies] = useState(true);
-  const [targetingCookies, setTargetingCookies] = useState(true);
-  const [functionalCookies, setFunctionalCookies] = useState(true);
+  const [preferences, setPreferences] = useState<CookiePreferences>({
+    performance: true,
+    targeting: true,
+    functional: true,
+    strictlyNecessary: true,
+  });
+
+  // Load current preferences when component mounts
+  useEffect(() => {
+    if (isOpen) {
+      const currentPreferences = getCookiePreferences();
+      setPreferences(currentPreferences);
+    }
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
   const handleConfirmChoices = () => {
-    // Save preferences logic here
+    // Save the current preferences
+    saveCookiePreferences(preferences);
     onClose();
   };
 
   const handleAcceptEssential = () => {
     // Accept only essential cookies
-    setPerformanceCookies(false);
-    setTargetingCookies(false);
-    setFunctionalCookies(false);
+    acceptEssentialOnly();
     onClose();
+  };
+
+  const updatePreference = (key: keyof CookiePreferences, value: boolean) => {
+    setPreferences(prev => ({
+      ...prev,
+      [key]: value
+    }));
+  };
+
+  const toggleAllNonEssential = (enabled: boolean) => {
+    setPreferences(prev => ({
+      ...prev,
+      performance: enabled,
+      targeting: enabled,
+      functional: enabled
+    }));
   };
 
   return (
@@ -131,13 +163,8 @@ export default function PrivacyPreferenceCenter({ isOpen, onClose }: PrivacyPref
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input
                         type="checkbox"
-                        checked={performanceCookies && targetingCookies && functionalCookies}
-                        onChange={(e) => {
-                          const checked = e.target.checked;
-                          setPerformanceCookies(checked);
-                          setTargetingCookies(checked);
-                          setFunctionalCookies(checked);
-                        }}
+                        checked={preferences.performance && preferences.targeting && preferences.functional}
+                        onChange={(e) => toggleAllNonEssential(e.target.checked)}
                         className="sr-only peer"
                       />
                       <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
@@ -153,8 +180,8 @@ export default function PrivacyPreferenceCenter({ isOpen, onClose }: PrivacyPref
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
                           type="checkbox"
-                          checked={performanceCookies}
-                          onChange={(e) => setPerformanceCookies(e.target.checked)}
+                          checked={preferences.performance}
+                          onChange={(e) => updatePreference('performance', e.target.checked)}
                           className="sr-only peer"
                         />
                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
@@ -172,8 +199,8 @@ export default function PrivacyPreferenceCenter({ isOpen, onClose }: PrivacyPref
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
                           type="checkbox"
-                          checked={targetingCookies}
-                          onChange={(e) => setTargetingCookies(e.target.checked)}
+                          checked={preferences.targeting}
+                          onChange={(e) => updatePreference('targeting', e.target.checked)}
                           className="sr-only peer"
                         />
                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
@@ -191,8 +218,8 @@ export default function PrivacyPreferenceCenter({ isOpen, onClose }: PrivacyPref
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
                           type="checkbox"
-                          checked={functionalCookies}
-                          onChange={(e) => setFunctionalCookies(e.target.checked)}
+                          checked={preferences.functional}
+                          onChange={(e) => updatePreference('functional', e.target.checked)}
                           className="sr-only peer"
                         />
                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
