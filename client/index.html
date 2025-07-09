@@ -66,32 +66,7 @@
     </script>
     
     <!-- Pulse Point Pixel -->
-    <script type="text/javascript">
-      (function() {
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.async = true;
-        
-        // Build the URL with proper parameters
-        var baseUrl = 'https://tr.contextweb.com/bh/at?cv=510688&t=scr';
-        var params = [];
-        
-        // Add privacy parameters if available
-        if (typeof window !== 'undefined') {
-          // You can set these variables based on your privacy framework
-          var us_privacy = window.us_privacy || '';
-          var gpp_string = window.gpp_string || '';
-          var gpp_sid = window.gpp_sid || '';
-          
-          if (us_privacy) params.push('us_privacy=' + encodeURIComponent(us_privacy));
-          if (gpp_string) params.push('gpp=' + encodeURIComponent(gpp_string));
-          if (gpp_sid) params.push('gpp_sid=' + encodeURIComponent(gpp_sid));
-        }
-        
-        script.src = baseUrl + (params.length ? '&' + params.join('&') : '');
-        document.head.appendChild(script);
-      })();
-    </script>
+    <script type="text/javascript" src="https://tr.contextweb.com/bh/at?cv=510688&t=scr"></script>
   </head>
   <body>
     <div id="root"></div>
