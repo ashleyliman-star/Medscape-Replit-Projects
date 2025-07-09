@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DebateHeader from "@/components/debate-header";
+import medscapeLogo from "@assets/Medscape logo_1752074413175.png";
 import DebateQuestion from "@/components/debate-question";
 import DebateSide from "@/components/debate-side";
 import AdPlaceholder from "@/components/ad-placeholder";
@@ -385,14 +386,12 @@ export default function DebatePage() {
             
             {/* Medscape Logo */}
             <div className="pb-2">
-              <svg className="h-8" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="30" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fill="#1e5aa8">
-                  Med
-                </text>
-                <text x="60" y="30" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="normal" fill="#555555">
-                  scape
-                </text>
-              </svg>
+              <img 
+                src={medscapeLogo} 
+                alt="Medscape" 
+                className="h-8"
+                style={{maxWidth: '120px'}}
+              />
             </div>
           </div>
           
