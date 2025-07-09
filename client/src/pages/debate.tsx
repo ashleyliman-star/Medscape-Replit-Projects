@@ -112,6 +112,7 @@ const debateData = {
 
 export default function DebatePage() {
   const [isCommentPanelOpen, setIsCommentPanelOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState('policies');
 
   const handleCommentClick = () => {
     setIsCommentPanelOpen(true);
@@ -119,6 +120,39 @@ export default function DebatePage() {
 
   const handleCloseCommentPanel = () => {
     setIsCommentPanelOpen(false);
+  };
+
+  const menuItems = {
+    policies: [
+      { label: 'Privacy Policy', href: '#' },
+      { label: 'Editorial Policy', href: '#' },
+      { label: 'Advertising Policy', href: '#' },
+      { label: 'Terms of Use', href: '#' },
+      { label: 'Cookies', href: '#' },
+      { label: 'Your Privacy Choices', href: '#', hasIcon: true }
+    ],
+    medscape: [
+      { label: 'News & Perspectives', href: '#' },
+      { label: 'Tools & References', href: '#' },
+      { label: 'CME/CE', href: '#' },
+      { label: 'Video', href: '#' },
+      { label: 'Events', href: '#' },
+      { label: 'Specialties', href: '#' },
+      { label: 'Topics', href: '#' },
+      { label: 'Account Information', href: '#' },
+      { label: 'Newsletters & Alerts', href: '#' }
+    ],
+    about: [
+      { label: 'About Medscape', href: '#' },
+      { label: 'Medscape Staff', href: '#' },
+      { label: 'Market Research', href: '#' },
+      { label: 'Help Center', href: '#' },
+      { label: 'Contact Us', href: '#' }
+    ],
+    advertisers: [
+      { label: 'Advertise with Us', href: '#' },
+      { label: 'Advertising Policy', href: '#' }
+    ]
   };
 
   return (
@@ -340,29 +374,59 @@ export default function DebatePage() {
           {/* Main Navigation */}
           <div className="flex flex-wrap items-center justify-between border-b border-gray-200 mb-4">
             <div className="flex gap-8">
-              <a href="#" className="text-base text-gray-700 hover:text-[#16478c] py-3 border-b-2 border-[#16478c] transition-colors duration-200">
+              <button 
+                onClick={() => setActiveMenu('policies')}
+                onMouseEnter={() => setActiveMenu('policies')}
+                className={`text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200 ${
+                  activeMenu === 'policies' ? 'border-b-2 border-[#16478c]' : ''
+                }`}
+              >
                 Policies
-              </a>
-              <a href="#" className="text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200">
+              </button>
+              <button 
+                onClick={() => setActiveMenu('medscape')}
+                onMouseEnter={() => setActiveMenu('medscape')}
+                className={`text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200 ${
+                  activeMenu === 'medscape' ? 'border-b-2 border-[#16478c]' : ''
+                }`}
+              >
                 Medscape
-              </a>
-              <a href="#" className="text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200">
+              </button>
+              <button 
+                onClick={() => setActiveMenu('about')}
+                onMouseEnter={() => setActiveMenu('about')}
+                className={`text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200 ${
+                  activeMenu === 'about' ? 'border-b-2 border-[#16478c]' : ''
+                }`}
+              >
                 About
-              </a>
-              <a href="#" className="text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200">
+              </button>
+              <button 
+                onClick={() => setActiveMenu('advertisers')}
+                onMouseEnter={() => setActiveMenu('advertisers')}
+                className={`text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200 ${
+                  activeMenu === 'advertisers' ? 'border-b-2 border-[#16478c]' : ''
+                }`}
+              >
                 For Advertisers
-              </a>
+              </button>
             </div>
           </div>
           
-          {/* Sub-menu (showing Policies sub-menu as active) */}
+          {/* Dynamic Sub-menu */}
           <div className="flex flex-wrap gap-6 text-sm text-gray-600 mb-6">
-            <a href="#" className="hover:text-gray-800">Privacy Policy</a>
-            <a href="#" className="hover:text-gray-800">Editorial Policy</a>
-            <a href="#" className="hover:text-gray-800">Advertising Policy</a>
-            <a href="#" className="hover:text-gray-800">Terms of Use</a>
-            <a href="#" className="hover:text-gray-800">Cookies</a>
-            <a href="#" className="hover:text-gray-800">Your Privacy Choices <span className="inline-block w-4 h-4 bg-blue-600 rounded-full text-white text-xs text-center leading-4">✓</span></a>
+            {menuItems[activeMenu as keyof typeof menuItems]?.map((item, index) => (
+              <a 
+                key={index}
+                href={item.href} 
+                className="hover:text-gray-800"
+              >
+                {item.label}
+                {item.hasIcon && (
+                  <span className="ml-1 inline-block w-4 h-4 bg-blue-600 rounded-full text-white text-xs text-center leading-4">✓</span>
+                )}
+              </a>
+            ))}
           </div>
           
           {/* Social Media Icons */}
