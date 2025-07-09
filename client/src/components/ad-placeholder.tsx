@@ -105,8 +105,8 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const seventhMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_300x250 (1)_1752091987538.jpg";
 
   return (
-    <div className={cn("flex flex-col", className)}>
-      <div className="w-full">
+    <div className={cn("flex flex-col items-center", className)}>
+      <div>
         {showFirstMedscapeAd ? (
         <a
           href="https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_mscpmrk_masters_alc"
@@ -328,7 +328,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
       </div>
       
       {/* Advertisement label */}
-      <div className="w-full text-center mt-2">
+      <div className="text-center mt-2">
         <span className="text-xs text-gray-500">Advertisement</span>
       </div>
     </div>
