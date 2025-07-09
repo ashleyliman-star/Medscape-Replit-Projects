@@ -59,7 +59,12 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
 
   // Show Medscape alcohol ads for specific positions on desktop
   const showFirstMedscapeAd = size === '728x90' && position === 1 && isDesktop;
-  const showSecondMedscapeAd = (size === 'responsive-desktop-banner' && position === 7 && isDesktop);
+  const showSecondMedscapeAd = size === 'responsive-desktop-banner' && position === 7 && isDesktop;
+  
+  // Debug logging
+  if (position === 7) {
+    console.log('Second ad debug:', { size, position, isDesktop, showSecondMedscapeAd });
+  }
   
   const firstAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
   const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
