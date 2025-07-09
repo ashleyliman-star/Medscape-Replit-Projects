@@ -386,12 +386,14 @@ export default function DebatePage() {
             
             {/* Medscape Logo */}
             <div className="pb-2">
-              <img 
-                src={medscapeLogo} 
-                alt="Medscape" 
-                className="h-6"
-                style={{width: 'auto', maxWidth: '140px'}}
-              />
+              <a href="https://www.medscape.com" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src={medscapeLogo} 
+                  alt="Medscape" 
+                  className="h-6"
+                  style={{width: 'auto', maxWidth: '140px'}}
+                />
+              </a>
             </div>
           </div>
           
@@ -462,7 +464,7 @@ export default function DebatePage() {
             <a href="https://play.google.com/store/apps/details?id=com.medscape.android&pli=1" target="_blank" rel="noopener noreferrer" className="inline-block">
               <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" 
                    alt="Get it on Google Play" 
-                   className="h-10" />
+                   className="h-8" />
             </a>
           </div>
           
