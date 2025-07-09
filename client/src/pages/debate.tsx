@@ -125,11 +125,11 @@ export default function DebatePage() {
 
   const menuItems = {
     policies: [
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Editorial Policy', href: '#' },
-      { label: 'Advertising Policy', href: '#' },
-      { label: 'Terms of Use', href: '#' },
-      { label: 'Cookies', href: '#' },
+      { label: 'Privacy Policy', href: 'https://www.medscape.com/public/privacy' },
+      { label: 'Editorial Policy', href: 'https://www.medscape.com/public/editorialpolicies' },
+      { label: 'Advertising Policy', href: 'https://www.medscape.com/public/adpolicy' },
+      { label: 'Terms of Use', href: 'https://www.medscape.com/public/termsofuse' },
+      { label: 'Cookies', href: 'https://www.medscape.com/public/cookies' },
       { label: 'Your Privacy Choices', href: '#', hasIcon: true }
     ],
     medscape: [
@@ -152,7 +152,7 @@ export default function DebatePage() {
     ],
     advertisers: [
       { label: 'Advertise with Us', href: '#' },
-      { label: 'Advertising Policy', href: '#' }
+      { label: 'Advertising Policy', href: 'https://www.medscape.com/public/adpolicy' }
     ]
   };
 
@@ -402,6 +402,8 @@ export default function DebatePage() {
                 key={index}
                 href={item.href} 
                 className="text-black hover:text-gray-600"
+                target={item.href.startsWith('http') ? '_blank' : '_self'}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               >
                 {item.label}
                 {item.hasIcon && (
