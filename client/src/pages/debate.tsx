@@ -18,6 +18,7 @@ import UnboxedArguments from "@/components/unboxed-arguments";
 import SummaryTableUnboxed from "@/components/summary-table-unboxed";
 import MiddleGroundUnboxed from "@/components/middle-ground-unboxed";
 import ConclusionsUnboxed from "@/components/conclusions-unboxed";
+import PrivacyPreferenceCenter from "@/components/privacy-preference-center";
 
 const debateData = {
   question: "Do Patients Benefit From Routine Checks for Cancer Metastases?",
@@ -114,6 +115,7 @@ const debateData = {
 
 export default function DebatePage() {
   const [isCommentPanelOpen, setIsCommentPanelOpen] = useState(false);
+  const [isPrivacyCenterOpen, setIsPrivacyCenterOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState('policies');
 
   const handleCommentClick = () => {
@@ -402,17 +404,29 @@ export default function DebatePage() {
           <div className="flex flex-wrap items-center gap-4 text-sm mb-6">
             {menuItems[activeMenu as keyof typeof menuItems]?.map((item, index, array) => (
               <div key={index} className="flex items-center">
-                <a 
-                  href={item.href} 
-                  className="text-black hover:text-gray-600"
-                  target={item.href.startsWith('http') ? '_blank' : '_self'}
-                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                >
-                  {item.label}
-                  {item.hasIcon && (
-                    <span className="ml-1 inline-block w-4 h-4 bg-blue-600 rounded-full text-white text-xs text-center leading-4">✓</span>
-                  )}
-                </a>
+                {item.label === "Your Privacy Choices" ? (
+                  <button 
+                    onClick={() => setIsPrivacyCenterOpen(true)}
+                    className="text-black hover:text-gray-600 text-left"
+                  >
+                    {item.label}
+                    {item.hasIcon && (
+                      <span className="ml-1 inline-block w-4 h-4 bg-blue-600 rounded-full text-white text-xs text-center leading-4">✓</span>
+                    )}
+                  </button>
+                ) : (
+                  <a 
+                    href={item.href} 
+                    className="text-black hover:text-gray-600"
+                    target={item.href.startsWith('http') ? '_blank' : '_self'}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  >
+                    {item.label}
+                    {item.hasIcon && (
+                      <span className="ml-1 inline-block w-4 h-4 bg-blue-600 rounded-full text-white text-xs text-center leading-4">✓</span>
+                    )}
+                  </a>
+                )}
                 {index < array.length - 1 && (
                   <div className="h-4 w-px bg-gray-300 mx-4"></div>
                 )}
@@ -481,6 +495,12 @@ export default function DebatePage() {
         isOpen={isCommentPanelOpen}
         onClose={handleCloseCommentPanel}
         debateId="breast-cancer-surveillance"
+      />
+
+      {/* Privacy Preference Center */}
+      <PrivacyPreferenceCenter 
+        isOpen={isPrivacyCenterOpen}
+        onClose={() => setIsPrivacyCenterOpen(false)}
       />
     </div>
   );
