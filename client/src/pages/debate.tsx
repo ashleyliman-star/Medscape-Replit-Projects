@@ -309,21 +309,21 @@ export default function DebatePage() {
           {/* Main Navigation */}
           <div className="flex flex-wrap justify-between items-start">
             <div className="flex flex-wrap gap-8 relative">
-              <a href="#" className="text-[#16478c] hover:text-[#16478c] font-medium text-base relative group">
+              <a href="#" className="text-[#16478c] hover:text-[#16478c] font-medium text-base relative group pb-1">
                 Policies
-                <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#16478c]"></span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#16478c]"></span>
               </a>
-              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group">
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group pb-1">
                 Medscape
-                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group">
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group pb-1">
                 About
-                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group">
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group pb-1">
                 For Advertisers
-                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
             
