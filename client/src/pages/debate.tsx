@@ -396,20 +396,24 @@ export default function DebatePage() {
           </div>
           
           {/* Dynamic Sub-menu */}
-          <div className="flex flex-wrap gap-6 text-sm mb-6">
-            {menuItems[activeMenu as keyof typeof menuItems]?.map((item, index) => (
-              <a 
-                key={index}
-                href={item.href} 
-                className="text-black hover:text-gray-600"
-                target={item.href.startsWith('http') ? '_blank' : '_self'}
-                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              >
-                {item.label}
-                {item.hasIcon && (
-                  <span className="ml-1 inline-block w-4 h-4 bg-blue-600 rounded-full text-white text-xs text-center leading-4">✓</span>
+          <div className="flex flex-wrap items-center gap-4 text-sm mb-6">
+            {menuItems[activeMenu as keyof typeof menuItems]?.map((item, index, array) => (
+              <div key={index} className="flex items-center">
+                <a 
+                  href={item.href} 
+                  className="text-black hover:text-gray-600"
+                  target={item.href.startsWith('http') ? '_blank' : '_self'}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                >
+                  {item.label}
+                  {item.hasIcon && (
+                    <span className="ml-1 inline-block w-4 h-4 bg-blue-600 rounded-full text-white text-xs text-center leading-4">✓</span>
+                  )}
+                </a>
+                {index < array.length - 1 && (
+                  <div className="h-4 w-px bg-gray-300 mx-4"></div>
                 )}
-              </a>
+              </div>
             ))}
           </div>
           
