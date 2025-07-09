@@ -191,7 +191,7 @@ export default function DebatePage() {
         </div>
 
         {/* 728x90 ad unit on desktop, 300x250 on mobile - below summary of key points */}
-        <AdPlaceholder size="responsive-desktop-banner" className="flex justify-center mb-12" position={7} />
+        <AdPlaceholder size="responsive-desktop-banner" className="flex justify-center mb-12" position={4} />
 
         <MiddleGroundUnboxed />
 
@@ -200,7 +200,7 @@ export default function DebatePage() {
         </div>
 
         {/* 300x250 ad unit above poll - stays the same on all devices */}
-        <AdPlaceholder size="300x250" className="flex justify-center mb-12" position={8} />
+        <AdPlaceholder size="300x250" className="flex justify-center mb-12" position={5} />
 
         <PollSection debateId="breast-cancer-surveillance" />
 
