@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DebateHeader from "@/components/debate-header";
 import medscapeLogo from "@assets/Medscape logo_1752074413175.png";
+import googlePlayBadge from "@assets/Google_Play_Store_badge_EN.svg_1752080323301.webp";
 import DebateQuestion from "@/components/debate-question";
 import DebateSide from "@/components/debate-side";
 import AdPlaceholder from "@/components/ad-placeholder";
@@ -462,7 +463,7 @@ export default function DebatePage() {
                    className="h-8" />
             </a>
             <a href="https://play.google.com/store/apps/details?id=com.medscape.android&pli=1" target="_blank" rel="noopener noreferrer" className="inline-block">
-              <img src="/attached_assets/Google_Play_Store_badge_EN.svg_1752080323301.webp" 
+              <img src={googlePlayBadge} 
                    alt="Get it on Google Play" 
                    className="h-8" />
             </a>
