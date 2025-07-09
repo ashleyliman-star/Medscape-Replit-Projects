@@ -52,19 +52,14 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
     // Navigate to specific URLs for Medscape alcohol ads
     if (size === '728x90' && position === 1) {
       window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_mscpmrk_masters_alc', '_blank');
-    } else if (size === 'responsive-desktop-banner' && position === 7) {
+    } else if (size === 'responsive-desktop-banner' && position === 2) {
       window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_mscpmrk_masters_alc', '_blank');
     }
   };
 
   // Show Medscape alcohol ads for specific positions on desktop
   const showFirstMedscapeAd = size === '728x90' && position === 1 && isDesktop;
-  const showSecondMedscapeAd = size === 'responsive-desktop-banner' && position === 7 && isDesktop;
-  
-  // Debug logging
-  if (position === 7) {
-    console.log('Second ad debug:', { size, position, isDesktop, showSecondMedscapeAd });
-  }
+  const showSecondMedscapeAd = size === 'responsive-desktop-banner' && position === 2 && isDesktop;
   
   const firstAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
   const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
