@@ -348,7 +348,7 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('policies')}
                 onMouseEnter={() => setActiveMenu('policies')}
-                className={`text-base font-bold py-3 transition-colors duration-200 ${
+                className={`text-base py-3 transition-colors duration-200 ${
                   activeMenu === 'policies' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
@@ -357,7 +357,7 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('medscape')}
                 onMouseEnter={() => setActiveMenu('medscape')}
-                className={`text-base font-bold py-3 transition-colors duration-200 ${
+                className={`text-base py-3 transition-colors duration-200 ${
                   activeMenu === 'medscape' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
@@ -366,7 +366,7 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('about')}
                 onMouseEnter={() => setActiveMenu('about')}
-                className={`text-base font-bold py-3 transition-colors duration-200 ${
+                className={`text-base py-3 transition-colors duration-200 ${
                   activeMenu === 'about' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
@@ -375,7 +375,7 @@ export default function DebatePage() {
               <button 
                 onClick={() => setActiveMenu('advertisers')}
                 onMouseEnter={() => setActiveMenu('advertisers')}
-                className={`text-base font-bold py-3 transition-colors duration-200 ${
+                className={`text-base py-3 transition-colors duration-200 ${
                   activeMenu === 'advertisers' ? 'text-[#16478c] border-b-4 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                 }`}
               >
@@ -397,12 +397,12 @@ export default function DebatePage() {
           </div>
           
           {/* Dynamic Sub-menu */}
-          <div className="flex flex-wrap gap-6 text-sm text-gray-600 mb-6">
+          <div className="flex flex-wrap gap-6 text-sm mb-6">
             {menuItems[activeMenu as keyof typeof menuItems]?.map((item, index) => (
               <a 
                 key={index}
                 href={item.href} 
-                className="hover:text-gray-800"
+                className="text-black hover:text-gray-600"
               >
                 {item.label}
                 {item.hasIcon && (
