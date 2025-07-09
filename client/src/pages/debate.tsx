@@ -306,35 +306,36 @@ export default function DebatePage() {
 
       <footer className="bg-white py-8 mt-12" style={{borderTop: '2px solid #16478c'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Main Navigation */}
-          <div className="flex flex-wrap justify-between items-start mb-0">
-            <div className="flex flex-wrap gap-8 relative mb-0">
-              <a href="#" className="text-[#16478c] hover:text-[#16478c] font-medium text-base relative group">
+          {/* Main Navigation with integrated divider */}
+          <div className="flex flex-wrap justify-between items-end border-b-2 border-gray-300 mb-6">
+            <div className="flex flex-wrap gap-8 relative">
+              <a href="#" className="text-[#16478c] hover:text-[#16478c] font-medium text-base relative group pb-2">
                 Policies
-                <span className="absolute bottom-[-2px] left-0 w-full h-0.5 bg-[#16478c]"></span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#16478c]"></span>
               </a>
-              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group">
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group pb-2">
                 Medscape
-                <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group">
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group pb-2">
                 About
-                <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group">
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group pb-2">
                 For Advertisers
-                <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
             
             {/* Medscape Logo */}
-            <div>
-              <div className="text-[#16478c] text-xl font-bold">Medscape</div>
+            <div className="pb-2">
+              <img src="/attached_assets/Medscape_Logo.svg%20(1)_1750723648901.png" alt="Medscape" className="h-6" onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextElementSibling.style.display = 'block';
+              }} />
+              <div className="text-[#16478c] text-lg font-bold" style={{display: 'none'}}>Medscape</div>
             </div>
           </div>
-          
-          {/* Grey divider line */}
-          <div className="border-t-2 border-gray-300 mb-6"></div>
           
           {/* Secondary Links and App Downloads */}
           <div className="flex flex-wrap justify-between items-center mb-6">
