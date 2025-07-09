@@ -410,7 +410,7 @@ export default function DebatePage() {
                 >
                   {item.label}
                   {item.hasIcon && (
-                    <span className="ml-1 inline-block w-4 h-4 bg-blue-600 rounded-full text-white text-xs text-center leading-4">✓</span>
+                    <span className="ml-1 inline-block w-4 h-4 bg-blue-600 rounded-full text-white text-xs font-bold text-center leading-4">CA</span>
                   )}
                 </a>
                 {index < array.length - 1 && (
