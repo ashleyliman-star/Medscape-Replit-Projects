@@ -304,26 +304,29 @@ export default function DebatePage() {
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-200 py-8 mt-12">
+      <footer className="bg-white py-8 mt-12" style={{borderTop: '3px solid #204673'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Navigation */}
           <div className="flex flex-wrap justify-between items-start mb-6">
             <div className="flex flex-wrap gap-8 mb-4 lg:mb-0">
-              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium">Policies</a>
-              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium">Medscape</a>
-              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium">About</a>
-              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium">For Advertisers</a>
+              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg">Policies</a>
+              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg">Medscape</a>
+              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg">About</a>
+              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg">For Advertisers</a>
             </div>
             
             {/* Medscape Logo */}
-            <div className="text-blue-600 text-2xl font-bold">
-              Medscape
+            <div>
+              <img src="/attached_assets/Medscape_Logo.svg (1)_1750723648901.png" alt="Medscape" className="h-8" />
             </div>
           </div>
           
+          {/* Grey divider line */}
+          <div className="border-t border-gray-300 mb-6"></div>
+          
           {/* Secondary Links and App Downloads */}
           <div className="flex flex-wrap justify-between items-center mb-6">
-            <div className="flex flex-wrap gap-6 text-sm text-gray-600 mb-4 lg:mb-0">
+            <div className="flex flex-wrap gap-6 text-base text-gray-600 mb-4 lg:mb-0">
               <a href="#" className="hover:text-gray-800">Privacy Policy</a>
               <a href="#" className="hover:text-gray-800">Editorial Policy</a>
               <a href="#" className="hover:text-gray-800">Advertising Policy</a>
@@ -364,7 +367,7 @@ export default function DebatePage() {
           
           {/* App Downloads */}
           <div className="flex flex-wrap gap-4 mb-6">
-            <div className="text-sm text-gray-600 mr-4">GET THE MEDSCAPE APP</div>
+            <div className="text-base text-gray-600 mr-4">GET THE MEDSCAPE APP</div>
             <a href="#" className="inline-block">
               <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1469664000" 
                    alt="Download on the App Store" 
