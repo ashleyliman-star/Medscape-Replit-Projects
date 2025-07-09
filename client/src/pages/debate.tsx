@@ -307,12 +307,24 @@ export default function DebatePage() {
       <footer className="bg-white py-8 mt-12" style={{borderTop: '2px solid #16478c'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Navigation */}
-          <div className="flex flex-wrap justify-between items-start mb-3">
-            <div className="flex flex-wrap gap-8 mb-4 lg:mb-0">
-              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg">Policies</a>
-              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg">Medscape</a>
-              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg">About</a>
-              <a href="#" className="text-blue-600 hover:text-blue-800 font-medium text-lg">For Advertisers</a>
+          <div className="flex flex-wrap justify-between items-start mb-1">
+            <div className="flex flex-wrap gap-8 mb-2 lg:mb-0">
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-lg relative group">
+                Policies
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-lg relative group">
+                Medscape
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-lg relative group">
+                About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-lg relative group">
+                For Advertisers
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+              </a>
             </div>
             
             {/* Medscape Logo */}
