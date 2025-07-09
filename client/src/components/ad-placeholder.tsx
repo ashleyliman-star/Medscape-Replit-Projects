@@ -68,6 +68,8 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
       window.open('https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_mscpmrk_masters_alc', '_blank');
     } else if (size === '300x250' && position === 4 && !isDesktop) {
       window.open('https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=house-3_mscpmrk_masters_alc', '_blank');
+    } else if (size === '300x250' && position === 5 && !isDesktop) {
+      window.open('https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_mscpmrk_masters_alc', '_blank');
     }
   };
 
@@ -81,6 +83,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const showSecondMobile300x250Ad = size === '300x250' && position === 2 && !isDesktop;
   const showThirdMobile300x250Ad = size === '300x250' && position === 3 && !isDesktop;
   const showFourthMobile300x250Ad = size === '300x250' && position === 4 && !isDesktop;
+  const showFifthMobile300x250Ad = size === '300x250' && position === 5 && !isDesktop;
   
   const firstAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
   const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
@@ -91,6 +94,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const secondMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_300x250_1752091332968.jpg";
   const thirdMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v6_300x250_1752091467559.jpg";
   const fourthMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v5_300x250_1752091581010.jpg";
+  const fifthMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v7_300x250 (1)_1752091625733.jpg";
 
   return (
     <div className={cn(className)}>
@@ -234,6 +238,22 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
           <img
             src={fourthMobile300x250AdImage}
             alt="How to Treat Alcohol Use and Mental Health Together - Read Now"
+            className="w-full h-full object-cover rounded-lg"
+            style={{ width: '300px', height: '250px' }}
+          />
+        </a>
+      ) : showFifthMobile300x250Ad ? (
+        <a
+          href="https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_mscpmrk_masters_alc"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleAdClick}
+          className="block cursor-pointer hover:opacity-90 transition-opacity"
+          style={getStyles()}
+        >
+          <img
+            src={fifthMobile300x250AdImage}
+            alt="Uncovering Unhealthy Drinking in 'Normal' Patients - Read Now"
             className="w-full h-full object-cover rounded-lg"
             style={{ width: '300px', height: '250px' }}
           />
