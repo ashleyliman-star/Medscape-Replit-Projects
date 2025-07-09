@@ -337,55 +337,65 @@ export default function DebatePage() {
             </div>
           </div>
           
-          {/* Sub-menu sections */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-6">
-            {/* Policies */}
-            <div>
-              <h4 className="text-[#16478c] font-medium text-base mb-3">Policies</h4>
-              <div className="space-y-2">
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Privacy Policy</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Editorial Policy</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Advertising Policy</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Terms of Use</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Cookies</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Your Privacy Choices 🔘</a>
+          {/* Main Navigation with Dropdown Menus */}
+          <div className="flex flex-wrap items-center justify-between border-b border-gray-200 mb-6">
+            <div className="flex gap-8">
+              {/* Policies Dropdown */}
+              <div className="relative group">
+                <button className="text-base text-gray-700 hover:text-[#16478c] py-3 border-b-2 border-[#16478c] transition-colors duration-200">
+                  Policies
+                </button>
+                <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-200 rounded-md py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Privacy Policy</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Editorial Policy</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Advertising Policy</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Terms of Use</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Cookies</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Your Privacy Choices 🔘</a>
+                </div>
               </div>
-            </div>
-            
-            {/* Medscape */}
-            <div>
-              <h4 className="text-[#16478c] font-medium text-base mb-3">Medscape</h4>
-              <div className="space-y-2">
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">News & Perspectives</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Tools & References</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">CME/CE</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Video</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Events</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Specialties</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Topics</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Account Information</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Newsletters & Alerts</a>
+
+              {/* Medscape Dropdown */}
+              <div className="relative group">
+                <button className="text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200">
+                  Medscape
+                </button>
+                <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-200 rounded-md py-2 w-52 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">News & Perspectives</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Tools & References</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">CME/CE</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Video</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Events</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Specialties</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Topics</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Account Information</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Newsletters & Alerts</a>
+                </div>
               </div>
-            </div>
-            
-            {/* About */}
-            <div>
-              <h4 className="text-[#16478c] font-medium text-base mb-3">About</h4>
-              <div className="space-y-2">
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">About Medscape</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Medscape Staff</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Market Research</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Help Center</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Contact Us</a>
+
+              {/* About Dropdown */}
+              <div className="relative group">
+                <button className="text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200">
+                  About
+                </button>
+                <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-200 rounded-md py-2 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">About Medscape</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Medscape Staff</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Market Research</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Help Center</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Contact Us</a>
+                </div>
               </div>
-            </div>
-            
-            {/* For Advertisers */}
-            <div>
-              <h4 className="text-[#16478c] font-medium text-base mb-3">For Advertisers</h4>
-              <div className="space-y-2">
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Advertise with Us</a>
-                <a href="#" className="block text-sm text-gray-600 hover:text-gray-800">Advertising Policy</a>
+
+              {/* For Advertisers Dropdown */}
+              <div className="relative group">
+                <button className="text-base text-gray-700 hover:text-[#16478c] py-3 transition-colors duration-200">
+                  For Advertisers
+                </button>
+                <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-200 rounded-md py-2 w-44 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Advertise with Us</a>
+                  <a href="#" className="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-800">Advertising Policy</a>
+                </div>
               </div>
             </div>
           </div>
