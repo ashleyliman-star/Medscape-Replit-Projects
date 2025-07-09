@@ -63,8 +63,8 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
     }
   };
 
-  // Show Medscape alcohol ads for specific positions on desktop
-  const showFirstMedscapeAd = size === '728x90' && position === 1 && isDesktop;
+  // Show Medscape alcohol ads for specific positions on desktop and mobile
+  const showFirstMedscapeAd = size === '728x90' && position === 1; // Show on both desktop and mobile
   const showSecondMedscapeAd = size === 'responsive-desktop-banner' && position === 2 && isDesktop;
   const showThirdMedscapeAd = size === 'responsive-desktop-banner' && position === 3 && isDesktop;
   const showFourthMedscapeAd = size === 'responsive-desktop-banner' && position === 4 && isDesktop;
@@ -91,7 +91,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
             src={firstAlcoholAdImage}
             alt="The Cancer Risk Hiding in Your Patient's Glass - Read Now"
             className="w-full h-full object-cover rounded-lg"
-            style={{ width: '728px', height: '90px' }}
+            style={isDesktop ? { width: '728px', height: '90px' } : { width: '100%', height: '90px', maxWidth: '728px' }}
           />
         </a>
       ) : showSecondMedscapeAd ? (
