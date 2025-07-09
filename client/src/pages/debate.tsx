@@ -385,11 +385,14 @@ export default function DebatePage() {
             
             {/* Medscape Logo */}
             <div className="pb-2">
-              <img 
-                src="/attached_assets/Medscape%20logo_1752074292455.png" 
-                alt="Medscape" 
-                className="h-8"
-              />
+              <svg className="h-8" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="30" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fill="#1e5aa8">
+                  Med
+                </text>
+                <text x="60" y="30" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="normal" fill="#555555">
+                  scape
+                </text>
+              </svg>
             </div>
           </div>
           
