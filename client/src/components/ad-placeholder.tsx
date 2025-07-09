@@ -60,6 +60,8 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
       window.open('https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=house-3_mscpmrk_masters_alc', '_blank');
     } else if (size === '300x250' && position === 5) {
       window.open('https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_mscpmrk_masters_alc', '_blank');
+    } else if (size === '300x250' && position === 2 && !isDesktop) {
+      window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_mscpmrk_masters_alc', '_blank');
     }
   };
 
@@ -69,12 +71,14 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const showThirdMedscapeAd = size === 'responsive-desktop-banner' && position === 3 && isDesktop;
   const showFourthMedscapeAd = size === 'responsive-desktop-banner' && position === 4 && isDesktop;
   const showFifthMedscapeAd = size === '300x250' && position === 5 && isDesktop;
+  const showFirstMobile300x250Ad = size === '300x250' && position === 2 && !isDesktop;
   
   const firstAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
   const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
   const thirdAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v6_728x90 (1)_1752083072070.jpg";
   const fourthAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v5_728x90_1752083208434.jpg";
   const fifthAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v7_300x250_1752083329006.jpg";
+  const firstMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_300x250_1752090608590.jpg";
 
   return (
     <div className={cn(className)}>
@@ -154,6 +158,22 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
           <img
             src={fifthAlcoholAdImage}
             alt="Uncovering Unhealthy Drinking in 'Normal' Patients - Read Now"
+            className="w-full h-full object-cover rounded-lg"
+            style={{ width: '300px', height: '250px' }}
+          />
+        </a>
+      ) : showFirstMobile300x250Ad ? (
+        <a
+          href="https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_mscpmrk_masters_alc"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleAdClick}
+          className="block cursor-pointer hover:opacity-90 transition-opacity"
+          style={getStyles()}
+        >
+          <img
+            src={firstMobile300x250AdImage}
+            alt="The Cancer Risk Hiding in Your Patient's Glass - Read Now"
             className="w-full h-full object-cover rounded-lg"
             style={{ width: '300px', height: '250px' }}
           />
