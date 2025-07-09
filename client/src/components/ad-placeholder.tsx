@@ -42,10 +42,11 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   };
 
   const handleAdClick = () => {
+    const deviceType = isDesktop ? 'desktop' : 'mobile';
     trackEvent(
-      'ad_click',
+      'medscape_ad_click',
       'advertisement',
-      `Position ${position || 'Unknown'}`,
+      `Position ${position || 'Unknown'} ${deviceType}`,
       1
     );
     
