@@ -45,8 +45,15 @@ export function saveCookiePreferences(preferences: CookiePreferences): void {
   }
 }
 
-// Apply cookie preferences by managing basic cookie storage
+// Apply cookie preferences by managing tracking and cookie storage
 export function applyCookiePreferences(preferences: CookiePreferences): void {
+  // Only affect tracking if performance cookies are disabled
+  if (!preferences.performance) {
+    disableAnalyticsTracking();
+  } else {
+    enableAnalyticsTracking();
+  }
+
   // Handle targeting cookies (advertising) - basic cleanup only
   if (!preferences.targeting) {
     cleanupTargetingCookies();
@@ -61,6 +68,40 @@ export function applyCookiePreferences(preferences: CookiePreferences): void {
   window.dispatchEvent(new CustomEvent('cookiePreferencesChanged', {
     detail: preferences
   }));
+}
+
+// Disable analytics tracking when performance cookies are off
+function disableAnalyticsTracking(): void {
+  // Disable Google Analytics
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('config', import.meta.env.VITE_GA_MEASUREMENT_ID || '', {
+      anonymize_ip: true,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+  }
+  
+  // Disable Hotjar tracking
+  if (typeof window !== 'undefined' && (window as any).hj) {
+    (window as any).hj('stateChange', '/blocked');
+  }
+  
+  // Note: Adobe Analytics would need specific implementation based on their setup
+  console.log('Analytics tracking disabled due to performance cookie settings');
+}
+
+// Re-enable analytics tracking when performance cookies are on
+function enableAnalyticsTracking(): void {
+  // Re-enable Google Analytics with normal settings
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('config', import.meta.env.VITE_GA_MEASUREMENT_ID || '', {
+      anonymize_ip: false,
+      allow_google_signals: true,
+      allow_ad_personalization_signals: true
+    });
+  }
+  
+  console.log('Analytics tracking enabled');
 }
 
 // Clean up targeting/advertising cookies (basic cleanup only)
