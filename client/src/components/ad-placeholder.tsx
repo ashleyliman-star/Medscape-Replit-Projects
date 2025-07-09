@@ -72,6 +72,8 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
       window.open('https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_mscpmrk_masters_alc', '_blank');
     } else if (size === 'responsive-desktop-banner' && position === 5 && !isDesktop) {
       window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_mscpmrk_masters_alc', '_blank');
+    } else if (size === '300x250' && position === 7 && !isDesktop) {
+      window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_mscpmrk_masters_alc', '_blank');
     }
   };
 
@@ -87,6 +89,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const showFourthMobile300x250Ad = size === '300x250' && position === 4 && !isDesktop;
   const showFifthMobile300x250Ad = size === '300x250' && position === 5 && !isDesktop;
   const showSixthMobile300x250Ad = size === 'responsive-desktop-banner' && position === 5 && !isDesktop;
+  const showSeventhMobile300x250Ad = size === '300x250' && position === 7 && !isDesktop;
   
   const firstAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
   const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
@@ -99,6 +102,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const fourthMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v5_300x250_1752091581010.jpg";
   const fifthMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v7_300x250 (1)_1752091625733.jpg";
   const sixthMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_300x250 (1)_1752091862554.jpg";
+  const seventhMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_300x250 (1)_1752091987538.jpg";
 
   return (
     <div className={cn(className)}>
@@ -274,6 +278,22 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
           <img
             src={sixthMobile300x250AdImage}
             alt="The Cancer Risk Hiding in Your Patient's Glass - Read Now"
+            className="w-full h-full object-cover rounded-lg"
+            style={{ width: '300px', height: '250px' }}
+          />
+        </a>
+      ) : showSeventhMobile300x250Ad ? (
+        <a
+          href="https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_mscpmrk_masters_alc"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleAdClick}
+          className="block cursor-pointer hover:opacity-90 transition-opacity"
+          style={getStyles()}
+        >
+          <img
+            src={seventhMobile300x250AdImage}
+            alt="Use Brain Health to Start the Alcohol Conversation - Read Now"
             className="w-full h-full object-cover rounded-lg"
             style={{ width: '300px', height: '250px' }}
           />
