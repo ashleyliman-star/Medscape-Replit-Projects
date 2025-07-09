@@ -417,11 +417,11 @@ export default function DebatePage() {
             </div>
 
             {/* Horizontally Scrollable Main Menu */}
-            <div className="overflow-x-auto mb-6">
-              <div className="flex gap-6 pb-2" style={{minWidth: 'max-content'}}>
+            <div className="overflow-x-auto mb-4">
+              <div className="flex gap-4 border-b border-gray-300 pb-0" style={{minWidth: 'max-content'}}>
                 <button 
                   onClick={() => setActiveMenu('policies')}
-                  className={`text-sm font-medium whitespace-nowrap px-2 py-2 transition-colors duration-200 ${
+                  className={`text-sm font-medium whitespace-nowrap px-1 py-3 transition-colors duration-200 ${
                     activeMenu === 'policies' ? 'text-[#16478c] border-b-2 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                   }`}
                 >
@@ -429,7 +429,7 @@ export default function DebatePage() {
                 </button>
                 <button 
                   onClick={() => setActiveMenu('medscape')}
-                  className={`text-sm font-medium whitespace-nowrap px-2 py-2 transition-colors duration-200 ${
+                  className={`text-sm font-medium whitespace-nowrap px-1 py-3 transition-colors duration-200 ${
                     activeMenu === 'medscape' ? 'text-[#16478c] border-b-2 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                   }`}
                 >
@@ -437,7 +437,7 @@ export default function DebatePage() {
                 </button>
                 <button 
                   onClick={() => setActiveMenu('about')}
-                  className={`text-sm font-medium whitespace-nowrap px-2 py-2 transition-colors duration-200 ${
+                  className={`text-sm font-medium whitespace-nowrap px-1 py-3 transition-colors duration-200 ${
                     activeMenu === 'about' ? 'text-[#16478c] border-b-2 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                   }`}
                 >
@@ -445,7 +445,7 @@ export default function DebatePage() {
                 </button>
                 <button 
                   onClick={() => setActiveMenu('advertisers')}
-                  className={`text-sm font-medium whitespace-nowrap px-2 py-2 transition-colors duration-200 ${
+                  className={`text-sm font-medium whitespace-nowrap px-1 py-3 transition-colors duration-200 ${
                     activeMenu === 'advertisers' ? 'text-[#16478c] border-b-2 border-[#16478c]' : 'text-black hover:text-[#16478c]'
                   }`}
                 >
@@ -491,13 +491,13 @@ export default function DebatePage() {
 
           {/* Dynamic Sub-menu - Mobile */}
           <div className="md:hidden mb-6">
-            <div className="grid grid-cols-2 gap-3">
-              {menuItems[activeMenu as keyof typeof menuItems]?.map((item, index) => (
-                <div key={index}>
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              {menuItems[activeMenu as keyof typeof menuItems]?.map((item, index, array) => (
+                <div key={index} className="flex items-center">
                   {item.label === "Your Privacy Choices" ? (
                     <button 
                       onClick={() => setIsPrivacyCenterOpen(true)}
-                      className="text-xs text-black hover:text-gray-600 text-left block"
+                      className="text-xs text-black hover:text-gray-600 text-left"
                     >
                       {item.label}
                       {item.hasIcon && (
@@ -507,7 +507,7 @@ export default function DebatePage() {
                   ) : (
                     <a 
                       href={item.href} 
-                      className="text-xs text-black hover:text-gray-600 block"
+                      className="text-xs text-black hover:text-gray-600"
                       target={item.href.startsWith('http') ? '_blank' : '_self'}
                       rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     >
@@ -516,6 +516,9 @@ export default function DebatePage() {
                         <span className="ml-1 inline-block w-3 h-3 bg-blue-600 rounded-full text-white text-xs text-center leading-3">✓</span>
                       )}
                     </a>
+                  )}
+                  {index < array.length - 1 && (
+                    <div className="h-3 w-px bg-gray-300 mx-2"></div>
                   )}
                 </div>
               ))}
