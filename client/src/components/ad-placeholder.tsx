@@ -53,9 +53,9 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
     if (size === '728x90' && position === 1) {
       window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_mscpmrk_masters_alc', '_blank');
     } else if (size === 'responsive-desktop-banner' && position === 2) {
-      window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_mscpmrk_masters_alc', '_blank');
-    } else if (size === 'responsive-desktop-banner' && position === 3) {
       window.open('https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_mscpmrk_masters_alc', '_blank');
+    } else if (size === 'responsive-desktop-banner' && position === 3) {
+      window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_mscpmrk_masters_alc', '_blank');
     } else if (size === 'responsive-desktop-banner' && position === 5) {
       window.open('https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=house-3_mscpmrk_masters_alc', '_blank');
     } else if (size === '300x250' && position === 7) {
@@ -74,8 +74,8 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const showFirstMobile300x250Ad = size === '300x250' && position === 1 && !isDesktop; // Updated position
   
   const firstAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
-  const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
-  const thirdAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v6_728x90 (1)_1752083072070.jpg";
+  const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v6_728x90 (1)_1752083072070.jpg";
+  const thirdAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
   const fourthAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v5_728x90_1752083208434.jpg";
   const fifthAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v7_300x250_1752083329006.jpg";
   const firstMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_300x250_1752090608590.jpg";
@@ -109,14 +109,14 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         >
           <img
             src={secondAlcoholAdImage}
-            alt="Use Brain Health to Start the Alcohol Conversation - Read Now"
+            alt="Beyond Cancer: The Overlooked Harms of Alcohol - Read Now"
             className="w-full h-full object-cover rounded-lg"
             style={{ width: '728px', height: '90px' }}
           />
         </a>
       ) : showThirdMedscapeAd ? (
         <a
-          href="https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_mscpmrk_masters_alc"
+          href="https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_mscpmrk_masters_alc"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -125,7 +125,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         >
           <img
             src={thirdAlcoholAdImage}
-            alt="Beyond Cancer: The Overlooked Harms of Alcohol - Read Now"
+            alt="Use Brain Health to Start the Alcohol Conversation - Read Now"
             className="w-full h-full object-cover rounded-lg"
             style={{ width: '728px', height: '90px' }}
           />
