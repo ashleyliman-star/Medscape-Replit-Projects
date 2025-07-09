@@ -307,29 +307,29 @@ export default function DebatePage() {
       <footer className="bg-white py-8 mt-12" style={{borderTop: '2px solid #16478c'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Main Navigation */}
-          <div className="flex flex-wrap justify-between items-start">
-            <div className="flex flex-wrap gap-8 relative">
-              <a href="#" className="text-[#16478c] hover:text-[#16478c] font-medium text-base relative group pb-1">
+          <div className="flex flex-wrap justify-between items-start mb-0">
+            <div className="flex flex-wrap gap-8 relative mb-0">
+              <a href="#" className="text-[#16478c] hover:text-[#16478c] font-medium text-base relative group">
                 Policies
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#16478c]"></span>
+                <span className="absolute bottom-[-2px] left-0 w-full h-0.5 bg-[#16478c]"></span>
               </a>
-              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group pb-1">
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group">
                 Medscape
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group pb-1">
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group">
                 About
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group pb-1">
+              <a href="#" className="text-black hover:text-[#16478c] font-medium text-base relative group">
                 For Advertisers
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-[-2px] left-0 w-0 h-0.5 bg-[#16478c] transition-all duration-300 group-hover:w-full"></span>
               </a>
             </div>
             
             {/* Medscape Logo */}
             <div>
-              <img src="@assets/Medscape_Logo.svg (1)_1750723648901.png" alt="Medscape" className="h-8" />
+              <div className="text-[#16478c] text-xl font-bold">Medscape</div>
             </div>
           </div>
           
