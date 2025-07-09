@@ -6,6 +6,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Serve attached assets
+app.use('/attached_assets', express.static('attached_assets'));
+
 // Serve robots.txt file only for the specific debate page path
 app.get('/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases/robots.txt', (req, res) => {
   res.type('text/plain');
@@ -33,7 +36,7 @@ app.use((req, res, next) => {
     next();
   }
   // Allow access to necessary assets and API routes for the debate page
-  else if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/')) {
+  else if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/') || req.path.startsWith('/attached_assets/')) {
     next();
   }
   // For development, allow root access 

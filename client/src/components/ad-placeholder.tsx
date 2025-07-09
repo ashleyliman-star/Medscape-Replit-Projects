@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 import { useEffect, useState } from "react";
-import alcoholAdImage from "@assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
 
 interface AdPlaceholderProps {
   size: '300x250' | '728x90' | 'responsive-desktop-banner';
@@ -58,6 +57,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
 
   // Show the Medscape alcohol cancer ad for first 728x90 unit on desktop
   const showMedscapeAd = size === '728x90' && position === 1 && isDesktop;
+  const alcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
 
   return (
     <div className={cn(className)}>
