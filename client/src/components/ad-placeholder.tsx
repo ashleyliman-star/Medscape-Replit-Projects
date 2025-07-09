@@ -58,6 +58,8 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
       window.open('https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_mscpmrk_masters_alc', '_blank');
     } else if (size === 'responsive-desktop-banner' && position === 7) {
       window.open('https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=house-3_mscpmrk_masters_alc', '_blank');
+    } else if (size === '300x250' && position === 8) {
+      window.open('https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_mscpmrk_masters_alc', '_blank');
     }
   };
 
@@ -66,11 +68,13 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const showSecondMedscapeAd = size === 'responsive-desktop-banner' && position === 2 && isDesktop;
   const showThirdMedscapeAd = size === 'responsive-desktop-banner' && position === 3 && isDesktop;
   const showFourthMedscapeAd = size === 'responsive-desktop-banner' && position === 7 && isDesktop;
+  const showFifthMedscapeAd = size === '300x250' && position === 8 && isDesktop;
   
   const firstAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
   const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
   const thirdAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v6_728x90 (1)_1752083072070.jpg";
   const fourthAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v5_728x90_1752083208434.jpg";
+  const fifthAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v7_300x250_1752083329006.jpg";
 
   return (
     <div className={cn(className)}>
@@ -136,6 +140,22 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
             alt="How to Treat Alcohol Use and Mental Health Together - Read Now"
             className="w-full h-full object-cover rounded-lg"
             style={{ width: '728px', height: '90px' }}
+          />
+        </a>
+      ) : showFifthMedscapeAd ? (
+        <a
+          href="https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_mscpmrk_masters_alc"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={handleAdClick}
+          className="block cursor-pointer hover:opacity-90 transition-opacity"
+          style={getStyles()}
+        >
+          <img
+            src={fifthAlcoholAdImage}
+            alt="Uncovering Unhealthy Drinking in 'Normal' Patients - Read Now"
+            className="w-full h-full object-cover rounded-lg"
+            style={{ width: '300px', height: '250px' }}
           />
         </a>
       ) : (
