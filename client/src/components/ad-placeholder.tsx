@@ -46,12 +46,12 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
     // Special handling for mobile position labeling
     let trackingPosition = position || 'Unknown';
     if (!isDesktop) {
-      // Mobile ad above summary of key points (responsive-desktop-banner, position 5) = Position 5 mobile
-      // Mobile ad above middle ground (300x250, position 5) = Position 6 mobile
+      // Mobile ad above summary of key points (300x250, position 5) = Position 5 mobile  
+      // Mobile ad above middle ground (responsive-desktop-banner, position 5) = Position 6 mobile
       if (size === '300x250' && position === 5) {
-        trackingPosition = 6;
-      } else if (size === 'responsive-desktop-banner' && position === 5) {
         trackingPosition = 5;
+      } else if (size === 'responsive-desktop-banner' && position === 5) {
+        trackingPosition = 6;
       }
     }
     trackEvent(
