@@ -43,10 +43,15 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
 
   const handleAdClick = () => {
     const deviceType = isDesktop ? 'desktop' : 'mobile';
+    // Special handling for mobile ad above middle ground - should be labeled as Position 6
+    let trackingPosition = position || 'Unknown';
+    if (size === '300x250' && position === 5 && !isDesktop) {
+      trackingPosition = 6;
+    }
     trackEvent(
       'medscape_ad_click',
       'advertisement',
-      `Position ${position || 'Unknown'} ${deviceType}`,
+      `Position ${trackingPosition} ${deviceType}`,
       1
     );
     
