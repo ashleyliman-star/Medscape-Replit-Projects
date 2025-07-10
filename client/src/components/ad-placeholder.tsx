@@ -70,7 +70,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
     } else if (size === '300x250' && position === 4 && !isDesktop) {
       window.open('https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=house-3_ICD_cancerdebate', '_blank');
     } else if (size === '300x250' && position === 5 && !isDesktop) {
-      window.open('https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_ICD_cancerdebate', '_blank');
     } else if (size === 'responsive-desktop-banner' && position === 5 && !isDesktop) {
       window.open('https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_ICD_cancerdebate', '_blank');
     } else if (size === '300x250' && position === 7 && !isDesktop) {
@@ -254,7 +254,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showFifthMobile300x250Ad ? (
         <a
-          href="https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_ICD_cancerdebate"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -263,7 +263,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         >
           <img
             src={fifthMobile300x250AdImage}
-            alt="Uncovering Unhealthy Drinking in 'Normal' Patients - Read Now"
+            alt="The Cancer Risk Hiding in Your Patient's Glass - Read Now"
             className="w-full h-full object-cover rounded-lg"
             style={{ width: '300px', height: '250px' }}
           />
