@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { MessageCircle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
+import { trackEvent } from "@/lib/analytics";
 import type { Comment } from "@shared/schema";
 
 interface DebateQuestionProps {
@@ -126,7 +127,15 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
                 {truncatedText}
                 <span 
                   className="text-blue-600 cursor-pointer font-medium ml-1"
-                  onClick={() => setIsExpanded(true)}
+                  onClick={() => {
+                    setIsExpanded(true);
+                    trackEvent(
+                      'read_more_click',
+                      'user_interaction',
+                      'Mobile Introduction Expand',
+                      1
+                    );
+                  }}
                 >
                   ... read more
                 </span>
@@ -137,7 +146,15 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
                 {needsTruncation && isExpanded && (
                   <span 
                     className="text-blue-600 cursor-pointer font-medium ml-2"
-                    onClick={() => setIsExpanded(false)}
+                    onClick={() => {
+                      setIsExpanded(false);
+                      trackEvent(
+                        'read_less_click',
+                        'user_interaction',
+                        'Mobile Introduction Collapse',
+                        1
+                      );
+                    }}
                   >
                     read less
                   </span>

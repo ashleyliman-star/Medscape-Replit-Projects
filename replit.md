@@ -93,6 +93,7 @@ This is a full-stack web application for presenting medical debates with expert 
 
 ## Changelog
 
+- July 10, 2025: Added GA click tracking for mobile "read more/read less" buttons (read_more_click and read_less_click events)
 - July 10, 2025: Updated all ad unit links to use new house campaign tracking codes (ecd=house-X_ICD_cancerdebate)
 - July 10, 2025: Updated "What to Read Next on Medscape" section links to use Pulse Point tracking parameters (ecd=ppc_pulsepoint_250709_icd_cancerdebate_position1-5)
 - July 9, 2025: Enhanced Pulse Point pixel with privacy compliance parameters (us_privacy, GPP_STRING, GPP_SID)
