@@ -31,7 +31,7 @@ app.use((req, res, next) => {
   }
   
   // If accessing the specific debate path or admin path, serve the app
-  if (req.path === targetPath || req.path === targetPath + '/' || req.path === targetPath + '/icd-admin') {
+  if (req.path === targetPath || req.path === targetPath + '/' || req.path === targetPath + '/icd-admin' || req.path === targetPath + '/icd-admin/') {
     req.url = '/'; // Rewrite to root for the app
     next();
   }
