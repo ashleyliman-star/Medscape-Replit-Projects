@@ -93,6 +93,10 @@ This is a full-stack web application for presenting medical debates with expert 
 
 ## Changelog
 
+- July 10, 2025: Updated "What to Read Next on Medscape" section links to use Pulse Point tracking parameters (ecd=ppc_pulsepoint_250709_icd_cancerdebate_position1-5)
+- July 9, 2025: Enhanced Pulse Point pixel with privacy compliance parameters (us_privacy, GPP_STRING, GPP_SID)
+- July 9, 2025: Added detailed console logging for Adobe Analytics initialization and verification
+- July 9, 2025: Implemented comprehensive GA click tracking for ad units with position-specific and device-specific labels (medscape_ad_click events)
 - July 9, 2025: Completed comprehensive Medscape Masters alcohol campaign integration with all seven mobile ad units filled with unique 300x250 creatives and proper click tracking
 - July 9, 2025: Added "Advertisement" labels below all ad units for both mobile and desktop compliance
 - July 9, 2025: Optimized mobile ad positioning with sequential numbering (1-7) matching visual order from top to bottom
