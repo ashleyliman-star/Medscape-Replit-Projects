@@ -49,7 +49,7 @@ const debateData = {
       {
         title: "Earlier detection could improve outcomes",
         points: [
-          "5-year survival rates tend to be higher in patients with asymptomatic vs symptomatic recurrences."
+          "Five-year survival rates tend to be higher in patients with asymptomatic vs symptomatic recurrences."
         ]
       },
       {
