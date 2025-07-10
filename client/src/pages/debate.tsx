@@ -22,7 +22,7 @@ import PrivacyPreferenceCenter from "@/components/privacy-preference-center";
 
 const debateData = {
   question: "Do Patients Benefit From Routine Checks for Cancer Metastases?",
-  introduction: "Is it time to rethink routine surveillance? After undergoing a full course of curative-intent cancer treatment, patients are typically monitored for early signs of recurrence. For certain cancer types, guidelines recommend patients receive imaging scans and blood tests as often as every 6 months over 5 years. But some experts have longstanding concerns about the value of surveillance after curative-intent treatment in patients who remain asymptomatic. Do frequent scans and blood tests actually improve survival or quality of life?",
+  introduction: "Is it time to rethink routine surveillance? After undergoing a full course of curative-intent cancer treatment, patients are typically monitored for early signs of recurrence. For certain cancer types, guidelines recommend patients receive imaging scans and blood tests as often as every six months over five years. But some experts have longstanding concerns about the value of surveillance after curative-intent treatment in patients who remain asymptomatic. Do frequent scans and blood tests actually improve survival or quality of life?",
   sideA: {
     position: "YES: Routine Surveillance is Worth It",
     color: "blue" as const,
@@ -79,7 +79,7 @@ const debateData = {
     statement: "While breast cancer screening has benefits, routine surveillance carries significant risks of overdiagnosis, false positives, and psychological harm that may outweigh benefits for many women.",
     arguments: [
       {
-        title: "Regular surveillance can lead to overdiagnosis",
+        title: "Routine surveillance can lead to overdiagnosis",
         points: [
           "Routine blood tests and imaging may uncover incidental findings that would not be harmful to patients."
         ]
