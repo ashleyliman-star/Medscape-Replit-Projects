@@ -1,4 +1,8 @@
+import { useState } from "react";
+import ReferencesModal from "./references-modal";
+
 export default function ConclusionsUnboxed() {
+  const [isReferencesOpen, setIsReferencesOpen] = useState(false);
   return (
     <section className="mb-12">
       <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
@@ -10,15 +14,20 @@ export default function ConclusionsUnboxed() {
         </p>
         
         <div className="mt-6">
-          <a 
-            href="#references" 
-            className="font-bold text-base md:text-lg"
+          <button 
+            onClick={() => setIsReferencesOpen(true)}
+            className="font-bold text-base md:text-lg hover:underline transition-all"
             style={{ color: '#30529a' }}
           >
             References
-          </a>
+          </button>
         </div>
       </div>
+      
+      <ReferencesModal 
+        isOpen={isReferencesOpen} 
+        onClose={() => setIsReferencesOpen(false)} 
+      />
     </section>
   );
 }
