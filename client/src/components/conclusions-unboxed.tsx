@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReferencesModal from "./references-modal";
+import { trackEvent } from "@/lib/analytics";
 
 export default function ConclusionsUnboxed() {
   const [isReferencesOpen, setIsReferencesOpen] = useState(false);
@@ -15,7 +16,10 @@ export default function ConclusionsUnboxed() {
         
         <div className="mt-6">
           <button 
-            onClick={() => setIsReferencesOpen(true)}
+            onClick={() => {
+              setIsReferencesOpen(true);
+              trackEvent('medscape_reference_click', 'user_interaction', 'References Button', 1);
+            }}
             className="font-bold text-base md:text-lg hover:underline transition-all"
             style={{ color: '#30529a' }}
           >
