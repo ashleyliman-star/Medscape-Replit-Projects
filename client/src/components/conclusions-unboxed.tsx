@@ -12,7 +12,7 @@ export default function ConclusionsUnboxed() {
         <div className="mt-6">
           <a 
             href="#references" 
-            className="font-bold text-sm"
+            className="font-bold text-base md:text-lg"
             style={{ color: '#30529a' }}
           >
             References
