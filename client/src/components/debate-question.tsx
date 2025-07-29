@@ -90,13 +90,8 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
             <span className="hidden md:inline" style={{ fontSize: '40px' }}>{question}</span>
           </h2>
           
-          {/* Desktop - always show full text */}
-          <p className="hidden md:block text-base md:text-lg text-gray-600 leading-relaxed text-left">
-            {introduction}
-          </p>
-          
           {/* Byline and publication date - desktop */}
-          <div className="hidden md:block mt-4 text-center">
+          <div className="hidden md:block mb-6 text-center">
             <p className="text-sm text-gray-500 flex items-center justify-center">
               <span className="font-medium">Victoria Stern</span>
               <span className="mx-2">•</span>
@@ -115,6 +110,32 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
               )}
             </p>
           </div>
+          
+          {/* Byline and publication date - mobile */}
+          <div className="md:hidden mb-4 text-center">
+            <p className="text-sm text-gray-500 flex items-center justify-center">
+              <span className="font-medium">Victoria Stern</span>
+              <span className="mx-2">•</span>
+              <span>July 07, 2025</span>
+              {onCommentClick && (
+                <>
+                  <span className="mx-2">•</span>
+                  <button 
+                    onClick={onCommentClick}
+                    className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    <span>{comments.length}</span>
+                  </button>
+                </>
+              )}
+            </p>
+          </div>
+          
+          {/* Desktop - always show full text */}
+          <p className="hidden md:block text-base md:text-lg text-gray-600 leading-relaxed text-left">
+            {introduction}
+          </p>
           
           {/* Mobile - truncated with read more */}
           <div ref={textRef} className="md:hidden text-base text-gray-600 leading-relaxed text-left">
@@ -157,27 +178,6 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
                 )}
               </p>
             )}
-          </div>
-          
-          {/* Byline and publication date - mobile */}
-          <div className="md:hidden mt-4 text-center">
-            <p className="text-sm text-gray-500 flex items-center justify-center">
-              <span className="font-medium">Victoria Stern</span>
-              <span className="mx-2">•</span>
-              <span>July 07, 2025</span>
-              {onCommentClick && (
-                <>
-                  <span className="mx-2">•</span>
-                  <button 
-                    onClick={onCommentClick}
-                    className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    <span>{comments.length}</span>
-                  </button>
-                </>
-              )}
-            </p>
           </div>
         </div>
       </div>
