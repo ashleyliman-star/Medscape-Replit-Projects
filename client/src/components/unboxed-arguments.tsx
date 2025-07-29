@@ -62,8 +62,8 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
   return (
     <div className="space-y-8">
-      {/* Position Headers */}
-      <div className="grid md:grid-cols-2 gap-8 mb-8">
+      {/* Position Headers - Desktop */}
+      <div className="hidden md:grid md:grid-cols-2 gap-8 mb-8">
         {/* YES Position */}
         <Card className="text-white p-4 md:p-8 flex items-center" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)', minHeight: '80px' }}>
           <div className="flex items-center">
@@ -79,6 +79,16 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-white">NO: Selective Surveillance Is More Appropriate</h2>
           </div>
         </Card>
+      </div>
+
+      {/* Position Headers - Mobile (Plain Text) */}
+      <div className="md:hidden mb-8 space-y-4">
+        <h2 className="font-bold text-xl text-center" style={{ color: '#1A9FDA' }}>
+          YES: Routine Surveillance Is Worth It
+        </h2>
+        <h2 className="font-bold text-xl text-center" style={{ color: '#D43F5C' }}>
+          NO: Selective Surveillance Is More Appropriate
+        </h2>
       </div>
 
       {/* Key Arguments sections for each physician - Desktop only */}
