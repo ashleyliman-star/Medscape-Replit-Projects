@@ -85,7 +85,7 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
     <section className="text-center mb-8">
       <div className="max-w-4xl mx-auto mb-6">
         <div className="text-left">
-          <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontSize: '28px' }}>
+          <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontSize: '22px' }}>
             <span className="md:hidden">{question}</span>
             <span className="hidden md:inline" style={{ fontSize: '40px' }}>{question}</span>
           </h2>
