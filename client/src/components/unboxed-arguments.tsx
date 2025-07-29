@@ -81,15 +81,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         </Card>
       </div>
 
-      {/* Position Headers - Mobile (Plain Text) */}
-      <div className="md:hidden mb-8 space-y-4">
-        <h2 className="font-bold text-xl text-center" style={{ color: '#1A9FDA' }}>
-          YES: Routine Surveillance Is Worth It
-        </h2>
-        <h2 className="font-bold text-xl text-center" style={{ color: '#D43F5C' }}>
-          NO: Selective Surveillance Is More Appropriate
-        </h2>
-      </div>
+
 
       {/* Key Arguments sections for each physician - Desktop only */}
       <div className="hidden md:block mb-8">
