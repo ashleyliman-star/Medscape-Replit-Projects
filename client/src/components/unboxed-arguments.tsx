@@ -147,13 +147,13 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               {/* YES Argument */}
               {yesArguments[index] && (
                 <div className="mb-6">
-                  <div className="flex items-start mb-3 gap-3">
-                    <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5', fontSize: '16px' }}>
-                      Yes
+                  <div className="flex items-start mb-3 gap-2">
+                    <span className="font-semibold text-lg" style={{ color: '#1A9FDA' }}>
+                      Yes:
                     </span>
-                    <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
+                    <h4 className="font-semibold text-lg" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
                   </div>
-                  <div className="ml-8">
+                  <div className="ml-0">
                     {yesArguments[index].points.map((point, pointIndex) => (
                       <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
                     ))}
@@ -164,13 +164,13 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               {/* NO Argument */}
               {noArguments[index] && (
                 <div className="mb-6">
-                  <div className="flex items-start mb-3 gap-3">
-                    <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5" style={{ backgroundColor: '#F07584', fontSize: '16px' }}>
-                      No
+                  <div className="flex items-start mb-3 gap-2">
+                    <span className="font-semibold text-lg" style={{ color: '#D43F5C' }}>
+                      No:
                     </span>
-                    <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
+                    <h4 className="font-semibold text-lg" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
                   </div>
-                  <div className="ml-8">
+                  <div className="ml-0">
                     {noArguments[index].points.map((point, pointIndex) => (
                       <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
                     ))}
