@@ -83,10 +83,6 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
   }, [introduction]);
   return (
     <section className="text-center mb-8">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: '#064AA7' }}>
-        Medscape Debates
-      </h1>
-      
       <div className="max-w-4xl mx-auto mb-6">
         <div className="text-left">
           <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontSize: '28px' }}>
