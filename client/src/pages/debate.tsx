@@ -47,9 +47,9 @@ const debateData = {
         ]
       },
       {
-        title: "Earlier detection could improve outcomes",
+        title: "There is little harm from intervening early",
         points: [
-          "Five-year survival rates tend to be higher in patients with asymptomatic vs symptomatic recurrences."
+          "Historically, mortality rates from surgery favored watchful waiting, but contemporary SAVR (and increasingly TAVR) has a rate of perioperative mortality of 1%-2% in low-risk patients."
         ]
       },
       {
