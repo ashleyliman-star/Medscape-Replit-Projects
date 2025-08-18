@@ -20,16 +20,6 @@ app.use((req, res, next) => {
   const targetPath = '/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention';
   const host = req.get('host') || '';
   
-  // Redirect from Replit app domain to Medscape domain
-  if (host.includes('medscape-debate.replit.app') && req.path === '/') {
-    return res.redirect(301, `https://exp.medscape.com${targetPath}`);
-  }
-  
-  // Block root access on exp.medscape.com domain
-  if (host.includes('exp.medscape.com') && req.path === '/') {
-    return res.status(404).send('Page not found');
-  }
-  
   // Remove trailing slash and redirect
   if (req.path === targetPath + '/' && req.path.length > 1) {
     return res.redirect(301, targetPath);
@@ -51,7 +41,7 @@ app.use((req, res, next) => {
   else if (req.path === '/' && (req.get('host')?.includes('replit') || req.get('host')?.includes('localhost') || req.get('host')?.includes('127.0.0.1'))) {
     next();
   }
-  // Block all other paths - let them be handled by other services on exp.medscape.com
+  // Block all other paths except the target debate path
   else {
     res.status(404).send('Page not found');
   }
