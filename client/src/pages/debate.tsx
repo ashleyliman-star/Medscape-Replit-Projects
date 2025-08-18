@@ -235,7 +235,7 @@ export default function DebatePage() {
           <div className="space-y-4">
             <div className="border-b border-gray-200 pb-3">
               <a 
-                href="https://www.medscape.com/viewarticle/routine-checks-cancer-metastases-help-or-harm-2025a1000h03?ecd=ppc_pulsepoint_250709_icd_cancerdebate_position1"
+                href="https://www.medscape.com/viewarticle/fda-approves-tavr-asymptomatic-severe-stenosis-2025a1000b6d?ecd=dir_mscp_020925_icd_cardiodebate_position1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
@@ -246,8 +246,8 @@ export default function DebatePage() {
                     console.log('Firing GA4 event: medscape_link_click');
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'Routine Checks for Cancer Metastases Help or Harm',
-                      link_url: 'https://www.medscape.com/viewarticle/routine-checks-cancer-metastases-help-or-harm-2025a1000h03?ecd=ppc_pulsepoint_250709_icd_cancerdebate_position1'
+                      event_label: 'FDA Approves TAVR in Asymptomatic Severe Stenosis',
+                      link_url: 'https://www.medscape.com/viewarticle/fda-approves-tavr-asymptomatic-severe-stenosis-2025a1000b6d?ecd=dir_mscp_020925_icd_cardiodebate_position1'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
                   } else {
@@ -255,12 +255,12 @@ export default function DebatePage() {
                   }
                 }}
               >
-                Routine Checks for Cancer Metastases: A Help or Harm?
+                FDA Approves TAVR in Asymptomatic Severe Stenosis
               </a>
             </div>
             <div className="border-b border-gray-200 pb-3">
               <a 
-                href="https://www.medscape.com/viewarticle/beyond-survival-why-many-women-opt-double-mastectomy-2024a1000gv5?ecd=ppc_pulsepoint_250709_icd_cancerdebate_position2"
+                href="https://www.medscape.com/viewarticle/asymptomatic-aortic-stenosis-time-act-or-not-so-fast-2025a10005o9?ecd=dir_mscp_020925_icd_cardiodebate_position2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
@@ -268,19 +268,19 @@ export default function DebatePage() {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'Beyond Survival Double Mastectomy',
-                      link_url: 'https://www.medscape.com/viewarticle/beyond-survival-why-many-women-opt-double-mastectomy-2024a1000gv5?ecd=ppc_pulsepoint_250709_icd_cancerdebate_position2'
+                      event_label: 'Asymptomatic Aortic Stenosis Time to Act or Not So Fast',
+                      link_url: 'https://www.medscape.com/viewarticle/asymptomatic-aortic-stenosis-time-act-or-not-so-fast-2025a10005o9?ecd=dir_mscp_020925_icd_cardiodebate_position2'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
                   }
                 }}
               >
-                Beyond Survival: Why Many Women Opt for a Double Mastectomy
+                Asymptomatic Aortic Stenosis: 'Time to Act' or Not So Fast?
               </a>
             </div>
             <div className="border-b border-gray-200 pb-3">
               <a 
-                href="https://www.medscape.com/viewarticle/surveillance-instead-surgery-low-risk-dcis-2024a1000nak?ecd=ppc_pulsepoint_250709_icd_cancerdebate_position3"
+                href="https://www.medscape.com/viewarticle/tavr-beats-surveillance-asymptomatic-aortic-stenosis-2024a1000kji?ecd=dir_mscp_020925_icd_cardiodebate_position3"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
@@ -288,19 +288,19 @@ export default function DebatePage() {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'Surveillance Instead Surgery DCIS',
-                      link_url: 'https://www.medscape.com/viewarticle/surveillance-instead-surgery-low-risk-dcis-2024a1000nak?ecd=ppc_pulsepoint_250709_icd_cancerdebate_position3'
+                      event_label: 'TAVR Beats Surveillance for Asymptomatic Aortic Stenosis',
+                      link_url: 'https://www.medscape.com/viewarticle/tavr-beats-surveillance-asymptomatic-aortic-stenosis-2024a1000kji?ecd=dir_mscp_020925_icd_cardiodebate_position3'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
                   }
                 }}
               >
-                Surveillance Instead of Surgery for Low-Risk DCIS?
+                TAVR Beats Surveillance for Asymptomatic Aortic Stenosis
               </a>
             </div>
             <div className="border-b border-gray-200 pb-3">
               <a 
-                href="https://www.medscape.com/viewarticle/do-tattoos-pose-cancer-risk-2025a1000fkh?ecd=ppc_pulsepoint_250709_icd_cancerdebate_position4"
+                href="https://www.medscape.com/viewarticle/early-tavr-positive-trial-fails-inform-clinical-decisions-2024a1000kec?ecd=dir_mscp_020925_icd_cardiodebate_position4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
@@ -308,19 +308,19 @@ export default function DebatePage() {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'Do Tattoos Pose Cancer Risk',
-                      link_url: 'https://www.medscape.com/viewarticle/do-tattoos-pose-cancer-risk-2025a1000fkh?ecd=ppc_pulsepoint_250709_icd_cancerdebate_position4'
+                      event_label: 'EARLY TAVR A Positive Trial That Fails to Inform Clinical Decisions',
+                      link_url: 'https://www.medscape.com/viewarticle/early-tavr-positive-trial-fails-inform-clinical-decisions-2024a1000kec?ecd=dir_mscp_020925_icd_cardiodebate_position4'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
                   }
                 }}
               >
-                Do Tattoos Pose a Cancer Risk?
+                EARLY TAVR: A Positive Trial That Fails to Inform Clinical Decisions
               </a>
             </div>
             <div className="border-b border-gray-200 pb-3">
               <a 
-                href="https://www.medscape.com/viewarticle/napping-patterns-older-adults-tied-all-cause-mortality-2025a1000fn3?ecd=ppc_pulsepoint_250709_icd_cancerdebate_position5"
+                href="https://www.medscape.com/s/viewarticle/1002532?ecd=dir_mscp_020925_icd_cardiodebate_position5"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg font-medium text-blue-600 hover:text-blue-800 cursor-pointer block"
@@ -328,14 +328,14 @@ export default function DebatePage() {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'Napping Patterns Older Adults Mortality',
-                      link_url: 'https://www.medscape.com/viewarticle/napping-patterns-older-adults-tied-all-cause-mortality-2025a1000fn3?ecd=ppc_pulsepoint_250709_icd_cancerdebate_position5'
+                      event_label: 'Transcatheter Aortic Valve Replacement Beyond Severe Aortic Stenosis',
+                      link_url: 'https://www.medscape.com/s/viewarticle/1002532?ecd=dir_mscp_020925_icd_cardiodebate_position5'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
                   }
                 }}
               >
-                Napping Patterns in Older Adults Tied to All-Cause Mortality
+                Transcatheter Aortic Valve Replacement Beyond Severe Aortic Stenosis
               </a>
             </div>
           </div>

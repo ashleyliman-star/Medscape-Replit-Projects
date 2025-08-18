@@ -93,6 +93,10 @@ This is a full-stack web application for presenting medical debates with expert 
 
 ## Changelog
 
+- August 18, 2025: Updated "What to Read Next on Medscape" section with five aortic stenosis-focused articles and new tracking parameters (ecd=dir_mscp_020925_icd_cardiodebate_position1-5)
+- August 18, 2025: Transformed poll system to three-option aortic stenosis debate: TAVR/SAVR, SAVR favored, clinical surveillance with pie chart visualization
+- August 18, 2025: Updated all references to seven current aortic stenosis trials and guidelines (AVATAR, EVOLVED, EARLY TAVR, etc.)
+- August 18, 2025: Completed comprehensive content transformation from cancer surveillance to aortic stenosis early intervention debate
 - July 10, 2025: Added GA click tracking for mobile "read more/read less" buttons (read_more_click and read_less_click events)
 - July 10, 2025: Updated all ad unit links to use new house campaign tracking codes (ecd=house-X_ICD_cancerdebate)
 - July 10, 2025: Updated "What to Read Next on Medscape" section links to use Pulse Point tracking parameters (ecd=ppc_pulsepoint_250709_icd_cancerdebate_position1-5)
