@@ -64,6 +64,11 @@ function PieChart({ pollStats }: PieChartProps) {
     const start = startAngle * Math.PI / 180;
     const end = endAngle * Math.PI / 180;
     
+    // Handle full circle case (360 degrees)
+    if (endAngle - startAngle >= 360) {
+      return `M 96 ${96 - radius} A ${radius} ${radius} 0 1 1 ${96 - 0.1} ${96 - radius} Z`;
+    }
+    
     const largeArc = endAngle - startAngle > 180 ? 1 : 0;
     
     const x1 = 96 + radius * Math.cos(start);
@@ -76,6 +81,8 @@ function PieChart({ pollStats }: PieChartProps) {
 
   let currentAngle = -90; // Start from top
   const slices = angles.map((angle, index) => {
+    if (counts[index] === 0) return null; // Skip empty slices
+    
     const startAngle = currentAngle;
     const endAngle = currentAngle + angle;
     currentAngle = endAngle;
@@ -85,7 +92,7 @@ function PieChart({ pollStats }: PieChartProps) {
       color: colors[index],
       percentage: Math.round((counts[index] / total) * 100)
     };
-  });
+  }).filter((slice): slice is NonNullable<typeof slice> => slice !== null);
 
   return (
     <div className="relative">
