@@ -24,18 +24,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/poll/:debateId/stats", async (req, res) => {
     try {
       const { debateId } = req.params;
-      const stats = await storage.getPollStats(debateId);
+      const rawStats = await storage.getPollStats(debateId);
+      
+      // Transform raw stats to expected format for three options
+      const counts = {
+        yes_tavr_savr: rawStats['yes_tavr_savr'] || 0,
+        yes_savr_favored: rawStats['yes_savr_favored'] || 0,
+        no_surveillance: rawStats['no_surveillance'] || 0
+      };
       
       // Calculate total and percentages
-      const total = Object.values(stats).reduce((sum, count) => sum + count, 0);
-      const percentages: Record<string, number> = {};
-      
-      for (const [option, count] of Object.entries(stats)) {
-        percentages[option] = total > 0 ? Math.round((count / total) * 100) : 0;
-      }
+      const total = Object.values(counts).reduce((sum, count) => sum + count, 0);
+      const percentages = {
+        yes_tavr_savr: total > 0 ? Math.round((counts.yes_tavr_savr / total) * 100) : 0,
+        yes_savr_favored: total > 0 ? Math.round((counts.yes_savr_favored / total) * 100) : 0,
+        no_surveillance: total > 0 ? Math.round((counts.no_surveillance / total) * 100) : 0
+      };
       
       res.json({ 
-        counts: stats, 
+        counts, 
         percentages, 
         total,
         responses: await storage.getPollResponsesByDebateId(debateId)

@@ -16,20 +16,102 @@ interface PollSectionProps {
 
 interface PollStats {
   counts: {
-    yes: number;
-    no: number;
+    yes_tavr_savr: number;
+    yes_savr_favored: number;
+    no_surveillance: number;
   };
   percentages: {
-    yes: number;
-    no: number;
+    yes_tavr_savr: number;
+    yes_savr_favored: number;
+    no_surveillance: number;
   };
   total: number;
 }
 
 const pollOptions = [
-  { value: 'yes', label: 'Yes - Routine surveillance is worth it' },
-  { value: 'no', label: 'No - Selective surveillance is more appropriate' }
+  { value: 'yes_tavr_savr', label: 'Yes, with TAVR or SAVR' },
+  { value: 'yes_savr_favored', label: 'Yes, with SAVR favored over TAVR' },
+  { value: 'no_surveillance', label: 'No, clinical surveillance is more appropriate' }
 ];
+
+interface PieChartProps {
+  pollStats: PollStats;
+}
+
+function PieChart({ pollStats }: PieChartProps) {
+  const total = pollStats.total || 0;
+  if (total === 0) {
+    return (
+      <div className="w-48 h-48 rounded-full border-4 border-gray-300 flex items-center justify-center">
+        <span className="text-gray-500 text-sm">No votes yet</span>
+      </div>
+    );
+  }
+
+  const counts = [
+    pollStats.counts.yes_tavr_savr || 0,
+    pollStats.counts.yes_savr_favored || 0,
+    pollStats.counts.no_surveillance || 0
+  ];
+
+  const colors = ['#1A9FDA', '#7C3AED', '#D43F5C'];
+  
+  // Calculate angles for each slice
+  const angles = counts.map(count => (count / total) * 360);
+  
+  // Generate SVG path data for each slice
+  const createSlicePath = (startAngle: number, endAngle: number, radius: number = 90) => {
+    const start = startAngle * Math.PI / 180;
+    const end = endAngle * Math.PI / 180;
+    
+    const largeArc = endAngle - startAngle > 180 ? 1 : 0;
+    
+    const x1 = 96 + radius * Math.cos(start);
+    const y1 = 96 + radius * Math.sin(start);
+    const x2 = 96 + radius * Math.cos(end);
+    const y2 = 96 + radius * Math.sin(end);
+    
+    return `M 96 96 L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArc} 1 ${x2} ${y2} Z`;
+  };
+
+  let currentAngle = -90; // Start from top
+  const slices = angles.map((angle, index) => {
+    const startAngle = currentAngle;
+    const endAngle = currentAngle + angle;
+    currentAngle = endAngle;
+    
+    return {
+      path: createSlicePath(startAngle, endAngle),
+      color: colors[index],
+      percentage: Math.round((counts[index] / total) * 100)
+    };
+  });
+
+  return (
+    <div className="relative">
+      <svg width="192" height="192" viewBox="0 0 192 192" className="transform -rotate-90">
+        {slices.map((slice, index) => (
+          <path
+            key={index}
+            d={slice.path}
+            fill={slice.color}
+            stroke="white"
+            strokeWidth="2"
+            className="transition-all duration-500"
+          />
+        ))}
+      </svg>
+      
+      {/* Center circle with total */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="bg-white rounded-full w-20 h-20 flex flex-col items-center justify-center shadow-md">
+          <span className="text-xl font-bold text-gray-800">{total}</span>
+          <span className="text-xs text-gray-500">votes</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function PollSection({ debateId }: PollSectionProps) {
   const [selectedOption, setSelectedOption] = useState<string>("");
@@ -95,7 +177,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
       
       <div className="max-w-2xl mx-auto">
         <h3 className="text-lg font-semibold text-gray-800 mb-6 text-center">
-          Is routine surveillance for cancer metastases a good idea in asymptomatic patients?
+          Should we intervene early in asymptomatic aortic stenosis?
         </h3>
         
         {!hasVoted ? (
@@ -129,72 +211,56 @@ export default function PollSection({ debateId }: PollSectionProps) {
             <h3 className="text-lg font-semibold text-gray-800 mb-6 text-center">Results</h3>
             
             {pollStats && (
-              <div className="relative">
-                {/* Argument titles */}
-                <div className="flex justify-between mb-4">
-                  <div className="text-left">
-                    <h4 className="font-bold text-base" style={{ color: '#1A9FDA' }}>
-                      YES: Routine Surveillance is Worth It
-                    </h4>
-                  </div>
-                  <div className="text-right">
-                    <h4 className="font-bold text-base" style={{ color: '#D43F5C' }}>
-                      NO: Selective Surveillance is More Appropriate
-                    </h4>
-                  </div>
+              <div className="flex flex-col items-center">
+                {/* Pie Chart */}
+                <div className="mb-6">
+                  <PieChart pollStats={pollStats} />
                 </div>
 
-                {/* Vote counts on sides */}
-                <div className="flex justify-between items-center mb-2 text-sm text-gray-500">
-                  <span>{pollStats.counts.yes || 0} votes</span>
-                  <span>{pollStats.counts.no || 0} votes</span>
-                </div>
-
-                {/* Progress bar container */}
-                <div className="relative flex items-center">
-                  {/* YES percentage and bar */}
-                  <div className="flex-1 flex items-center">
-                    <span className="text-2xl font-bold mr-2" style={{ color: '#1A9FDA' }}>
-                      {pollStats.total > 0 ? Math.round(((pollStats.counts.yes || 0) / pollStats.total) * 100) : 0}%
-                    </span>
-                    <div className="flex-1 h-8 bg-white overflow-hidden border border-gray-300" style={{ borderTopLeftRadius: '9999px', borderBottomLeftRadius: '9999px' }}>
-                      <div 
-                        className="h-full transition-all duration-500"
-                        style={{ 
-                          backgroundColor: '#1A9FDA',
-                          width: `${pollStats.total > 0 ? ((pollStats.counts.yes || 0) / pollStats.total) * 100 : 0}%`
-                        }}
-                      />
+                {/* Legend */}
+                <div className="space-y-3 w-full max-w-md">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="w-4 h-4 rounded-full mr-3" style={{ backgroundColor: '#1A9FDA' }}></div>
+                      <span className="text-sm font-medium text-gray-700">Yes, with TAVR or SAVR</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-lg font-bold" style={{ color: '#1A9FDA' }}>
+                        {pollStats.total > 0 ? Math.round(((pollStats.counts.yes_tavr_savr || 0) / pollStats.total) * 100) : 0}%
+                      </span>
+                      <div className="text-xs text-gray-500">{pollStats.counts.yes_tavr_savr || 0} votes</div>
                     </div>
                   </div>
 
-                  {/* Center circle with total votes - overlapping bars */}
-                  <div className="relative -mx-4">
-                    <div className="w-16 h-16 bg-gray-800 rounded-full flex flex-col items-center justify-center text-white text-xs font-semibold z-10 relative">
-                      <span className="text-lg font-bold">{pollStats.total || 0}</span>
-                      <span>votes</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="w-4 h-4 rounded-full mr-3" style={{ backgroundColor: '#7C3AED' }}></div>
+                      <span className="text-sm font-medium text-gray-700">Yes, with SAVR favored over TAVR</span>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-lg font-bold" style={{ color: '#7C3AED' }}>
+                        {pollStats.total > 0 ? Math.round(((pollStats.counts.yes_savr_favored || 0) / pollStats.total) * 100) : 0}%
+                      </span>
+                      <div className="text-xs text-gray-500">{pollStats.counts.yes_savr_favored || 0} votes</div>
                     </div>
                   </div>
 
-                  {/* NO bar and percentage */}
-                  <div className="flex-1 flex items-center">
-                    <div className="flex-1 h-8 bg-white overflow-hidden border border-gray-300" style={{ borderTopRightRadius: '9999px', borderBottomRightRadius: '9999px' }}>
-                      <div 
-                        className="h-full transition-all duration-500 ml-auto"
-                        style={{ 
-                          backgroundColor: '#D43F5C',
-                          width: `${pollStats.total > 0 ? ((pollStats.counts.no || 0) / pollStats.total) * 100 : 0}%`
-                        }}
-                      />
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="w-4 h-4 rounded-full mr-3" style={{ backgroundColor: '#D43F5C' }}></div>
+                      <span className="text-sm font-medium text-gray-700">No, clinical surveillance is more appropriate</span>
                     </div>
-                    <span className="text-2xl font-bold ml-2" style={{ color: '#D43F5C' }}>
-                      {pollStats.total > 0 ? Math.round(((pollStats.counts.no || 0) / pollStats.total) * 100) : 0}%
-                    </span>
+                    <div className="text-right">
+                      <span className="text-lg font-bold" style={{ color: '#D43F5C' }}>
+                        {pollStats.total > 0 ? Math.round(((pollStats.counts.no_surveillance || 0) / pollStats.total) * 100) : 0}%
+                      </span>
+                      <div className="text-xs text-gray-500">{pollStats.counts.no_surveillance || 0} votes</div>
+                    </div>
                   </div>
                 </div>
 
                 {/* Total votes centered below */}
-                <div className="text-center text-sm text-gray-500 mt-4">
+                <div className="text-center text-sm text-gray-500 mt-6">
                   Based on {pollStats.total} responses • Results update in real-time
                 </div>
               </div>
