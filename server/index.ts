@@ -30,8 +30,16 @@ app.use((req, res, next) => {
     return res.status(404).send('Page not found');
   }
   
+  // Remove trailing slash and redirect
+  if (req.path === targetPath + '/' && req.path.length > 1) {
+    return res.redirect(301, targetPath);
+  }
+  if (req.path === targetPath + '/icd-admin/') {
+    return res.redirect(301, targetPath + '/icd-admin');
+  }
+  
   // If accessing the specific debate path or admin path, serve the app
-  if (req.path === targetPath || req.path === targetPath + '/' || req.path === targetPath + '/icd-admin' || req.path === targetPath + '/icd-admin/') {
+  if (req.path === targetPath || req.path === targetPath + '/icd-admin') {
     req.url = '/'; // Rewrite to root for the app
     next();
   }
