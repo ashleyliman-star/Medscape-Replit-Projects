@@ -19,15 +19,6 @@ app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/r
 // Handle routing for specific debate page only
 app.use((req, res, next) => {
   const targetPath = '/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention';
-  const host = req.get('host') || '';
-  
-  // Remove trailing slash and redirect
-  if (req.path === targetPath + '/' && req.path.length > 1) {
-    return res.redirect(301, targetPath);
-  }
-  if (req.path === targetPath + '/icd-admin/') {
-    return res.redirect(301, targetPath + '/icd-admin');
-  }
   
   // If accessing the specific debate path or admin path, serve the app
   if (req.path === targetPath || req.path === targetPath + '/icd-admin') {
