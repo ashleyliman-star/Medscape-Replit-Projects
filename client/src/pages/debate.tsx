@@ -59,9 +59,9 @@ const debateData = {
         ]
       },
       {
-        title: "The disease may be easier to treat",
+        title: "Severe AS is undertreated",
         points: [
-          "Treating patients at an earlier stage should be more effective or mean less aggressive treatment is needed."
+          "Severe AS is often undertreated, and delays in treatment are associated with premature mortality and poor quality of life. An early intervention approach could avoid this."
         ]
       }
     ],
