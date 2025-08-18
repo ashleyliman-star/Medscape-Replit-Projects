@@ -50,21 +50,30 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
       if (fullHeight > maxHeight) {
         setNeedsTruncation(true);
         
-        // Find the maximum text that fits in 3 lines with "... read more"
-        const words = introduction.split(' ');
-        let result = '';
+        // Check if text contains "Eugene Braunwald, MD" and truncate there
+        const targetPhrase = "Eugene Braunwald, MD";
+        const targetIndex = introduction.indexOf(targetPhrase);
         
-        for (let i = 0; i < words.length; i++) {
-          const testText = words.slice(0, i + 1).join(' ') + '... read more';
-          tester.textContent = testText;
+        if (targetIndex !== -1) {
+          const truncateAt = targetIndex + targetPhrase.length;
+          setTruncatedText(introduction.substring(0, truncateAt));
+        } else {
+          // Fallback to original logic if target phrase not found
+          const words = introduction.split(' ');
+          let result = '';
           
-          if (tester.offsetHeight > maxHeight) {
-            result = words.slice(0, i).join(' ');
-            break;
+          for (let i = 0; i < words.length; i++) {
+            const testText = words.slice(0, i + 1).join(' ') + '... read more';
+            tester.textContent = testText;
+            
+            if (tester.offsetHeight > maxHeight) {
+              result = words.slice(0, i).join(' ');
+              break;
+            }
           }
+          
+          setTruncatedText(result);
         }
-        
-        setTruncatedText(result);
       } else {
         setNeedsTruncation(false);
       }
