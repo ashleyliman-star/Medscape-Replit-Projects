@@ -3,9 +3,6 @@ import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
-app.set('trust proxy', true);
-app.disable('x-powered-by');
-app.set('strict routing', true);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -13,38 +10,40 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/attached_assets', express.static('attached_assets'));
 
 // Serve robots.txt file only for the specific debate page path
-app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/robots.txt', (req, res) => {
+app.get('/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases/robots.txt', (req, res) => {
   res.type('text/plain');
   res.send('User-agent: *\nDisallow: /');
 });
 
-// Handle both with and without trailing slash versions explicitly
-app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention', (req, res, next) => {
-  req.url = '/';
-  next();
-});
-
-app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/', (req, res, next) => {
-  req.url = '/';
-  next();
-});
-
-app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/icd-admin', (req, res, next) => {
-  req.url = '/';
-  next();
-});
-
-// Handle routing - allow necessary assets and API routes, block others
+// Handle routing for specific debate page only
 app.use((req, res, next) => {
-  // Allow access to necessary assets and API routes
-  if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/') || req.path.startsWith('/attached_assets/')) {
+  const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
+  const host = req.get('host') || '';
+  
+  // Redirect from Replit app domain to Medscape domain
+  if (host.includes('medscape-debate.replit.app') && req.path === '/') {
+    return res.redirect(301, `https://exp.medscape.com${targetPath}`);
+  }
+  
+  // Block root access on exp.medscape.com domain
+  if (host.includes('exp.medscape.com') && req.path === '/') {
+    return res.status(404).send('Page not found');
+  }
+  
+  // If accessing the specific debate path or admin path, serve the app
+  if (req.path === targetPath || req.path === targetPath + '/' || req.path === targetPath + '/icd-admin' || req.path === targetPath + '/icd-admin/') {
+    req.url = '/'; // Rewrite to root for the app
+    next();
+  }
+  // Allow access to necessary assets and API routes for the debate page
+  else if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/') || req.path.startsWith('/attached_assets/')) {
     next();
   }
   // For development, allow root access 
   else if (req.path === '/' && (req.get('host')?.includes('replit') || req.get('host')?.includes('localhost') || req.get('host')?.includes('127.0.0.1'))) {
     next();
   }
-  // Block all other paths except those already handled by specific routes above
+  // Block all other paths - let them be handled by other services on exp.medscape.com
   else {
     res.status(404).send('Page not found');
   }
