@@ -81,7 +81,7 @@ const debateData = {
       {
         title: "The current data are not sufficient to support early intervention",
         points: [
-          "SAVR was not superior to surveillance for the composite endpoint of death or unplanned AS-related hospitalization in the EVOLVED trial."
+          "SAVR was not superior to surveillance for the composite endpoint of death or unplanned AS-related hospitalization in the EVOLVED trial. The benefits seen for TAVR in the EARLY TAVR trial were driven by unplanned hospitalizations; there was no statistically significant difference in stroke or mortality."
         ]
       },
       {
