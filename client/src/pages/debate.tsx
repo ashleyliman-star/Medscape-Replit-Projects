@@ -41,9 +41,9 @@ const debateData = {
         ]
       },
       {
-        title: "Routine surveillance finds more recurrences",
+        title: "Aortic stenosis is a progressive disease",
         points: [
-          "Studies generally indicate that regular scans and blood tests uncover more cancer recurrences."
+          "Even when asymptomatic, severe AS is a progressive condition that ultimately leads to left ventricular dysfunction and heart failure."
         ]
       },
       {
