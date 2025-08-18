@@ -22,7 +22,7 @@ import PrivacyPreferenceCenter from "@/components/privacy-preference-center";
 
 const debateData = {
   question: "Does Asymptomatic Aortic Stenosis Warrant Early Intervention?",
-  introduction: "It's not everyday that a cardiology legend publicly changes course. Yet after 35 years, Eugene Braunwald, MD, reversed his stance against intervening early in patients with severe asymptomatic aortic stenosis. His reconsideration was based on cumulative data from trials on early intervention. The FDA followed with expanded indications. But not everyone favors early intervention over clinical surveillance. Are the data strong enough to support a paradigm shift?",
+  introduction: "It's not everyday that a cardiology legend publicly changes course. Yet after 35 years, Eugene Braunwald, MD, reversed his stance against intervening early in patients with severe asymptomatic aortic stenosis. The FDA followed with expanded indications, but not everyone favors early intervention. Are the data strong enough?",
   sideA: {
     position: "YES: Early Intervention Is Best",
     color: "blue" as const,
