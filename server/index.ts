@@ -4,6 +4,8 @@ import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 app.set('trust proxy', true);
+app.disable('x-powered-by');
+app.set('strict routing', true);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -16,24 +18,33 @@ app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/r
   res.send('User-agent: *\nDisallow: /');
 });
 
-// Handle routing for specific debate page only
+// Handle both with and without trailing slash versions explicitly
+app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention', (req, res, next) => {
+  req.url = '/';
+  next();
+});
+
+app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/', (req, res, next) => {
+  req.url = '/';
+  next();
+});
+
+app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/icd-admin', (req, res, next) => {
+  req.url = '/';
+  next();
+});
+
+// Handle routing - allow necessary assets and API routes, block others
 app.use((req, res, next) => {
-  const targetPath = '/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention';
-  
-  // If accessing the specific debate path or admin path, serve the app
-  if (req.path === targetPath || req.path === targetPath + '/icd-admin') {
-    req.url = '/'; // Rewrite to root for the app
-    next();
-  }
-  // Allow access to necessary assets and API routes for the debate page
-  else if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/') || req.path.startsWith('/attached_assets/')) {
+  // Allow access to necessary assets and API routes
+  if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/') || req.path.startsWith('/attached_assets/')) {
     next();
   }
   // For development, allow root access 
   else if (req.path === '/' && (req.get('host')?.includes('replit') || req.get('host')?.includes('localhost') || req.get('host')?.includes('127.0.0.1'))) {
     next();
   }
-  // Block all other paths except the target debate path
+  // Block all other paths except those already handled by specific routes above
   else {
     res.status(404).send('Page not found');
   }
