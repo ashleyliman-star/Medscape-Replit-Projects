@@ -6,10 +6,13 @@ interface ReferencesModalProps {
 }
 
 const references = [
-  "Wilson BE, Wright K, Koven R, Booth CM. Surveillance imaging after curative-intent treatment for cancer: benefits, harms, and evidence. J Clin Oncol. 2024;42(19):2245–2249",
-  "Welch H, Dossett LA. Routine surveillance for cancer metastases — does it help or harm patients? N Engl J Med. 2025;392(17):1667–1670",
-  "American Society of Clinical Oncology. Choosing Wisely. In: Cancer Care Initiatives – Value in Cancer Care. ASCO. Reviewed 2021.",
-  "Giglio V, Schneider P, Madden K, Lin B, Multani I, Baldawi H, Thornley P, Naji L, Levin M, Wang P, Bozzo A, Wilson D, Ghert M. Published randomized controlled trials of surveillance in cancer patients ­– a systematic review. Oncol Rev. 2021;15(1):522"
+  "Lindman BR, Braunwald E, Pellikka PA. Aortic valve replacement for asymptomatic severe aortic stenosis—the time has come. JAMA Cardiol. 2025;10(4):305-306. doi:10.1001/jamacardio.2024.5648",
+  "Kang D-H, Park S-J, Lee S-A, et al. Early surgery or conservative care for asymptomatic aortic stenosis. N Engl J Med. 2020;382:111-119. doi:10.1056/NEJMoa1912846",
+  "Banovic M, Putnik S, Penicka M, et al. Aortic valve replacement versus conservative treatment in asymptomatic severe aortic stenosis: the AVATAR trial. Circulation. 2022;145(9):648-658. doi:10.1161/CIRCULATIONAHA.121.057639",
+  "Loganath K, Craig NJ, Everett RJ, et al. Early intervention in patients with asymptomatic severe aortic stenosis and myocardial fibrosis: the EVOLVED randomized clinical trial. JAMA. 2025;333(3):213-221. doi:10.1001/jama.2024.22730",
+  "Généreux P, Schwartz A, Oldemeyer JB, et al; EARLY TAVR Trial Investigators. Transcatheter aortic-valve replacement for asymptomatic severe aortic stenosis. N Engl J Med. 2025;392(3):217-227. doi:10.1056/NEJMoa2405880",
+  "Beerkens FJ, Tang GHL, Kini AS, et al. Transcatheter aortic valve replacement beyond severe aortic stenosis: JACC state-of-the-art review. JACC. 2025 Mar;85(9):944-964. doi:10.1016/j.jacc.2024.11.051",
+  "Otto CM, Nishimura RA, Bonow RO, et al; Writing Committee Members. 2020 ACC/AHA guideline for the management of patients with valvular heart disease: a report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines. J Am Coll Cardiol. 2021;77(4):e25-e197. doi:10.1016/j.jacc.2020.11.018"
 ];
 
 export default function ReferencesModal({ isOpen, onClose }: ReferencesModalProps) {
