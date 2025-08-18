@@ -103,9 +103,9 @@ const debateData = {
         ]
       },
       {
-        title: "Patients often bear the cost",
+        title: "We should wait for more data",
         points: [
-          "These tests aren't cheap and patients increasingly have to pay the costs out of pocket."
+          "Current data are from trials that were relatively small, with short to medium-term follow-up, and focus on low-risk surgical cohorts. We should wait for the completion of ongoing RCTs (EASY-AS and DANAVR) and longer follow-up of EARLY TAVR before recommending an early intervention strategy."
         ]
       }
     ],
