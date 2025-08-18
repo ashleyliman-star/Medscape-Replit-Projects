@@ -53,9 +53,9 @@ const debateData = {
         ]
       },
       {
-        title: "Catching recurrences earlier likely means less disease",
+        title: "The line between symptomatic and asymptomatic is blurry",
         points: [
-          "Theoretically, tumor burden will be lower before symptoms develop."
+          "Patients may appear asymptomatic because they limit activity or have comorbidities that confound symptoms from valvular disease."
         ]
       },
       {
