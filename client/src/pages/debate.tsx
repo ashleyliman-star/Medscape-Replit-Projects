@@ -35,9 +35,9 @@ const debateData = {
     statement: "Routine breast cancer surveillance saves lives through early detection. The benefits of identifying cancer in its earliest stages far outweigh the risks and challenges of screening programs.",
     arguments: [
       {
-        title: "Routine surveillance is often backed by guidelines",
+        title: "Data from RCTs support early intervention",
         points: [
-          "Major cancer organizations, such as NCCN and ASCO, typically recommend routine surveillance in asymptomatic patients following curative intent cancer treatment (notable exception is breast cancer)."
+          "A meta-analysis of the 4 RCTs comparing SAVR or TAVR with clinical surveillance found that early intervention was associated with a significantly lower risk of stroke, hospitalization for heart failure, and unplanned cardiovascular hospitalizations."
         ]
       },
       {
