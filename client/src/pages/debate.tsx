@@ -97,9 +97,9 @@ const debateData = {
         ]
       },
       {
-        title: "Quality of life doesn't improve",
+        title: "Guidelines with clear definitions are needed first",
         points: [
-          "Research also indicates that routine surveillance in this population does not improve patients' quality of life. This testing can, for instance, fuel greater anxiety among patients, and regular travel to appointments may be challenging and take time away from work and family."
+          "Clear definitions of what constitutes \"severe\" and \"asymptomatic\" are needed before widespread adoption of early intervention."
         ]
       },
       {
