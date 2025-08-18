@@ -91,9 +91,9 @@ const debateData = {
         ]
       },
       {
-        title: "No clear evidence survival improves",
+        title: "There is potential harm from intervening early",
         points: [
-          "Studies consistently show that identifying recurrent disease earlier does not improve survival in asymptomatic patients. Survival may only appear to be better in patients with asymptomatic vs symptomatic recurrences because the \"survival clock\" starts earlier."
+          "Even low-risk SAVR/TAVR carries a risk of stroke, bleeding, conduction abnormalities or need for pacemaker, and vascular complications."
         ]
       },
       {
