@@ -85,9 +85,9 @@ const debateData = {
         ]
       },
       {
-        title: "Overdiagnosis can lead to unnecessary care",
+        title: "Valve durability issues mean patients will need repeat intervention",
         points: [
-          "Incidental findings may prompt follow-up testing and expose patients to additional radiation from imaging or to unnecessary treatment."
+          "Earlier intervention means a high likelihood of bioprosthesis degeneration and the need for reoperation and/or valve-in-valve TAVR decades later."
         ]
       },
       {
