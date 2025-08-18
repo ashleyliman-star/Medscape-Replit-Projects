@@ -28,7 +28,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             <div className="flex items-center mb-3 md:mb-4">
               <ThumbsUp className="h-5 w-5 md:h-6 md:w-6 mr-2 md:mr-3" style={{ color: '#1A9FDA' }} />
               <h3 className="text-base md:text-lg font-bold" style={{ color: '#1A9FDA' }}>
-                Supporting Routine Surveillance
+                Early Intervention Is Best
               </h3>
             </div>
             <ul className="space-y-2 md:space-y-3">
@@ -46,7 +46,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             <div className="flex items-center mb-3 md:mb-4">
               <ThumbsDown className="h-5 w-5 md:h-6 md:w-6 mr-2 md:mr-3" style={{ color: '#D43F5C' }} />
               <h3 className="text-base md:text-lg font-bold" style={{ color: '#D43F5C' }}>
-                Selective Surveillance is More Appropriate
+                Clinical Surveillance is More Appropriate
               </h3>
             </div>
             <ul className="space-y-2 md:space-y-3">
