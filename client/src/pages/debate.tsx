@@ -22,7 +22,7 @@ import PrivacyPreferenceCenter from "@/components/privacy-preference-center";
 
 const debateData = {
   question: "Does Asymptomatic Aortic Stenosis Warrant Early Intervention?",
-  introduction: "Is it time to rethink routine surveillance? After undergoing a full course of curative-intent cancer treatment, patients are typically monitored for early signs of recurrence. For certain cancer types, guidelines recommend patients receive imaging scans and blood tests as often as every six months over five years. But some experts have longstanding concerns about the value of surveillance after curative-intent treatment in patients who remain asymptomatic. Do frequent scans and blood tests actually improve survival or quality of life?",
+  introduction: "It's not everyday that a cardiology legend publicly changes course. Yet after 35 years, Eugene Braunwald, MD, reversed his stance against intervening early in patients with severe asymptomatic aortic stenosis (AS). His reconsideration was based on cumulative data from randomized controlled trials (RCTs) on early surgical or transcatheter aortic valve replacement (SAVR/TAVR). The FDA followed with an expanded indication for TAVR to include asymptomatic patients. But not everyone favors early intervention over clinical surveillance. Are the data strong enough to support a paradigm shift in management?",
   sideA: {
     position: "YES: Routine Surveillance is Worth It",
     color: "blue" as const,
