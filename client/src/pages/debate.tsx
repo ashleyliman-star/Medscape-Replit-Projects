@@ -24,7 +24,7 @@ const debateData = {
   question: "Does Asymptomatic Aortic Stenosis Warrant Early Intervention?",
   introduction: "It's not everyday that a cardiology legend publicly changes course. Yet after 35 years, Eugene Braunwald, MD, reversed his stance against intervening early in patients with severe asymptomatic aortic stenosis (AS). His reconsideration was based on cumulative data from randomized controlled trials (RCTs) on early surgical or transcatheter aortic valve replacement (SAVR/TAVR). The FDA followed with an expanded indication for TAVR to include asymptomatic patients. But not everyone favors early intervention over clinical surveillance. Are the data strong enough to support a paradigm shift in management?",
   sideA: {
-    position: "YES: Routine Surveillance is Worth It",
+    position: "YES: Early Intervention Is Best",
     color: "blue" as const,
     physician: {
       name: "Dr. Jennifer Martinez",
@@ -68,7 +68,7 @@ const debateData = {
     guidelines: "Follow established screening guidelines recommending annual or biennial mammograms for women aged 50-74, with individualized decisions for women 40-49 based on personal risk factors and preferences."
   },
   sideB: {
-    position: "NO: Selective Surveillance is More Appropriate",
+    position: "NO: Clinical Surveillance is More Appropriate",
     color: "purple" as const,
     physician: {
       name: "Dr. Robert Chen",
