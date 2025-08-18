@@ -4,7 +4,7 @@ export default function MiddleGroundUnboxed() {
   return (
     <section className="mb-12">
       <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-        <div className="flex items-center justify-center" style={{ gap: '2px' }}>
+        <div className="flex items-center justify-center gap-0.5 md:gap-2">
           <Scale className="h-6 w-6 flex-shrink-0" style={{ color: '#064AA7' }} />
           <span className="text-center">Middle Ground and Evolving Perspectives</span>
         </div>
