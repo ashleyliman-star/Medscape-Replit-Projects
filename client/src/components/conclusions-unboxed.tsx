@@ -11,7 +11,7 @@ export default function ConclusionsUnboxed() {
       </h2>
       <div className="max-w-4xl mx-auto space-y-4 text-gray-700 text-base md:text-lg">
         <p>
-          Despite many guidelines that recommend routine checks, there is limited evidence that frequent surveillance for cancer metastases in patients with asymptomatic disease improves overall survival or quality of life. However, there isn't necessarily a one-size-fits-all approach to surveillance in this patient population. The benefits and harms may vary by the cancer type and the patient, and decisions should be made on a case-by-case basis alongside the patient.
+          US guidelines from 2020 give a class I indication for aortic valve replacement in patients with severe asymptomatic AS if they have an impaired left ventricular ejection fraction (&lt; 50%) or are undergoing cardiac surgery for another indication. Proponents of early intervention say there are enough data now to update the guidelines. Opponents see limitations in the current data and believe that the clinical surveillance approach is prudent as we await more long-term data and the completion of ongoing trials.
         </p>
         
         <div className="mt-6">
