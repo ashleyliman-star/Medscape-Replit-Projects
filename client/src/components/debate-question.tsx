@@ -96,9 +96,9 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
           {/* Byline and publication date - desktop */}
           <div className="hidden md:block mb-6 text-center">
             <p className="text-sm text-gray-500 flex items-center justify-center">
-              <span className="font-medium">Victoria Stern</span>
+              <span className="font-medium">Tricia Ward</span>
               <span className="mx-2">•</span>
-              <span>July 07, 2025</span>
+              <span>September 2, 2025</span>
               {onCommentClick && (
                 <>
                   <span className="mx-2">•</span>
@@ -117,9 +117,9 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
           {/* Byline and publication date - mobile */}
           <div className="md:hidden mb-4 text-center">
             <p className="text-sm text-gray-500 flex items-center justify-center">
-              <span className="font-medium">Victoria Stern</span>
+              <span className="font-medium">Tricia Ward</span>
               <span className="mx-2">•</span>
-              <span>July 07, 2025</span>
+              <span>September 2, 2025</span>
               {onCommentClick && (
                 <>
                   <span className="mx-2">•</span>
