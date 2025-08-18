@@ -10,14 +10,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/attached_assets', express.static('attached_assets'));
 
 // Serve robots.txt file only for the specific debate page path
-app.get('/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases/robots.txt', (req, res) => {
+app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/robots.txt', (req, res) => {
   res.type('text/plain');
   res.send('User-agent: *\nDisallow: /');
 });
 
 // Handle routing for specific debate page only
 app.use((req, res, next) => {
-  const targetPath = '/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases';
+  const targetPath = '/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention';
   const host = req.get('host') || '';
   
   // Redirect from Replit app domain to Medscape domain
