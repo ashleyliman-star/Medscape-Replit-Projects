@@ -268,7 +268,7 @@ export default function DebatePage() {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'Asymptomatic Aortic Stenosis Time to Act or Not So Fast',
+                      event_label: 'Asymptomatic Aortic Stenosis: \'Time to Act\' or Not So Fast?',
                       link_url: 'https://www.medscape.com/viewarticle/asymptomatic-aortic-stenosis-time-act-or-not-so-fast-2025a10005o9?ecd=dir_mscp_020925_icd_cardiodebate_position2'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
@@ -308,7 +308,7 @@ export default function DebatePage() {
                   if (typeof window !== 'undefined' && window.gtag) {
                     window.gtag('event', 'medscape_link_click', {
                       event_category: 'external_links',
-                      event_label: 'EARLY TAVR A Positive Trial That Fails to Inform Clinical Decisions',
+                      event_label: 'EARLY TAVR: A Positive Trial That Fails to Inform Clinical Decisions',
                       link_url: 'https://www.medscape.com/viewarticle/early-tavr-positive-trial-fails-inform-clinical-decisions-2024a1000kec?ecd=dir_mscp_020925_icd_cardiodebate_position4'
                     });
                     console.log('GA4 Event fired: medscape_link_click');
