@@ -14,8 +14,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={DebatePage} />
-      <Route path="/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases" component={DebatePage} />
-      <Route path="/debates/do-patients-benefit-from-routine-checks-for-cancer-metastases/icd-admin" component={AdminPage} />
+      <Route path="/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention" component={DebatePage} />
+      <Route path="/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/icd-admin" component={AdminPage} />
       <Route component={NotFound} />
     </Switch>
   );
