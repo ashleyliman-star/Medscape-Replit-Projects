@@ -79,9 +79,9 @@ const debateData = {
     statement: "While breast cancer screening has benefits, routine surveillance carries significant risks of overdiagnosis, false positives, and psychological harm that may outweigh benefits for many women.",
     arguments: [
       {
-        title: "Routine surveillance can lead to overdiagnosis",
+        title: "The current data are not sufficient to support early intervention",
         points: [
-          "Routine blood tests and imaging may uncover incidental findings that would not be harmful to patients."
+          "SAVR was not superior to surveillance for the composite endpoint of death or unplanned AS-related hospitalization in the EVOLVED trial."
         ]
       },
       {
