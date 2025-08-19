@@ -22,7 +22,7 @@ import PrivacyPreferenceCenter from "@/components/privacy-preference-center";
 
 const debateData = {
   question: "Does Asymptomatic Aortic Stenosis Warrant Early Intervention?",
-  introduction: "It's not everyday that a cardiology legend publicly changes course. Yet after 35 years, Eugene Braunwald, MD, reversed his stance against intervening early in patients with severe asymptomatic aortic stenosis. His reconsideration was based on cumulative data from randomized controlled trials on early surgical or transcatheter aortic valve replacement. The FDA followed with expanded indications for TAVR to include asymptomatic patients, but not everyone favors early intervention over clinical surveillance. Are the data strong enough to support a paradigm shift in management?",
+  introduction: "It's not everyday that a cardiology legend publicly changes course. Yet after 35 years, Eugene Braunwald, MD, reversed his stance against intervening early in patients with severe asymptomatic aortic stenosis (AS). His reconsideration was based on cumulative data from randomized controlled trials (RCTs) on early surgical or transcatheter aortic valve replacement (SAVR/TAVR). The FDA followed with an expanded indication for TAVR to include asymptomatic patients. But not everyone favors early intervention over clinical surveillance. Are the data strong enough to support a paradigm shift in management?",
   sideA: {
     position: "YES: Early Intervention Is Best",
     color: "blue" as const,
