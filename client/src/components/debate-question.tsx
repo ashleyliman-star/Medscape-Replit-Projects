@@ -96,8 +96,8 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
         <div className="text-left">
           <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontSize: '22px' }}>
             <span className="md:hidden">
-              Do Patients Benefit From Routine<br />
-              Checks for Cancer Metastases?
+              Does Asymptomatic Aortic Stenosis<br />
+              Warrant Early Intervention?
             </span>
             <span className="hidden md:inline" style={{ fontSize: '40px' }}>{question}</span>
           </h2>
