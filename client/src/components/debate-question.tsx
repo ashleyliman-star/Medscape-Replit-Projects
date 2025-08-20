@@ -50,8 +50,8 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
       if (fullHeight > maxHeight) {
         setNeedsTruncation(true);
         
-        // Check if text contains "Eugene Braunwald, MD, reversed" and truncate there
-        const targetPhrase = "Eugene Braunwald, MD, reversed";
+        // Check if text contains "Eugene Braunwald, MD, reversed his" and truncate there
+        const targetPhrase = "Eugene Braunwald, MD, reversed his";
         const targetIndex = introduction.indexOf(targetPhrase);
         
         if (targetIndex !== -1) {
