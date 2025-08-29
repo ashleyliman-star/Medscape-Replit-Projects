@@ -320,11 +320,10 @@ export default function DebatePage() {
           />
         </div>
 
-        <div className="mb-16">
-          <SummaryTableUnboxed
-            yesArguments={debateData.sideA.arguments}
-            noArguments={debateData.sideB.arguments}
-          />
+        <MiddleGroundUnboxed />
+
+        <div className="mt-16 mb-12">
+          <ConclusionsUnboxed />
         </div>
 
         {/* 728x90 ad unit on desktop, 300x250 on mobile - below summary of key points */}
@@ -334,10 +333,11 @@ export default function DebatePage() {
           position={5}
         />
 
-        <MiddleGroundUnboxed />
-
-        <div className="mt-16 mb-12">
-          <ConclusionsUnboxed />
+        <div className="mb-16">
+          <SummaryTableUnboxed
+            yesArguments={debateData.sideA.arguments}
+            noArguments={debateData.sideB.arguments}
+          />
         </div>
 
         {/* 300x250 ad unit above poll - stays the same on all devices */}
