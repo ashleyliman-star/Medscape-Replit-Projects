@@ -85,7 +85,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
         </div>
 
         {/* Vertical divider line */}
-        <div className="w-px bg-gray-300 mx-4"></div>
+        <div className="w-px bg-gray-300 ml-2 mr-4"></div>
         
         {/* NO Side Summary */}
         <div className="flex-1" style={{ paddingLeft: '20px' }}>
