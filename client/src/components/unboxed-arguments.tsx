@@ -68,7 +68,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
       </div>
 
       {/* Position Headers - Desktop */}
-      <div className="hidden md:grid md:grid-cols-2 gap-16 mb-8">
+      <div className="hidden md:grid md:grid-cols-2 gap-20 mb-8">
         {/* YES Position */}
         <div className="flex items-center">
           <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
@@ -93,7 +93,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
           <div key={index}>
             {/* Arguments row */}
-            <div className={`grid grid-cols-2 gap-16 ${(index === 1 || index === 3) ? 'mb-1' : 'mb-2'}`}>
+            <div className={`grid grid-cols-2 gap-20 mb-2`}>
               {/* YES Arguments */}
               <div>
                 {yesArguments[index] && (
