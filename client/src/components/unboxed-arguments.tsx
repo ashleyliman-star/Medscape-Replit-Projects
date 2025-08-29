@@ -62,67 +62,74 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
   return (
     <div className="space-y-8">
+      {/* Key Arguments Title */}
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold text-gray-900">Key Arguments</h2>
+      </div>
+
       {/* Position Headers - Desktop */}
       <div className="hidden md:grid md:grid-cols-2 gap-8 mb-8">
         {/* YES Position */}
-        <Card className="text-white p-4 md:p-8 flex items-center" style={{ background: 'linear-gradient(135deg, #3DC7F5 0%, #2BB4E8 50%, #1A9FDA 100%)', minHeight: '80px' }}>
+        <Card className="text-white p-4 md:p-8 flex items-center" style={{ backgroundColor: '#3D8AF5', minHeight: '80px' }}>
           <div className="flex items-center">
-            <ThumbsUp className="mr-2 md:mr-3 h-6 w-6 md:h-8 md:w-8" />
-            <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-white">YES: Early Intervention Is Best</h2>
+            <div className="mr-2 md:mr-3 bg-white text-blue-600 rounded-full p-1">
+              <span className="text-xs font-bold px-2">YES</span>
+            </div>
+            <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-white">Early Intervention Is Best</h2>
           </div>
         </Card>
 
         {/* NO Position */}
-        <Card className="text-white p-4 md:p-8 flex items-center" style={{ background: 'linear-gradient(135deg, #F07584 0%, #E85A70 50%, #D43F5C 100%)', minHeight: '80px' }}>
+        <Card className="text-white p-4 md:p-8 flex items-center" style={{ backgroundColor: '#C20A20', minHeight: '80px' }}>
           <div className="flex items-center">
-            <ThumbsDown className="mr-2 md:mr-3 h-6 w-6 md:h-8 md:w-8" />
-            <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-white">NO: Clinical Surveillance Is More Appropriate</h2>
+            <div className="mr-2 md:mr-3 bg-white text-red-600 rounded-full p-1">
+              <span className="text-xs font-bold px-2">NO</span>
+            </div>
+            <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-white">Clinical Surveillance Is More Appropriate</h2>
           </div>
         </Card>
       </div>
 
 
 
-      {/* Key Arguments sections for each physician - Desktop only */}
+      {/* Key Arguments sections - Desktop */}
       <div className="hidden md:block mb-8">
         {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
           <div key={index}>
             {/* Arguments row */}
             <div className={`grid grid-cols-2 gap-8 ${(index === 1 || index === 3) ? 'mb-4' : 'mb-8'}`}>
-              {/* YES Key Arguments */}
+              {/* YES Arguments */}
               <div>
-                {index === 0 && <h3 className="text-xl font-bold text-gray-800 mb-4">Key Arguments</h3>}
                 {yesArguments[index] && (
-                  <div className="mb-6">
+                  <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: 'rgba(61, 138, 245, 0.05)' }}>
                     <div className="flex items-start mb-3 gap-3">
-                      <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5', fontSize: '16px' }}>
-                        Yes
-                      </span>
-                      <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#3D8AF5' }}>
+                        <span className="text-white text-xs font-bold">YES</span>
+                      </div>
+                      <h4 className="font-semibold text-lg text-black">{yesArguments[index].title}</h4>
                     </div>
-                    <div className="ml-16">
+                    <div className="ml-9">
                       {yesArguments[index].points.map((point, pointIndex) => (
-                        <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
+                        <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
                       ))}
                     </div>
                   </div>
                 )}
               </div>
 
-              {/* NO Key Arguments */}
+              {/* NO Arguments */}
               <div>
-                {index === 0 && <h3 className="text-xl font-bold text-gray-800 mb-4">Key Arguments</h3>}
                 {noArguments[index] && (
-                  <div className="mb-6">
+                  <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: 'rgba(194, 10, 32, 0.05)' }}>
                     <div className="flex items-start mb-3 gap-3">
-                      <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5" style={{ backgroundColor: '#F07584', fontSize: '16px' }}>
-                        No
-                      </span>
-                      <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
+                      <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#C20A20' }}>
+                        <span className="text-white text-xs font-bold">NO</span>
+                      </div>
+                      <h4 className="font-semibold text-lg text-black">{noArguments[index].title}</h4>
                     </div>
-                    <div className="ml-16">
+                    <div className="ml-9">
                       {noArguments[index].points.map((point, pointIndex) => (
-                        <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
+                        <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
                       ))}
                     </div>
                   </div>
@@ -142,22 +149,21 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
       {/* Mobile: Alternating YES/NO arguments */}
       <div className="md:hidden mb-8">
-        <h3 className="text-xl font-bold text-gray-800 mb-4">Key Arguments</h3>
         {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
           <div key={index}>
             <div className="space-y-6 mb-6">
               {/* YES Argument */}
               {yesArguments[index] && (
-                <div className="mb-6">
+                <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: 'rgba(61, 138, 245, 0.05)' }}>
                   <div className="flex items-start mb-3 gap-3">
-                    <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5" style={{ backgroundColor: '#3DC7F5', fontSize: '16px' }}>
-                      Yes
-                    </span>
-                    <h4 className="font-semibold text-xl" style={{ color: '#1A9FDA' }}>{yesArguments[index].title}</h4>
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#3D8AF5' }}>
+                      <span className="text-white text-xs font-bold">YES</span>
+                    </div>
+                    <h4 className="font-semibold text-lg text-black">{yesArguments[index].title}</h4>
                   </div>
-                  <div className="ml-8">
+                  <div className="ml-9">
                     {yesArguments[index].points.map((point, pointIndex) => (
-                      <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
+                      <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
                     ))}
                   </div>
                 </div>
@@ -165,16 +171,16 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
 
               {/* NO Argument */}
               {noArguments[index] && (
-                <div className="mb-6">
+                <div className="mb-6 p-4 rounded-lg" style={{ backgroundColor: 'rgba(194, 10, 32, 0.05)' }}>
                   <div className="flex items-start mb-3 gap-3">
-                    <span className="text-white px-4 py-2 rounded-full font-semibold mt-0.5" style={{ backgroundColor: '#F07584', fontSize: '16px' }}>
-                      No
-                    </span>
-                    <h4 className="font-semibold text-xl" style={{ color: '#D43F5C' }}>{noArguments[index].title}</h4>
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: '#C20A20' }}>
+                      <span className="text-white text-xs font-bold">NO</span>
+                    </div>
+                    <h4 className="font-semibold text-lg text-black">{noArguments[index].title}</h4>
                   </div>
-                  <div className="ml-8">
+                  <div className="ml-9">
                     {noArguments[index].points.map((point, pointIndex) => (
-                      <p key={pointIndex} className="text-base md:text-lg text-gray-700 leading-relaxed">{point}</p>
+                      <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
                     ))}
                   </div>
                 </div>
