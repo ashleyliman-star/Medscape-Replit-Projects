@@ -93,7 +93,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
           <div key={index}>
             {/* Arguments row */}
-            <div className={`grid grid-cols-2 gap-8 ${(index === 1 || index === 3) ? 'mb-4' : 'mb-8'}`}>
+            <div className={`grid grid-cols-2 gap-12 ${(index === 1 || index === 3) ? 'mb-4' : 'mb-8'}`}>
               {/* YES Arguments */}
               <div>
                 {yesArguments[index] && (
