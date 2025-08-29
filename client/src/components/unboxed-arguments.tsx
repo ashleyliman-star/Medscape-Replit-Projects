@@ -64,7 +64,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
     <div className="space-y-8">
       {/* Key Arguments Title */}
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-gray-900">Key Arguments</h2>
+        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Key Arguments</h2>
       </div>
 
       {/* Position Headers - Desktop */}
