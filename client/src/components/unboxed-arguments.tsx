@@ -68,7 +68,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
       </div>
 
       {/* Position Headers - Desktop */}
-      <div className="hidden md:grid md:grid-cols-2 gap-8 mb-8">
+      <div className="hidden md:grid md:grid-cols-2 gap-16 mb-8">
         {/* YES Position */}
         <div className="flex items-center">
           <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
