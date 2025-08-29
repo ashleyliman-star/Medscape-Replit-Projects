@@ -74,7 +74,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
           <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
             YES
           </div>
-          <h2 className="font-bold text-lg" style={{ color: '#3D8AF5' }}>Early Intervention Is Best</h2>
+          <h2 className="font-bold text-xl" style={{ color: '#3D8AF5' }}>Early Intervention Is Best</h2>
         </div>
 
         {/* NO Position */}
@@ -82,7 +82,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
           <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
             NO
           </div>
-          <h2 className="font-bold text-lg" style={{ color: '#C20A20' }}>Clinical Surveillance Is More Appropriate</h2>
+          <h2 className="font-bold text-xl" style={{ color: '#C20A20' }}>Clinical Surveillance Is More Appropriate</h2>
         </div>
       </div>
 
@@ -151,7 +151,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
               YES
             </div>
-            <h2 className="font-bold text-lg" style={{ color: '#3D8AF5' }}>Early Intervention Is Best</h2>
+            <h2 className="font-bold text-xl" style={{ color: '#3D8AF5' }}>Early Intervention Is Best</h2>
           </div>
 
           {/* NO Position */}
@@ -159,7 +159,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
               NO
             </div>
-            <h2 className="font-bold text-lg" style={{ color: '#C20A20' }}>Clinical Surveillance Is More Appropriate</h2>
+            <h2 className="font-bold text-xl" style={{ color: '#C20A20' }}>Clinical Surveillance Is More Appropriate</h2>
           </div>
         </div>
 
