@@ -70,24 +70,20 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
       {/* Position Headers - Desktop */}
       <div className="hidden md:grid md:grid-cols-2 gap-8 mb-8">
         {/* YES Position */}
-        <Card className="text-white p-4 md:p-8 flex items-center" style={{ backgroundColor: '#3D8AF5', minHeight: '80px' }}>
-          <div className="flex items-center">
-            <div className="mr-2 md:mr-3 bg-white text-blue-600 rounded-full p-1">
-              <span className="text-xs font-bold px-2">YES</span>
-            </div>
-            <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-white">Early Intervention Is Best</h2>
+        <div className="flex items-center">
+          <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
+            YES
           </div>
-        </Card>
+          <h2 className="font-bold text-lg" style={{ color: '#3D8AF5' }}>Early Intervention Is Best</h2>
+        </div>
 
         {/* NO Position */}
-        <Card className="text-white p-4 md:p-8 flex items-center" style={{ backgroundColor: '#C20A20', minHeight: '80px' }}>
-          <div className="flex items-center">
-            <div className="mr-2 md:mr-3 bg-white text-red-600 rounded-full p-1">
-              <span className="text-xs font-bold px-2">NO</span>
-            </div>
-            <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-white">Clinical Surveillance Is More Appropriate</h2>
+        <div className="flex items-center">
+          <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
+            NO
           </div>
-        </Card>
+          <h2 className="font-bold text-lg" style={{ color: '#C20A20' }}>Clinical Surveillance Is More Appropriate</h2>
+        </div>
       </div>
 
 
@@ -147,8 +143,26 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         ))}
       </div>
 
-      {/* Mobile: Alternating YES/NO arguments */}
+      {/* Mobile Position Headers */}
       <div className="md:hidden mb-8">
+        <div className="space-y-4 mb-6">
+          {/* YES Position */}
+          <div className="flex items-center">
+            <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
+              YES
+            </div>
+            <h2 className="font-bold text-lg" style={{ color: '#3D8AF5' }}>Early Intervention Is Best</h2>
+          </div>
+
+          {/* NO Position */}
+          <div className="flex items-center">
+            <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
+              NO
+            </div>
+            <h2 className="font-bold text-lg" style={{ color: '#C20A20' }}>Clinical Surveillance Is More Appropriate</h2>
+          </div>
+        </div>
+
         {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
           <div key={index}>
             <div className="space-y-6 mb-6">
