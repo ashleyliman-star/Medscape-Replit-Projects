@@ -94,12 +94,12 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
     <section className="text-center mb-8 md:mt-8">
       <div className="max-w-4xl mx-auto mb-6">
         <div className="text-left">
-          <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontSize: '22px' }}>
+          <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontSize: '22px', fontFamily: 'EB Garamond, serif' }}>
             <span className="md:hidden">
               Does Asymptomatic Aortic Stenosis<br />
               Warrant Early Intervention?
             </span>
-            <span className="hidden md:inline" style={{ fontSize: '40px' }}>{question}</span>
+            <span className="hidden md:inline" style={{ fontSize: '40px', fontFamily: 'EB Garamond, serif' }}>{question}</span>
           </h2>
           
           {/* Byline and publication date - desktop */}
