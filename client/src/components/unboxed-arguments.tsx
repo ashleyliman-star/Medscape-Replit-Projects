@@ -188,7 +188,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               {/* Ad after every 2 arguments */}
               {(index + 1) % 2 === 0 && (
                 <div className="flex justify-center py-8">
-                  <AdPlaceholder size="300x250" className="mx-auto" position={Math.floor((yesArguments.length + index + 1) / 2) + Math.floor(yesArguments.length / 2)} />
+                  <AdPlaceholder size="300x250" className="mx-auto" position={Math.floor(yesArguments.length / 2) + Math.floor((index + 1) / 2) + 1} />
                 </div>
               )}
             </div>
