@@ -133,60 +133,56 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         ))}
       </div>
 
-      {/* Mobile Position Headers */}
+      {/* Mobile: Grouped YES/NO arguments */}
       <div className="md:hidden mb-8">
-        <div className="space-y-4 mb-6">
-          {/* YES Position */}
-          <div className="flex items-center">
+        {/* YES Position Header and Arguments */}
+        <div className="mb-8">
+          <div className="flex items-center mb-6">
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
               YES
             </div>
             <h2 className="font-bold text-xl" style={{ color: '#3D8AF5' }}>Early Intervention Is Best</h2>
           </div>
 
-          {/* NO Position */}
-          <div className="flex items-center">
+          {/* All YES Arguments */}
+          {yesArguments.map((argument, index) => (
+            <div key={`yes-${index}`} className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(61, 138, 245, 0.05)', borderLeftColor: '#3D8AF5' }}>
+              <h4 className="font-semibold text-lg text-black mb-3">{argument.title}</h4>
+              <div>
+                {argument.points.map((point, pointIndex) => (
+                  <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Ad between YES and NO sections */}
+        <div className="flex justify-center py-8">
+          <AdPlaceholder size="300x250" className="mx-auto" position={3} />
+        </div>
+
+        {/* NO Position Header and Arguments */}
+        <div className="mb-8">
+          <div className="flex items-center mb-6">
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
               NO
             </div>
             <h2 className="font-bold text-xl" style={{ color: '#C20A20' }}>Clinical Surveillance Is More Appropriate</h2>
           </div>
+
+          {/* All NO Arguments */}
+          {noArguments.map((argument, index) => (
+            <div key={`no-${index}`} className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(194, 10, 32, 0.05)', borderLeftColor: '#C20A20' }}>
+              <h4 className="font-semibold text-lg text-black mb-3">{argument.title}</h4>
+              <div>
+                {argument.points.map((point, pointIndex) => (
+                  <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-
-        {Array.from({ length: Math.max(yesArguments.length, noArguments.length) }).map((_, index) => (
-          <div key={index}>
-            <div className="space-y-6 mb-6">
-              {/* YES Argument */}
-              {yesArguments[index] && (
-                <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(61, 138, 245, 0.05)', borderLeftColor: '#3D8AF5' }}>
-                  <h4 className="font-semibold text-lg text-black mb-3">{yesArguments[index].title}</h4>
-                  <div>
-                    {yesArguments[index].points.map((point, pointIndex) => (
-                      <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* NO Argument */}
-              {noArguments[index] && (
-                <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(194, 10, 32, 0.05)', borderLeftColor: '#C20A20' }}>
-                  <h4 className="font-semibold text-lg text-black mb-3">{noArguments[index].title}</h4>
-                  <div>
-                    {noArguments[index].points.map((point, pointIndex) => (
-                      <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Ad after every pair of YES/NO arguments */}
-            <div className="flex justify-center py-8">
-              <AdPlaceholder size="300x250" className="mx-auto" position={1 + index} />
-            </div>
-          </div>
-        ))}
       </div>
 
     </div>
