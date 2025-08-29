@@ -329,7 +329,7 @@ export default function DebatePage() {
         {/* 728x90 ad unit on desktop, 300x250 on mobile - below summary of key points */}
         <AdPlaceholder
           size="responsive-desktop-banner"
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-6 md:mb-12"
           position={5}
         />
 
@@ -343,7 +343,7 @@ export default function DebatePage() {
         {/* 300x250 ad unit above poll - stays the same on all devices */}
         <AdPlaceholder
           size="300x250"
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-6 md:mb-12"
           position={7}
         />
 
