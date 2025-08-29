@@ -118,6 +118,13 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
 
   return (
     <div className={cn("flex flex-col items-center", className)}>
+      {/* Scroll for more content text - mobile only */}
+      {!isDesktop && (
+        <div className="text-center mb-3">
+          <span className="text-xs text-gray-600 font-medium">SCROLL FOR MORE CONTENT</span>
+        </div>
+      )}
+      
       <div>
         {showFirstMedscapeAd ? (
         <a
