@@ -63,12 +63,12 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
       </div>
 
       {/* Desktop Layout */}
-      <div className="hidden md:grid md:grid-cols-2 gap-8 relative">
+      <div className="hidden md:grid md:grid-cols-2 gap-4 relative">
         {/* Vertical divider line */}
         <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2"></div>
         
         {/* YES Side Summary */}
-        <div className="pr-2 pl-16">
+        <div className="pr-2 pl-8">
           <div className="flex items-center mb-6">
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
               YES
@@ -88,7 +88,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
         </div>
 
         {/* NO Side Summary */}
-        <div className="pl-4">
+        <div className="pl-2 pr-8">
           <div className="flex items-center mb-6">
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
               NO
