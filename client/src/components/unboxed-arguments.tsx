@@ -63,7 +63,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
   return (
     <div className="space-y-8">
       {/* Key Arguments Title */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-6 md:mb-8">
         <h2 className="text-xl md:text-2xl font-bold text-gray-900">Key Arguments</h2>
       </div>
 
