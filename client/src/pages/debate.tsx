@@ -296,7 +296,7 @@ export default function DebatePage() {
     <div className="min-h-screen bg-white">
       <DebateHeader />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-8 md:py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-8 md:pt-4 md:pb-8">
         <DebateQuestion
           question={debateData.question}
           introduction={debateData.introduction}
