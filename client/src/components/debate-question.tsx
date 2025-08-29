@@ -96,8 +96,9 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
         <div className="text-left">
           <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontSize: '26px', fontFamily: 'EB Garamond, serif' }}>
             <span className="md:hidden">
-              Does Asymptomatic Aortic Stenosis<br />
-              Warrant Early Intervention?
+              Does Asymptomatic<br />
+              Aortic Stenosis Warrant<br />
+              Early Intervention?
             </span>
             <span className="hidden md:inline" style={{ fontSize: '40px', fontFamily: 'EB Garamond, serif' }}>{question}</span>
           </h2>
