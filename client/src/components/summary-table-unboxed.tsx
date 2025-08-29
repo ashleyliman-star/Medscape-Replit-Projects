@@ -65,7 +65,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
       {/* Desktop Layout */}
       <div className="hidden md:flex relative max-w-6xl mx-auto">
         {/* YES Side Summary */}
-        <div className="flex-1" style={{ paddingRight: '20px' }}>
+        <div className="flex-1" style={{ paddingLeft: '60px', paddingRight: '20px' }}>
           <div className="flex items-center mb-6">
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
               YES
