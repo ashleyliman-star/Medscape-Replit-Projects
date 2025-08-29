@@ -176,7 +176,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
   };
 
   return (
-    <section className="rounded-xl shadow-lg p-8" style={{ background: 'linear-gradient(90deg, rgba(6, 74, 167, 0.1) 0%, rgba(6, 74, 167, 0.15) 50%, rgba(6, 74, 167, 0.1) 100%)' }}>
+    <section className="rounded-xl shadow-lg p-8" style={{ backgroundColor: '#D6E3F5' }}>
       <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center flex items-center justify-center">
         <BarChart3 className="mr-3 h-6 w-6 text-gray-600" />
         What's Your Opinion?
