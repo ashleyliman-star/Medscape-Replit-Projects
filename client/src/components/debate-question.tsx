@@ -98,7 +98,7 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
         <img 
           src={medscapeLogo} 
           alt="Medscape" 
-          className="h-8 md:h-12"
+          className="h-12 md:h-16"
         />
       </div>
       
