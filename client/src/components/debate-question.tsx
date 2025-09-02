@@ -93,14 +93,7 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
   }, [introduction]);
   return (
     <section className="text-center mb-8 md:mt-8">
-      {/* Medscape Logo */}
-      <div className="flex justify-center mb-6">
-        <img 
-          src={medscapeLogo} 
-          alt="Medscape" 
-          className="h-12 md:h-16"
-        />
-      </div>
+
       
       <div className="max-w-4xl mx-auto mb-6">
         <div className="text-left">

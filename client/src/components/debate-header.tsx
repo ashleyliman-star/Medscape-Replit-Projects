@@ -1,4 +1,4 @@
-import medscapeLogo from "@assets/mscp-logo_1750724375360.avif";
+import medscapeLogo from "@assets/Group 2_1756837824991.png";
 
 export default function DebateHeader() {
   return (
@@ -9,7 +9,7 @@ export default function DebateHeader() {
             <img 
               src={medscapeLogo}
               alt="Medscape" 
-              className="h-6 md:h-8 hover:opacity-80 transition-opacity"
+              className="h-8 md:h-12 hover:opacity-80 transition-opacity"
             />
           </a>
         </div>
