@@ -64,7 +64,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
     <div className="space-y-8">
       {/* Key Arguments Title */}
       <div className="text-center mb-4 md:mb-8">
-        <h2 className="text-xl font-bold text-gray-900" style={{ fontSize: '28px' }}>Key Arguments</h2>
+        <h2 className="font-bold text-gray-900 text-xl md:text-3xl">Key Arguments</h2>
       </div>
 
       {/* Position Headers - Desktop */}
@@ -141,14 +141,14 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             <div className="mr-3 text-white text-sm font-bold px-3 py-2 rounded" style={{ backgroundColor: '#3D8AF5' }}>
               YES
             </div>
-            <h2 className="font-bold" style={{ color: '#3D8AF5', fontSize: '24px' }}>Early Intervention Is Best</h2>
+            <h2 className="font-bold md:text-2xl text-xl" style={{ color: '#3D8AF5' }}>Early Intervention Is Best</h2>
           </div>
 
           {/* All YES Arguments */}
           {yesArguments.map((argument, index) => (
             <div key={`yes-${index}`}>
               <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(61, 138, 245, 0.05)', borderLeftColor: '#3D8AF5' }}>
-                <h4 className="font-semibold text-black mb-3" style={{ fontSize: '22px' }}>{argument.title}</h4>
+                <h4 className="font-semibold text-black mb-3 text-lg md:text-xl">{argument.title}</h4>
                 <div>
                   {argument.points.map((point, pointIndex) => (
                     <p key={pointIndex} className="text-gray-700 leading-relaxed text-base md:text-xl">{point}</p>
@@ -171,14 +171,14 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
             <div className="mr-3 text-white text-sm font-bold px-3 py-2 rounded" style={{ backgroundColor: '#C20A20' }}>
               NO
             </div>
-            <h2 className="font-bold" style={{ color: '#C20A20', fontSize: '24px' }}>Clinical Surveillance Is More Appropriate</h2>
+            <h2 className="font-bold md:text-2xl text-xl" style={{ color: '#C20A20' }}>Clinical Surveillance Is More Appropriate</h2>
           </div>
 
           {/* All NO Arguments */}
           {noArguments.map((argument, index) => (
             <div key={`no-${index}`}>
               <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(194, 10, 32, 0.05)', borderLeftColor: '#C20A20' }}>
-                <h4 className="font-semibold text-black mb-3" style={{ fontSize: '22px' }}>{argument.title}</h4>
+                <h4 className="font-semibold text-black mb-3 text-lg md:text-xl">{argument.title}</h4>
                 <div>
                   {argument.points.map((point, pointIndex) => (
                     <p key={pointIndex} className="text-gray-700 leading-relaxed text-base md:text-xl">{point}</p>

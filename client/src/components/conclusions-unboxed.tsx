@@ -6,7 +6,7 @@ export default function ConclusionsUnboxed() {
   const [isReferencesOpen, setIsReferencesOpen] = useState(false);
   return (
     <section className="mb-12">
-      <h2 className="font-bold text-gray-900 mb-6 text-center" style={{ fontSize: '28px' }}>
+      <h2 className="font-bold text-gray-900 mb-6 text-center text-xl md:text-3xl">
         Conclusions
       </h2>
       <div className="max-w-4xl mx-auto space-y-4 text-gray-700 text-base md:text-xl">

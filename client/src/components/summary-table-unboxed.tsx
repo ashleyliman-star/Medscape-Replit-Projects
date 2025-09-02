@@ -15,7 +15,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
 
   return (
     <div className="mb-8 md:mb-12 md:mt-8">
-      <h2 className="font-bold text-gray-800 mb-6 md:mb-8 text-center" style={{ fontSize: '28px' }}>
+      <h2 className="font-bold text-gray-800 mb-6 md:mb-8 text-center text-xl md:text-3xl">
         Summary of Key Points
       </h2>
       
@@ -27,7 +27,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
               YES
             </div>
-            <h3 className="font-bold" style={{ color: '#3D8AF5', fontSize: '24px' }}>
+            <h3 className="font-bold md:text-2xl text-xl" style={{ color: '#3D8AF5' }}>
               Early Intervention Is Best
             </h3>
           </div>
@@ -47,7 +47,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
               NO
             </div>
-            <h3 className="font-bold" style={{ color: '#C20A20', fontSize: '24px' }}>
+            <h3 className="font-bold md:text-2xl text-xl" style={{ color: '#C20A20' }}>
               Clinical Surveillance Is More Appropriate
             </h3>
           </div>
@@ -70,7 +70,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             <div className="mr-3 text-white text-sm font-bold px-3 py-2 rounded" style={{ backgroundColor: '#3D8AF5' }}>
               YES
             </div>
-            <h3 className="font-bold" style={{ color: '#3D8AF5', fontSize: '24px' }}>
+            <h3 className="font-bold md:text-2xl text-xl" style={{ color: '#3D8AF5' }}>
               Early Intervention Is Best
             </h3>
           </div>
@@ -93,7 +93,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             <div className="mr-3 text-white text-sm font-bold px-3 py-2 rounded" style={{ backgroundColor: '#C20A20' }}>
               NO
             </div>
-            <h3 className="font-bold" style={{ color: '#C20A20', fontSize: '24px' }}>
+            <h3 className="font-bold md:text-2xl text-xl" style={{ color: '#C20A20' }}>
               Clinical Surveillance Is More Appropriate
             </h3>
           </div>
