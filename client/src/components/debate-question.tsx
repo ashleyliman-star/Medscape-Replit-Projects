@@ -104,8 +104,8 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
       
       <div className="max-w-4xl mx-auto mb-6">
         <div className="text-left">
-          <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontSize: '26px', fontFamily: 'EB Garamond, serif' }}>
-            <span className="md:hidden">
+          <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontFamily: 'EB Garamond, serif' }}>
+            <span className="md:hidden" style={{ fontSize: '28px' }}>
               Does Asymptomatic<br />
               Aortic Stenosis Warrant<br />
               Early Intervention?
@@ -115,7 +115,7 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
           
           {/* Byline and publication date - desktop */}
           <div className="hidden md:block mb-6 text-center">
-            <p className="text-sm text-gray-500 flex items-center justify-center">
+            <p className="text-gray-500 flex items-center justify-center" style={{ fontSize: '16px' }}>
               <span className="font-medium">Tricia Ward</span>
               <span className="mx-2">•</span>
               <span>September 2, 2025</span>
@@ -136,7 +136,7 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
           
           {/* Byline and publication date - mobile */}
           <div className="md:hidden mb-4 text-center">
-            <p className="text-sm text-gray-500 flex items-center justify-center">
+            <p className="text-gray-500 flex items-center justify-center" style={{ fontSize: '16px' }}>
               <span className="font-medium">Tricia Ward</span>
               <span className="mx-2">•</span>
               <span>September 2, 2025</span>
@@ -156,12 +156,12 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
           </div>
           
           {/* Desktop - always show full text */}
-          <p className="hidden md:block text-base md:text-lg text-gray-600 leading-relaxed text-left">
+          <p className="hidden md:block text-gray-600 leading-relaxed text-left" style={{ fontSize: '20px' }}>
             {introduction}
           </p>
           
           {/* Mobile - truncated with read more */}
-          <div ref={textRef} className="md:hidden text-base text-gray-600 leading-relaxed text-left">
+          <div ref={textRef} className="md:hidden text-gray-600 leading-relaxed text-left" style={{ fontSize: '16px' }}>
             {!isExpanded && needsTruncation ? (
               <p>
                 {truncatedText}

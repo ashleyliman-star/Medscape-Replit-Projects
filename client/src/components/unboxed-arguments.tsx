@@ -64,25 +64,25 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
     <div className="space-y-8">
       {/* Key Arguments Title */}
       <div className="text-center mb-4 md:mb-8">
-        <h2 className="text-xl md:text-2xl font-bold text-gray-900">Key Arguments</h2>
+        <h2 className="text-xl font-bold text-gray-900" style={{ fontSize: '28px' }}>Key Arguments</h2>
       </div>
 
       {/* Position Headers - Desktop */}
       <div className="hidden md:grid md:grid-cols-2 gap-20 mb-8">
         {/* YES Position */}
         <div className="flex items-center">
-          <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
+          <div className="mr-3 text-white text-sm font-bold px-3 py-2 rounded" style={{ backgroundColor: '#3D8AF5' }}>
             YES
           </div>
-          <h2 className="font-bold text-xl" style={{ color: '#3D8AF5' }}>Early Intervention Is Best</h2>
+          <h2 className="font-bold" style={{ color: '#3D8AF5', fontSize: '24px' }}>Early Intervention Is Best</h2>
         </div>
 
         {/* NO Position */}
         <div className="flex items-center">
-          <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
+          <div className="mr-3 text-white text-sm font-bold px-3 py-2 rounded" style={{ backgroundColor: '#C20A20' }}>
             NO
           </div>
-          <h2 className="font-bold text-xl" style={{ color: '#C20A20' }}>Clinical Surveillance Is More Appropriate</h2>
+          <h2 className="font-bold" style={{ color: '#C20A20', fontSize: '24px' }}>Clinical Surveillance Is More Appropriate</h2>
         </div>
       </div>
 
@@ -98,10 +98,10 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               <div>
                 {yesArguments[index] && (
                   <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(61, 138, 245, 0.05)', borderLeftColor: '#3D8AF5' }}>
-                    <h4 className="font-semibold text-lg text-black mb-3">{yesArguments[index].title}</h4>
+                    <h4 className="font-semibold text-black mb-3" style={{ fontSize: '22px' }}>{yesArguments[index].title}</h4>
                     <div>
                       {yesArguments[index].points.map((point, pointIndex) => (
-                        <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
+                        <p key={pointIndex} className="text-gray-700 leading-relaxed" style={{ fontSize: '20px' }}>{point}</p>
                       ))}
                     </div>
                   </div>
@@ -112,10 +112,10 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               <div>
                 {noArguments[index] && (
                   <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(194, 10, 32, 0.05)', borderLeftColor: '#C20A20' }}>
-                    <h4 className="font-semibold text-lg text-black mb-3">{noArguments[index].title}</h4>
+                    <h4 className="font-semibold text-black mb-3" style={{ fontSize: '22px' }}>{noArguments[index].title}</h4>
                     <div>
                       {noArguments[index].points.map((point, pointIndex) => (
-                        <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
+                        <p key={pointIndex} className="text-gray-700 leading-relaxed" style={{ fontSize: '20px' }}>{point}</p>
                       ))}
                     </div>
                   </div>
@@ -138,20 +138,20 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         {/* YES Position Header and Arguments */}
         <div className="mb-8">
           <div className="flex items-center mb-6">
-            <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
+            <div className="mr-3 text-white text-sm font-bold px-3 py-2 rounded" style={{ backgroundColor: '#3D8AF5' }}>
               YES
             </div>
-            <h2 className="font-bold text-xl" style={{ color: '#3D8AF5' }}>Early Intervention Is Best</h2>
+            <h2 className="font-bold" style={{ color: '#3D8AF5', fontSize: '24px' }}>Early Intervention Is Best</h2>
           </div>
 
           {/* All YES Arguments */}
           {yesArguments.map((argument, index) => (
             <div key={`yes-${index}`}>
               <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(61, 138, 245, 0.05)', borderLeftColor: '#3D8AF5' }}>
-                <h4 className="font-semibold text-lg text-black mb-3">{argument.title}</h4>
+                <h4 className="font-semibold text-black mb-3" style={{ fontSize: '22px' }}>{argument.title}</h4>
                 <div>
                   {argument.points.map((point, pointIndex) => (
-                    <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
+                    <p key={pointIndex} className="text-gray-700 leading-relaxed" style={{ fontSize: '20px' }}>{point}</p>
                   ))}
                 </div>
               </div>
@@ -168,20 +168,20 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
         {/* NO Position Header and Arguments */}
         <div className="mb-8">
           <div className="flex items-center mb-6">
-            <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
+            <div className="mr-3 text-white text-sm font-bold px-3 py-2 rounded" style={{ backgroundColor: '#C20A20' }}>
               NO
             </div>
-            <h2 className="font-bold text-xl" style={{ color: '#C20A20' }}>Clinical Surveillance Is More Appropriate</h2>
+            <h2 className="font-bold" style={{ color: '#C20A20', fontSize: '24px' }}>Clinical Surveillance Is More Appropriate</h2>
           </div>
 
           {/* All NO Arguments */}
           {noArguments.map((argument, index) => (
             <div key={`no-${index}`}>
               <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(194, 10, 32, 0.05)', borderLeftColor: '#C20A20' }}>
-                <h4 className="font-semibold text-lg text-black mb-3">{argument.title}</h4>
+                <h4 className="font-semibold text-black mb-3" style={{ fontSize: '22px' }}>{argument.title}</h4>
                 <div>
                   {argument.points.map((point, pointIndex) => (
-                    <p key={pointIndex} className="text-base text-gray-700 leading-relaxed">{point}</p>
+                    <p key={pointIndex} className="text-gray-700 leading-relaxed" style={{ fontSize: '20px' }}>{point}</p>
                   ))}
                 </div>
               </div>

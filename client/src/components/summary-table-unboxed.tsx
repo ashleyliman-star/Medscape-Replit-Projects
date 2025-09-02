@@ -15,7 +15,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
 
   return (
     <div className="mb-8 md:mb-12 md:mt-8">
-      <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-6 md:mb-8 text-center">
+      <h2 className="font-bold text-gray-800 mb-6 md:mb-8 text-center" style={{ fontSize: '28px' }}>
         Summary of Key Points
       </h2>
       
@@ -27,7 +27,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
               YES
             </div>
-            <h3 className="text-lg font-bold" style={{ color: '#3D8AF5' }}>
+            <h3 className="font-bold" style={{ color: '#3D8AF5', fontSize: '24px' }}>
               Early Intervention Is Best
             </h3>
           </div>
@@ -35,7 +35,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             {yesPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0 bg-black"></span>
-                <span className="text-gray-700 leading-relaxed flex-1 text-base">{point}</span>
+                <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '20px' }}>{point}</span>
               </li>
             ))}
           </ul>
@@ -47,7 +47,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
               NO
             </div>
-            <h3 className="text-lg font-bold" style={{ color: '#C20A20' }}>
+            <h3 className="font-bold" style={{ color: '#C20A20', fontSize: '24px' }}>
               Clinical Surveillance Is More Appropriate
             </h3>
           </div>
@@ -55,7 +55,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             {noPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0 bg-black"></span>
-                <span className="text-gray-700 leading-relaxed flex-1 text-base">{point}</span>
+                <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '20px' }}>{point}</span>
               </li>
             ))}
           </ul>
@@ -67,10 +67,10 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
         {/* YES Side Summary */}
         <div className="flex-1" style={{ paddingLeft: '60px', paddingRight: '20px' }}>
           <div className="flex items-center mb-6">
-            <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#3D8AF5' }}>
+            <div className="mr-3 text-white text-sm font-bold px-3 py-2 rounded" style={{ backgroundColor: '#3D8AF5' }}>
               YES
             </div>
-            <h3 className="text-xl font-bold" style={{ color: '#3D8AF5' }}>
+            <h3 className="font-bold" style={{ color: '#3D8AF5', fontSize: '24px' }}>
               Early Intervention Is Best
             </h3>
           </div>
@@ -78,7 +78,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             {yesPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0 bg-black"></span>
-                <span className="text-gray-700 leading-relaxed flex-1 text-base">{point}</span>
+                <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '20px' }}>{point}</span>
               </li>
             ))}
           </ul>
@@ -90,10 +90,10 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
         {/* NO Side Summary */}
         <div className="flex-1" style={{ paddingLeft: '20px' }}>
           <div className="flex items-center mb-6">
-            <div className="mr-3 text-white text-xs font-bold px-2 py-1 rounded" style={{ backgroundColor: '#C20A20' }}>
+            <div className="mr-3 text-white text-sm font-bold px-3 py-2 rounded" style={{ backgroundColor: '#C20A20' }}>
               NO
             </div>
-            <h3 className="text-xl font-bold" style={{ color: '#C20A20' }}>
+            <h3 className="font-bold" style={{ color: '#C20A20', fontSize: '24px' }}>
               Clinical Surveillance Is More Appropriate
             </h3>
           </div>
@@ -101,7 +101,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             {noPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0 bg-black"></span>
-                <span className="text-gray-700 leading-relaxed flex-1 text-base">{point}</span>
+                <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '20px' }}>{point}</span>
               </li>
             ))}
           </ul>

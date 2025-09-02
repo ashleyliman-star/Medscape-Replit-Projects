@@ -183,7 +183,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
       </h2>
       
       <div className="max-w-2xl mx-auto">
-        <h3 className="text-lg font-semibold text-gray-800 mb-6 text-center">
+        <h3 className="font-semibold text-gray-800 mb-6 text-center" style={{ fontSize: '22px' }}>
           Should we intervene early in asymptomatic aortic stenosis?
         </h3>
         
@@ -197,7 +197,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
                   className="poll-option flex items-center space-x-3 bg-white rounded-lg p-4 cursor-pointer hover:shadow-md transition-all"
                 >
                   <RadioGroupItem value={option.value} id={option.value} />
-                  <span className="text-gray-800">{option.label}</span>
+                  <span className="text-gray-800 text-base md:text-xl">{option.label}</span>
                 </Label>
               ))}
             </RadioGroup>
@@ -206,7 +206,7 @@ export default function PollSection({ debateId }: PollSectionProps) {
               <Button 
                 onClick={handleSubmit}
                 disabled={submitVoteMutation.isPending}
-                className="text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all text-base md:text-xl"
                 style={{ background: 'linear-gradient(90deg, #064AA7 0%, #0862C7 100%)' }}
               >
                 {submitVoteMutation.isPending ? "Submitting..." : "Submit Vote"}
