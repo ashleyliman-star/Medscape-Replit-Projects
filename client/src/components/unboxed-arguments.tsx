@@ -64,7 +64,10 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
     <div className="space-y-8">
       {/* Key Arguments Title */}
       <div className="text-center mb-4 md:mb-8">
-        <h2 className="font-bold text-gray-900" style={{ fontSize: '22px' }}><span className="md:text-3xl">Key Arguments</span></h2>
+        <h2 className="font-bold text-gray-900" style={{ fontSize: '22px' }}>
+          <span className="hidden md:inline text-gray-900 font-bold" style={{ fontSize: '28px' }}>Key Arguments</span>
+          <span className="md:hidden">Key Arguments</span>
+        </h2>
       </div>
 
       {/* Position Headers - Desktop */}
