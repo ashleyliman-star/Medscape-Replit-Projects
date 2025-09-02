@@ -15,8 +15,8 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
 
   return (
     <div className="mb-8 md:mb-12 md:mt-8">
-      <h2 className="font-bold text-gray-800 mb-6 md:mb-8 text-center text-xl md:text-3xl">
-        Summary of Key Points
+      <h2 className="font-bold text-gray-800 mb-6 md:mb-8 text-center" style={{ fontSize: '22px' }}>
+        <span className="md:text-3xl">Summary of Key Points</span>
       </h2>
       
       {/* Mobile Layout */}
