@@ -100,7 +100,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               {/* YES Arguments */}
               <div>
                 {yesArguments[index] && (
-                  <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(61, 138, 245, 0.05)', borderLeftColor: '#3D8AF5' }}>
+                  <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(61, 138, 245, 0.1)', borderLeftColor: '#3D8AF5' }}>
                     <h4 className="font-semibold text-black mb-3" style={{ fontSize: '22px' }}>{yesArguments[index].title}</h4>
                     <div>
                       {yesArguments[index].points.map((point, pointIndex) => (
@@ -114,7 +114,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
               {/* NO Arguments */}
               <div>
                 {noArguments[index] && (
-                  <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(194, 10, 32, 0.05)', borderLeftColor: '#C20A20' }}>
+                  <div className="mb-6 p-4 border-l-4 relative" style={{ backgroundColor: 'rgba(194, 10, 32, 0.1)', borderLeftColor: '#C20A20' }}>
                     <h4 className="font-semibold text-black mb-3" style={{ fontSize: '22px' }}>{noArguments[index].title}</h4>
                     <div>
                       {noArguments[index].points.map((point, pointIndex) => (
