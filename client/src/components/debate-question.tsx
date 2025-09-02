@@ -3,6 +3,7 @@ import { MessageCircle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { trackEvent } from "@/lib/analytics";
 import type { Comment } from "@shared/schema";
+import medscapeLogo from "@assets/Group 2_1756837824991.png";
 
 interface DebateQuestionProps {
   question: string;
@@ -92,6 +93,15 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
   }, [introduction]);
   return (
     <section className="text-center mb-8 md:mt-8">
+      {/* Medscape Logo */}
+      <div className="flex justify-center mb-6">
+        <img 
+          src={medscapeLogo} 
+          alt="Medscape" 
+          className="h-8 md:h-12"
+        />
+      </div>
+      
       <div className="max-w-4xl mx-auto mb-6">
         <div className="text-left">
           <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontSize: '26px', fontFamily: 'EB Garamond, serif' }}>
