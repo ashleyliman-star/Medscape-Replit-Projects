@@ -230,6 +230,14 @@ export default function DebatePage() {
   const isPageScrollingRef = useRef(false);
 
   useEffect(() => {
+    // Remove previous scroll milestones from session storage
+    [0, 25, 50, 75, 98].forEach((milestone) => {
+      sessionStorage.removeItem(`scroll_milestone_${milestone}`);
+    });
+    // Track this for 0% scrolling depth on page load
+    console.log(`GA Event: page scroll, 0%`); // Debug log
+    track("scrlstry_0pct");
+
     const handlePageScroll = () => {
       const scrollTop =
         window.pageYOffset || document.documentElement.scrollTop;
@@ -262,10 +270,8 @@ export default function DebatePage() {
 
       milestones.forEach((milestone, index) => {
         const displayLabel = milestoneLabels[index];
-        if (
-          scrollPercentage >= milestone &&
-          !pageScrollDepthTrackedRef.current.has(milestone)
-        ) {
+        const key = `scroll_milestone_${milestone}`;
+        if (scrollPercentage >= milestone && !sessionStorage.getItem(key)) {
           // Track this milestone
           if (typeof window !== "undefined" && window.gtag) {
             window.gtag("event", "page scroll", {
@@ -277,7 +283,7 @@ export default function DebatePage() {
           }
 
           // Mark this milestone as tracked
-          pageScrollDepthTrackedRef.current.add(milestone);
+          sessionStorage.setItem(key, "true");
         }
       });
     };
