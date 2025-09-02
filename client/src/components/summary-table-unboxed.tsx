@@ -35,7 +35,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             {yesPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0 bg-black"></span>
-                <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '20px' }}>{point}</span>
+                <span className="text-gray-700 leading-relaxed flex-1 text-base md:text-xl">{point}</span>
               </li>
             ))}
           </ul>
@@ -55,7 +55,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             {noPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0 bg-black"></span>
-                <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '20px' }}>{point}</span>
+                <span className="text-gray-700 leading-relaxed flex-1 text-base md:text-xl">{point}</span>
               </li>
             ))}
           </ul>
@@ -78,7 +78,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             {yesPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0 bg-black"></span>
-                <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '20px' }}>{point}</span>
+                <span className="text-gray-700 leading-relaxed flex-1 text-base md:text-xl">{point}</span>
               </li>
             ))}
           </ul>
@@ -101,7 +101,7 @@ export default function SummaryTableUnboxed({ yesArguments, noArguments }: Summa
             {noPoints.map((point, index) => (
               <li key={index} className="flex items-start">
                 <span className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0 bg-black"></span>
-                <span className="text-gray-700 leading-relaxed flex-1" style={{ fontSize: '20px' }}>{point}</span>
+                <span className="text-gray-700 leading-relaxed flex-1 text-base md:text-xl">{point}</span>
               </li>
             ))}
           </ul>

@@ -151,7 +151,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 <h4 className="font-semibold text-black mb-3" style={{ fontSize: '22px' }}>{argument.title}</h4>
                 <div>
                   {argument.points.map((point, pointIndex) => (
-                    <p key={pointIndex} className="text-gray-700 leading-relaxed" style={{ fontSize: '20px' }}>{point}</p>
+                    <p key={pointIndex} className="text-gray-700 leading-relaxed text-base md:text-xl">{point}</p>
                   ))}
                 </div>
               </div>
@@ -181,7 +181,7 @@ export default function UnboxedArguments({ yesArguments, noArguments, yesPhysici
                 <h4 className="font-semibold text-black mb-3" style={{ fontSize: '22px' }}>{argument.title}</h4>
                 <div>
                   {argument.points.map((point, pointIndex) => (
-                    <p key={pointIndex} className="text-gray-700 leading-relaxed" style={{ fontSize: '20px' }}>{point}</p>
+                    <p key={pointIndex} className="text-gray-700 leading-relaxed text-base md:text-xl">{point}</p>
                   ))}
                 </div>
               </div>
