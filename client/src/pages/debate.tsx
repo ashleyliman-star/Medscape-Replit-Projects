@@ -52,7 +52,7 @@ const debateData = {
       "Routine breast cancer surveillance saves lives through early detection. The benefits of identifying cancer in its earliest stages far outweigh the risks and challenges of screening programs.",
     arguments: [
       {
-        title: "Data from randomized controlled trials (RCTs) support early intervention",
+        title: "Data from RCTs support early intervention",
         points: [
           "A meta-analysis of the 4 RCTs comparing SAVR or TAVR with clinical surveillance found that early intervention was associated with a significantly lower risk of stroke, hospitalization for heart failure, and unplanned cardiovascular hospitalizations.",
         ],
