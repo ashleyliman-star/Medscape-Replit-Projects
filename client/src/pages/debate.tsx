@@ -303,16 +303,30 @@ export default function DebatePage() {
       <DebateHeader />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-8 md:pt-4 md:pb-8">
-        <DebateQuestion
-          question={debateData.question}
-          introduction={debateData.introduction}
-          onCommentClick={handleCommentClick}
-        />
+        {/* Introduction text section */}
+        <section className="text-center mb-4 md:mt-8">
+          <div className="max-w-4xl mx-auto mb-6">
+            <div className="text-left">
+              {/* Introduction text for both desktop and mobile */}
+              <p className="text-gray-600 leading-relaxed text-left md:text-xl text-base mb-8">
+                {debateData.introduction}
+              </p>
+            </div>
+          </div>
+        </section>
 
+        {/* 728x90 ad unit on desktop - positioned after intro, before headline */}
         <AdPlaceholder
           size="728x90"
           className="hidden md:flex justify-center mb-8"
           position={1}
+        />
+
+        {/* Headline and byline section */}
+        <DebateQuestion
+          question={debateData.question}
+          introduction={""}
+          onCommentClick={handleCommentClick}
         />
 
         {/* C1 Version: Unboxed arguments with YES/NO capsules */}

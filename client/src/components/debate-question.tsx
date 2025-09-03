@@ -70,10 +70,12 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
             </p>
           </div>
           
-          {/* Introduction text for both desktop and mobile */}
-          <p className="text-gray-600 leading-relaxed text-left md:text-xl text-base">
-            {introduction}
-          </p>
+          {/* Introduction text for both desktop and mobile - only show if introduction exists */}
+          {introduction && (
+            <p className="text-gray-600 leading-relaxed text-left md:text-xl text-base">
+              {introduction}
+            </p>
+          )}
         </div>
       </div>
     </section>
