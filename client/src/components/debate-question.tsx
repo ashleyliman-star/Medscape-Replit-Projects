@@ -20,7 +20,7 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
       <div className="max-w-4xl mx-auto mb-6">
         <div className="text-left">
           <h2 className="font-bold text-gray-900 mb-4 text-center" style={{ fontFamily: 'EB Garamond, serif' }}>
-            <span className="md:hidden" style={{ fontSize: '28px', lineHeight: '1.1' }}>
+            <span className="md:hidden" style={{ fontSize: '30px', lineHeight: '1.1' }}>
               Debate: Does Asymptomatic<br />
               Aortic Stenosis Warrant<br />
               Early Intervention?
