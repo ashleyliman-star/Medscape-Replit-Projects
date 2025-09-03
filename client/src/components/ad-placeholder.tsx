@@ -63,29 +63,29 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
     
     // Navigate to specific URLs for Medscape alcohol ads
     if (size === '728x90' && position === 1) {
-      window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=dir_mscp_020925_icd_cardiodebate_position1ad', '_blank');
     } else if (size === 'responsive-desktop-banner' && position === 2) {
-      window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=dir_mscp_020925_icd_cardiodebate_position2ad', '_blank');
     } else if (size === 'responsive-desktop-banner' && position === 3) {
-      window.open('https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=dir_mscp_020925_icd_cardiodebate_position3ad', '_blank');
     } else if (size === 'responsive-desktop-banner' && position === 5 && isDesktop) {
-      window.open('https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=house-3_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=dir_mscp_020925_icd_cardiodebate_position5ad', '_blank');
     } else if (size === '300x250' && position === 7 && isDesktop) {
-      window.open('https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=dir_mscp_020925_icd_cardiodebate_position7ad', '_blank');
     } else if (size === '300x250' && position === 1 && !isDesktop) {
-      window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=dir_mscp_020925_icd_cardiodebate_position1ad', '_blank');
     } else if (size === '300x250' && position === 2 && !isDesktop) {
-      window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=dir_mscp_020925_icd_cardiodebate_position2ad', '_blank');
     } else if (size === '300x250' && position === 3 && !isDesktop) {
-      window.open('https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=dir_mscp_020925_icd_cardiodebate_position3ad', '_blank');
     } else if (size === '300x250' && position === 4 && !isDesktop) {
-      window.open('https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=house-3_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=dir_mscp_020925_icd_cardiodebate_position4ad', '_blank');
     } else if (size === '300x250' && position === 5 && !isDesktop) {
-      window.open('https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=dir_mscp_020925_icd_cardiodebate_position5ad', '_blank');
     } else if (size === 'responsive-desktop-banner' && position === 5 && !isDesktop) {
-      window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=dir_mscp_020925_icd_cardiodebate_position6ad', '_blank');
     } else if (size === '300x250' && position === 7 && !isDesktop) {
-      window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_ICD_cancerdebate', '_blank');
+      window.open('https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=dir_mscp_020925_icd_cardiodebate_position7ad', '_blank');
     }
   };
 
@@ -128,7 +128,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
       <div>
         {showFirstMedscapeAd ? (
         <a
-          href="https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=dir_mscp_020925_icd_cardiodebate_position1ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -144,7 +144,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showSecondMedscapeAd ? (
         <a
-          href="https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=dir_mscp_020925_icd_cardiodebate_position2ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -160,7 +160,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showThirdMedscapeAd ? (
         <a
-          href="https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=dir_mscp_020925_icd_cardiodebate_position3ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -176,7 +176,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showFourthMedscapeAd ? (
         <a
-          href="https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=house-3_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=dir_mscp_020925_icd_cardiodebate_position4ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -192,7 +192,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showFifthMedscapeAd ? (
         <a
-          href="https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=dir_mscp_020925_icd_cardiodebate_position5ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -208,7 +208,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showFirstMobile300x250Ad ? (
         <a
-          href="https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=dir_mscp_020925_icd_cardiodebate_position1ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -224,7 +224,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showSecondMobile300x250Ad ? (
         <a
-          href="https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=dir_mscp_020925_icd_cardiodebate_position2ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -240,7 +240,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showThirdMobile300x250Ad ? (
         <a
-          href="https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=house-4_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/if-youre-only-watching-cancer-youre-missing-real-harm-2025a1000cma?ecd=dir_mscp_020925_icd_cardiodebate_position3ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -256,7 +256,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showFourthMobile300x250Ad ? (
         <a
-          href="https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=house-3_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/two-diagnoses-one-patient-how-treat-alcohol-use-and-mental-2025a1000czn?ecd=dir_mscp_020925_icd_cardiodebate_position4ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -272,7 +272,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showFifthMobile300x250Ad ? (
         <a
-          href="https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=house-5_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/danger-zone-no-one-screens-uncovering-unhealthy-drinking-2025a1000cm6?ecd=dir_mscp_020925_icd_cardiodebate_position5ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -288,7 +288,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showSixthMobile300x250Ad ? (
         <a
-          href="https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=house-1_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/cancer-risk-hiding-your-patients-glass-rethinking-alcohol-2025a1000c9d?ecd=dir_mscp_020925_icd_cardiodebate_position6ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
@@ -304,7 +304,7 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
         </a>
       ) : showSeventhMobile300x250Ad ? (
         <a
-          href="https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=house-2_ICD_cancerdebate"
+          href="https://www.medscape.com/viewarticle/memory-loss-motivation-use-brain-health-start-alcohol-2025a1000cby?ecd=dir_mscp_020925_icd_cardiodebate_position7ad"
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleAdClick}
