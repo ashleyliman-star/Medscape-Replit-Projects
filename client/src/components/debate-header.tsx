@@ -1,4 +1,4 @@
-import medscapeLogo from "@assets/Group 2_1756837824991.png";
+import medscapeLogo from "@assets/Group 6_1756922957897.png";
 
 export default function DebateHeader() {
   return (
