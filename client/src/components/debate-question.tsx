@@ -2,6 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import type { Comment } from "@shared/schema";
 import medscapeLogo from "@assets/Group 2_1756837824991.png";
+import AdPlaceholder from "@/components/ad-placeholder";
 
 interface DebateQuestionProps {
   question: string;
@@ -70,12 +71,17 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
             </p>
           </div>
           
-          {/* Introduction text for both desktop and mobile - only show if introduction exists */}
-          {introduction && (
-            <p className="text-gray-600 leading-relaxed text-left md:text-xl text-base">
-              {introduction}
-            </p>
-          )}
+          {/* Introduction text for both desktop and mobile */}
+          <p className="text-gray-600 leading-relaxed text-left md:text-xl text-base mb-6">
+            {introduction}
+          </p>
+
+          {/* 728x90 ad unit on desktop - positioned after intro text */}
+          <AdPlaceholder
+            size="728x90"
+            className="hidden md:flex justify-center mb-8"
+            position={1}
+          />
         </div>
       </div>
     </section>
