@@ -305,7 +305,7 @@ export default function DebatePage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-8 md:pt-4 md:pb-8">
         <AdPlaceholder
           size="728x90"
-          className="hidden md:flex justify-center mb-4"
+          className="hidden md:flex justify-center mb-2"
           position={1}
         />
 
