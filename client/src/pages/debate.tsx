@@ -22,7 +22,7 @@ import ConclusionsUnboxed from "@/components/conclusions-unboxed";
 import PrivacyPreferenceCenter from "@/components/privacy-preference-center";
 
 // Declare gtag function for TypeScript
-// Start - Declare this block for enable scroll tracking
+// Start - Declare this block for enable tracking
 declare global {
   interface Window {
     gtag: (...args: any[]) => void;
@@ -32,7 +32,7 @@ declare global {
 const track = (moduleName) => {
   window?.globalMetrics?.sendEvent?.({ type: "pagelink", moduleName });
 };
-// End - Declare this block for enable scroll tracking
+// End - Declare this block for enable tracking
 
 const debateData = {
   question: "Debate: Does Asymptomatic Aortic Stenosis Warrant Early Intervention?",
