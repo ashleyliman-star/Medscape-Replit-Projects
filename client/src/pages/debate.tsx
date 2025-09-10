@@ -328,6 +328,15 @@ export default function DebatePage() {
 
         <MiddleGroundUnboxed />
 
+        {/* 300x250 ad unit above poll - stays the same on all devices */}
+        <AdPlaceholder
+          size="300x250"
+          className="flex justify-center mb-6 md:mb-12 mt-16"
+          position={7}
+        />
+
+        <PollSection debateId="breast-cancer-surveillance" />
+
         <div className="mt-16 mb-12">
           <ConclusionsUnboxed />
         </div>
@@ -346,14 +355,6 @@ export default function DebatePage() {
           />
         </div>
 
-        {/* 300x250 ad unit above poll - stays the same on all devices */}
-        <AdPlaceholder
-          size="300x250"
-          className="flex justify-center mb-6 md:mb-12"
-          position={7}
-        />
-
-        <PollSection debateId="breast-cancer-surveillance" />
 
         {/* ARCHIVED: What to Read Next section for version D
         {version === 'D' && (
