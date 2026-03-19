@@ -1,0 +1,11 @@
+node_modules
+dist
+.git
+.gitignore
+.local
+.cache
+.upm
+.agents
+.replit
+archived_designs
+*.md

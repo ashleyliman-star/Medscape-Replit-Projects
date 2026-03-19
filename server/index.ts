@@ -20,11 +20,6 @@ app.use((req, res, next) => {
   const targetPath = '/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention';
   const host = req.get('host') || '';
   
-  // Redirect from Replit app domain to Medscape domain
-  if (host.includes('medscape-debate.replit.app') && req.path === '/') {
-    return res.redirect(301, `https://exp.medscape.com${targetPath}`);
-  }
-  
   // Block root access on exp.medscape.com domain
   if (host.includes('exp.medscape.com') && req.path === '/') {
     return res.status(404).send('Page not found');
@@ -35,12 +30,12 @@ app.use((req, res, next) => {
     req.url = '/'; // Rewrite to root for the app
     next();
   }
-  // Allow access to necessary assets and API routes for the debate page
-  else if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/') || req.path.startsWith('/attached_assets/')) {
+  // Allow access to necessary assets, API routes, and health check
+  else if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/') || req.path.startsWith('/attached_assets/') || req.path === '/health') {
     next();
   }
-  // For development, allow root access 
-  else if (req.path === '/' && (req.get('host')?.includes('replit') || req.get('host')?.includes('localhost') || req.get('host')?.includes('127.0.0.1'))) {
+  // For development, allow root access
+  else if (req.path === '/' && app.get('env') === 'development') {
     next();
   }
   // Block all other paths - let them be handled by other services on exp.medscape.com
@@ -99,10 +94,7 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
+  const port = parseInt(process.env.PORT || '5000', 10);
   server.listen({
     port,
     host: "0.0.0.0",

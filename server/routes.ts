@@ -5,6 +5,10 @@ import { insertPollResponseSchema, insertCommentSchema } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  app.get("/health", (_req, res) => {
+    res.status(200).json({ status: "healthy" });
+  });
+
   // Submit poll response
   app.post("/api/poll", async (req, res) => {
     try {

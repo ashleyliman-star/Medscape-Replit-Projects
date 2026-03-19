@@ -76,20 +76,35 @@ This is a full-stack web application for presenting medical debates with expert 
 
 ## Deployment Strategy
 
+### Containerization
+- **Dockerfile**: Multi-stage build (node:18-alpine), port 5000, built-in HEALTHCHECK
+- **docker-compose.yml**: Service definition with DATABASE_URL env var
+- **.dockerignore**: Excludes node_modules, .git, etc.
+- **kubeconfig.json**: Kubernetes config with `appid: medscape-debates`, `containerport: "5000"`, `liveprobe: /health`
+- **.gitlab-ci.yml**: CI/CD pipeline configuration
+
 ### Build Process
 1. **Client Build**: Vite builds React app to `dist/public`
 2. **Server Build**: esbuild bundles Express server to `dist/index.js`
 3. **Database**: Drizzle migrations applied via `npm run db:push`
+4. **Docker**: `docker build` produces production image with `npm ci --omit=dev`
 
 ### Environment Configuration
 - **Development**: `npm run dev` - TSX with hot reload
 - **Production**: `npm run start` - Node.js with built assets
 - **Database**: PostgreSQL connection via `DATABASE_URL` environment variable
+- **Health Check**: `GET /health` returns `{"status":"healthy"}` (HTTP 200)
+
+### Third-Party Script Gating
+- Adobe DTM launch tag, medscapeads.js, Hotjar, PulsePoint pixel, and Meta pixel only load on production domains (`medscape.com`, `webmd.com`)
+- Dev environments use `window.__medscapeIsDev = true` flag to skip these scripts
+- Detection is domain-based (not hostname-based) to work across any dev environment
 
 ### Hosting Requirements
-- **Node.js 20+**: Server runtime
-- **PostgreSQL 16**: Database backend
+- **Node.js 18+**: Server runtime (Alpine-based Docker image)
+- **PostgreSQL 16**: Database backend (via DATABASE_URL)
 - **Static Assets**: Served via Express in production
+- **Port**: 5000 (configurable via PORT env var)
 
 ## Changelog
 

@@ -4,15 +4,16 @@
     <!--#NGINX_SSO_TARGET#-->
 <script>
     (function() {
-        var isDev = window.location.hostname.indexOf('replit') !== -1 || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '0.0.0.0';
-        if (!isDev) {
+        var host = window.location.hostname;
+        var isProd = host === 'medscape.com' || host.slice(-13) === '.medscape.com' || host === 'webmd.com' || host.slice(-10) === '.webmd.com';
+        if (isProd) {
             var s = document.createElement('script');
             s.id = 'launchtags';
             s.src = '//assets.adobedtm.com/2c8c1e17b98c/4dda5256e2e3/launch-635e7c7c4ccb.min.js';
             s.async = true;
             document.head.appendChild(s);
         }
-        window.__medscapeIsDev = isDev;
+        window.__medscapeIsDev = !isProd;
     })();
 </script>
 <!-- launchtags loaded conditionally above: //assets.adobedtm.com/2c8c1e17b98c/4dda5256e2e3/launch-635e7c7c4ccb.min.js -->
@@ -82,7 +83,7 @@
     </script>
     <!-- Ads Script Include-->
     <script>
-        if (!window.__medscapeIsDev) {
+        if (window.__medscapeIsDev === false) {
             var adsScript = document.createElement('script');
             adsScript.src = 'https://img.staging.medscapestatic.com/medscape-core/ads/js/dfp/medscapeads.js';
             document.head.appendChild(adsScript);
@@ -92,6 +93,7 @@
     
     <!-- Hotjar Tracking Code for Medscape Debates Cardio -->
     <script>
+        if (window.__medscapeIsDev === false) {
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
             h._hjSettings={hjid:196515,hjsv:6};
@@ -100,13 +102,21 @@
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        }
     </script>
     
     <!-- Pulse Point Pixel -->
-    <script type="text/javascript" src="https://tr.contextweb.com/bh/at?cv=510688&t=scr&us_privacy=${us_privacy}&gpp=${GPP_STRING_XXXXX}&gpp_sid=${GPP_SID}"></script>
+    <script>
+        if (window.__medscapeIsDev === false) {
+            var ppScript = document.createElement('script');
+            ppScript.src = 'https://tr.contextweb.com/bh/at?cv=510688&t=scr&us_privacy=${us_privacy}&gpp=${GPP_STRING_XXXXX}&gpp_sid=${GPP_SID}';
+            document.head.appendChild(ppScript);
+        }
+    </script>
     
     <!-- Meta Pixel Code -->
     <script>
+    if (window.__medscapeIsDev === false) {
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -117,14 +127,15 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '428750600651790');
     fbq('track', 'PageView');
+    }
     </script>
     <!-- End Meta Pixel Code -->
   </head>
   <body>
-    <!-- Meta Pixel Noscript Fallback -->
-    <noscript><img height="1" width="1" style="display:none"
+    <!-- Meta Pixel Noscript Fallback - production only, cannot be JS-gated -->
+    <!-- <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=428750600651790&ev=PageView&noscript=1"
-    /></noscript>
+    /></noscript> -->
     
      <!--- Ad Containers --->
         <div data-ad-unit="true" data-ad-pos="101" id="ads-pos-101" class="globalpromoadsunit AdUnit" page="" data-ad-text="Advertisement"></div>
@@ -133,7 +144,5 @@
     
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
   </body>
 </html>
