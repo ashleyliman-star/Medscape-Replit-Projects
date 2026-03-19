@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <!--#NGINX_SSO_TARGET#-->
+<style>vite-error-overlay { display: none !important; }</style>
 <script>
     (function() {
         var thirdPartyPatterns = ['adobedtm.com', 'medscapestatic.com', 'contextweb.com', 'launch-'];
@@ -15,21 +16,33 @@
         function isThirdPartyError(msg, src, stack) {
             if (isThirdParty(src) || isThirdParty(stack)) return true;
             if (msg === 'Script error.' || (msg && msg.indexOf('uncaught exception') !== -1)) return true;
-            if (stack && stack.indexOf('<anonymous>') !== -1 && isThirdParty(stack)) return true;
             if (!src && stack && isThirdParty(stack)) return true;
             var knownMsgs = ["reading 'tar'", "reading 'usp'", "reading 'gd'"];
             if (msg) { for (var i = 0; i < knownMsgs.length; i++) { if (msg.indexOf(knownMsgs[i]) !== -1) return true; } }
             return false;
         }
-        window.onerror = function(msg, src, line, col, err) {
+        var _onerror = function(msg, src, line, col, err) {
             var stack = err ? (err.stack || '') : '';
-            if (isThirdPartyError(msg, src, stack)) return true;
+            if (isThirdPartyError(String(msg || ''), String(src || ''), stack)) return true;
         };
+        Object.defineProperty(window, 'onerror', {
+            get: function() { return _onerror; },
+            set: function(fn) {
+                var orig = fn;
+                _onerror = function(msg, src, line, col, err) {
+                    var stack = err ? (err.stack || '') : '';
+                    if (isThirdPartyError(String(msg || ''), String(src || ''), stack)) return true;
+                    return orig ? orig(msg, src, line, col, err) : undefined;
+                };
+            },
+            configurable: true
+        });
         window.addEventListener('error', function(e) {
             var stack = e.error ? (e.error.stack || '') : '';
-            if (isThirdPartyError(e.message, e.filename, stack)) {
+            if (isThirdPartyError(e.message || '', e.filename || '', stack)) {
                 e.stopImmediatePropagation();
                 e.preventDefault();
+                return false;
             }
         }, true);
         window.addEventListener('unhandledrejection', function(e) {
@@ -37,12 +50,15 @@
             if (isThirdPartyError(r.message || '', '', r.stack || '')) {
                 e.stopImmediatePropagation();
                 e.preventDefault();
+                return false;
             }
         }, true);
         new MutationObserver(function(mutations) {
             mutations.forEach(function(m) {
                 m.addedNodes.forEach(function(node) {
-                    if (node.tagName === 'VITE-ERROR-OVERLAY') node.remove();
+                    if (node.tagName && node.tagName.toLowerCase() === 'vite-error-overlay') {
+                        node.remove();
+                    }
                 });
             });
         }).observe(document.documentElement, { childList: true, subtree: true });
