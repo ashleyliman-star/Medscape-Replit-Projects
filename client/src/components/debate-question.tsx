@@ -1,20 +1,11 @@
-import { MessageCircle } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
-import type { Comment } from "@shared/schema";
 import medscapeLogo from "@assets/Group 2_1756837824991.png";
 
 interface DebateQuestionProps {
   question: string;
   introduction: string;
-  onCommentClick?: () => void;
 }
 
-export default function DebateQuestion({ question, introduction, onCommentClick }: DebateQuestionProps) {
-  // Fetch comments to get count
-  const { data: comments = [] } = useQuery<Comment[]>({
-    queryKey: [`/api/comments/breast-cancer-surveillance`]
-  });
-
+export default function DebateQuestion({ question, introduction }: DebateQuestionProps) {
   return (
     <section className="text-center mb-8">
       <div className="max-w-4xl mx-auto mb-6">
@@ -34,18 +25,6 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
               <span className="font-medium">Tricia Ward</span>
               <span className="mx-2">•</span>
               <span>September 2, 2025</span>
-              {onCommentClick && (
-                <>
-                  <span className="mx-2">•</span>
-                  <button 
-                    onClick={onCommentClick}
-                    className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    <span>{comments.length}</span>
-                  </button>
-                </>
-              )}
             </p>
           </div>
           
@@ -55,18 +34,6 @@ export default function DebateQuestion({ question, introduction, onCommentClick 
               <span className="font-medium">Tricia Ward</span>
               <span className="mx-2">•</span>
               <span>September 2, 2025</span>
-              {onCommentClick && (
-                <>
-                  <span className="mx-2">•</span>
-                  <button 
-                    onClick={onCommentClick}
-                    className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors"
-                  >
-                    <MessageCircle className="h-4 w-4" />
-                    <span>{comments.length}</span>
-                  </button>
-                </>
-              )}
             </p>
           </div>
           

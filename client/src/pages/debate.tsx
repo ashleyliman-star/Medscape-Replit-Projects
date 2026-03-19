@@ -6,13 +6,10 @@ import googlePlayBadge from "@assets/Google_Play_Store_badge_EN.svg_175208032330
 import DebateQuestion from "@/components/debate-question";
 import DebateSide from "@/components/debate-side";
 import AdPlaceholder from "@/components/ad-placeholder";
-import PollSection from "@/components/poll-section";
 import MiddleGround from "@/components/middle-ground";
 import Conclusions from "@/components/conclusions";
 import SideBySideArguments from "@/components/side-by-side-arguments";
 import SummaryTable from "@/components/summary-table";
-import CommentSection from "@/components/comment-section";
-import CommentPanel from "@/components/comment-panel";
 import GroupedArguments from "@/components/grouped-arguments";
 import SplitLayout from "@/components/split-layout";
 import UnboxedArguments from "@/components/unboxed-arguments";
@@ -138,17 +135,8 @@ const debateData = {
 
 // Find principal export function to export the scroll tracking
 export default function DebatePage() {
-  const [isCommentPanelOpen, setIsCommentPanelOpen] = useState(false);
   const [isPrivacyCenterOpen, setIsPrivacyCenterOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState("policies");
-
-  const handleCommentClick = () => {
-    setIsCommentPanelOpen(true);
-  };
-
-  const handleCloseCommentPanel = () => {
-    setIsCommentPanelOpen(false);
-  };
 
   const menuItems = {
     policies: [
@@ -312,7 +300,7 @@ export default function DebatePage() {
         <DebateQuestion
           question={debateData.question}
           introduction={debateData.introduction}
-          onCommentClick={handleCommentClick}
+          
         />
 
         {/* C1 Version: Unboxed arguments with YES/NO capsules */}
@@ -328,11 +316,7 @@ export default function DebatePage() {
 
         <MiddleGroundUnboxed />
 
-        <div className="mt-16 mb-12">
-          <PollSection debateId="breast-cancer-surveillance" />
-        </div>
-
-        {/* 300x250 ad unit below poll - stays the same on all devices */}
+        {/* 300x250 ad unit - stays the same on all devices */}
         <AdPlaceholder
           size="300x250"
           className="flex justify-center mb-6 md:mb-12"
@@ -842,13 +826,6 @@ export default function DebatePage() {
           </div>
         </div>
       </footer>
-
-      {/* Comment Panel */}
-      <CommentPanel
-        isOpen={isCommentPanelOpen}
-        onClose={handleCloseCommentPanel}
-        debateId="breast-cancer-surveillance"
-      />
 
       {/* Privacy Preference Center */}
       <PrivacyPreferenceCenter

@@ -22,24 +22,13 @@ This is a full-stack web application for presenting medical debates with expert 
 
 ## Key Components
 
-### Database Layer
-- **Schema**: Defined in `shared/schema.ts` with Drizzle ORM
-- **Tables**: 
-  - `users` - User authentication data
-  - `poll_responses` - Debate poll submissions
-- **Validation**: Zod schemas for type-safe data validation
-- **Connection**: Neon Database serverless PostgreSQL
-
 ### API Layer
-- **Poll Endpoints**: 
-  - `POST /api/poll` - Submit poll responses
-  - `GET /api/poll/:debateId/stats` - Retrieve poll statistics
-- **Storage Interface**: Abstracted storage layer with in-memory fallback for development
+- **Health Check**: `GET /health` returns `{"status":"healthy"}`
+- No database dependencies — all content is static
 
 ### Frontend Components
 - **Debate Layout**: Multiple layout variants (A, B, D, E) for A/B testing
 - **Argument Display**: Accordion-style expandable arguments
-- **Poll System**: Interactive voting with real-time results
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 
 ### UI/UX Features
@@ -51,16 +40,11 @@ This is a full-stack web application for presenting medical debates with expert 
 ## Data Flow
 
 1. **Content Delivery**: Static debate content is embedded in React components
-2. **User Interaction**: Poll submissions trigger API calls to Express backend
-3. **Data Persistence**: Poll responses stored in PostgreSQL via Drizzle ORM
-4. **Real-time Updates**: Poll statistics fetched and displayed after voting
-5. **Analytics**: User interactions tracked via Google Analytics
+2. **Analytics**: User interactions tracked via Google Analytics and Adobe Analytics
 
 ## External Dependencies
 
 ### Core Dependencies
-- **@neondatabase/serverless**: Serverless PostgreSQL connection
-- **drizzle-orm**: Type-safe database operations
 - **@tanstack/react-query**: Server state management
 - **@radix-ui/***: Accessible UI primitives
 - **tailwindcss**: Utility-first CSS framework
@@ -68,7 +52,6 @@ This is a full-stack web application for presenting medical debates with expert 
 ### Development Tools
 - **tsx**: TypeScript execution for development
 - **esbuild**: Fast bundling for production server
-- **drizzle-kit**: Database migration and introspection tools
 
 ### Analytics Integration
 - **Google Analytics**: Requires `VITE_GA_MEASUREMENT_ID` environment variable
@@ -86,13 +69,11 @@ This is a full-stack web application for presenting medical debates with expert 
 ### Build Process
 1. **Client Build**: Vite builds React app to `dist/public`
 2. **Server Build**: esbuild bundles Express server to `dist/index.js`
-3. **Database**: Drizzle migrations applied via `npm run db:push`
-4. **Docker**: `docker build` produces production image with `npm ci --omit=dev`
+3. **Docker**: `docker build` produces production image with `npm ci --omit=dev`
 
 ### Environment Configuration
 - **Development**: `npm run dev` - TSX with hot reload
 - **Production**: `npm run start` - Node.js with built assets
-- **Database**: PostgreSQL connection via `DATABASE_URL` environment variable
 - **Health Check**: `GET /health` returns `{"status":"healthy"}` (HTTP 200)
 
 ### Third-Party Script Gating
@@ -102,8 +83,8 @@ This is a full-stack web application for presenting medical debates with expert 
 
 ### Hosting Requirements
 - **Node.js 18+**: Server runtime (Alpine-based Docker image)
-- **PostgreSQL 16**: Database backend (via DATABASE_URL)
 - **Static Assets**: Served via Express in production
+- **No database required**
 - **Port**: 5000 (configurable via PORT env var)
 
 ## Changelog
