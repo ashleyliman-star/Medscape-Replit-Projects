@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--#NGINX_SSO_TARGET#-->
+<script id="launchtags" src="//assets.adobedtm.com/2c8c1e17b98c/4dda5256e2e3/launch-635e7c7c4ccb.min.js" async></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -61,6 +63,13 @@
     <script id="alloytags" src="//img.lb.wbmdstatic.com/webmd_static_vue/file-explorer/webmd/global-metrics/global-metrics.min.js" defer onload="console.log('Adobe Analytics: Global metrics script loaded successfully')" onerror="console.error('Adobe Analytics: Failed to load global metrics script')"></script>
     <!-- Adobe Analytics End -->
     
+    <!-- Ads Pos Settings Object-->
+    <script>
+        window.adsPosSettings = {};
+    </script>
+    <!-- Ads Script Include-->
+    <script src="https://img.staging.medscapestatic.com/medscape-core/ads/js/dfp/medscapeads.js"></script>
+    
     <!-- Hotjar Tracking Code for Medscape Debates Cardio -->
     <script>
         (function(h,o,t,j,a,r){
@@ -96,6 +105,11 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=428750600651790&ev=PageView&noscript=1"
     /></noscript>
+    
+     <!--- Ad Containers --->
+        <div data-ad-unit="true" data-ad-pos="101" id="ads-pos-101" class="globalpromoadsunit AdUnit" page="" data-ad-text="Advertisement"></div>
+        <div data-ad-unit="true" data-ad-pos="122" id="ads-pos-122" class="globalpromoadsunit AdUnit" page="" data-ad-text="Advertisement"></div>
+        <div data-ad-unit="true" data-ad-pos="910" id="ads-pos-910" class="globalpromoadsunit AdUnit" page="" data-ad-text="Advertisement"></div>
     
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
