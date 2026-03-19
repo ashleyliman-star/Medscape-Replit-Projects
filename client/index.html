@@ -4,16 +4,18 @@
     <!--#NGINX_SSO_TARGET#-->
 <script>
     (function() {
-        var origDefine = customElements.define.bind(customElements);
-        customElements.define = function(name, cls, opts) {
-            if (name === 'vite-error-overlay') {
-                cls = class extends HTMLElement { constructor() { super(); } };
-            }
-            try { origDefine(name, cls, opts); } catch(e) {}
-        };
+        var isDev = window.location.hostname.indexOf('replit') !== -1 || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === '0.0.0.0';
+        if (!isDev) {
+            var s = document.createElement('script');
+            s.id = 'launchtags';
+            s.src = '//assets.adobedtm.com/2c8c1e17b98c/4dda5256e2e3/launch-635e7c7c4ccb.min.js';
+            s.async = true;
+            document.head.appendChild(s);
+        }
+        window.__medscapeIsDev = isDev;
     })();
 </script>
-<script id="launchtags" src="//assets.adobedtm.com/2c8c1e17b98c/4dda5256e2e3/launch-635e7c7c4ccb.min.js" async></script>
+<!-- launchtags loaded conditionally above: //assets.adobedtm.com/2c8c1e17b98c/4dda5256e2e3/launch-635e7c7c4ccb.min.js -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -79,7 +81,14 @@
         window.adsPosSettings = {};
     </script>
     <!-- Ads Script Include-->
-    <script src="https://img.staging.medscapestatic.com/medscape-core/ads/js/dfp/medscapeads.js"></script>
+    <script>
+        if (!window.__medscapeIsDev) {
+            var adsScript = document.createElement('script');
+            adsScript.src = 'https://img.staging.medscapestatic.com/medscape-core/ads/js/dfp/medscapeads.js';
+            document.head.appendChild(adsScript);
+        }
+    </script>
+    <!-- medscapeads.js loaded conditionally above -->
     
     <!-- Hotjar Tracking Code for Medscape Debates Cardio -->
     <script>
