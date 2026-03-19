@@ -2,6 +2,36 @@
 <html lang="en">
   <head>
     <!--#NGINX_SSO_TARGET#-->
+<script>
+    (function() {
+        var thirdPartyDomains = ['adobedtm.com', 'medscapestatic.com', 'contextweb.com'];
+        function isThirdPartyError(filename, stack, message) {
+            var src = (filename || '') + (stack || '') + (message || '');
+            for (var i = 0; i < thirdPartyDomains.length; i++) {
+                if (src.indexOf(thirdPartyDomains[i]) !== -1) return true;
+            }
+            if (!filename && stack && stack.indexOf('launch-') !== -1) return true;
+            if (message === 'Script error.' || message === 'An uncaught exception occured but the error was not an error object.') return true;
+            return false;
+        }
+        window.addEventListener('error', function(e) {
+            var stack = e.error ? (e.error.stack || '') : '';
+            if (isThirdPartyError(e.filename, stack, e.message)) {
+                e.stopImmediatePropagation();
+                e.preventDefault();
+                return true;
+            }
+        }, true);
+        window.addEventListener('unhandledrejection', function(e) {
+            var reason = e.reason || {};
+            if (isThirdPartyError('', reason.stack || '', reason.message || '')) {
+                e.stopImmediatePropagation();
+                e.preventDefault();
+                return true;
+            }
+        }, true);
+    })();
+</script>
 <script id="launchtags" src="//assets.adobedtm.com/2c8c1e17b98c/4dda5256e2e3/launch-635e7c7c4ccb.min.js" async></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
