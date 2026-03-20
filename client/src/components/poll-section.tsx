@@ -49,6 +49,7 @@ export default function PollSection({ questionnaireId, formId, siteId = "2001" }
   const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasVoted, setHasVoted] = useState(false);
+  const [viewingOnly, setViewingOnly] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -133,7 +134,7 @@ export default function PollSection({ questionnaireId, formId, siteId = "2001" }
 
       if (data.questionResponseSummaries) {
         setResults(data.questionResponseSummaries);
-        setHasVoted(true);
+        setViewingOnly(true);
       }
     } catch (err) {
       setError("Unable to load results. Please try again.");
@@ -280,7 +281,7 @@ export default function PollSection({ questionnaireId, formId, siteId = "2001" }
           ))}
         </div>
 
-        {!results && (
+        {!hasVoted && !results && (
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <button
               onClick={handleSubmit}
@@ -299,6 +300,20 @@ export default function PollSection({ questionnaireId, formId, siteId = "2001" }
               className="px-6 py-2.5 rounded-lg font-medium text-sm text-[#16478c] border border-[#16478c] hover:bg-blue-50 transition-all duration-200"
             >
               View Results
+            </button>
+          </div>
+        )}
+
+        {viewingOnly && results && (
+          <div className="mt-6">
+            <button
+              onClick={() => {
+                setResults(null);
+                setViewingOnly(false);
+              }}
+              className="px-6 py-2.5 rounded-lg font-medium text-sm text-[#16478c] border border-[#16478c] hover:bg-blue-50 transition-all duration-200"
+            >
+              Back to Vote
             </button>
           </div>
         )}
