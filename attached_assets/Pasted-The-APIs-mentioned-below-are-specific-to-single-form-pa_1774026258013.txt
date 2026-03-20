@@ -1,0 +1,324 @@
+The APIs mentioned below are specific to single form/page poll API calls, including request and response information.
+  
+  Below mentioned is the questionnaire form data.
+  GET API call: https://api.medscape.com/servicegateway/v2/auth/qnaservice/questionnaire/39695/form/1?aggregated=true&siteId=2001
+  Response: {
+  "formId" : 1,
+  "formTitle" : "Reader Poll: Do You e-Consult?",
+  "formTypeId" : 16,
+  "formType" : "INSTANTPOLL",
+  "displayOrder" : 1,
+  "introduction" : null,
+  "questions" : [ {
+    "questionId" : 303569,
+    "questionText" : "Do you currently use e-consultations with a specialist or primary care provider?",
+    "displayType" : 1,
+    "poll" : true,
+    "required" : false,
+    "score" : false,
+    "displayOrder" : 1,
+    "discussion" : null,
+    "introduction" : null,
+    "choices" : [ {
+      "choiceText" : "Frequently",
+      "choiceId" : 959969,
+      "displayOrder" : 1,
+      "correct" : false,
+      "selected" : false,
+      "hideLabel" : false,
+      "explanation" : null,
+      "branchPath" : null,
+      "totalResponses" : "9",
+      "totalAbsoluteResponseCount" : 10
+    }, {
+      "choiceText" : "Sometimes",
+      "choiceId" : 959971,
+      "displayOrder" : 2,
+      "correct" : false,
+      "selected" : false,
+      "hideLabel" : false,
+      "explanation" : null,
+      "branchPath" : null,
+      "totalResponses" : "9",
+      "totalAbsoluteResponseCount" : 9
+    }, {
+      "choiceText" : "Occasionally",
+      "choiceId" : 959973,
+      "displayOrder" : 3,
+      "correct" : false,
+      "selected" : false,
+      "hideLabel" : false,
+      "explanation" : null,
+      "branchPath" : null,
+      "totalResponses" : "72",
+      "totalAbsoluteResponseCount" : 74
+    }, {
+      "choiceText" : "Rarely",
+      "choiceId" : 959975,
+      "displayOrder" : 4,
+      "correct" : false,
+      "selected" : false,
+      "hideLabel" : false,
+      "explanation" : null,
+      "branchPath" : null,
+      "totalResponses" : "7",
+      "totalAbsoluteResponseCount" : 7
+    }, {
+      "choiceText" : "Never",
+      "choiceId" : 959977,
+      "displayOrder" : 5,
+      "correct" : false,
+      "selected" : false,
+      "hideLabel" : false,
+      "explanation" : null,
+      "branchPath" : null,
+      "totalResponses" : "3",
+      "totalAbsoluteResponseCount" : 3
+    } ],
+    "showAnsTable" : true,
+    "showQuestion" : true,
+    "showResult" : false,
+    "responseText" : null,
+    "answered" : false,
+    "answeredCorrectly" : false,
+    "questionTypeId" : 1,
+    "mutuallyExclusive" : false,
+    "matrixQuestions" : [ ],
+    "totalResponses" : 103.0,
+    "viewResults" : true,
+    "specialties" : [ {
+      "description" : "Cardiology",
+      "specialtyId" : 3
+    }, {
+      "description" : "Family Medicine",
+      "specialtyId" : 9
+    }, {
+      "description" : "Internal Medicine",
+      "specialtyId" : 15
+    }, {
+      "description" : "Ob/Gyn & Women's Health",
+      "specialtyId" : 19
+    } ],
+    "professions" : [ {
+      "description" : "Physician",
+      "professionId" : 10
+    }, {
+      "description" : "Nurse/Advanced Practice Nurse",
+      "professionId" : 12
+    } ],
+    "horizontal" : false,
+    "branch" : false
+  }, {
+    "questionId" : 303571,
+    "questionText" : "Are you a specialist or a primary care clinician?",
+    "displayType" : 1,
+    "poll" : true,
+    "required" : false,
+    "score" : false,
+    "displayOrder" : 2,
+    "discussion" : null,
+    "introduction" : null,
+    "choices" : [ {
+      "choiceText" : "Specialist",
+      "choiceId" : 959979,
+      "displayOrder" : 1,
+      "correct" : false,
+      "selected" : false,
+      "hideLabel" : false,
+      "explanation" : null,
+      "branchPath" : null,
+      "totalResponses" : "91",
+      "totalAbsoluteResponseCount" : 94
+    }, {
+      "choiceText" : "Primary care clinician",
+      "choiceId" : 959981,
+      "displayOrder" : 2,
+      "correct" : false,
+      "selected" : false,
+      "hideLabel" : false,
+      "explanation" : null,
+      "branchPath" : null,
+      "totalResponses" : "9",
+      "totalAbsoluteResponseCount" : 9
+    } ],
+    "showAnsTable" : true,
+    "showQuestion" : true,
+    "showResult" : false,
+    "responseText" : null,
+    "answered" : false,
+    "answeredCorrectly" : false,
+    "questionTypeId" : 1,
+    "mutuallyExclusive" : false,
+    "matrixQuestions" : [ ],
+    "totalResponses" : 103.0,
+    "viewResults" : true,
+    "specialties" : [ {
+      "description" : "Cardiology",
+      "specialtyId" : 3
+    }, {
+      "description" : "Family Medicine",
+      "specialtyId" : 9
+    }, {
+      "description" : "Internal Medicine",
+      "specialtyId" : 15
+    }, {
+      "description" : "Ob/Gyn & Women's Health",
+      "specialtyId" : 19
+    } ],
+    "professions" : [ {
+      "description" : "Physician",
+      "professionId" : 10
+    }, {
+      "description" : "Nurse/Advanced Practice Nurse",
+      "professionId" : 12
+    } ],
+    "horizontal" : false,
+    "branch" : false
+  } ],
+  "isActive" : 1,
+  "gated" : false,
+  "expirationDate" : null,
+  "viewResults" : false,
+  "totalForScoreQuestions" : 0,
+  "questionIds" : [ 303569, 303571 ]
+}
+
+Below mentioned is view results call specific data.
+POST API Call: https://api.medscape.com/servicegateway/v2/auth/qnaservice/questionnaire/filter
+Request: {"questionnaireId":"39695","formId":1}
+Response: {
+  "questionnaireId" : 39695,
+  "specialtyId" : 0,
+  "professionId" : 0,
+  "questionResponseSummaries" : [ {
+    "questionId" : 303569,
+    "pollSummaryChoiceResponses" : [ {
+      "choiceId" : 959969,
+      "userResponded" : false,
+      "totalResponses" : 0,
+      "questionSum" : 103,
+      "totalCount" : 10,
+      "responseText" : ""
+    }, {
+      "choiceId" : 959971,
+      "userResponded" : false,
+      "totalResponses" : 0,
+      "questionSum" : 103,
+      "totalCount" : 9,
+      "responseText" : ""
+    }, {
+      "choiceId" : 959973,
+      "userResponded" : false,
+      "totalResponses" : 0,
+      "questionSum" : 103,
+      "totalCount" : 74,
+      "responseText" : ""
+    }, {
+      "choiceId" : 959975,
+      "userResponded" : false,
+      "totalResponses" : 0,
+      "questionSum" : 103,
+      "totalCount" : 7,
+      "responseText" : ""
+    }, {
+      "choiceId" : 959977,
+      "userResponded" : false,
+      "totalResponses" : 0,
+      "questionSum" : 103,
+      "totalCount" : 3,
+      "responseText" : ""
+    } ]
+  }, {
+    "questionId" : 303571,
+    "pollSummaryChoiceResponses" : [ {
+      "choiceId" : 959979,
+      "userResponded" : false,
+      "totalResponses" : 0,
+      "questionSum" : 103,
+      "totalCount" : 94,
+      "responseText" : ""
+    }, {
+      "choiceId" : 959981,
+      "userResponded" : false,
+      "totalResponses" : 0,
+      "questionSum" : 103,
+      "totalCount" : 9,
+      "responseText" : ""
+    } ]
+  } ]
+}
+
+POST API Call: https://api.medscape.com/servicegateway/v2/auth/qnaservice/save/userresponse?aggregated=true
+Request: {"formId":1,"questionResponses":[{"choiceId":959969,"questionId":303569},{"choiceId":959979,"questionId":303571}],"questionnaireId":"39695","siteId":2001}
+
+Response: {
+  "ok" : true,
+  "errorMessage" : null,
+  "type" : null,
+  "data" : {
+    "incorrectlyAnsweredQuestionIds" : [ 303569, 303571 ],
+    "pollingSummary" : {
+      "questionnaireId" : 39695,
+      "pollSummaryQuestionResponses" : [ {
+        "questionId" : 303569,
+        "pollSummaryChoiceResponses" : [ {
+          "choiceId" : 959969,
+          "userResponded" : true,
+          "totalResponses" : 0,
+          "questionSum" : 103,
+          "totalCount" : 10,
+          "responseText" : ""
+        }, {
+          "choiceId" : 959971,
+          "userResponded" : false,
+          "totalResponses" : 0,
+          "questionSum" : 103,
+          "totalCount" : 9,
+          "responseText" : ""
+        }, {
+          "choiceId" : 959973,
+          "userResponded" : false,
+          "totalResponses" : 0,
+          "questionSum" : 103,
+          "totalCount" : 74,
+          "responseText" : ""
+        }, {
+          "choiceId" : 959975,
+          "userResponded" : false,
+          "totalResponses" : 0,
+          "questionSum" : 103,
+          "totalCount" : 7,
+          "responseText" : ""
+        }, {
+          "choiceId" : 959977,
+          "userResponded" : false,
+          "totalResponses" : 0,
+          "questionSum" : 103,
+          "totalCount" : 3,
+          "responseText" : ""
+        } ],
+        "userChoiceId" : 0,
+        "userResponseText" : null
+      }, {
+        "questionId" : 303571,
+        "pollSummaryChoiceResponses" : [ {
+          "choiceId" : 959979,
+          "userResponded" : true,
+          "totalResponses" : 0,
+          "questionSum" : 103,
+          "totalCount" : 94,
+          "responseText" : ""
+        }, {
+          "choiceId" : 959981,
+          "userResponded" : false,
+          "totalResponses" : 0,
+          "questionSum" : 103,
+          "totalCount" : 9,
+          "responseText" : ""
+        } ],
+        "userChoiceId" : 0,
+        "userResponseText" : null
+      } ]
+    }
+  }
+}
