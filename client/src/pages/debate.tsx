@@ -17,6 +17,7 @@ import SummaryTableUnboxed from "@/components/summary-table-unboxed";
 import MiddleGroundUnboxed from "@/components/middle-ground-unboxed";
 import ConclusionsUnboxed from "@/components/conclusions-unboxed";
 import PrivacyPreferenceCenter from "@/components/privacy-preference-center";
+import PollSection from "@/components/poll-section";
 
 // Declare gtag function for TypeScript
 // Start - Declare this block for enable tracking
@@ -333,6 +334,14 @@ export default function DebatePage() {
           className="flex justify-center mb-6 md:mb-12"
           position={5}
         />
+
+        <div className="mb-12">
+          <PollSection
+            questionnaireId="39695"
+            formId={1}
+            siteId="2001"
+          />
+        </div>
 
         <div className="mb-16">
           <SummaryTableUnboxed

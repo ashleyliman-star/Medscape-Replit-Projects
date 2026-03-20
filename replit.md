@@ -28,18 +28,21 @@ All application output is served under a root context path: `/r8m2k5x9np4b/`
 ### Backend Architecture
 - **Runtime**: Node.js 20 with TypeScript
 - **Framework**: Express.js for RESTful API endpoints
-- **Database**: PostgreSQL with Drizzle ORM for type-safe database operations
+- **No database** — all poll data comes from Medscape QNA API proxied through Express
 - **Development**: Hot module replacement with Vite middleware in development
 
 ## Key Components
 
 ### API Layer
 - **Health Check**: `GET /health` returns `{"status":"healthy"}`
-- No database dependencies — all content is static
+- **Poll Form**: `GET /api/poll/form/:questionnaireId/:formId` — proxies to Medscape QNA service to fetch questionnaire form data
+- **Poll Results**: `POST /api/poll/results` — proxies to Medscape QNA filter endpoint for aggregated results
+- **Poll Submit**: `POST /api/poll/submit` — proxies to Medscape QNA save/userresponse endpoint
+- All poll routes forward cookies for authentication and validate JSON content-type from upstream
 
 ### Frontend Components
-- **Debate Layout**: Multiple layout variants (A, B, D, E) for A/B testing
-- **Argument Display**: Accordion-style expandable arguments
+- **Debate Layout**: Unboxed (C1) layout with side-by-side YES/NO arguments
+- **Poll Section**: `client/src/components/poll-section.tsx` — interactive poll that calls Medscape QNA API via server proxy; supports voting, viewing results, loading/error states
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 
 ### UI/UX Features
