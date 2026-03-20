@@ -42,6 +42,35 @@ interface PollSectionProps {
   siteId?: string;
 }
 
+const MEDSCAPE_QNA_BASE = "https://api.medscape.com/servicegateway/v2/auth/qnaservice";
+
+function isOnMedscapeDomain(): boolean {
+  const host = window.location.hostname;
+  return host === "medscape.com" || host.endsWith(".medscape.com") ||
+         host === "webmd.com" || host.endsWith(".webmd.com");
+}
+
+async function directOrProxy(
+  directUrl: string,
+  proxyUrl: string,
+  options: RequestInit = {}
+): Promise<Response> {
+  if (isOnMedscapeDomain()) {
+    try {
+      const directResponse = await fetch(directUrl, {
+        ...options,
+        credentials: "include",
+      });
+      if (directResponse.ok) return directResponse;
+      const contentType = directResponse.headers.get("content-type") || "";
+      if (contentType.includes("application/json")) return directResponse;
+    } catch (_) {
+      // Direct call failed, fall through to proxy
+    }
+  }
+  return fetch(proxyUrl, options);
+}
+
 export default function PollSection({ questionnaireId, formId, siteId = "2001" }: PollSectionProps) {
   const [formData, setFormData] = useState<FormData | null>(null);
   const [selectedChoices, setSelectedChoices] = useState<Record<number, number>>({});
@@ -56,12 +85,22 @@ export default function PollSection({ questionnaireId, formId, siteId = "2001" }
     fetchFormData();
   }, [questionnaireId, formId]);
 
-  const fetchFormData = async () => {
+  const fetchFormData = async (retryCount = 0) => {
     try {
       setIsLoading(true);
       setError(null);
-      const response = await fetch(`/api/poll/form/${questionnaireId}/${formId}?siteId=${siteId}`);
-      if (!response.ok) throw new Error("Failed to load poll");
+      const directUrl = `${MEDSCAPE_QNA_BASE}/questionnaire/${questionnaireId}/form/${formId}?aggregated=true&siteId=${siteId}`;
+      const proxyUrl = `/api/poll/form/${questionnaireId}/${formId}?siteId=${siteId}`;
+      const response = await directOrProxy(directUrl, proxyUrl);
+      if (!response.ok) {
+        if ((response.status === 429 || response.status === 403) && retryCount < 3) {
+          const delay = (retryCount + 1) * 2000;
+          console.log(`Poll API returned ${response.status}, retrying in ${delay}ms (attempt ${retryCount + 1}/3)`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          return fetchFormData(retryCount + 1);
+        }
+        throw new Error("Failed to load poll");
+      }
       const data = await response.json();
       setFormData(data);
     } catch (err) {
@@ -90,15 +129,19 @@ export default function PollSection({ questionnaireId, formId, siteId = "2001" }
         questionId: q.questionId,
       }));
 
-      const response = await fetch("/api/poll/submit", {
+      const submitBody = JSON.stringify({
+        formId,
+        questionResponses,
+        questionnaireId,
+        siteId,
+      });
+
+      const directUrl = `${MEDSCAPE_QNA_BASE}/save/userresponse?aggregated=true`;
+      const proxyUrl = "/api/poll/submit";
+      const response = await directOrProxy(directUrl, proxyUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          formId,
-          questionResponses,
-          questionnaireId,
-          siteId,
-        }),
+        body: submitBody,
       });
 
       if (!response.ok) throw new Error("Failed to submit");
@@ -123,10 +166,13 @@ export default function PollSection({ questionnaireId, formId, siteId = "2001" }
   const handleViewResults = async () => {
     try {
       setIsSubmitting(true);
-      const response = await fetch("/api/poll/results", {
+      const filterBody = JSON.stringify({ questionnaireId, formId });
+      const directUrl = `${MEDSCAPE_QNA_BASE}/questionnaire/filter`;
+      const proxyUrl = "/api/poll/results";
+      const response = await directOrProxy(directUrl, proxyUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ questionnaireId, formId }),
+        body: filterBody,
       });
 
       if (!response.ok) throw new Error("Failed to fetch results");
