@@ -42,36 +42,6 @@ interface PollSectionProps {
   siteId?: string;
 }
 
-const FALLBACK_FORM: FormData = {
-  formId: 1,
-  formTitle: "Reader Poll: Do You e-Consult?",
-  questions: [
-    {
-      questionId: 303569,
-      questionText: "Do you currently use e-consultations with a specialist or primary care provider?",
-      displayOrder: 1,
-      totalResponses: 103,
-      choices: [
-        { choiceText: "Frequently", choiceId: 959969, displayOrder: 1, totalResponses: "9", totalAbsoluteResponseCount: 10 },
-        { choiceText: "Sometimes", choiceId: 959971, displayOrder: 2, totalResponses: "9", totalAbsoluteResponseCount: 9 },
-        { choiceText: "Occasionally", choiceId: 959973, displayOrder: 3, totalResponses: "72", totalAbsoluteResponseCount: 74 },
-        { choiceText: "Rarely", choiceId: 959975, displayOrder: 4, totalResponses: "7", totalAbsoluteResponseCount: 7 },
-        { choiceText: "Never", choiceId: 959977, displayOrder: 5, totalResponses: "3", totalAbsoluteResponseCount: 3 },
-      ],
-    },
-    {
-      questionId: 303571,
-      questionText: "Are you a specialist or a primary care clinician?",
-      displayOrder: 2,
-      totalResponses: 103,
-      choices: [
-        { choiceText: "Specialist", choiceId: 959979, displayOrder: 1, totalResponses: "91", totalAbsoluteResponseCount: 94 },
-        { choiceText: "Primary care clinician", choiceId: 959981, displayOrder: 2, totalResponses: "9", totalAbsoluteResponseCount: 9 },
-      ],
-    },
-  ],
-};
-
 export default function PollSection({ questionnaireId, formId, siteId = "2001" }: PollSectionProps) {
   const [formData, setFormData] = useState<FormData | null>(null);
   const [selectedChoices, setSelectedChoices] = useState<Record<number, number>>({});
@@ -93,14 +63,10 @@ export default function PollSection({ questionnaireId, formId, siteId = "2001" }
       const response = await fetch(`/api/poll/form/${questionnaireId}/${formId}?siteId=${siteId}`);
       if (!response.ok) throw new Error("Failed to load poll");
       const data = await response.json();
-      if (data.questions && data.questions.length > 0) {
-        setFormData(data);
-      } else {
-        setFormData(FALLBACK_FORM);
-      }
+      setFormData(data);
     } catch (err) {
-      console.error("Poll fetch error, using fallback data:", err);
-      setFormData(FALLBACK_FORM);
+      setError("Unable to load poll. Please try again later.");
+      console.error("Poll fetch error:", err);
     } finally {
       setIsLoading(false);
     }
@@ -193,6 +159,20 @@ export default function PollSection({ questionnaireId, formId, siteId = "2001" }
           <div className="h-10 bg-gray-200 rounded"></div>
           <div className="h-10 bg-gray-200 rounded"></div>
         </div>
+      </div>
+    );
+  }
+
+  if (error && !formData) {
+    return (
+      <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+        <p className="text-red-600">{error}</p>
+        <button
+          onClick={fetchFormData}
+          className="mt-3 text-sm text-red-700 underline hover:no-underline"
+        >
+          Try again
+        </button>
       </div>
     );
   }
