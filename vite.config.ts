@@ -1,11 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { ROOT_CONTEXT } from "./shared/config";
 
 export default defineConfig({
   plugins: [
     react(),
   ],
+  base: `/${ROOT_CONTEXT}/`,
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),

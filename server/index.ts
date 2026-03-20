@@ -1,44 +1,54 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { ROOT_CONTEXT, BASE_PATH } from "@shared/config";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Serve attached assets
-app.use('/attached_assets', express.static('attached_assets'));
+// Serve attached assets under the root context
+app.use(`${BASE_PATH}/attached_assets`, express.static('attached_assets'));
 
 // Serve robots.txt file only for the specific debate page path
-app.get('/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/robots.txt', (req, res) => {
+app.get(`${BASE_PATH}/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention/robots.txt`, (req, res) => {
   res.type('text/plain');
   res.send('User-agent: *\nDisallow: /');
 });
 
-// Handle routing for specific debate page only
+// Handle routing with root context
 app.use((req, res, next) => {
-  const targetPath = '/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention';
+  const debatePath = `${BASE_PATH}/debates/does-asymptomatic-aortic-stenosis-warrant-early-intervention`;
   const host = req.get('host') || '';
+  
+  // Health check and API routes stay outside the context
+  if (req.path === '/health' || req.path.startsWith('/api/')) {
+    return next();
+  }
   
   // Block root access on exp.medscape.com domain
   if (host.includes('exp.medscape.com') && req.path === '/') {
     return res.status(404).send('Page not found');
   }
   
-  // If accessing the specific debate path, serve the app
-  if (req.path === targetPath || req.path === targetPath + '/') {
-    req.url = '/'; // Rewrite to root for the app
+  // If accessing the specific debate path under context, serve the app
+  if (req.path === debatePath || req.path === debatePath + '/') {
+    req.url = `${BASE_PATH}/`;
     next();
   }
-  // Allow access to necessary assets, API routes, and health check
-  else if (req.path.startsWith('/src/') || req.path.startsWith('/@') || req.path.startsWith('/node_modules/') || req.path.includes('.') || req.path.startsWith('/api/') || req.path.startsWith('/attached_assets/') || req.path === '/health') {
+  // If accessing the context root, serve the app
+  else if (req.path === BASE_PATH || req.path === `${BASE_PATH}/`) {
     next();
   }
-  // For development, allow root access
+  // Allow access to assets under the context path (Vite dev assets, built assets)
+  else if (req.path.startsWith(`${BASE_PATH}/`)) {
+    next();
+  }
+  // For development, allow root access and redirect to context
   else if (req.path === '/' && app.get('env') === 'development') {
-    next();
+    return res.redirect(`${BASE_PATH}/`);
   }
-  // Block all other paths - let them be handled by other services on exp.medscape.com
+  // Block all other paths
   else {
     res.status(404).send('Page not found');
   }
@@ -101,5 +111,6 @@ app.use((req, res, next) => {
     reusePort: true,
   }, () => {
     log(`serving on port ${port}`);
+    log(`root context: ${BASE_PATH}`);
   });
 })();

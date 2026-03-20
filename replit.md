@@ -2,7 +2,18 @@
 
 ## Overview
 
-This is a full-stack web application for presenting medical debates with expert opinions. The platform showcases evidence-based arguments from healthcare professionals on controversial medical topics, allowing users to explore different perspectives and participate in polls.
+This is a full-stack web application for presenting medical debates with expert opinions. The platform showcases evidence-based arguments from healthcare professionals on controversial medical topics, allowing users to explore different perspectives.
+
+## Root Context
+
+All application output is served under a root context path: `/r8m2k5x9np4b/`
+- **Context string**: `r8m2k5x9np4b` (12-char alphanumeric, defined in `shared/config.ts`)
+- CSS, JS, images, and all pages load within this root context
+- Health check (`/health`) and API routes (`/api/`) remain outside the context
+- Vite `base` is set to `/${ROOT_CONTEXT}/` for asset path prefixing
+- Wouter Router uses `base` prop for client-side routing under context
+- Production static files are mounted at the context path
+- `kubeconfig.json` paths updated to `["/r8m2k5x9np4b"]`
 
 ## System Architecture
 

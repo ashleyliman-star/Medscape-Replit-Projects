@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 import { useEffect, useState } from "react";
+import { BASE_PATH } from "@shared/config";
 
 interface AdPlaceholderProps {
   size: '300x250' | '728x90' | 'responsive-desktop-banner';
@@ -103,18 +104,18 @@ export default function AdPlaceholder({ size, className, position }: AdPlacehold
   const showSixthMobile300x250Ad = size === 'responsive-desktop-banner' && position === 5 && !isDesktop;
   const showSeventhMobile300x250Ad = size === '300x250' && position === 7 && !isDesktop;
   
-  const firstAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg";
-  const secondAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg";
-  const thirdAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v6_728x90 (1)_1752083072070.jpg";
-  const fourthAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v5_728x90_1752083208434.jpg";
-  const fifthAlcoholAdImage = "/attached_assets/MM_Alcohol_Post-Event_v7_300x250_1752083329006.jpg";
-  const firstMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_300x250_1752090608590.jpg";
-  const secondMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_300x250_1752091332968.jpg";
-  const thirdMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v6_300x250_1752091467559.jpg";
-  const fourthMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v5_300x250_1752091581010.jpg";
-  const fifthMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v7_300x250 (1)_1752091625733.jpg";
-  const sixthMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v3_300x250 (1)_1752091862554.jpg";
-  const seventhMobile300x250AdImage = "/attached_assets/MM_Alcohol_Post-Event_v4_300x250 (1)_1752091987538.jpg";
+  const firstAlcoholAdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v3_728x90_1752081869926.jpg`;
+  const secondAlcoholAdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v4_728x90_1752082530452.jpg`;
+  const thirdAlcoholAdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v6_728x90 (1)_1752083072070.jpg`;
+  const fourthAlcoholAdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v5_728x90_1752083208434.jpg`;
+  const fifthAlcoholAdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v7_300x250_1752083329006.jpg`;
+  const firstMobile300x250AdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v3_300x250_1752090608590.jpg`;
+  const secondMobile300x250AdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v4_300x250_1752091332968.jpg`;
+  const thirdMobile300x250AdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v6_300x250_1752091467559.jpg`;
+  const fourthMobile300x250AdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v5_300x250_1752091581010.jpg`;
+  const fifthMobile300x250AdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v7_300x250 (1)_1752091625733.jpg`;
+  const sixthMobile300x250AdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v3_300x250 (1)_1752091862554.jpg`;
+  const seventhMobile300x250AdImage = `${BASE_PATH}/attached_assets/MM_Alcohol_Post-Event_v4_300x250 (1)_1752091987538.jpg`;
 
   return (
     <div className={cn("flex flex-col items-center", className)}>
